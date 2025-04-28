@@ -609,6 +609,26 @@ nav .nav-links li a:hover {
     color: #ffffff; /* White text on hover */
   }
 }
+/* Adjust content padding for sticky navbar */
+body {
+  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container {
+  padding-top: 20px; /* Ensure the content doesn’t get hidden by the fixed navbar */
+}
+
+/* For Mobile view */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Add more padding for mobile, considering the navbar height */
+  }
+
+  .main-content, .thank-you-container {
+    padding-top: 20px;
+  }
+}
 
 
 
