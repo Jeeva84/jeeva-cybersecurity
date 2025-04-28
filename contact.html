@@ -5,19 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jeeva Kumaradas - Contact</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
-    <h1>Jeeva Kumaradas</h1>
-  </div>
-</header>
-
-<nav>
+<!-- Navigation Bar -->
+<nav class="nav-bar">
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="resume.html">Resume</a></li>
@@ -31,32 +24,27 @@
 </nav>
 
 <!-- Contact Section -->
-<section class="contact-page">
+<div class="contact-container">
 
-  <div class="contact-container">
-
-    <!-- Left Side: Image -->
-    <div class="contact-image">
-      <img src="images/jeeva-profile.png" alt="Contact Image">
-    </div>
-
-    <!-- Right Side: Contact Form -->
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-
-      <form action="https://formsubmit.co/your-email@example.com" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="E-mail" required>
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit" class="hero-button">Send Message</button>
-      </form>
-
-    </div>
-
+  <!-- Left Side - Big Profile Picture -->
+  <div class="contact-image">
+    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
   </div>
 
-</section>
+  <!-- Right Side - Contact Form -->
+  <div class="contact-form">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/your-email@example.com" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="send-button">Send Message</button>
+    </form>
+  </div>
 
+</div>
+
+<!-- Footer -->
 <footer>
   <div class="footer-wrapper">
     <p>&copy; 2025 Jeeva Kumaradas. Built with ❤️ and Dedication to Cybersecurity.</p>
