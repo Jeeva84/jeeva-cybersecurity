@@ -1,11 +1,10 @@
-/* --- Automatic Container for Main Content --- */
-section, header, main {
+/* --- Automatic Container Fix for Whole Website --- */
+section, header, main, .resume-page, .main-content {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
 
 /* --- General Page Container --- */
 .container {
