@@ -1,88 +1,108 @@
-/* --- Base Styles --- */
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #121212;
+  background-color: #0d0d0d;
   color: #f5f5f5;
 }
 
-/* --- Container --- */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 40px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-/* --- Navigation Bar --- */
+/* Navigation */
 nav {
-  background-color: #1f1f1f;
-  padding: 15px 0;
+  background-color: transparent;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
 
-nav .nav-wrapper {
+.nav-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-nav .nav-links {
+.nav-links {
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 25px;
+  gap: 30px;
 }
 
-nav .nav-links li a {
+.nav-links li a {
   color: #f5f5f5;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  transition: background 0.3s;
+  transition: color 0.3s;
 }
 
-nav .nav-links li a:hover {
-  background-color: #ffca28;
-  color: #121212;
+.nav-links li a:hover {
+  color: #ffca28;
 }
 
-/* --- Footer --- */
-footer {
-  background-color: #1f1f1f;
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: radial-gradient(circle at center, #512da8, #0d0d0d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
+  flex-direction: column;
+  color: #ffffff;
 }
 
-.footer-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #f5f5f5;
-  font-size: 16px;
+.hero-content h1 {
+  font-size: 48px;
+  margin: 0;
 }
 
-/* --- Hero Button --- */
+.hero-content h2 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
 .hero-button {
   background: #ffca28;
   color: #121212;
-  padding: 12px 30px;
+  padding: 14px 30px;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .hero-button:hover {
   background: #ffc107;
   color: #000;
-  box-shadow: 0 0 10px #ffc107;
+  box-shadow: 0 0 15px #ffc107;
+}
+
+/* About Section */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+footer {
+  background-color: #121212;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #888;
+  font-size: 16px;
 }
