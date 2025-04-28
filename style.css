@@ -438,5 +438,8 @@ body {
   color: #ff5722; /* Orange bullet points */
 }
 
+h1, h2, h3 {
+  color: #121212; /* Set headings black */
+}
 
 
