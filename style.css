@@ -10,9 +10,10 @@ nav ul.container {
   margin: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; /* <<< Important: keep on one line! */
-  gap: 20px; /* <<< smaller gap */
-  overflow-x: auto; /* allow scrolling if needed on small screens */
+  flex-wrap: nowrap; /* no wrapping allowed */
+  gap: 20px; /* reduce space between tabs */
+  overflow-x: auto; /* scroll on very small screens */
+  white-space: nowrap; /* no line breaks inside */
 }
 
 nav ul.container li {
@@ -23,7 +24,7 @@ nav ul.container li a {
   color: #f5f5f5;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px; /* <<< slightly smaller font for better fitting */
+  font-size: 16px; /* smaller font to fit all tabs */
   transition: 0.3s;
 }
 
@@ -31,3 +32,4 @@ nav ul.container li a:hover {
   color: #ffca28;
   text-shadow: 0 0 10px #ffca28;
 }
+
