@@ -10,10 +10,10 @@ nav ul.container {
   margin: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; /* no wrapping allowed */
-  gap: 20px; /* reduce space between tabs */
-  overflow-x: auto; /* scroll on very small screens */
-  white-space: nowrap; /* no line breaks inside */
+  flex-wrap: nowrap; /* FORCE: no wrapping */
+  gap: 10px; /* Very small gap between tabs */
+  overflow-x: auto; /* Scroll if needed */
+  white-space: nowrap; /* No breaking lines */
 }
 
 nav ul.container li {
@@ -24,7 +24,8 @@ nav ul.container li a {
   color: #f5f5f5;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px; /* smaller font to fit all tabs */
+  font-size: 14px; /* Make font smaller to fit all tabs */
+  padding: 8px 8px; /* Smaller padding inside tabs */
   transition: 0.3s;
 }
 
