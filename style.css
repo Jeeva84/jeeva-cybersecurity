@@ -1327,4 +1327,61 @@ nav.nav-bar {
     padding-top: 20px !important;
   }
 }
+/* --- For Mobile View --- */
+
+/* Ensure padding at the top of the body to accommodate sticky navbar */
+body {
+  margin: 0;
+  padding-top: 60px; /* Adjust for the sticky navbar */
+}
+
+/* Ensures content doesn't get hidden behind navbar */
+.main-content, .thank-you-container, .section-card {
+  padding-top: 20px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  /* Increase padding on mobile */
+  body {
+    padding-top: 70px; /* Adjust to navbar height */
+  }
+
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure no overlap */
+  }
+
+  /* Navbar settings for mobile */
+  nav.nav-bar {
+    padding: 10px 0; /* Adjust navbar padding */
+  }
+
+  nav .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center items */
+    width: 100%; /* Full width for navbar */
+  }
+
+  nav .nav-links li {
+    width: 100%; /* Full width for each link */
+    text-align: center;
+  }
+
+  nav .nav-links li a {
+    width: 100%; /* Make links span the full width */
+    padding: 15px 0; /* Increase the touch area */
+    font-size: 18px; /* Adjust font size */
+    border-radius: 6px; /* Rounded corners */
+  }
+
+  nav .nav-links li a:hover {
+    background-color: #ff5722; /* Ensure hover effect */
+    color: #ffffff; /* White text on hover */
+  }
+
+  /* Optional: You can reduce the size of the hero image on mobile */
+  .hero-image img {
+    width: 80%; /* Reduce image width on smaller screens */
+  }
+}
 
