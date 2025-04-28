@@ -1,3 +1,12 @@
+/* --- General Page Container --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* center horizontally */
+  padding: 0 20px; /* little left and right spacing */
+}
+
+
 /* Base Styles */
 body {
   margin: 0;
