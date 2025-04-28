@@ -200,3 +200,11 @@ body {
   line-height: 1.8;
   font-size: 18px;
 }
+.profile-pic {
+  width: 250px;     /* Same size as Passion page */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* Circle (smooth edges) */
+  margin: 30px auto 10px;
+  display: block;
+}
