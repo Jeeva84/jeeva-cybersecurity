@@ -208,3 +208,12 @@ body {
   margin: 30px auto 10px;
   display: block;
 }
+.profile-pic {
+  width: 250px;        /* Profile Picture Width */
+  height: 250px;       /* Profile Picture Height */
+  object-fit: cover;   /* Make sure it doesn’t stretch */
+  border-radius: 50%;  /* Makes it a perfect circle */
+  margin: 30px auto 10px; /* Center the image and give margin */
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: soft shadow */
+}
