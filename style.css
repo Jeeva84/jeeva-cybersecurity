@@ -610,48 +610,28 @@ nav .nav-links li a:hover {
   }
 }
 /* Adjust content padding for sticky navbar */
-body {
-  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
-}
-
-/* Main Content Section Adjustments */
-.main-content, .thank-you-container {
-  padding-top: 20px; /* Ensure the content doesn’t get hidden by the fixed navbar */
-}
-
-/* For Mobile view */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Add more padding for mobile, considering the navbar height */
-  }
-
-  .main-content, .thank-you-container {
-    padding-top: 20px;
-  }
-}
-
-/* Other styles above */
-
-/* Ensures the navbar doesn't overlap content */
+/* Adjusts for navbar offset on all pages */
 body {
   margin: 0;
-  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
+  padding-top: 60px; /* Adds padding to the top of the body to compensate for the sticky navbar */
 }
 
 /* Main Content Section Adjustments */
 .main-content, .thank-you-container {
-  padding-top: 20px; /* Add top padding to ensure content doesn't get hidden by navbar */
+  padding-top: 20px; /* Ensures content doesn’t get hidden by the fixed navbar */
 }
 
 /* For Mobile View (adjust for smaller screen sizes) */
 @media (max-width: 768px) {
   body {
-    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
+    padding-top: 70px; /* Add more padding for mobile, accounting for navbar height */
   }
 
   .main-content, .thank-you-container {
-    padding-top: 20px; /* Ensure content is below the navbar */
+    padding-top: 20px; /* Ensures content is not hidden below navbar on mobile */
   }
+}
+
 }
 
 /* Adjust the navbar style for sticky positioning */
