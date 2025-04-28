@@ -76,25 +76,17 @@
   </footer>
 
   <!-- JavaScript to hide/show navbar on scroll for mobile -->
-  <script>
-    let lastScrollTop = 0; // Stores the last scroll position
-    const navbar = document.querySelector('.nav-bar'); // Navbar element
+<script>
+  window.onscroll = function () {
+    var navbar = document.querySelector(".nav-bar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      navbar.classList.add("hidden-navbar");
+    } else {
+      navbar.classList.remove("hidden-navbar");
+    }
+  };
+</script>
 
-    // Listen to the scroll event
-    window.addEventListener('scroll', function() {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-      if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-        // If scrolling down, hide navbar
-        navbar.classList.add('hidden-navbar');
-      } else {
-        // If scrolling up, show navbar
-        navbar.classList.remove('hidden-navbar');
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-    });
-  </script>
 </body>
 </html>
 
