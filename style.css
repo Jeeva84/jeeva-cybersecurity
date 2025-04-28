@@ -15,12 +15,17 @@ section, header, main, .resume-page, .main-content {
 }
 
 
-/* Base Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #121212, #fff3e0, #1f1f1f);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #121212;
 }
+
 
 /* --- Navigation Bar --- */
 .nav-bar {
@@ -431,13 +436,5 @@ body {
   color: #444;
 }
 /* --- Light Modern Background for Sub Pages --- */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #ffffff, #fff3e0, #1f1f1f);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #121212;
-}
+
+
