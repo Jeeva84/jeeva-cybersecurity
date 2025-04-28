@@ -357,3 +357,9 @@ nav ul.container li a {
 nav ul.container li {
   display: inline-block;
 }
+.profile-pic {
+  width: 600px;
+  height: auto;
+  margin-top: 0;
+  border-radius: 0;
+}
