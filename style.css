@@ -1461,3 +1461,24 @@ body {
     transition: transform 0.3s ease;
   }
 }
+/* Mobile-specific Navbar Styling */
+@media (max-width: 768px) {
+  nav.nav-bar {
+    padding: 10px 0; /* Adjust padding for mobile screens */
+    overflow-x: auto; /* Allow horizontal scrolling if the items overflow */
+    white-space: nowrap; /* Prevent the items from wrapping to a new line */
+  }
+
+  .nav-links {
+    display: flex; /* Keep links in a horizontal row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 15px; /* Space between the tabs */
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    padding: 15px 20px; /* Add padding for better touch targets */
+    font-size: 16px; /* Slightly smaller font size on mobile */
+  }
+}
