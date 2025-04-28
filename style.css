@@ -19,12 +19,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #121212, #fff3e0, #1f1f1f);
+  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   color: #121212;
 }
+
 
 
 /* --- Navigation Bar --- */
@@ -441,5 +442,6 @@ body {
 h1, h2, h3 {
   color: #121212; /* Set headings black */
 }
+
 
 
