@@ -338,4 +338,22 @@ nav {
   .send-button:hover {
     background-color: #bf360c;
   }
-  
+  nav ul.container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* All tabs side by side */
+  justify-content: center; /* Center the tabs */
+  flex-wrap: wrap; /* Allow small screens to stack if needed */
+  gap: 30px; /* Space between each tab */
+}
+
+nav ul.container li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+nav ul.container li {
+  display: inline-block;
+}
