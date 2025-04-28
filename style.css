@@ -45,13 +45,14 @@ body {
   padding: 10px 15px;
   transition: color 0.3s, background 0.3s;
   border-radius: 6px;
+  transition: color 0.3s, background 0.3s;
+
 }
 
 .nav-links li a:hover {
   background-color: #ffca28;
   color: #121212;
-  text-shadow: none;
-}
+  }
 
 /* Split Hero Section */
 .split-hero {
