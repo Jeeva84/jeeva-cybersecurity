@@ -1,7 +1,7 @@
 /* --- Navigation Bar --- */
 nav {
   background: #1f1f1f;
-  padding: 10px 0;
+  padding: 5px 0; /* reduced vertical padding */
 }
 
 nav ul.container {
@@ -10,10 +10,11 @@ nav ul.container {
   margin: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; /* FORCE: no wrapping */
-  gap: 10px; /* Very small gap between tabs */
-  overflow-x: auto; /* Scroll if needed */
-  white-space: nowrap; /* No breaking lines */
+  align-items: center;
+  flex-wrap: nowrap; /* very important: don't allow wrapping */
+  overflow-x: auto; /* allow horizontal scroll on small screens */
+  white-space: nowrap; /* prevent line breaks */
+  gap: 10px; /* small gap between items */
 }
 
 nav ul.container li {
@@ -24,8 +25,8 @@ nav ul.container li a {
   color: #f5f5f5;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px; /* Make font smaller to fit all tabs */
-  padding: 8px 8px; /* Smaller padding inside tabs */
+  font-size: 14px; /* reduced font size */
+  padding: 8px 6px; /* very small internal padding */
   transition: 0.3s;
 }
 
