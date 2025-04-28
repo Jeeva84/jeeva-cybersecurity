@@ -194,3 +194,9 @@ body {
   line-height: 1.8;
   font-size: 18px;
 }
+/* --- Spacing for My Passion Page Paragraphs --- */
+#passion p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
