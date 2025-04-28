@@ -106,3 +106,26 @@ footer {
   color: #888;
   font-size: 16px;
 }
+#testimonials .testimonial {
+  background: #1a1a1a;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#testimonials p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+#testimonials .testimonial-author {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffca28; /* Highlight name in golden-yellow */
+}
+
+#testimonials .testimonial-author span {
+  color: #64b5f6; /* Name itself in light blue */
+}
