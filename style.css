@@ -356,3 +356,15 @@ body {
 .send-button:hover {
   background-color: #ff5722;
 }
+.profile-top {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
