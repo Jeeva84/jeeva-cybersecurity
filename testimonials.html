@@ -69,5 +69,28 @@
     <p>&copy; 2025 Jeeva Kumaradas. Built with ❤️ and Dedication to Cybersecurity.</p>
 </footer>
 
+<script>
+  let lastScrollTop = 0; // Stores the last scroll position
+  const navbar = document.querySelector('.nav-bar'); // Navbar element
+
+  // Listen to the scroll event
+  window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
+
+    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
+      // If scrolling down, hide navbar
+      navbar.classList.add('hidden-navbar');
+      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
+    } else {
+      // If scrolling up, show navbar
+      navbar.classList.remove('hidden-navbar');
+      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
+  });
+</script>
+    
+
 </body>
 </html>
