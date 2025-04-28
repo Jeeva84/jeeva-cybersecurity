@@ -433,5 +433,32 @@ body {
   color: #444;
 }
 /* --- Light Modern Background for Sub Pages --- */
+/* --- Gentle Orange Traces for Sub Pages --- */
+
+/* Make all main section titles softly orange */
+h2 {
+  color: #ff5722;
+  margin-bottom: 20px;
+}
+
+/* Highlight bullet points with orange markers */
+ul li::marker {
+  color: #ff5722;
+}
+
+/* Optional: slightly color important h3 titles inside sections */
+h3 {
+  color: #ff7043;
+  margin-bottom: 15px;
+}
+
+/* Keep paragraph text still black/grey, no change */
+p {
+  color: #333333;
+}
+
+/* Keep navigation bar background dark — no change */
+
+/* Buttons already look great — no changes needed there */
 
 
