@@ -1482,3 +1482,41 @@ body {
     font-size: 16px; /* Slightly smaller font size on mobile */
   }
 }
+/* Ensures the navbar doesn't overlap content globally */
+body {
+  margin: 0;
+  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container, .section-card {
+  padding-top: 20px; /* Ensure content doesn't get hidden by the navbar */
+}
+
+/* Adjustments for Mobile View (for smaller screen sizes) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
+  }
+
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure content is below the navbar */
+  }
+}
+
+/* For Sticky Navbar across all pages */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Keep it always on top */
+}
+
+/* Navigation links styling */
+nav .nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
