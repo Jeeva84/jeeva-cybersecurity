@@ -1384,4 +1384,74 @@ body {
     width: 80%; /* Reduce image width on smaller screens */
   }
 }
+/* --- For Desktop --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #121212;
+}
+
+/* --- Navigation Bar --- */
+.nav-bar {
+  background-color: #1f1f1f; /* Solid dark background always */
+  width: 100%;
+  padding: 15px 0; /* more padding for better spacing */
+  position: sticky;
+  top: 0;
+  z-index: 999; /* always on top */
+  text-align: center; /* center items */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  /* Remove sticky navbar for mobile */
+  .nav-bar {
+    position: relative; /* Allow navbar to scroll with content */
+    padding: 10px 0; /* Adjust navbar padding */
+  }
+
+  /* Adjust body padding for mobile */
+  body {
+    padding-top: 0; /* Remove extra padding on top */
+  }
+
+  /* Ensure content doesn’t get hidden by the navbar */
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure content is visible */
+  }
+
+  /* Navigation links stacking vertically */
+  nav .nav-links {
+    flex-direction: column; /* Stack the links vertically */
+    align-items: center; /* Center the items */
+    width: 100%; /* Ensure full width for navbar */
+  }
+
+  nav .nav-links li {
+    width: 100%; /* Full width for each link */
+    text-align: center; /* Center-align the links */
+  }
+
+  nav .nav-links li a {
+    width: 100%; /* Make each link fill the width */
+    padding: 15px 0; /* Increase padding for touch areas */
+    font-size: 18px; /* Adjust font size */
+    border-radius: 6px; /* Rounded corners */
+  }
+
+  nav .nav-links li a:hover {
+    background-color: #ff5722; /* Orange background on hover */
+    color: #ffffff; /* White text on hover */
+  }
+
+  /* Make sure hero image and content looks fine on mobile */
+  .hero-image img {
+    width: 80%; /* Reduce image width on mobile */
+  }
+}
 
