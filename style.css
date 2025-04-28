@@ -202,3 +202,70 @@ footer {
 .submit-button:hover {
   background: #09124a;
 }
+/* --- Modern Hero Section --- */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 0 50px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-hero {
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  flex: 2;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  color: #ffca28;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  background: #ffca28;
+  color: #121212;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero-button:hover {
+  background: #ffc107;
+  color: #000;
+  box-shadow: 0 0 10px #ffc107;
+}
