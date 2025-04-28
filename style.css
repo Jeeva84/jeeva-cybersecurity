@@ -1454,4 +1454,11 @@ body {
     width: 80%; /* Reduce image width on mobile */
   }
 }
+/* Hide navbar when scrolling down on mobile */
+@media (max-width: 768px) {
+  .nav-bar.hidden-navbar {
+    transform: translateY(-100%); /* Moves the navbar up, effectively hiding it */
+    transition: transform 0.3s ease;
+  }
+}
 
