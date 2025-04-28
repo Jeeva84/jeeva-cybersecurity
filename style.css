@@ -368,3 +368,58 @@ body {
   border-radius: 50%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+/* --- Navigation Bar --- */
+.nav-bar {
+  background-color: #1f1f1f;
+  padding: 10px 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px; /* Uniform size */
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffca28;
+  text-shadow: 0 0 5px #ffca28;
+}
+.resume-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* more space between sections */
+  margin-top: 40px;
+  padding: 0 20px; /* side padding */
+}
+
+.resume-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px; /* more inside padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1.8; /* more space between lines */
+}
+
+.resume-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.resume-card p, 
+.resume-card ul {
+  font-size: 18px;
+  color: #444;
+}
