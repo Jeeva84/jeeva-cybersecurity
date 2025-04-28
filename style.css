@@ -630,5 +630,47 @@ body {
   }
 }
 
+/* Other styles above */
+
+/* Ensures the navbar doesn't overlap content */
+body {
+  margin: 0;
+  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container {
+  padding-top: 20px; /* Add top padding to ensure content doesn't get hidden by navbar */
+}
+
+/* For Mobile View (adjust for smaller screen sizes) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
+  }
+
+  .main-content, .thank-you-container {
+    padding-top: 20px; /* Ensure content is below the navbar */
+  }
+}
+
+/* Adjust the navbar style for sticky positioning */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Make sure it stays on top */
+}
+
+/* Ensures the navbar stays at the top */
+nav .nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
+
+/* Other styles below */
 
 
