@@ -217,3 +217,8 @@ body {
   display: block;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: soft shadow */
 }
+.testimonial-author span {
+  color: #ffca28; /* Yellow-Gold Highlight */
+  font-weight: bold;
+  font-size: 18px;
+}
