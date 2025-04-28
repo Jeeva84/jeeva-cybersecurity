@@ -710,5 +710,48 @@ nav .nav-links {
   list-style: none;
   gap: 25px;
 }
+/* Ensures the navbar doesn't overlap content globally */
+body {
+  margin: 0;
+  padding-top: 60px; /* Adjust padding to compensate for sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container, .section-card {
+  padding-top: 20px; /* Ensure the content is not hidden behind navbar */
+}
+
+/* Adjustments for mobile (for smaller screen sizes) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
+  }
+
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure content is below the navbar */
+  }
+}
+
+/* Navbar position adjustments */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Ensure navbar stays on top */
+}
+
+/* Navigation links styling */
+nav .nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
+
+/* Special styling for other pages (if needed) */
+body.page-specific {
+  padding-top: 70px; /* Custom adjustment for specific pages */
+}
 
 
