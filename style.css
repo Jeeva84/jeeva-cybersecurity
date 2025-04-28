@@ -433,26 +433,10 @@ body {
   color: #444;
 }
 /* --- Light Modern Background for Sub Pages --- */
-/* --- Gentle Orange Traces for Sub Pages (More Specific) --- */
-
-/* Section main titles inside container */
-.container h2, .main-content h2, section h2 {
-  color: #ff5722;
-}
-
-/* Sub section small titles */
-.container h3, .main-content h3, section h3 {
-  color: #ff7043;
-}
-
-/* Bullet points inside any section or container */
+/* --- Only Bullet Points Orange for Sub Pages --- */
 .container ul li::marker, .main-content ul li::marker, section ul li::marker {
-  color: #ff5722;
+  color: #ff5722; /* Orange bullet points */
 }
 
-/* Normal paragraph text remains clean dark */
-.container p, .main-content p, section p {
-  color: #333333;
-}
 
 
