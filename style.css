@@ -753,5 +753,20 @@ nav .nav-links {
 body.page-specific {
   padding-top: 70px; /* Custom adjustment for specific pages */
 }
+/* Other existing CSS rules */
+
+/* Page-specific styling for all pages with the class "page-specific" */
+.page-specific {
+  padding-top: 60px;  /* Adjust for navbar offset */
+}
+
+/* For mobile view: make the navbar stay above content */
+@media (max-width: 768px) {
+  .page-specific {
+    padding-top: 70px; /* Adjust for mobile navbar */
+  }
+}
+
+/* Other existing CSS rules */
 
 
