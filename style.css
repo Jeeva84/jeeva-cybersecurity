@@ -129,56 +129,76 @@ footer {
 #testimonials .testimonial-author span {
   color: #64b5f6; /* Name itself in light blue */
 }
-/* Contact Form Box */
-.contact-box {
-  background: #1a1a1a;
-  padding: 40px;
+/* --- Modern Contact Form Styling --- */
+.contact-card {
+  background: #ffffff;
+  color: #121212;
+  padding: 40px 30px;
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
   border-radius: 12px;
-  margin-top: 40px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contact-box form {
+.contact-icon {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.contact-card h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contact-card form {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
-.contact-box label {
-  margin-bottom: 8px;
+.contact-card label {
+  margin-bottom: 6px;
   font-weight: bold;
-  color: #ffca28;
+  font-size: 14px;
+  color: #333;
 }
 
-.contact-box input,
-.contact-box textarea {
-  padding: 12px;
+.contact-card input,
+.contact-card textarea {
+  padding: 10px;
   margin-bottom: 20px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  background: #2a2a2a;
-  color: #f5f5f5;
   font-size: 16px;
-}
-
-.contact-box input:focus,
-.contact-box textarea:focus {
-  outline: 2px solid #ffca28;
-}
-
-.send-button {
-  background-color: #ffca28;
+  width: 100%;
+  background: #f9f9f9;
   color: #121212;
-  padding: 14px 28px;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+  outline: 2px solid #4A90E2; /* Blue focus outline */
+}
+
+.submit-button {
+  background: #0d1b66;
+  color: #ffffff;
   border: none;
-  border-radius: 30px;
+  padding: 14px 20px;
+  border-radius: 6px;
   font-weight: bold;
-  cursor: pointer;
   font-size: 16px;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
-.send-button:hover {
-  background-color: #ffc107;
-  color: #000;
-  box-shadow: 0 0 10px #ffc107;
+.submit-button:hover {
+  background: #09124a;
 }
