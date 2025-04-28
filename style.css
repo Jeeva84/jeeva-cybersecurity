@@ -569,6 +569,46 @@ nav .nav-links li a:hover {
     padding: 15px 0; /* Add some padding for better touch area */
   }
 }
+/* Navigation Bar for Mobile */
+@media (max-width: 768px) {
+  /* Ensure full width for navigation bar */
+  nav.nav-bar {
+    padding: 10px 0; /* Adjust padding for smaller screens */
+    text-align: center;
+  }
+
+  /* Navigation links (stacked vertically) */
+  nav .nav-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center-align links */
+    gap: 15px; /* Add some space between links */
+    width: 100%; /* Make sure nav container takes full width */
+    padding: 0; /* Reset any default padding */
+    margin: 0; /* Reset any default margin */
+  }
+
+  /* Each list item should take full width */
+  nav .nav-links li {
+    width: 100%; /* Each link should take full width */
+    text-align: center; /* Center the link text */
+  }
+
+  /* Adjust link styling for mobile */
+  nav .nav-links li a {
+    padding: 15px 0; /* Increase padding for touch devices */
+    font-size: 18px; /* Adjust font size for mobile */
+    width: 100%; /* Make each link span the full width */
+    text-align: center; /* Ensure text is centered inside each button */
+    border-radius: 6px; /* Rounded corners */
+  }
+
+  /* On hover, give an orange background */
+  nav .nav-links li a:hover {
+    background-color: #ff5722; /* Orange hover effect */
+    color: #ffffff; /* White text on hover */
+  }
+}
 
 
 
