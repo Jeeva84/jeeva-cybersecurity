@@ -1,4 +1,20 @@
-/* General styling for body */
+/* --- Automatic Container Fix for Whole Website --- */
+section, header, main, .resume-page, .main-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- General Page Container --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* center horizontally */
+  padding: 0 20px; /* little left and right spacing */
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -8,27 +24,23 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: #121212;
-  padding-top: 60px; /* Add padding to the body to compensate for the sticky navbar */
 }
 
-/* Main Content Section Adjustments */
-.main-content, .thank-you-container, .section-card {
-  padding-top: 20px; /* Ensure the content doesn’t get hidden by the fixed navbar */
-}
 
-/* Navbar Styling */
-nav.nav-bar {
-  background-color: #1f1f1f; /* Black background for navbar */
+
+/* --- Navigation Bar --- */
+.nav-bar {
+  background-color: #1f1f1f; /* Solid dark background always */
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 0; /* more padding for better spacing */
   position: sticky;
   top: 0;
-  z-index: 999;
-  text-align: center;
+  z-index: 999; /* always on top */
+  text-align: center; /* center items */
 }
 
-/* Navigation links styling */
-nav .nav-links {
+
+.nav-links {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -37,7 +49,7 @@ nav .nav-links {
   gap: 25px;
 }
 
-nav .nav-links li a {
+.nav-links li a {
   color: #f5f5f5;
   text-decoration: none;
   font-weight: bold;
@@ -47,39 +59,1272 @@ nav .nav-links li a {
   transition: color 0.3s, background 0.3s;
 }
 
-/* Navigation hover effects */
-nav .nav-links li a:hover {
+.nav-links li a:hover {
   background-color: #ffca28;
   color: #121212;
 }
 
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Increase padding for mobile to avoid navbar overlap */
-  }
 
-  /* Stack the navigation links vertically for mobile */
+/* Split Hero Section */
+.split-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 100px;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #ffffff 50%, #0d0d0d 50%);
+}
+
+.hero-text {
+  flex: 1;
+  color: #121212;
+  padding-right: 50px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  color: #ff5722;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.hero-button {
+  background: #ff5722;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: #e64a19;
+}
+
+/* Profile Image */
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Highlight color */
+.highlight {
+  color: #ff5722;
+}
+
+/* About Me Section */
+.about-me {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  padding: 80px 40px;
+  max-width: 1000px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-me h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #ffca28;
+  margin-bottom: 40px;
+}
+
+.about-me p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  list-style: inside disc;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 20px 0 40px 20px;
+}
+
+.about-list li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer-wrapper {
+  text-align: center;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  padding: 20px;
+  font-size: 16px;
+}
+.resume-pic {
+  width: 300px;   /* Bigger like Home Labs */
+  height: auto;
+  object-fit: cover;
+  border-radius: 0; /* No curves (square/rectangle) */
+  margin-bottom: 20px;
+}
+/* --- Proper Spacing for My Passion Section --- */
+#passion p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Opportunities Section --- */
+#opportunities p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Certifications Section --- */
+#certifications li, #certifications p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Testimonials Section --- */
+#testimonials p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+/* --- Spacing for My Passion Page Paragraphs --- */
+#passion p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+.profile-pic {
+  width: 250px;     /* Same size as Passion page */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* Circle (smooth edges) */
+  margin: 30px auto 10px;
+  display: block;
+}
+.profile-pic {
+  width: 250px;        /* Profile Picture Width */
+  height: 250px;       /* Profile Picture Height */
+  object-fit: cover;   /* Make sure it doesn’t stretch */
+  border-radius: 50%;  /* Makes it a perfect circle */
+  margin: 30px auto 10px; /* Center the image and give margin */
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: soft shadow */
+}
+.testimonial-author span {
+  color: #ff5722; /* Yellow-Gold Highlight */
+  font-weight: bold;
+  font-size: 18px;
+}
+.contact-page {
+  padding: 60px 30px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-form h2 {
+  font-size: 32px;
+  color: #ffca28;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: #ffca28;
+  color: #121212;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ffc107;
+}
+/* --- Contact Page Styling --- */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 50px;
+}
+
+.contact-image img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form {
+  background: #1f1f1f;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaaaaa;
+}
+
+.send-button {
+  width: 100%;
+  background-color: #ff7043;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.send-button:hover {
+  background-color: #ff5722;
+}
+.profile-top {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px; /* Uniform size */
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffca28;
+  text-shadow: 0 0 5px #ffca28;
+}
+.resume-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* more space between sections */
+  margin-top: 40px;
+  padding: 0 20px; /* side padding */
+}
+
+.resume-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px; /* more inside padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1.8; /* more space between lines */
+}
+
+.resume-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.resume-card p, 
+.resume-card ul {
+  font-size: 18px;
+  color: #444;
+}
+/* --- Light Modern Background for Sub Pages --- */
+/* --- Only Bullet Points Orange for Sub Pages --- */
+.container ul li::marker, .main-content ul li::marker, section ul li::marker {
+  color: #ff5722; /* Orange bullet points */
+}
+
+h1, h2, h3 {
+  color: #121212; /* Set headings black */
+}
+.section-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-card h2 {
+  color: #121212;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section-card p, .section-card ul {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.section-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-card h2 {
+  color: #121212;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section-card p, 
+.section-card ul, 
+.section-card li {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+.cert-image {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.download-button {
+  display: inline-block;
+  background-color: #ff5722;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.download-button:hover {
+  background-color: #e64a19;
+}
+
+
+/* --- Automatic Container Fix for Whole Website --- */
+section, header, main, .resume-page, .main-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- General Page Container --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* center horizontally */
+  padding: 0 20px; /* little left and right spacing */
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #121212;
+}
+
+
+
+/* --- Navigation Bar --- */
+.nav-bar {
+  background-color: #1f1f1f; /* Solid dark background always */
+  width: 100%;
+  padding: 15px 0; /* more padding for better spacing */
+  position: sticky;
+  top: 0;
+  z-index: 999; /* always on top */
+  text-align: center; /* center items */
+}
+
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: color 0.3s, background 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #ffca28;
+  color: #121212;
+}
+
+
+/* Split Hero Section */
+.split-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 100px;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #ffffff 50%, #0d0d0d 50%);
+}
+
+.hero-text {
+  flex: 1;
+  color: #121212;
+  padding-right: 50px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  color: #ff5722;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.hero-button {
+  background: #ff5722;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: #e64a19;
+}
+
+/* Profile Image */
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Highlight color */
+.highlight {
+  color: #ff5722;
+}
+
+/* About Me Section */
+.about-me {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  padding: 80px 40px;
+  max-width: 1000px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-me h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #ffca28;
+  margin-bottom: 40px;
+}
+
+.about-me p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  list-style: inside disc;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 20px 0 40px 20px;
+}
+
+.about-list li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer-wrapper {
+  text-align: center;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  padding: 20px;
+  font-size: 16px;
+}
+.resume-pic {
+  width: 300px;   /* Bigger like Home Labs */
+  height: auto;
+  object-fit: cover;
+  border-radius: 0; /* No curves (square/rectangle) */
+  margin-bottom: 20px;
+}
+/* --- Proper Spacing for My Passion Section --- */
+#passion p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Opportunities Section --- */
+#opportunities p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Certifications Section --- */
+#certifications li, #certifications p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Testimonials Section --- */
+#testimonials p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+/* --- Spacing for My Passion Page Paragraphs --- */
+#passion p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+.profile-pic {
+  width: 250px;     /* Same size as Passion page */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* Circle (smooth edges) */
+  margin: 30px auto 10px;
+  display: block;
+}
+.profile-pic {
+  width: 250px;        /* Profile Picture Width */
+  height: 250px;       /* Profile Picture Height */
+  object-fit: cover;   /* Make sure it doesn’t stretch */
+  border-radius: 50%;  /* Makes it a perfect circle */
+  margin: 30px auto 10px; /* Center the image and give margin */
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: soft shadow */
+}
+.testimonial-author span {
+  color: #ff5722; /* Yellow-Gold Highlight */
+  font-weight: bold;
+  font-size: 18px;
+}
+.contact-page {
+  padding: 60px 30px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-form h2 {
+  font-size: 32px;
+  color: #ffca28;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: #ffca28;
+  color: #121212;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ffc107;
+}
+/* --- Contact Page Styling --- */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 50px;
+}
+
+.contact-image img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form {
+  background: #1f1f1f;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaaaaa;
+}
+
+.send-button {
+  width: 100%;
+  background-color: #ff7043;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.send-button:hover {
+  background-color: #ff5722;
+}
+.profile-top {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px; /* Uniform size */
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffca28;
+  text-shadow: 0 0 5px #ffca28;
+}
+.resume-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* more space between sections */
+  margin-top: 40px;
+  padding: 0 20px; /* side padding */
+}
+
+.resume-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px; /* more inside padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1.8; /* more space between lines */
+}
+
+.resume-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.resume-card p, 
+.resume-card ul {
+  font-size: 18px;
+  color: #444;
+}
+/* --- Light Modern Background for Sub Pages --- */
+/* --- Only Bullet Points Orange for Sub Pages --- */
+.container ul li::marker, .main-content ul li::marker, section ul li::marker {
+  color: #ff5722; /* Orange bullet points */
+}
+
+h1, h2, h3 {
+  color: #121212; /* Set headings black */
+}
+.section-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-card h2 {
+  color: #121212;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section-card p, .section-card ul {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.section-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-card h2 {
+  color: #121212;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section-card p, 
+.section-card ul, 
+.section-card li {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+.cert-image {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.download-button {
+  display: inline-block;
+  background-color: #ff5722;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.download-button:hover {
+  background-color: #e64a19;
+}
+/* Current desktop styles for the nav-bar */
+nav.nav-bar {
+  background-color: #1f1f1f; /* Black background for nav */
+  width: 100%;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+
+/* Navigation links container */
+nav .nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+  width: 100%;
+}
+
+/* Style for nav links */
+nav .nav-links li a {
+  color: #f5f5f5; /* Light text color */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: transparent; /* Ensures no background color */
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block; /* Makes sure each item is inline */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Style for nav links on hover */
+nav .nav-links li a:hover {
+  background-color: #ff5722; /* Orange background on hover */
+  color: #ffffff; /* Ensures text remains white on hover */
+}
+
+/* Mobile-specific: Adjustments for smaller screens */
+@media (max-width: 768px) {
   nav .nav-links {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    flex-direction: column; /* Stack the links vertically */
+    align-items: center; /* Center the items */
+    width: 100%; /* Ensure it covers the full width */
   }
 
   nav .nav-links li {
-    width: 100%; /* Each link takes the full width */
-    text-align: center;
+    width: 100%; /* Make each link take up the full width */
+    text-align: center; /* Center-align text for each link */
   }
 
   nav .nav-links li a {
-    width: 100%; /* Ensure the link fills the width */
-    padding: 15px 0;
-  }
-
-  /* Ensure the navbar stays on top */
-  nav.nav-bar {
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    width: 100%; /* Make the anchor tag fill the width */
+    padding: 15px 0; /* Add some padding for better touch area */
   }
 }
+/* Navigation Bar for Mobile */
+@media (max-width: 768px) {
+  /* Ensure full width for navigation bar */
+  nav.nav-bar {
+    padding: 10px 0; /* Adjust padding for smaller screens */
+    text-align: center;
+  }
+
+  /* Navigation links (stacked vertically) */
+  nav .nav-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center-align links */
+    gap: 15px; /* Add some space between links */
+    width: 100%; /* Make sure nav container takes full width */
+    padding: 0; /* Reset any default padding */
+    margin: 0; /* Reset any default margin */
+  }
+
+  /* Each list item should take full width */
+  nav .nav-links li {
+    width: 100%; /* Each link should take full width */
+    text-align: center; /* Center the link text */
+  }
+
+  /* Adjust link styling for mobile */
+  nav .nav-links li a {
+    padding: 15px 0; /* Increase padding for touch devices */
+    font-size: 18px; /* Adjust font size for mobile */
+    width: 100%; /* Make each link span the full width */
+    text-align: center; /* Ensure text is centered inside each button */
+    border-radius: 6px; /* Rounded corners */
+  }
+
+  /* On hover, give an orange background */
+  nav .nav-links li a:hover {
+    background-color: #ff5722; /* Orange hover effect */
+    color: #ffffff; /* White text on hover */
+  }
+}
+/* Adjust content padding for sticky navbar */
+/* Adjusts for navbar offset on all pages */
+body {
+  margin: 0;
+  padding-top: 60px; /* Adds padding to the top of the body to compensate for the sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container {
+  padding-top: 20px; /* Ensures content doesn’t get hidden by the fixed navbar */
+}
+
+/* For Mobile View (adjust for smaller screen sizes) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Add more padding for mobile, accounting for navbar height */
+  }
+
+  .main-content, .thank-you-container {
+    padding-top: 20px; /* Ensures content is not hidden below navbar on mobile */
+  }
+}
+
+}
+
+/* Adjust the navbar style for sticky positioning */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Make sure it stays on top */
+}
+
+/* Ensures the navbar stays at the top */
+nav .nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
+
+/* Other styles below */
+/* Ensures the navbar doesn't overlap content globally */
+body {
+  margin: 0;
+  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container, .section-card {
+  padding-top: 20px; /* Ensure content doesn't get hidden by navbar */
+}
+
+/* Adjustments for Mobile View (for smaller screen sizes) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
+  }
+
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure content is below the navbar */
+  }
+}
+
+/* For Sticky Navbar across all pages */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Keep it always on top */
+}
+
+/* Navigation links styling */
+nav .nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
+/* Ensures the navbar doesn't overlap content globally */
+body {
+  margin: 0;
+  padding-top: 60px; /* Adjust padding to compensate for sticky navbar */
+}
+
+/* Main Content Section Adjustments */
+.main-content, .thank-you-container, .section-card {
+  padding-top: 20px; /* Ensure the content is not hidden behind navbar */
+}
+
+/* Adjustments for mobile (for smaller screen sizes) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
+  }
+
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure content is below the navbar */
+  }
+}
+
+/* Navbar position adjustments */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Ensure navbar stays on top */
+}
+
+/* Navigation links styling */
+nav .nav-links {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
+
+/* Special styling for other pages (if needed) */
+body.page-specific {
+  padding-top: 70px; /* Custom adjustment for specific pages */
+}
+/* Other existing CSS rules */
+
+/* Page-specific styling for all pages with the class "page-specific" */
+.page-specific {
+  padding-top: 60px;  /* Adjust for navbar offset */
+}
+
+/* For mobile view: make the navbar stay above content */
+@media (max-width: 768px) {
+  .page-specific {
+    padding-top: 70px; /* Adjust for mobile navbar */
+  }
+}
+
+/* Other existing CSS rules */
+
+/* Page-specific styling for all pages with the class "page-specific" */
+.page-specific {
+  padding-top: 70px;  /* Adjust for navbar offset */
+}
+
+/* Ensure navbar stays on top of content */
+nav.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Ensures navbar stays on top */
+  width: 100%;
+  background-color: #1f1f1f; /* Black background */
+  padding: 15px 0;
+}
+
+/* Main content section padding */
+.main-content, .thank-you-container {
+  padding-top: 20px;  /* Ensure content doesn’t get hidden behind navbar */
+}
+
+/* For Mobile View */
+@media (max-width: 768px) {
+  .page-specific {
+    padding-top: 80px;  /* Adjust for mobile view */
+  }
+
+  .main-content, .thank-you-container {
+    padding-top: 20px;
+  }
+}
+
+/* Ensures the navbar does not overlap content */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+/* Page-specific styling for all pages with the class "page-specific" */
+.page-specific {
+  padding-top: 70px !important;  /* Ensure padding above the navbar */
+}
+
+/* Ensure navbar stays on top of content */
+nav.nav-bar {
+  position: sticky !important;
+  top: 0;
+  z-index: 999 !important; /* Ensures navbar stays on top */
+  width: 100%;
+  background-color: #1f1f1f; /* Black background */
+  padding: 15px 0 !important;
+}
+
+/* Main content section padding */
+.main-content, .thank-you-container {
+  padding-top: 20px !important;  /* Ensure content doesn’t get hidden behind navbar */
+}
+
+/* For Mobile View */
+@media (max-width: 768px) {
+  .page-specific {
+    padding-top: 80px !important;  /* Adjust for mobile view */
+  }
+
+  .main-content, .thank-you-container {
+    padding-top: 20px !important;
+  }
+}
+
