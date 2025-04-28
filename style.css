@@ -31,11 +31,13 @@ body {
 .nav-bar {
   background-color: #1f1f1f; /* Solid dark background always */
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 0; /* more padding for better spacing */
   position: sticky;
   top: 0;
   z-index: 999; /* always on top */
+  text-align: center; /* center items */
 }
+
 
 .nav-links {
   display: flex;
@@ -379,11 +381,6 @@ body {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-/* --- Navigation Bar --- */
-.nav-bar {
-  background-color: #1f1f1f;
-  padding: 10px 0;
 }
 
 .nav-links {
