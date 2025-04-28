@@ -7,22 +7,18 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="page-layout">
+<header>
+  <div class="container">
+    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
+    <h1>Jeeva Kumaradas</h1>
+  </div>
+</header>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="sidebar-pic">
-    <h2>Jeeva Kumaradas</h2>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="main-content">
-
-    <!-- Navigation Menu -->
-    <nav>
-  <ul class="nav-links">   <!-- ✅ NEW -->
+<nav>
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="resume.html">Resume</a></li>
     <li><a href="labs.html">Home Labs</a></li>
@@ -34,36 +30,37 @@
   </ul>
 </nav>
 
+<!-- Contact Section -->
+<section class="contact-page">
 
-<section class="container" id="contact">
-  <div class="contact-card">
-    <img src="images/email-icon.png" alt="Contact Icon" class="contact-icon">
-    <h2>Contact Us</h2>
-    <p class="contact-subtitle">Please fill this form in a decent manner</p>
+  <div class="contact-container">
 
-    <form action="https://formsubmit.co/your-email@example.com" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+    <!-- Left Side: Image -->
+    <div class="contact-image">
+      <img src="images/jeeva-profile.png" alt="Contact Image">
+    </div>
 
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" name="email" required>
+    <!-- Right Side: Contact Form -->
+    <div class="contact-form">
+      <h2>Contact Me</h2>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <form action="https://formsubmit.co/your-email@example.com" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit" class="hero-button">Send Message</button>
+      </form>
 
-      <button type="submit" class="submit-button">SUBMIT</button>
-    </form>
+    </div>
+
   </div>
+
 </section>
 
-
-
-  </main>
-
-</div>
-
 <footer>
-  <p>&copy; 2025 Jeeva Kumaradas. Built with ❤️ and Dedication to Cybersecurity.</p>
+  <div class="footer-wrapper">
+    <p>&copy; 2025 Jeeva Kumaradas. Built with ❤️ and Dedication to Cybersecurity.</p>
+  </div>
 </footer>
 
 </body>
