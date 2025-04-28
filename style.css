@@ -805,4 +805,34 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
+/* Page-specific styling for all pages with the class "page-specific" */
+.page-specific {
+  padding-top: 70px !important;  /* Ensure padding above the navbar */
+}
+
+/* Ensure navbar stays on top of content */
+nav.nav-bar {
+  position: sticky !important;
+  top: 0;
+  z-index: 999 !important; /* Ensures navbar stays on top */
+  width: 100%;
+  background-color: #1f1f1f; /* Black background */
+  padding: 15px 0 !important;
+}
+
+/* Main content section padding */
+.main-content, .thank-you-container {
+  padding-top: 20px !important;  /* Ensure content doesn’t get hidden behind navbar */
+}
+
+/* For Mobile View */
+@media (max-width: 768px) {
+  .page-specific {
+    padding-top: 80px !important;  /* Adjust for mobile view */
+  }
+
+  .main-content, .thank-you-container {
+    padding-top: 20px !important;
+  }
+}
 
