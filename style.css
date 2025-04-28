@@ -24,8 +24,12 @@ body {
 
 /* --- Navigation Bar --- */
 .nav-bar {
-  background-color: #1f1f1f; /* Always dark background */
+  background-color: #1f1f1f; /* Solid dark background always */
+  width: 100%;
   padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999; /* always on top */
 }
 
 .nav-links {
@@ -38,21 +42,20 @@ body {
 }
 
 .nav-links li a {
-  color: #f5f5f5; /* Light color text from the beginning */
+  color: #f5f5f5;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
   padding: 10px 15px;
-  transition: color 0.3s, background 0.3s;
   border-radius: 6px;
   transition: color 0.3s, background 0.3s;
-
 }
 
 .nav-links li a:hover {
   background-color: #ffca28;
   color: #121212;
-  }
+}
+
 
 /* Split Hero Section */
 .split-hero {
