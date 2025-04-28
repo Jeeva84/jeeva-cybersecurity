@@ -167,3 +167,30 @@ body {
   border-radius: 0; /* No curves (square/rectangle) */
   margin-bottom: 20px;
 }
+/* --- Proper Spacing for My Passion Section --- */
+#passion p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Opportunities Section --- */
+#opportunities p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Certifications Section --- */
+#certifications li, #certifications p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* --- Proper Spacing for Testimonials Section --- */
+#testimonials p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  font-size: 18px;
+}
