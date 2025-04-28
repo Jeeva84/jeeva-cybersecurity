@@ -1,99 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeeva Kumaradas - Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-</head>
+/* Slider */
+.slick-slider
+{
+    position: relative;
 
-<body class="page-specific">
+    display: block;
+    box-sizing: border-box;
 
-  <!-- Navigation Tabs -->
-  <nav class="nav-bar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="labs.html">Home Labs</a></li>
-      <li><a href="passion.html">My Passion</a></li>
-      <li><a href="opportunities.html">Opportunities</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 
-  <!-- Main Split Section -->
-  <section class="split-hero">
-    <!-- Left Side Text -->
-    <div class="hero-text">
-      <h1>I'm <span class="highlight">Jeeva Kumaradas</span></h1>
-      <h2>Cybersecurity Analyst | Threat Hunter</h2>
-      <p>
-        Passionate about defending digital infrastructures through proactive threat detection, security operations, and continuous learning.
-      </p>
-      <a href="images/Jeeva_Kumaradas_Resume.pdf" class="hero-button" download>Download Resume</a>
-    </div>
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
 
-    <!-- Right Side Profile Picture -->
-    <div class="hero-image">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
-    </div>
-  </section>
+.slick-list
+{
+    position: relative;
 
-  <!-- About Me Section -->
-  <section class="about-me" id="about">
-    <h2>About Me</h2>
+    display: block;
+    overflow: hidden;
 
-    <p>I am a highly motivated cybersecurity professional with strong hands-on experience in threat detection, security operations, and incident response. With a foundation built on formal education, industry-recognized certifications, and real-world projects, I bring a practical, resilient, and results-driven approach to cybersecurity challenges.</p>
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
 
-    <p>My journey has been shaped by perseverance and passion. After moving to Canada, I took on multiple jobs to support my family while simultaneously pursuing my long-standing dream of working in cybersecurity. Balancing work, studies, and family responsibilities taught me resilience, time management, and unwavering dedication — qualities that now define my professional character.</p>
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
 
-    <p>Through formal education in cybersecurity and network security, combined with certifications such as CompTIA CySA+ and ISC2 CC, I have developed strong technical expertise in areas including:</p>
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
 
-    <ul class="about-list">
-      <li>Threat detection and analysis</li>
-      <li>SIEM tools (QRadar, SentinelOne)</li>
-      <li>Centralized logging and monitoring</li>
-      <li>Vulnerability scanning and risk mitigation</li>
-      <li>Incident tracking and reporting</li>
-      <li>Network design and security fundamentals (VPNs, VLANs)</li>
-    </ul>
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
 
-    <p>In addition to academic learning, I have continuously honed my skills through hands-on labs, independent projects, and real-world threat simulations. This blend of practical experience and theoretical knowledge enables me to detect, respond to, and mitigate cybersecurity threats effectively and efficiently.</p>
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
 
-    <p>I believe that cybersecurity is not just about technology — it’s about proactive thinking, collaboration, and an endless commitment to learning. Every challenge has strengthened my ability to adapt, solve problems creatively, and protect organizations against emerging threats.</p>
+.slick-slide
+{
+    display: none;
+    float: left;
 
-    <p>Today, I am eager to turn my hard-earned knowledge, work ethic, and passion for security into meaningful contributions for an organization that values innovation, resilience, and a proactive security posture. I am ready to take on new challenges, continue growing, and make a positive impact in the cybersecurity industry.</p>
-  </section>
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-wrapper">
-      <p>&copy; 2025 Jeeva Kumaradas. Built with ❤️ and Dedication to Cybersecurity.</p>
-    </div>
-  </footer>
+    height: auto;
 
-  <!-- JavaScript to hide/show navbar on scroll for mobile -->
-  <script>
-    let lastScrollTop = 0; // Stores the last scroll position
-    const navbar = document.querySelector('.nav-bar'); // Navbar element
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
 
-    // Listen to the scroll event
-    window.addEventListener('scroll', function() {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-      if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-        // If scrolling down, hide navbar
-        navbar.classList.add('hidden-navbar');
-      } else {
-        // If scrolling up, show navbar
-        navbar.classList.remove('hidden-navbar');
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-    });
-  </script>
-</body>
-</html>
