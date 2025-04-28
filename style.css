@@ -1,3 +1,12 @@
+/* --- Automatic Container for Main Content --- */
+section, header, main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
 /* --- General Page Container --- */
 .container {
   width: 90%;
