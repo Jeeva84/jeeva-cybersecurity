@@ -22,32 +22,35 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Navigation Bar */
+/* --- Navigation Bar --- */
 .nav-bar {
-  background: transparent;
-  text-align: center;
-  padding: 20px 0;
+  background-color: #1f1f1f; /* Always dark background */
+  padding: 15px 0;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
+  list-style: none;
   margin: 0;
   padding: 0;
+  gap: 25px;
 }
 
 .nav-links li a {
-  color: #121212;
+  color: #f5f5f5; /* Light color text from the beginning */
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s, background 0.3s;
+  border-radius: 6px;
 }
 
 .nav-links li a:hover {
-  color: #ff5722;
+  background-color: #ffca28;
+  color: #121212;
+  text-shadow: none;
 }
 
 /* Split Hero Section */
