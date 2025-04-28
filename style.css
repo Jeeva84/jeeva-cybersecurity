@@ -1520,3 +1520,77 @@ nav .nav-links {
   list-style: none;
   gap: 25px;
 }
+/* Remove default padding for body */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #121212;
+  padding-top: 0; /* Remove the padding from here */
+}
+
+/* Ensure navbar sticky on desktop */
+nav.nav-bar {
+  background-color: #1f1f1f;
+  width: 100%;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  text-align: center;
+  box-sizing: border-box; 
+}
+
+/* Remove extra padding from .main-content */
+.main-content, .thank-you-container, .section-card {
+  padding-top: 0; /* Ensure no padding overlaps */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Add padding for mobile navbar */
+  }
+
+  /* Stack the navbar vertically */
+  nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  nav .nav-links li a {
+    width: 100%; 
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  /* Hide navbar on scroll down */
+  nav.nav-bar.hidden-navbar {
+    transform: translateY(-100%); /* Hide navbar when scrolling */
+    transition: transform 0.3s ease;
+  }
+
+  /* Allow main content sections to scroll and be visible on mobile */
+  .main-content, .thank-you-container, .section-card {
+    padding-top: 20px; /* Ensure the content is visible below navbar */
+  }
+}
+
+/* For sticky navbar adjustments (scroll effect) */
+@media (max-width: 768px) {
+  window.onscroll = function () {
+    var navbar = document.querySelector(".nav-bar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      navbar.classList.add("hidden-navbar");
+    } else {
+      navbar.classList.remove("hidden-navbar");
+    }
+  };
+}
