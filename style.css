@@ -442,6 +442,26 @@ body {
 h1, h2, h3 {
   color: #121212; /* Set headings black */
 }
+.section-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-card h2 {
+  color: #121212;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section-card p, .section-card ul {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
 
 
 
