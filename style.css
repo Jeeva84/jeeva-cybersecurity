@@ -423,3 +423,14 @@ body {
   font-size: 18px;
   color: #444;
 }
+/* --- Light Modern Background for Sub Pages --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #ffffff, #fff3e0, #1f1f1f);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #121212;
+}
