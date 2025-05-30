@@ -2573,8 +2573,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Ensure profile picture appears large and consistent */
 .profile-pic,
 .hero-image img {
-  width: 260px;
-  height: 260px;
+  width: 340px;
+  height: 340px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #fff;
