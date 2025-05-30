@@ -1746,6 +1746,6 @@ body {
 .hero-text p {
   color: #ffe066 !important;
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); !important;
 }
 
