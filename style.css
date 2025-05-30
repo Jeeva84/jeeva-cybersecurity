@@ -1738,14 +1738,10 @@ body {
 .hero-text p {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 }
-.hero-text p {
-  color: #ffe066; /* soft yellow */
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
+/* FORCE yellow paragraph in hero section */
 .hero-text p {
   color: #ffe066 !important;
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
 }
-
