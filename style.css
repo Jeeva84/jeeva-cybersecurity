@@ -1731,7 +1731,7 @@ body {
   z-index: 2;
 }
 
-  .hero-text {
+  .hero-text P {
   color: white; /* Add this line */
 
 .video-background::after {
@@ -1747,6 +1747,6 @@ body {
 .hero-text h1,
 .hero-text h2,
 .hero-text p {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
