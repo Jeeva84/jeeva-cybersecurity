@@ -2611,3 +2611,19 @@ body.page-home .about-me {
   color: #ffe066;
   font-weight: 500;
 }
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.skills-list i {
+  color: #ffe066;
+  margin-right: 10px;
+}
