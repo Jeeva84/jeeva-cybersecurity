@@ -2606,3 +2606,8 @@ body.page-home .about-me {
   padding: 0;
   width: 100%;
 }
+.education-list li {
+  margin-bottom: 0.5rem;
+  color: #ffe066;
+  font-weight: 500;
+}
