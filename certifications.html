@@ -32,6 +32,13 @@
   </video>
 </div>
 
+<!-- Profile Picture -->
+<header>
+  <div class="hero-image">
+    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
+  </div>
+</header>
+
 <!-- Navigation Bar -->
 <nav class="nav-bar">   
   <ul class="nav-links">
@@ -46,16 +53,8 @@
   </ul>
 </nav>
 
-<!-- Main Content Container -->
+<!-- Main Content Container with Certifications -->
 <div class="main-content">
-  <!-- Profile Picture -->
-  <header>
-    <div class="hero-image">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
-    </div>
-  </header>
-
-  <!-- Main Content -->
   <div class="section-card">
     <section id="certifications" class="container">
       <h2>Professional Certifications</h2>
@@ -102,6 +101,7 @@
         <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
         <li>The Ultimate GRC Course – Governance, Risk & Compliance 2024, Udemy (08/2024)</li>
       </ul>
+
     </section>
   </div>
 </div>
@@ -117,17 +117,19 @@
 
   // Listen to the scroll event
   window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
 
     if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
+      // If scrolling down, hide navbar
       navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent');
+      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
     } else {
+      // If scrolling up, show navbar
       navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent');
+      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
   });
 </script>
 
