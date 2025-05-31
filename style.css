@@ -2587,3 +2587,22 @@ body.page-home .about-me {
   padding-top: 0.5rem !important;
 }
 }
+.nav-bar {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
