@@ -32,7 +32,21 @@
   </video>
 </div>
 
-<!-- Main Content Container with Profile Picture and Certifications -->
+<!-- Navigation Bar -->
+<nav class="nav-bar">   
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="labs.html">Home Labs</a></li>
+    <li><a href="passion.html">My Passion</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content Container -->
 <div class="main-content">
   <!-- Profile Picture -->
   <header>
@@ -40,20 +54,6 @@
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
     </div>
   </header>
-
-  <!-- Navigation Bar -->
-  <nav class="nav-bar">   
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="labs.html">Home Labs</a></li>
-      <li><a href="passion.html">My Passion</a></li>
-      <li><a href="opportunities.html">Opportunities</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
   <!-- Main Content -->
   <div class="section-card">
@@ -102,7 +102,6 @@
         <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
         <li>The Ultimate GRC Course – Governance, Risk & Compliance 2024, Udemy (08/2024)</li>
       </ul>
-
     </section>
   </div>
 </div>
@@ -118,19 +117,17 @@
 
   // Listen to the scroll event
   window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
     if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
       navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
+      navbar.classList.remove('transparent');
     } else {
-      // If scrolling up, show navbar
       navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
+      navbar.classList.add('transparent');
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
 </script>
 
