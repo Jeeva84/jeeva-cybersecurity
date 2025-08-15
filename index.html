@@ -140,67 +140,46 @@
 
   <!-- Behavior scripts -->
   <script>
-(function(){
-  const isMobile = matchMedia('(max-width: 900px)').matches;
-  const banner  = document.getElementById('qr-banner');
-  const navbar  = document.querySelector('nav.nav-bar');
-  const params  = new URLSearchParams(location.search);
+  // Desktop-only: keep your current feel; mobile has no JS nav tricks
+  (function () {
+    const isMobile = window.matchMedia('(max-width: 900px)').matches;
+    const navbar = document.querySelector('nav.nav-bar');
+    const banner = document.getElementById('qr-banner');
+    const params = new URLSearchParams(location.search);
 
-  const setVar = (k, v) => document.documentElement.style.setProperty(k, v + 'px');
-
-  function measure(){
-    const bh = banner && !banner.hidden && !banner.classList.contains('is-hidden')
-      ? Math.ceil(banner.getBoundingClientRect().height) : 0;
-    const nh = navbar ? Math.ceil(navbar.getBoundingClientRect().height) : 0;
-    setVar('--bannerH', bh);
-    setVar('--navH', nh);
-    setVar('--top-offset', Math.max(120, bh + nh)); // 120px safety fallback
-  }
-
-  /* Show QR banner only with ?qr=1 or ref=qr; hide on first scroll */
-  if ((params.get('qr') === '1' || params.get('ref') === 'qr') && banner) {
-    banner.hidden = false;
-    // measure once it paints
-    requestAnimationFrame(measure);
-
-    let gone = false;
-    function collapseOnScroll(){
-      if (gone) return;
-      if (window.scrollY > 4){
-        banner.classList.add('is-hidden');
-        gone = true;
-        setTimeout(() => { banner.hidden = true; measure(); }, 280);
-        window.removeEventListener('scroll', collapseOnScroll);
-      }
+    // Show QR banner only on desktop (mobile is CSS-hidden)
+    if (!isMobile && banner && (params.get('qr') === '1' || params.get('ref') === 'qr')) {
+      banner.hidden = false;
+      let gone = false;
+      window.addEventListener('scroll', function () {
+        if (!gone && window.scrollY > 10) {
+          banner.style.display = 'none';
+          gone = true;
+        }
+      }, { passive: true });
     }
-    window.addEventListener('scroll', collapseOnScroll, { passive: true });
-  } else {
-    requestAnimationFrame(measure);
-  }
 
-  // Recalculate when layout can change
-  window.addEventListener('load', measure);
-  window.addEventListener('resize', measure);
-  window.addEventListener('orientationchange', measure);
-
-  // On mobile, the URL bar height changes on scroll; re-measure near top
-  if (isMobile){
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < 24 && !ticking){
-        ticking = true;
-        requestAnimationFrame(() => { measure(); ticking = false; });
+    // Desktop smooth hide/show (optional)
+    if (!isMobile && navbar) {
+      let lastY = window.scrollY || 0, ticking = false, delta = 6;
+      function onScroll() {
+        const y = window.scrollY || 0;
+        if (y <= 12) navbar.classList.remove('nav-hidden','hidden-navbar');
+        else if (y > lastY + delta) navbar.classList.add('nav-hidden','hidden-navbar');
+        else if (y < lastY - delta) navbar.classList.remove('nav-hidden','hidden-navbar');
+        lastY = y; ticking = false;
       }
-    }, { passive: true });
-  }
-
-  // Desktop: keep your scroll hide/show if you like (optional)
-})();
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    }
+  })();
 </script>
 
 
 </body>
 </html>
+
 
 
 
