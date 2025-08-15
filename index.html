@@ -138,49 +138,61 @@
 
   <!-- Behavior scripts -->
   <script>
-  // Show the QR banner only when ?qr=1 or ref=qr, and offset layout
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    const banner = document.getElementById("qr-banner");
-    if ((params.get("qr") === "1" || params.get("ref") === "qr") && banner) {
-      banner.hidden = false;
-      document.body.classList.add("qr-visible");
+(function () {
+  const navbar = document.querySelector("nav.nav-bar");
+  const banner  = document.getElementById("qr-banner");
+  const params  = new URLSearchParams(location.search);
+
+  // Show QR banner only with ?qr=1 or ref=qr, then fade/collapse on first scroll
+  if ((params.get("qr") === "1" || params.get("ref") === "qr") && banner) {
+    banner.hidden = false;
+    document.body.classList.add("qr-visible"); // offsets nav on mobile
+
+    let collapsed = false;
+    function hideBannerOnScroll() {
+      if (collapsed) return;
+      if (window.scrollY > 8) {
+        banner.classList.add("is-hidden");      // fades + collapses height
+        document.body.classList.remove("qr-visible"); // body/nav offset animates smoothly
+        collapsed = true;
+        window.removeEventListener("scroll", hideBannerOnScroll);
+      }
     }
-  })();
+    window.addEventListener("scroll", hideBannerOnScroll, { passive: true });
+  }
 
-  // Hide nav on scroll down; show on scroll up (mobile & desktop)
-  (function () {
-    const navbar = document.querySelector(".nav-bar");
-    if (!navbar) return;
+  // Smooth, flicker-free nav hide/show using rAF
+  if (!navbar) return;
+  let lastY = window.scrollY || 0;
+  let ticking = false;
+  const delta = 6;       // min movement before toggling
 
-    let lastY = window.scrollY || 0;
-    const delta = 4;        // minimal movement before acting
-    const revealAtTop = 20; // always show near the very top
+  function onScroll() {
+    const y = window.scrollY || 0;
 
-    window.addEventListener("scroll", function () {
-      const y = window.scrollY || 0;
+    if (y <= 12) {
+      navbar.classList.remove("nav-hidden", "hidden-navbar");
+    } else if (y > lastY + delta) {
+      navbar.classList.add("nav-hidden", "hidden-navbar");   // scrolling down → hide
+    } else if (y < lastY - delta) {
+      navbar.classList.remove("nav-hidden", "hidden-navbar"); // scrolling up → show
+    }
 
-      if (y <= revealAtTop) {
-        navbar.classList.remove("nav-hidden");
-        navbar.classList.remove("hidden-navbar"); // for older CSS
-        lastY = y;
-        return;
-      }
-
-      if (y > lastY + delta) {
-        navbar.classList.add("nav-hidden");
-        navbar.classList.add("hidden-navbar"); // for older CSS
-      } else if (y < lastY - delta) {
-        navbar.classList.remove("nav-hidden");
-        navbar.classList.remove("hidden-navbar"); // for older CSS
-      }
-      lastY = y;
-    }, { passive: true });
-  })();
+    lastY = y;
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
 </script>
 
 </body>
 </html>
+
 
 
 
