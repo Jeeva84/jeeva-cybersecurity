@@ -3878,6 +3878,35 @@ html{ scroll-behavior:smooth; }
   }
 }
 
+/* ===== CONTACT PAGE MOBILE FIX ===== */
+@media (max-width:900px){
+  /* Keep nav in normal flow (not on top of content) */
+  .nav-bar{
+    position:relative !important;
+    top:auto !important;
+    z-index:2 !important;
+    transform:none !important;
+  }
+  .nav-bar.hidden-navbar,
+  .nav-bar.nav-hidden{ transform:none !important; }
+
+  /* Kill any negative margins/absolute positions on the portrait */
+  .profile-pic,
+  .contact-image img,
+  header .profile-pic,
+  header .hero-image img{
+    position:static !important;
+    margin-top: 16px !important;   /* push the image fully below the nav */
+    transform:none !important;
+  }
+
+  /* Ensure the section itself doesn't pull upward */
+  header, .contact-image, .contact-container{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+}
+
 
 
 
