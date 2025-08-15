@@ -2992,6 +2992,70 @@ body.page-specific::before{
 /* Kill the animated ring behind the portrait */
 .hero-image::after { content: none !important; }
 
+/* ===== Brand Button Unifier (paste at end) ===== */
+:root{
+  /* Pick your brand orange once here */
+  --brand-orange: #ff5722;        /* change this hex if you prefer another orange */
+  --brand-orange-dark: #e64a19;
+  --brand-text: #ffffff;
+}
+
+/* Make ALL hero buttons identical (Download, See my story, View labs) */
+.hero-cta a,
+.hero-button {
+  background: var(--brand-orange) !important;
+  color: var(--brand-text) !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  padding: 12px 20px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 12px 24px rgba(255,87,34,.25) !important;
+  transition: transform .1s ease, background .2s ease !important;
+}
+.hero-cta a:hover,
+.hero-button:hover {
+  background: var(--brand-orange-dark) !important;
+  transform: translateY(-1px);
+}
+
+/* Quick-links chips in the About sidebar (See Labs & Projects / Certifications / Contact) */
+.about-facts .quick-links .chip {
+  background: var(--brand-orange) !important;
+  color: var(--brand-text) !important;
+  border: 0 !important;
+  box-shadow: 0 8px 20px rgba(255,87,34,.20) !important;
+  border-radius: 999px !important;      /* keep pill shape */
+  padding: .55rem .9rem !important;
+  font-weight: 700 !important;
+}
+.about-facts .quick-links .chip:hover {
+  background: var(--brand-orange-dark) !important;
+}
+
+/* CTA bar buttons (Contact Me / Quick Resume) */
+.cta-bar a {
+  background: var(--brand-orange) !important;
+  color: var(--brand-text) !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  padding: 12px 18px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 12px 24px rgba(255,87,34,.25) !important;
+}
+.cta-bar a:hover { background: var(--brand-orange-dark) !important; }
+
+/* Other legacy buttons that may appear elsewhere */
+.download-button,
+.send-button {
+  background: var(--brand-orange) !important;
+  color: var(--brand-text) !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 24px rgba(255,87,34,.25) !important;
+}
+.download-button:hover,
+.send-button:hover { background: var(--brand-orange-dark) !important; }
+
 
 
 
