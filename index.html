@@ -13,6 +13,53 @@
 
   <!-- Site Styles -->
   <link rel="stylesheet" href="style.css" />
+  <style id="mobile-hotfix">
+/* ===== HARD MOBILE HOTFIX (<=900px) ===== */
+@media (max-width:900px){
+
+  /* 0) kill all old offsets/fixed tricks */
+  body, body.page-specific{ padding-top:0 !important; }
+  main#content::before{ content:none !important; display:none !important; }
+
+  /* 1) TEMP: hide the QR banner on phones to remove clipping */
+  #qr-banner{ display:none !important; }
+
+  /* 2) Put the nav back in page flow; it can't cover the hero */
+  nav.nav-bar{
+    position: sticky !important; top:0 !important;
+    z-index: 1000 !important;
+    background:#1f1f1f !important;
+    padding:10px 8px !important;
+    transform:none !important; visibility:visible !important; opacity:1 !important;
+    box-shadow:0 6px 14px rgba(0,0,0,.35);
+  }
+  /* neutralize any old hide classes */
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden{ transform:none !important; }
+
+  /* 3) Show ALL tabs at once in a tidy 2-column grid */
+  nav .nav-links{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:8px !important;
+    margin:0 !important; padding:0 !important;
+    overflow:visible !important; white-space:normal !important;
+  }
+  nav .nav-links li{ list-style:none !important; }
+  nav .nav-links a{
+    display:block !important; text-align:center !important;
+    padding:12px 14px !important;
+    color:#fff !important;
+    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:10px !important;
+  }
+
+  /* 4) tiny nudge so hero never tucks under the sticky bar */
+  .split-hero{ margin-top:12px !important; }
+}
+</style>
+
 </head>
 
 <body class="page-specific">
@@ -179,6 +226,7 @@
 
 </body>
 </html>
+
 
 
 
