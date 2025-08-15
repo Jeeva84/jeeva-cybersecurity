@@ -3314,6 +3314,63 @@ html { scroll-behavior: smooth; }
 }
 .qr-banner.is-hidden{ max-height:0; opacity:0; padding:0 0; border-width:0; }
 
+/* ===== MOBILE NAV: clear 2-column grid, no auto-hide ===== */
+@media (max-width: 768px) {
+  /* keep header fixed and compact */
+  nav.nav-bar{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1000 !important;
+    background: #1f1f1f !important;
+    padding: 10px 8px !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+    transform: none !important;            /* disable slide-out on mobile */
+  }
+
+  /* turn the list into a 2-column grid (all tabs visible) */
+  nav .nav-links{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;        /* allow wrapping */
+    mask-image: none !important;           /* in case a mask was set earlier */
+  }
+  nav .nav-links li{
+    list-style: none;
+    width: auto !important;
+    flex: none !important;                 /* cancel old flex settings */
+  }
+  nav .nav-links li a{
+    display: block;
+    width: auto !important;                /* cancel old 100% width rules */
+    padding: 12px 14px;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 8px;
+  }
+
+  /* Make room for the taller (2-row) header */
+  body{
+    padding-top: 120px !important;         /* adjust if your header is taller/shorter */
+    transition: none !important;
+  }
+
+  /* If the QR banner shows, add its height above the nav */
+  body.qr-visible nav.nav-bar{ top: 44px !important; }
+  body.qr-visible{
+    padding-top: calc(120px + 44px) !important;
+  }
+
+  /* Disable any mobile hide classes from old code */
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden{
+    transform: none !important;
+  }
+}
+
 
 
 
