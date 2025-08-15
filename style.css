@@ -3056,6 +3056,39 @@ body.page-specific::before{
 .download-button:hover,
 .send-button:hover { background: var(--brand-orange-dark) !important; }
 
+/* ===== MOBILE NAV FIX: compact + hide on scroll ===== */
+@media (max-width: 768px) {
+  .nav-bar{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    padding: 10px 8px !important;
+    background-color: #1f1f1f !important;
+    z-index: 1000 !important;
+    transform: translateY(0);
+    transition: transform .25s ease !important;
+  }
+  .nav-bar.hidden-navbar{ transform: translateY(-100%) !important; }
+
+  /* Keep nav in a single row with horizontal scroll instead of stacking */
+  .nav-links{
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap !important;
+    gap: 12px !important;
+  }
+  .nav-links li{ flex: 0 0 auto !important; }
+
+  /* Make sure page content starts below the fixed nav */
+  body{ padding-top: 56px !important; }
+}
+
+/* OPTIONAL: if a QR banner can appear above the nav, offset the nav + body */
+@media (max-width: 768px) {
+  body.qr-visible .nav-bar{ top: 44px !important; }
+  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
+}
+
 
 
 
