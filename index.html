@@ -125,31 +125,48 @@
 
   <!-- Behavior scripts -->
   <script>
-    // Show the QR banner if the URL contains ?qr=1 or ref=qr
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('qr') === '1' || params.get('ref') === 'qr') {
-        const b = document.getElementById('qr-banner');
-        if (b) b.hidden = false;
-      }
-    })();
+  // Show the QR banner only when ?qr=1 or ref=qr, and offset layout
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const banner = document.getElementById("qr-banner");
+    if ((params.get("qr") === "1" || params.get("ref") === "qr") && banner) {
+      banner.hidden = false;
+      document.body.classList.add("qr-visible");
+    }
+  })();
 
-    // Hide nav when scrolling down, show when scrolling up
-    (function () {
-      let lastScrollTop = 0;
-      const navbar = document.querySelector('.nav-bar');
-      if (!navbar) return;
-      window.addEventListener('scroll', function () {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-          navbar.classList.add('hidden-navbar');
-        } else {
-          navbar.classList.remove('hidden-navbar');
-        }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-      });
-    })();
-  </script>
+  // Hide nav on scroll down; show on scroll up (mobile & desktop)
+  (function () {
+    const navbar = document.querySelector(".nav-bar");
+    if (!navbar) return;
+
+    let lastY = window.scrollY || 0;
+    const delta = 4;        // minimal movement before acting
+    const revealAtTop = 20; // always show near the very top
+
+    window.addEventListener("scroll", function () {
+      const y = window.scrollY || 0;
+
+      if (y <= revealAtTop) {
+        navbar.classList.remove("nav-hidden");
+        navbar.classList.remove("hidden-navbar"); // for older CSS
+        lastY = y;
+        return;
+      }
+
+      if (y > lastY + delta) {
+        navbar.classList.add("nav-hidden");
+        navbar.classList.add("hidden-navbar"); // for older CSS
+      } else if (y < lastY - delta) {
+        navbar.classList.remove("nav-hidden");
+        navbar.classList.remove("hidden-navbar"); // for older CSS
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
+</script>
+
 </body>
 </html>
+
 
