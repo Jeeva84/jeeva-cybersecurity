@@ -13,53 +13,79 @@
 
   <!-- Site Styles -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Minimal, safe overrides that will not fight your big CSS -->
   <style id="mobile-hotfix">
-/* ===== HARD MOBILE HOTFIX (<=900px) ===== */
-@media (max-width:900px){
+    /* Desktop QR banner (sticky, fades on first scroll via JS) */
+    .qr-banner[hidden] { display: none !important; }
+    .qr-banner {
+      position: sticky; top: 0; z-index: 1100;
+      display: flex; gap: .6rem; align-items: center;
+      padding: .65rem .9rem;
+      background: rgba(255,255,255,0.96);
+      color: #111;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      transition: max-height .25s ease, opacity .22s ease, padding .2s ease;
+      max-height: 60px; overflow: hidden;
+    }
+    .qr-banner.hidden { max-height: 0; opacity: 0; padding: 0 0; border-width: 0; }
 
-  /* 0) kill all old offsets/fixed tricks */
-  body, body.page-specific{ padding-top:0 !important; }
-  main#content::before{ content:none !important; display:none !important; }
+    /* Desktop nav: allow smooth hide/show if your main CSS adds .nav-hidden */
+    @media (min-width: 901px){
+      nav.nav-bar { position: sticky; top: 0; z-index: 1000; }
+      nav.nav-bar.nav-hidden { transform: translateY(-110%); transition: transform .24s ease; }
+    }
 
-  /* 1) TEMP: hide the QR banner on phones to remove clipping */
-  #qr-banner{ display:none !important; }
+    /* ===== MOBILE HARD RESET (<=900px): nav in flow, no overlap, all tabs visible ===== */
+    @media (max-width:900px){
+      /* No top padding tricks from older CSS */
+      body, body.page-specific{ padding-top:0 !important; }
+      main#content::before{ content:none !important; display:none !important; }
 
-  /* 2) Put the nav back in page flow; it can't cover the hero */
-  nav.nav-bar{
-    position: sticky !important; top:0 !important;
-    z-index: 1000 !important;
-    background:#1f1f1f !important;
-    padding:10px 8px !important;
-    transform:none !important; visibility:visible !important; opacity:1 !important;
-    box-shadow:0 6px 14px rgba(0,0,0,.35);
-  }
-  /* neutralize any old hide classes */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{ transform:none !important; }
+      /* Hide QR banner on phones for stability (can re-enable later) */
+      #qr-banner{ display:none !important; }
 
-  /* 3) Show ALL tabs at once in a tidy 2-column grid */
-  nav .nav-links{
-    display:grid !important;
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-    gap:8px !important;
-    margin:0 !important; padding:0 !important;
-    overflow:visible !important; white-space:normal !important;
-  }
-  nav .nav-links li{ list-style:none !important; }
-  nav .nav-links a{
-    display:block !important; text-align:center !important;
-    padding:12px 14px !important;
-    color:#fff !important;
-    background:rgba(255,255,255,.08) !important;
-    border:1px solid rgba(255,255,255,.18) !important;
-    border-radius:10px !important;
-  }
+      /* Nav lives in normal flow; cannot cover hero */
+      nav.nav-bar{
+        position: relative !important; top:auto !important;
+        z-index: 1 !important; width: 100% !important;
+        background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 10px 0 !important;
+        transform:none !important; visibility:visible !important; opacity:1 !important;
+        box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
 
-  /* 4) tiny nudge so hero never tucks under the sticky bar */
-  .split-hero{ margin-top:12px !important; }
-}
-</style>
+      /* Show ALL tabs in a 2-column grid (no horizontal scroll) */
+      nav .nav-links{
+        display:grid !important;
+        grid-template-columns:repeat(2, 1fr) !important;
+        gap:8px !important; margin:0 !important; padding:0 !important;
+        overflow:visible !important; white-space:normal !important; list-style:none !important;
+      }
+      nav .nav-links li{ list-style:none !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important;
+        border:1px solid rgba(255,255,255,.18) !important; border-radius:10px !important;
+      }
 
+      /* First section breathes below the nav */
+      .split-hero{ margin-top:0 !important; padding-top:8px !important; }
+
+      /* Slightly smaller portrait on small screens */
+      .hero-image img{
+        width: 220px !important; height: 220px !important;
+        object-fit: cover !important; border-radius: 50% !important;
+      }
+    }
+
+    /* Make both CTAs orange without editing your big CSS */
+    .hero-cta .hero-button { margin-right: .2rem; }
+    .hero-cta .secondary-button { background: #ff5722; color: #fff; border: none; }
+    .hero-cta .secondary-button:hover { background: #e64a19; }
+  </style>
 </head>
 
 <body class="page-specific">
@@ -74,23 +100,21 @@
 
   <!-- Navigation -->
   <nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-
-
-  <!-- QR Scan banner (auto shows if URL contains ?qr=1 or ref=qr) -->
+  <!-- QR banner (shows only when ?qr=1 or ref=qr) -->
   <div id="qr-banner" class="qr-banner" hidden>
-    <strong>Thanks for scanning! 👋</strong>
+    <strong>Thanks for scanning!</strong>
     <span>You're in the right place — see my journey, labs, and how I can help your team.</span>
   </div>
 
@@ -103,9 +127,9 @@
         <h2 class="role">Cybersecurity Analyst · Threat Hunter</h2>
 
         <ul class="hero-highlights">
-          <li>🛡 Built a SOC home lab (Splunk, QRadar, pfSense, Windows Server, Kali, Nessus)</li>
-          <li>📜 CompTIA CySA+, ISC2 CC</li>
-          <li>💼 Facility services pro pivoting to cyber — hands-on, practical, persistent</li>
+          <li>Built a SOC home lab (Splunk, QRadar, pfSense, Windows Server, Kali, Nessus)</li>
+          <li>Certifications: CompTIA CySA+, ISC2 CC</li>
+          <li>Hands-on, practical, persistent — ready to contribute on day one</li>
         </ul>
 
         <div class="hero-cta">
@@ -123,93 +147,52 @@
     </section>
 
     <!-- About -->
-<section class="about-me dense" id="about">
-  <div class="about-grid">
-    <div class="about-story">
-      <h2>From Factory Floors to Firewalls</h2>
+    <section class="about-me dense" id="about">
+      <div class="about-grid">
+        <div class="about-story">
+          <h2>From Factory Floors to Firewalls</h2>
 
-      <p>Cybersecurity has been my goal since high school, but I put it on hold to support my family. After moving to Canada, I worked two jobs—factory shifts by day and restaurant nights—while raising young kids. The dream never left; it just had to wait.</p>
+          <p>Cybersecurity has been my goal since high school, but I put it on hold to support my family. After moving to Canada, I worked two jobs—factory shifts by day and restaurant nights—while raising young kids. The dream never left; it just had to wait.</p>
 
-      <p>I studied in the margins of the day: on breaks, during commutes, and after bedtime. During COVID, I finally had a window to invest in myself. I completed a <strong>Post-Graduate Certificate in Network Security &amp; Architecture</strong> (Fanshawe, online), earned <strong>CompTIA CySA+</strong> and <strong>ISC2 CC</strong>, and built a <strong>full SOC home lab</strong> piece by piece—Splunk, QRadar, pfSense, Windows Server, Kali, Nessus, and more.</p>
+          <p>I studied in the margins of the day: on breaks, during commutes, and after bedtime. During COVID, I finally had a window to invest in myself. I completed a <strong>Post-Graduate Certificate in Network Security &amp; Architecture</strong> (Fanshawe, online), earned <strong>CompTIA CySA+</strong> and <strong>ISC2 CC</strong>, and built a <strong>full SOC home lab</strong> piece by piece—Splunk, QRadar, pfSense, Windows Server, Kali, Nessus, and more.</p>
 
-      <p>Many nights ended around 2 a.m., but that discipline became my advantage.</p>
+          <p>Many nights ended around 2 a.m., but that discipline became my advantage.</p>
 
-      <ul class="skills-list">
-        <li><strong>Resilience:</strong> Balancing full-time work, Parenting, and 15–20 hours/week of study and labs.</li>
-        <li><strong>Real practice:</strong> SIEM tuning, Detections, Incident triage, Vulnerability scans, and Clear write-ups.</li>
-        <li><strong>Team value:</strong> Reliability, Documentation, and Empathy for the people behind the systems.</li>
-      </ul>
+          <ul class="skills-list">
+            <li><strong>Resilience:</strong> balancing full-time work, parenting, and 15–20 hours/week of study and labs.</li>
+            <li><strong>Real practice:</strong> SIEM tuning, detections, incident triage, vulnerability scans, and clear write-ups.</li>
+            <li><strong>Team value:</strong> reliability, documentation, and empathy for the people behind the systems.</li>
+          </ul>
 
-      <div class="callout">
-        <h3>A Note to Hiring Managers</h3>
-        <p>Many “entry-level” roles still ask for a degree and 3+ years. My path is different, but the skills are real. I learned by doing—nights, weekends, and self-funded labs. I’m not asking for shortcuts; I’m asking for a chance to contribute, keep learning, and prove it.</p>
+          <div class="callout">
+            <h3>A Note to Hiring Managers</h3>
+            <p>Many “entry-level” roles still ask for a degree and 3+ years. My path is different, but the skills are real. I learned by doing—nights, weekends, and self-funded labs. I’m not asking for shortcuts; I’m asking for a chance to contribute, keep learning, and prove it.</p>
+          </div>
+
+          <p><strong>If your team values persistence and practical skill, I’m ready to help on day one.</strong></p>
+        </div>
+
+        <aside class="about-facts card" aria-label="Skills and quick links">
+          <h3>What I bring</h3>
+          <ul class="skills-list">
+            <li><i class="fas fa-shield-alt"></i> <strong>Threat Detection &amp; Analysis:</strong> Monitoring, anomalies, correlation</li>
+            <li><i class="fas fa-microscope"></i> <strong>Security Tools:</strong> QRadar (SIEM), Splunk, SentinelOne (XDR)</li>
+            <li><i class="fas fa-server"></i> <strong>Log &amp; Event:</strong> Centralized logging, parsing, retention</li>
+            <li><i class="fas fa-bug"></i> <strong>Vulnerability Mgmt:</strong> Scanning, prioritization, remediation</li>
+            <li><i class="fas fa-exclamation-triangle"></i> <strong>Incident Response:</strong> Triage → RCA → contain → lessons (NIST 800-61)</li>
+            <li><i class="fas fa-network-wired"></i> <strong>Network Security:</strong> VPNs, VLANs, segmentation, secure protocols</li>
+          </ul>
+
+          <div class="quick-links">
+            <a href="labs.html" class="chip">See Labs &amp; Projects</a>
+            <a href="certifications.html" class="chip">Certifications</a>
+            <a href="contact.html" class="chip">Contact</a>
+          </div>
+        </aside>
       </div>
 
-      <p><strong>If your team values persistence and practical skill, I’m ready to help on day one.</strong></p>
-    </div>
-
-    <aside class="about-facts card" aria-label="Skills and quick links">
-      <h3>What I bring</h3>
-      <ul class="skills-list">
-        <li><i class="fas fa-shield-alt"></i> <strong>Threat Detection &amp; Analysis:</strong> Monitoring, anomalies, correlation</li>
-        <li><i class="fas fa-microscope"></i> <strong>Security Tools:</strong> QRadar (SIEM), Splunk, SentinelOne (XDR)</li>
-        <li><i class="fas fa-server"></i> <strong>Log &amp; Event:</strong> Centralized logging, parsing, retention</li>
-        <li><i class="fas fa-bug"></i> <strong>Vulnerability Mgmt:</strong> Scanning, prioritization, remediation</li>
-        <li><i class="fas fa-exclamation-triangle"></i> <strong>Incident Response:</strong> Triage → RCA → contain → lessons (NIST 800-61)</li>
-        <li><i class="fas fa-network-wired"></i> <strong>Network Security:</strong> VPNs, VLANs, segmentation, secure protocols</li>
-      </ul>
-
-      <div class="quick-links">
-        <a href="labs.html" class="chip">See Labs &amp; Projects</a>
-        <a href="certifications.html" class="chip">Certifications</a>
-        <a href="contact.html" class="chip">Contact</a>
-      </div>
-    </aside>
-  </div>
-
-  <div class="cta-bar" role="region" aria-label="Call to action">
-    <p><strong>Looking for a driven cybersecurity analyst?</strong> I’m ready to contribute on day one.</p>
-    <div>
-      <a href="contact.html" class="hero-button">Contact Me</a>
-      <a href="resume.html" class="secondary-button">Quick Resume</a>
-    </div>
-  </div>
-</section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-wrapper">
-      <p>&copy; 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.</p>
-    </div>
-  </footer>
-
-  <!-- Behavior scripts -->
-  <script>
-(function(){
-  const isMobile = window.matchMedia('(max-width:900px)').matches;
-  const banner = document.getElementById('qr-banner');
-  const params = new URLSearchParams(location.search);
-
-  // Desktop only: show banner with ?qr=1 or ref=qr and hide on first scroll
-  if (!isMobile && banner && (params.get('qr')==='1' || params.get('ref')==='qr')) {
-    banner.hidden = false;
-    let gone = false;
-    window.addEventListener('scroll', () => {
-      if (!gone && window.scrollY > 10) { banner.style.display='none'; gone = true; }
-    }, {passive:true});
-  }
-
-  // Remove any previous window.onscroll overrides
-  window.onscroll = null;
-})();
-</script>
-
-
-
-</body>
-</html>
+      <div class="cta-bar" role="region" aria-label="Call to action">
+        <p><strong>Looking for a driven cybersecurity analyst?</strong> I’m ready
 
 
 
