@@ -1,123 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeeva Kumaradas - Opportunities</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="page-specific">
-    
-<div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeeva Kumaradas - Opportunities</title>
 
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=12" />
 
-<header>
-    <div class="container">
-        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
-        
-    </div>
-</header>
+  <!-- Small page-specific tweaks -->
+  <style>
+    /* Keep video behind everything */
+    .video-background { z-index:-1 !important; }
 
-<nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    /* Justify body copy for this page */
+    #opportunities p,
+    #opportunities li { text-align: justify; }
 
-
-<div class="section-card">
-<section class="container" id="opportunities">
-  <h2>Opportunities I'm Seeking</h2>
-
-  <p>
-    I am actively seeking entry-level cybersecurity roles that allow me to expand my hands-on experience, apply my technical skills, and contribute meaningfully to securing digital environments.  
-    My goal is to join professional teams where I can grow through real-world exposure, collaboration, and continuous learning.
-  </p>
-
-  <p>
-    I am particularly interested in full-time positions such as:
-  </p>
-
-  <ul>
-    <li>Security Operations Center (SOC) Analyst - Level 1</li>
-    <li>Cybersecurity Analyst - Junior/Associate Level</li>
-    <li>Threat Detection Analyst</li>
-    <li>Security Monitoring Specialist</li>
-    <li>Incident Response Analyst - Entry Level</li>
-    <li>Security Alert Analyst</li>
-    <li>Information Security Analyst - Entry Level</li>
-    <li>Vulnerability Management Analyst (Entry Level)</li>
-    <li>Network Security Analyst - Associate</li>
-  </ul>
-
-  <p>
-    I am also open to positions that involve cybersecurity support, threat intelligence analysis, event correlation, endpoint security monitoring, or assisting senior incident responders in managing and mitigating threats.
-  </p>
-
-  <p>
-    Areas where I am particularly motivated to apply and strengthen my skills include:
-  </p>
-
-  <ul>
-    <li>Security event monitoring and alert triage using SIEM platforms (IBM QRadar, SentinelOne, Splunk)</li>
-    <li>Vulnerability scanning, reporting, and remediation tracking (using tools like Nessus, OpenVAS)</li>
-    <li>Threat intelligence research and indicators of compromise (IoC) analysis</li>
-    <li>Network traffic analysis and packet inspection (using Wireshark and similar tools)</li>
-    <li>Endpoint security monitoring and malware behavior analysis</li>
-    <li>Incident investigation and basic incident response activities following NIST guidelines</li>
-  </ul>
-
-  <p>
-    I am committed to being a reliable, proactive, and continuously improving team member who brings enthusiasm, technical curiosity, and a strong work ethic to every task.  
-    My foundation of cybersecurity education, certifications, personal lab projects, and internship experience has prepared me to contribute from day one while continuing to grow as a cybersecurity professional.
-  </p>
-
-  <p style="margin-top: 30px; font-weight: bold; font-size: 20px; text-align: center;">
-    I am ready to defend, ready to analyze, and ready to grow in the cybersecurity industry.
-  </p>
-
-</section>
-</div>    
-
-
-<footer>
-    <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-</footer>
-
-    <script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
-
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
+    /* Desktop: optional smooth hide-on-scroll */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
+    /* Mobile: keep nav visible, show all tabs, never cover content */
+    @media (max-width:900px){
+      html, body, main, #content { margin-top:0 !important; padding-top:0 !important; }
 
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        width:100% !important; background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 12px 0 !important;
+        transform:none !important; opacity:1 !important; visibility:visible !important;
+        height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+
+      nav .nav-links{
+        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:0 !important;
+        list-style:none !important; white-space:normal !important; overflow:visible !important;
+      }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      /* Make sure the portrait is never tucked under anything */
+      header .profile-pic{
+        width:220px !important; height:220px !important; object-fit:cover !important;
+        border-radius:50% !important; border:2px solid #fff !important;
+        box-shadow:0 0 15px rgba(0,0,0,.6) !important;
+        margin-top:8px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-specific">
+
+  <!-- Background video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Header with profile image -->
+  <header>
+    <div class="container" style="text-align:center;">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html" aria-current="page">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content -->
+  <div class="section-card">
+    <section class="container" id="opportunities">
+      <h2>Opportunities I'm Seeking</h2>
+
+      <p>
+        I am actively seeking entry-level cybersecurity roles that allow me to expand my hands-on experience, apply my technical skills, and contribute meaningfully to securing digital environments.
+        My goal is to join professional teams where I can grow through real-world exposure, collaboration, and continuous learning.
+      </p>
+
+      <p>I am particularly interested in full-time positions such as:</p>
+      <ul>
+        <li>Security Operations Center (SOC) Analyst - Level 1</li>
+        <li>Cybersecurity Analyst - Junior/Associate Level</li>
+        <li>Threat Detection Analyst</li>
+        <li>Security Monitoring Specialist</li>
+        <li>Incident Response Analyst - Entry Level</li>
+        <li>Security Alert Analyst</li>
+        <li>Information Security Analyst - Entry Level</li>
+        <li>Vulnerability Management Analyst (Entry Level)</li>
+        <li>Network Security Analyst - Associate</li>
+      </ul>
+
+      <p>
+        I am also open to positions that involve cybersecurity support, threat intelligence analysis, event correlation, endpoint security monitoring, or assisting senior incident responders in managing and mitigating threats.
+      </p>
+
+      <p>Areas where I am particularly motivated to apply and strengthen my skills include:</p>
+      <ul>
+        <li>Security event monitoring and alert triage using SIEM platforms (IBM QRadar, SentinelOne, Splunk)</li>
+        <li>Vulnerability scanning, reporting, and remediation tracking (using tools like Nessus, OpenVAS)</li>
+        <li>Threat intelligence research and indicators of compromise (IoC) analysis</li>
+        <li>Network traffic analysis and packet inspection (using Wireshark and similar tools)</li>
+        <li>Endpoint security monitoring and malware behavior analysis</li>
+        <li>Incident investigation and basic incident response activities following NIST guidelines</li>
+      </ul>
+
+      <p>
+        I am committed to being a reliable, proactive, and continuously improving team member who brings enthusiasm, technical curiosity, and a strong work ethic to every task.
+        My foundation of cybersecurity education, certifications, personal lab projects, and internship experience has prepared me to contribute from day one while continuing to grow as a cybersecurity professional.
+      </p>
+
+      <p style="margin-top: 30px; font-weight: 700; font-size: 20px; text-align: center;">
+        I am ready to defend, ready to analyze, and ready to grow in the cybersecurity industry.
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+  </footer>
+
+  <!-- Behavior: hide nav on scroll ONLY on desktop -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
+
+      // Desktop only
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');
+            navbar.classList.remove('transparent');
+          } else {
+            navbar.classList.remove('nav-hidden');
+            navbar.classList.add('transparent');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
+
 
