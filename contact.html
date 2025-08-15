@@ -10,70 +10,66 @@
 
   <!-- Page-scoped hotfix so the photo never gets covered on mobile -->
   <style>
-    /* Background video behind everything */
-    .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
-    .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
+  /* Background video behind everything */
+  .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
+  .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* Nav visible and in-flow; neutralize any hide-on-scroll classes */
-    nav.nav-bar{
-      position:sticky !important; top:0 !important; z-index:5 !important;
-      background:#1f1f1f !important; margin:0 0 12px 0 !important;
-      transform:none !important; opacity:1 !important; visibility:visible !important;
-      box-shadow:0 3px 10px rgba(0,0,0,.25);
+  /* Nav visible and in-flow; neutralize any hide-on-scroll classes */
+  nav.nav-bar{
+    position:sticky !important; top:0 !important; z-index:5 !important;
+    background:#1f1f1f !important; margin:0 0 12px 0 !important;
+    transform:none !important; opacity:1 !important; visibility:visible !important;
+    box-shadow:0 3px 10px rgba(0,0,0,.25);
+  }
+  nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
+
+  /* Contact layout (desktop) */
+  .contact-container{
+    display:flex; align-items:flex-start; gap:32px;
+    max-width:1100px; margin:12px auto 40px; padding:0 16px;
+    position:relative; z-index:1;
+  }
+
+  /* DESKTOP: make photo big again */
+  .contact-image img{
+    display:block;
+    width:clamp(360px, 28vw, 460px);  /* grows with screen, max ~460px */
+    height:auto; object-fit:cover;
+    border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
+    position:static !important; transform:none !important;
+  }
+
+  .contact-form{ flex:1; min-width:0; }
+  .send-button{ background:#ff5722; border:none; color:#fff; padding:14px 18px; border-radius:12px; font-weight:700; }
+  .send-button:hover{ background:#e64a19; }
+
+  /* ===== Mobile (<=900px) ===== */
+  @media (max-width:900px){
+    html, body, main, #content { margin:0 !important; padding:0 !important; }
+
+    /* Nav: 2-column grid, never overlaps content */
+    nav.nav-bar{ position:relative !important; }
+    nav .nav-links{
+      display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+      gap:10px !important; list-style:none !important; margin:0 !important; padding:10px 8px !important;
     }
-    nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
-
-    /* Contact layout (desktop) */
-    .contact-container{
-      display:flex; align-items:flex-start; gap:32px;
-      max-width:1100px; margin:12px auto 40px; padding:0 16px;
-      position:relative; z-index:1;
+    nav .nav-links li{ list-style:none !important; }
+    nav .nav-links a{
+      display:block !important; text-align:center !important;
+      padding:12px 14px !important; color:#fff !important;
+      background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+      border-radius:10px !important; text-decoration:none !important;
     }
-    .contact-image img{
-      display:block; width:320px; height:auto; object-fit:cover;
-      border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
-      position:static !important; transform:none !important;
-    }
-    .contact-form{ flex:1; min-width:0; }
-    .send-button{ background:#ff5722; border:none; color:#fff; padding:14px 18px; border-radius:12px; font-weight:700; }
-    .send-button:hover{ background:#e64a19; }
 
-    /* ===== Mobile (<=900px) ===== */
-    @media (max-width:900px){
-      html, body, main, #content { margin:0 !important; padding:0 !important; }
+    /* PHONE: hide the photo completely so nothing is covered */
+    .contact-image{ display:none !important; }
 
-      /* Nav turns into a 2-column grid and never overlaps content */
-      nav.nav-bar{ position:relative !important; }
-      nav .nav-links{
-        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-        gap:10px !important; list-style:none !important; margin:0 !important; padding:10px 8px !important;
-      }
-      nav .nav-links li{ list-style:none !important; }
-      nav .nav-links a{
-        display:block !important; text-align:center !important;
-        padding:12px 14px !important; color:#fff !important;
-        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
-        border-radius:10px !important; text-decoration:none !important;
-      }
+    /* Stack & space */
+    .contact-container{ flex-direction:column; gap:16px; margin-top:8px !important; }
+    .section-card, .card{ margin-top:0 !important; transform:none !important; }
+  }
+</style>
 
-      /* Stack image over form; add spacing so it NEVER goes under nav */
-      .contact-container{ flex-direction:column; gap:16px; margin-top:8px !important; }
-
-      /* Bulletproof reset against any global hero/profile rules */
-      .contact-image img,
-      .profile-pic,
-      header .profile-pic,
-      .hero-image img{
-        position:static !important; transform:none !important; margin:0 auto 12px !important;
-        top:auto !important; left:auto !important; right:auto !important; bottom:auto !important;
-        width:min(88vw, 340px) !important; max-width:100% !important; height:auto !important; object-fit:cover !important;
-        border-radius:20px !important;
-      }
-
-      /* Kill any negative offsets that could overlap the image */
-      .section-card, .card{ margin-top:0 !important; transform:none !important; }
-    }
-  </style>
 </head>
 
 <body class="page-specific">
@@ -138,3 +134,4 @@
   <!-- No hide-on-scroll JS on this page; CSS handles everything -->
 </body>
 </html>
+
