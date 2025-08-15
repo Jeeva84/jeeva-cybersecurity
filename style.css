@@ -3640,6 +3640,50 @@ html{ scroll-behavior:smooth; }
   .split-hero{ margin-top: 0 !important; }
 }
 
+/* ===== MOBILE RESET: no overlap, all tabs visible, no QR banner ===== */
+@media (max-width: 900px) {
+  /* 0) kill old offsets / fixed tricks */
+  body, body.page-specific { padding-top: 0 !important; }
+  main#content::before { content: none !important; display: none !important; }
+
+  /* 1) TEMP: hide QR banner on phones so it can't clip content */
+  #qr-banner { display: none !important; }
+
+  /* 2) nav sits in document flow; can't cover hero */
+  nav.nav-bar {
+    position: sticky !important; top: 0 !important;
+    z-index: 1000 !important;
+    background: #1f1f1f !important;
+    padding: 10px 8px !important;
+    transform: none !important; visibility: visible !important; opacity: 1 !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  /* neutralize any old hide classes */
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden { transform: none !important; }
+
+  /* 3) make every tab visible (2-column grid) */
+  nav .nav-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 0 !important; padding: 0 !important;
+    overflow: visible !important; white-space: normal !important;
+  }
+  nav .nav-links li { list-style: none !important; }
+  nav .nav-links a {
+    display: block !important; text-align: center !important;
+    padding: 12px 14px !important;
+    color: #fff !important;
+    background: rgba(255,255,255,.06) !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+  }
+
+  /* 4) ensure hero starts below the sticky nav with a tiny nudge */
+  .split-hero { margin-top: 8px !important; }
+}
+
 
 
 
