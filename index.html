@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="page-specific">
 
-  <div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-  
-  <!-- Navigation Tabs -->
+  <!-- Background video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Navigation -->
   <nav class="nav-bar">
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="labs.html">Home Labs</a></li>
       <li><a href="passion.html">My Passion</a></li>
@@ -32,92 +39,117 @@
     </ul>
   </nav>
 
-  <!-- Main Split Section -->
-  <section class="split-hero">
+  <!-- QR Scan banner (auto shows if URL contains ?qr=1 or ref=qr) -->
+  <div id="qr-banner" class="qr-banner" hidden>
+    <strong>Thanks for scanning! 👋</strong>
+    <span>You're in the right place — see my journey, labs, and how I can help your team.</span>
+  </div>
 
-    
-    <!-- Left Side Text -->
-    <div class="hero-text">
-      <h1>I'm <span class="highlight">Jeeva Kumaradas</span></h1>
-      <h2>Cybersecurity Analyst | Threat Hunter</h2>
-      <p>
-        Passionate about defending digital infrastructures through proactive threat detection, security operations, and continuous learning.
-      </p>
-      <a href="images/Jeeva_Kumaradas_Cybersecurity_Resume_2025.pdf" class="hero-button" download>  Download Resume
-</a>
+  <main id="content" role="main">
+    <!-- Hero -->
+    <section class="split-hero compact-hero" aria-labelledby="intro-title">
+      <div class="hero-text">
+        <h1 id="intro-title">I'm <span class="highlight">Jeeva Kumaradas</span></h1>
+        <p class="tagline">From factory floors to firewalls — turning grit into great security.</p>
+        <h2 class="role">Cybersecurity Analyst · Threat Hunter</h2>
 
-    </div>
+        <ul class="hero-highlights">
+          <li>🛡 Built a SOC home lab (Splunk, QRadar, pfSense, Windows Server, Kali, Nessus)</li>
+          <li>📜 CompTIA CySA+, ISC2 CC</li>
+          <li>💼 Facility services pro pivoting to cyber — hands-on, practical, persistent</li>
+        </ul>
 
-    <!-- Right Side Profile Picture -->
-    <div class="hero-image">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
-    </div>
-  </section>
+        <div class="hero-cta">
+          <a href="images/Jeeva_Kumaradas_Cybersecurity_Resume_2025.pdf" class="hero-button" download>
+            Download Resume
+          </a>
+          <a href="#about" class="secondary-button">See my story</a>
+          <a href="labs.html" class="secondary-button">View labs</a>
+        </div>
+      </div>
 
-  <!-- About Me Section -->
-  <section class="about-me" id="about">
-    <h2>About Me</h2>
+      <div class="hero-image">
+        <img src="images/jeeva-profile.png" alt="Portrait of Jeeva Kumaradas" />
+      </div>
+    </section>
 
-    <p>I am a highly motivated cybersecurity professional with strong hands-on experience in threat detection, security operations, and incident response. With a foundation built on formal education, industry-recognized certifications, and real-world projects, I bring a practical, resilient, and results-driven approach to cybersecurity challenges.</p>
+    <!-- About -->
+    <section class="about-me dense" id="about">
+      <div class="about-grid">
+        <div class="about-story">
+          <h2>From Factory Floors to Firewalls</h2>
+          <p>Ever since high school, I wanted cybersecurity — but family responsibilities and finances meant putting that dream on hold. After moving to Canada, I worked two jobs (factory by day, restaurant at night) to support my family. The passion never left.</p>
+          <p>During COVID, I finally had space to invest in myself. I completed a Post-Graduate Certificate in Network Security &amp; Architecture (Fanshawe, online), earned certifications, and built a full SOC home lab. Today, I work full-time while studying and building after hours — because this is the dream I’ve held since I was a kid.</p>
 
-    <p>My journey has been shaped by perseverance and passion. After moving to Canada, I took on multiple jobs to support my family while simultaneously pursuing my long-standing dream of working in cybersecurity. Balancing work, studies, and family responsibilities taught me resilience, time management, and unwavering dedication — qualities that now define my professional character.</p>
+          <div class="callout">
+            <h3>A note to hiring managers</h3>
+            <p>Many “entry-level” roles ask for 3+ years and a degree. I’m part of a growing group who learned by doing — nights, weekends, and home labs. Give us a shot at an internship or junior role, and we’ll prove it.</p>
+          </div>
+        </div>
 
-  <p>Through formal education in cybersecurity and network security, combined with industry certifications such as <strong>CompTIA CySA+</strong> and <strong>ISC2 CC</strong>, I have developed practical expertise in the following areas:</p>
+        <aside class="about-facts card" aria-label="Skills and quick links">
+          <h3>What I bring</h3>
+          <ul class="skills-list">
+            <li><i class="fas fa-shield-alt"></i> <strong>Threat Detection &amp; Analysis:</strong> Monitoring, anomalies, correlation</li>
+            <li><i class="fas fa-microscope"></i> <strong>Security Tools:</strong> QRadar (SIEM), Splunk, SentinelOne (XDR)</li>
+            <li><i class="fas fa-server"></i> <strong>Log &amp; Event:</strong> Centralized logging, parsing, retention</li>
+            <li><i class="fas fa-bug"></i> <strong>Vulnerability Mgmt:</strong> Scanning, prioritization, remediation</li>
+            <li><i class="fas fa-exclamation-triangle"></i> <strong>Incident Response:</strong> Triage → RCA → contain → lessons (NIST 800-61)</li>
+            <li><i class="fas fa-network-wired"></i> <strong>Network Security:</strong> VPNs, VLANs, segmentation, secure protocols</li>
+          </ul>
 
-<!-- Be sure to include Font Awesome in your <head> if not already -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+          <div class="quick-links">
+            <a href="labs.html" class="chip">See Labs &amp; Projects</a>
+            <a href="certifications.html" class="chip">Certifications</a>
+            <a href="contact.html" class="chip">Contact</a>
+          </div>
+        </aside>
+      </div>
 
-<ul class="skills-list">
-  <li><i class="fas fa-shield-alt"></i> <strong>Threat Detection & Analysis:</strong> Real-time monitoring, anomaly detection, and threat correlation</li>
-  <li><i class="fas fa-microscope"></i> <strong>Security Tools:</strong> QRadar (SIEM), SentinelOne (XDR)</li>
-  <li><i class="fas fa-server"></i> <strong>Log & Event Management:</strong> Centralized logging, parsing, and retention strategies</li>
-  <li><i class="fas fa-bug"></i> <strong>Vulnerability Management:</strong> Scanning, prioritization, and remediation of security risks</li>
-  <li><i class="fas fa-exclamation-triangle"></i> <strong>Incident Response:</strong> Alert triaging, root cause analysis, and documentation aligned with NIST 800-61</li>
-  <li><i class="fas fa-network-wired"></i> <strong>Network Security Architecture:</strong> VPNs, VLANs, segmentation, and secure protocol enforcement</li>
-</ul>
-
-
-
-    <p>In addition to academic learning, I have continuously honed my skills through hands-on labs, independent projects, and real-world threat simulations. This blend of practical experience and theoretical knowledge enables me to detect, respond to, and mitigate cybersecurity threats effectively and efficiently.</p>
-
-    <p>I believe that cybersecurity is not just about technology — it’s about proactive thinking, collaboration, and an endless commitment to learning. Every challenge has strengthened my ability to adapt, solve problems creatively, and protect organizations against emerging threats.</p>
-
-    <p>Today, I am eager to turn my hard-earned knowledge, work ethic, and passion for security into meaningful contributions for an organization that values innovation, resilience, and a proactive security posture. I am ready to take on new challenges, continue growing, and make a positive impact in the cybersecurity industry.</p>
-  </section>
+      <div class="cta-bar" role="region" aria-label="Call to action">
+        <p><strong>Looking for a driven cybersecurity analyst?</strong> I’m ready to contribute on day one.</p>
+        <div>
+          <a href="contact.html" class="hero-button">Contact Me</a>
+          <a href="resume.html" class="secondary-button">Quick Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
     <div class="footer-wrapper">
-      <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+      <p>&copy; 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.</p>
     </div>
   </footer>
 
- <!-- JavaScript to hide/show navbar on scroll for mobile -->
-<!-- JavaScript to hide/show navbar on scroll for mobile -->
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
+  <!-- Behavior scripts -->
+  <script>
+    // Show the QR banner if the URL contains ?qr=1 or ref=qr
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('qr') === '1' || params.get('ref') === 'qr') {
+        const b = document.getElementById('qr-banner');
+        if (b) b.hidden = false;
+      }
+    })();
 
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-
-
-
+    // Hide nav when scrolling down, show when scrolling up
+    (function () {
+      let lastScrollTop = 0;
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
+      window.addEventListener('scroll', function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
+          navbar.classList.add('hidden-navbar');
+        } else {
+          navbar.classList.remove('hidden-navbar');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+    })();
+  </script>
 </body>
 </html>
 
