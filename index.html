@@ -141,14 +141,11 @@
   <!-- Behavior scripts -->
   <script>
 (function () {
-  const mqMobile = window.matchMedia("(max-width: 768px)");
-  const navbar   = document.querySelector("nav.nav-bar");
-  const menu     = document.getElementById("primary-nav");
-  const toggle   = document.querySelector(".nav-toggle");
-  const banner   = document.getElementById("qr-banner");
-  const params   = new URLSearchParams(location.search);
+  const navbar = document.querySelector("nav.nav-bar");
+  const banner = document.getElementById("qr-banner");
+  const params = new URLSearchParams(location.search);
 
-  /* --- QR banner: only with ?qr=1 or ref=qr, fade/collapse on first scroll --- */
+  /* --- QR banner: show only with ?qr=1 or ref=qr; fade/collapse on first scroll --- */
   if ((params.get("qr") === "1" || params.get("ref") === "qr") && banner) {
     banner.hidden = false;
     document.body.classList.add("qr-visible");
@@ -165,62 +162,40 @@
     window.addEventListener("scroll", hideBannerOnScroll, { passive: true });
   }
 
-  /* --- Mobile: + / - toggle dropdown --- */
-  function closeMenu() {
-    if (!menu) return;
-    menu.classList.remove("open");
-    document.body.classList.remove("nav-open");
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", "false");
-      const icon = toggle.querySelector(".toggle-icon");
-      if (icon) icon.textContent = "＋";
+  /* --- Smooth, flicker-free nav hide/show (mobile & desktop) --- */
+  if (!navbar) return;
+  let lastY = window.scrollY || 0;
+  let ticking = false;
+  const delta = 6;  // minimal movement to toggle
+
+  function onScroll() {
+    const y = window.scrollY || 0;
+
+    if (y <= 12) {
+      navbar.classList.remove("nav-hidden", "hidden-navbar");
+    } else if (y > lastY + delta) {
+      navbar.classList.add("nav-hidden", "hidden-navbar");   // scrolling down → hide
+    } else if (y < lastY - delta) {
+      navbar.classList.remove("nav-hidden", "hidden-navbar"); // scrolling up → show
     }
-  }
-  function openMenu() {
-    if (!menu) return;
-    menu.classList.add("open");
-    document.body.classList.add("nav-open");
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", "true");
-      const icon = toggle.querySelector(".toggle-icon");
-      if (icon) icon.textContent = "－";
-    }
-  }
-  if (mqMobile.matches && toggle && menu) {
-    toggle.addEventListener("click", function () {
-      if (menu.classList.contains("open")) closeMenu(); else openMenu();
-    });
-    // Close on scroll or tapping anywhere outside menu
-    window.addEventListener("scroll", closeMenu, { passive: true });
-    document.addEventListener("click", function (e) {
-      if (!navbar.contains(e.target)) closeMenu();
-    });
+
+    lastY = y;
+    ticking = false;
   }
 
-  /* --- Desktop: smooth hide/show on scroll (mobile uses toggle only) --- */
-  if (!mqMobile.matches && navbar) {
-    let lastY = window.scrollY || 0, ticking = false, delta = 6;
-    function onScroll() {
-      const y = window.scrollY || 0;
-      if (y <= 12) {
-        navbar.classList.remove("nav-hidden", "hidden-navbar");
-      } else if (y > lastY + delta) {
-        navbar.classList.add("nav-hidden", "hidden-navbar");
-      } else if (y < lastY - delta) {
-        navbar.classList.remove("nav-hidden", "hidden-navbar");
-      }
-      lastY = y; ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
     }
-    window.addEventListener("scroll", function () {
-      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
-    }, { passive: true });
-  }
+  }, { passive: true });
 })();
 </script>
 
 
 </body>
 </html>
+
 
 
 
