@@ -3542,6 +3542,80 @@ html { scroll-behavior: smooth; }
   }
 }
 
+/* === MOBILE FIX: full-height QR banner, visible nav, dynamic top offset === */
+:root{
+  --bannerH: 0px;   /* JS sets these */
+  --navH: 0px;
+  --top-offset: 64px;
+}
+
+@media (max-width: 900px){
+  /* QR banner fixed at top, allow wrapping */
+  .qr-banner{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 2000 !important;
+    display: flex; align-items: center; gap: .5rem;
+    padding: 10px 12px !important;
+    background: rgba(255,255,255,.97) !important;
+    color: #111 !important;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    line-height: 1.35;
+    font-size: 15px;
+    max-height: none !important;          /* remove any clamping */
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+  .qr-banner[hidden]{ display:none !important; }
+  .qr-banner.is-hidden{
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  /* Nav sits directly below the banner; no slide-away on phones */
+  nav.nav-bar{
+    position: fixed !important;
+    top: var(--bannerH) !important;
+    left: 0; right: 0;
+    z-index: 1500 !important;
+    background: #1f1f1f !important;
+    padding: 10px 8px !important;
+    transform: none !important;
+    visibility: visible !important; opacity: 1 !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden{ transform:none !important; } /* neutralize old code */
+
+  /* One-line, swipeable tabs (so nothing is hidden) */
+  nav .nav-links{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch;
+    white-space:nowrap !important;
+    gap:12px !important;
+    margin:0 !important; padding:0 !important;
+  }
+  nav .nav-links::-webkit-scrollbar{ display:none; }
+  nav .nav-links li{ list-style:none !important; flex:0 0 auto !important; }
+  nav .nav-links a{
+    display:inline-block !important;
+    padding:10px 14px !important;
+    color:#fff !important;
+    background:rgba(255,255,255,.06) !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:999px !important;
+  }
+
+  /* Page content is pushed below banner + nav using variables set by JS */
+  body.page-specific{ padding-top: var(--top-offset) !important; }
+}
+
+/* Optional: smooth anchor scrolling */
+html{ scroll-behavior:smooth; }
+
 
 
 
