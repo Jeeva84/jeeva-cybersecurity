@@ -3124,6 +3124,25 @@ body.page-specific::before{
   body.qr-visible{ padding-top: calc(56px + 44px) !important; }
 }
 
+/* === Even paragraph justification (site-wide) === */
+p {
+  text-align: justify !important;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  line-height: 1.75;
+  margin: 0 0 .9rem;
+}
+
+/* Don’t justify headings, lists, or nav items */
+h1, h2, h3, h4, h5, h6,
+ul, ol,
+.nav-links a,
+.hero-cta,
+.quick-links { text-align: left !important; }
+
 
 
 
