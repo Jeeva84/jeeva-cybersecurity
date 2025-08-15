@@ -3808,6 +3808,76 @@ html{ scroll-behavior:smooth; }
 /* Keep video firmly behind content everywhere */
 .video-background{ z-index:-1 !important; }
 
+/* ===== Mobile: keep nav visible and stop portrait from being cropped ===== */
+@media (max-width:900px){
+  /* NAV: in normal flow, visible, two-column grid */
+  .nav-bar{
+    position: relative !important;
+    top: auto !important;
+    z-index: 2 !important;
+    margin: 0 0 12px 0 !important;
+    background: #1f1f1f !important;
+    padding: 10px 8px !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    display: block !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  }
+  .nav-bar.hidden-navbar,
+  .nav-bar.nav-hidden { transform: none !important; }
+
+  .nav-links{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+  .nav-links li { list-style: none !important; }
+  .nav-links a{
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px 14px !important;
+    color: #fff !important;
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+  }
+
+  /* PORTRAIT: remove old absolute/negative offsets that crop the image */
+  header,
+  header .container,
+  .contact-image,
+  .hero-image{
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Apply to all portrait variants used across pages */
+  .profile-pic,
+  .contact-image img,
+  .hero-image img{
+    position: static !important;
+    top: auto !important; left: auto !important;
+    transform: none !important;
+    clip-path: none !important;
+    margin: 12px auto 0 !important;
+    width: min(90vw, 340px) !important;
+    height: auto !important;
+    border-radius: 20px !important;     /* keep it nicely rounded */
+    border: 2px solid #fff !important;   /* optional nice frame */
+    box-shadow: 0 8px 20px rgba(0,0,0,.4) !important;
+  }
+}
+
 
 
 
