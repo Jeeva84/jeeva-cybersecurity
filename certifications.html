@@ -1,139 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Certifications</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=8" />
+
+  <!-- Your existing content styling (kept) -->
   <style>
     .main-content {
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 10px;
-      margin: 2rem auto;
-      max-width: 960px;
+      color:#fff; background:rgba(0,0,0,.5);
+      padding:2rem; border-radius:10px; margin:2rem auto; max-width:960px;
     }
-    .section-card h2,
-    .section-card ul,
-    .section-card li,
-    .section-card p {
-      color: #fff;
+    .section-card h2, .section-card ul, .section-card li, .section-card p { color:#fff; }
+  </style>
+
+  <!-- Mobile nav + overlap fix (applies even if older CSS exists) -->
+  <style>
+    /* Desktop: allow smooth hide if desired */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
+    }
+
+    /* Mobile: keep nav visible, never cover hero, show all tabs */
+    @media (max-width:900px){
+      html, body, main, #content { margin-top:0 !important; padding-top:0 !important; }
+      .video-background{ z-index:-1 !important; } /* keep video behind everything */
+
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        width:100% !important; background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 12px 0 !important;
+        transform:none !important; opacity:1 !important; visibility:visible !important;
+        height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+
+      nav .nav-links{
+        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:0 !important;
+        list-style:none !important; white-space:normal !important; overflow:visible !important;
+      }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      /* Make sure the portrait is never underneath the nav */
+      header .hero-image{ position:relative !important; z-index:1 !important; text-align:center !important; }
+      header .hero-image img{
+        width:220px !important; height:220px !important; object-fit:cover !important;
+        border-radius:50% !important; border:2px solid #fff !important;
+        box-shadow:0 0 15px rgba(0,0,0,.6) !important;
+        margin-top:8px !important;
+      }
     }
   </style>
 </head>
+
 <body class="page-specific">
 
-<!-- Background Video -->
-<div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<!-- Profile Picture -->
-<header>
-  <div class="hero-image">
-    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
+  <!-- Background Video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
-</header>
 
-<!-- Navigation Bar -->
-<nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Navigation FIRST (so it never overlays hero on load) -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html" aria-current="page">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
+  <!-- Profile Picture -->
+  <header>
+    <div class="hero-image">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+    </div>
+  </header>
 
-<!-- Main Content Container with Certifications -->
-<div class="main-content">
-  <div class="section-card">
-    <section id="certifications" class="container">
-      <h2>Professional Certifications</h2>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="section-card">
+      <section id="certifications" class="container">
+        <h2>Professional Certifications</h2>
 
-      <ul>
-        <li><strong>CompTIA CySA+</strong><br>
-          Certified: April 11, 2025 | Expires: April 11, 2028<br>
-          Certification ID: COMP001022669239<br>
-          Verification Code: 1KH45GMQJR4QG9H
-        </li>
-      </ul>
+        <ul>
+          <li><strong>CompTIA CySA+</strong><br>
+            Certified: April 11, 2025 | Expires: April 11, 2028<br>
+            Certification ID: COMP001022669239<br>
+            Verification Code: 1KH45GMQJR4QG9H
+          </li>
+        </ul>
 
-      <!-- CompTIA Certificate Image + Download Button -->
-      <div style="text-align: center; margin: 20px 0;">
-        <img src="images/Comptia_CySA_plus.png" alt="CompTIA CySA+ Certificate" class="cert-image">
-        <br>
-        <a href="images/Comptia_CySA_plus.png" download="CompTIA_CySA_Plus_Certificate" class="download-button">
-          Download My CySA+ Certificate
-        </a>
-      </div>
+        <div style="text-align:center; margin:20px 0;">
+          <img src="images/Comptia_CySA_plus.png" alt="CompTIA CySA+ Certificate" class="cert-image" />
+          <br />
+          <a href="images/Comptia_CySA_plus.png" download="CompTIA_CySA_Plus_Certificate" class="download-button">
+            Download My CySA+ Certificate
+          </a>
+        </div>
 
-      <br>
+        <ul>
+          <li><strong>ISC2 Certified in Cybersecurity (CC)</strong><br>
+            Certified Since: 2024 | Cycle: June 1, 2024 – May 31, 2027<br>
+            Certification Number: 1985928
+          </li>
+        </ul>
 
-      <ul>
-        <li><strong>ISC2 Certified in Cybersecurity (CC)</strong><br>
-          Certified Since: 2024 | Cycle: June 1, 2024 – May 31, 2027<br>
-          Certification Number: 1985928
-        </li>
-      </ul>
+        <div style="text-align:center; margin:20px 0;">
+          <img src="images/ISC2_CC.png" alt="ISC2 CC Certificate" class="cert-image" />
+          <br />
+          <a href="images/ISC2_CC.png" download="ISC2_Cybersecurity_Certificate" class="download-button">
+            Download My ISC2 CC Certificate
+          </a>
+        </div>
 
-      <!-- ISC2 Certificate Image + Download Button -->
-      <div style="text-align: center; margin: 20px 0;">
-        <img src="images/ISC2_CC.png" alt="ISC2 CC Certificate" class="cert-image">
-        <br>
-        <a href="images/ISC2_CC.png" download="ISC2_Cybersecurity_Certificate" class="download-button">
-          Download My ISC2 CC Certificate
-        </a>
-      </div>
-
-      <h2>Relevant Short Courses & Trainings</h2>
-      <ul>
-        <li>Jr Penetration Tester, TryHackMe (01/2024)</li>
-        <li>Introduction to Dark Web, Anonymity, and Cryptocurrency, EC-Council (02/2024)</li>
-        <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
-        <li>The Ultimate GRC Course – Governance, Risk & Compliance 2024, Udemy (08/2024)</li>
-      </ul>
-
-    </section>
+        <h2>Relevant Short Courses & Trainings</h2>
+        <ul>
+          <li>Jr Penetration Tester, TryHackMe (01/2024)</li>
+          <li>Introduction to Dark Web, Anonymity, and Cryptocurrency, EC-Council (02/2024)</li>
+          <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
+          <li>The Ultimate GRC Course – Governance, Risk & Compliance 2024, Udemy (08/2024)</li>
+        </ul>
+      </section>
+    </div>
   </div>
-</div>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+  </footer>
 
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
+  <!-- Behavior: hide nav on scroll ONLY on desktop -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
 
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-
+      // Only enable hide-on-scroll on desktop screens
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');   // slides up on desktop
+            navbar.classList.remove('transparent');
+          } else {
+            navbar.classList.remove('nav-hidden'); // show when scrolling up
+            navbar.classList.add('transparent');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
-
