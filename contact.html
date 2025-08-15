@@ -5,47 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=20" />
+  <!-- Your main stylesheet (cache-busted so phones refresh it) -->
+  <link rel="stylesheet" href="style.css?v=21" />
 
-  <!-- Page-scoped hotfix: sits AFTER style.css so it wins -->
+  <!-- Page-scoped hotfix so the photo never gets covered on mobile -->
   <style>
-    /* --- Background video always behind content --- */
+    /* Background video behind everything */
     .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
     .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* --- Navigation: visible, never covers content --- */
+    /* Nav visible and in-flow; neutralize any hide-on-scroll classes */
     nav.nav-bar{
       position:sticky !important; top:0 !important; z-index:5 !important;
       background:#1f1f1f !important; margin:0 0 12px 0 !important;
       transform:none !important; opacity:1 !important; visibility:visible !important;
       box-shadow:0 3px 10px rgba(0,0,0,.25);
     }
-    /* neutralize any hide-on-scroll classes */
     nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* --- Contact layout --- */
+    /* Contact layout (desktop) */
     .contact-container{
       display:flex; align-items:flex-start; gap:32px;
       max-width:1100px; margin:12px auto 40px; padding:0 16px;
       position:relative; z-index:1;
     }
     .contact-image img{
-      display:block; width:320px; height:auto;
+      display:block; width:320px; height:auto; object-fit:cover;
       border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
       position:static !important; transform:none !important;
     }
     .contact-form{ flex:1; min-width:0; }
-    .send-button{ background:#ff5722; }
+    .send-button{ background:#ff5722; border:none; color:#fff; padding:14px 18px; border-radius:12px; font-weight:700; }
     .send-button:hover{ background:#e64a19; }
 
-    /* --- Footer tidy --- */
-    footer{ position:relative; z-index:1; }
-
-    /* ========== Mobile (<=900px) ========== */
+    /* ===== Mobile (<=900px) ===== */
     @media (max-width:900px){
-      html,body{ margin:0 !important; padding:0 !important; }
-      /* show all tabs in a grid; no overlap */
+      html, body, main, #content { margin:0 !important; padding:0 !important; }
+
+      /* Nav turns into a 2-column grid and never overlaps content */
+      nav.nav-bar{ position:relative !important; }
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
         gap:10px !important; list-style:none !important; margin:0 !important; padding:10px 8px !important;
@@ -57,14 +55,22 @@
         background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
         border-radius:10px !important; text-decoration:none !important;
       }
-      /* stack image above form; make sure nothing hides it */
+
+      /* Stack image over form; add spacing so it NEVER goes under nav */
       .contact-container{ flex-direction:column; gap:16px; margin-top:8px !important; }
-      .contact-image{ order:0 !important; }
-      .contact-form{ order:1 !important; padding-top:6px !important; }
-      .contact-image img{
-        width:min(86%,340px) !important; height:auto !important; margin:0 auto !important;
+
+      /* Bulletproof reset against any global hero/profile rules */
+      .contact-image img,
+      .profile-pic,
+      header .profile-pic,
+      .hero-image img{
+        position:static !important; transform:none !important; margin:0 auto 12px !important;
+        top:auto !important; left:auto !important; right:auto !important; bottom:auto !important;
+        width:min(88vw, 340px) !important; max-width:100% !important; height:auto !important; object-fit:cover !important;
+        border-radius:20px !important;
       }
-      /* kill any sneaky card pulls that could overlap */
+
+      /* Kill any negative offsets that could overlap the image */
       .section-card, .card{ margin-top:0 !important; transform:none !important; }
     }
   </style>
@@ -94,25 +100,33 @@
   </nav>
 
   <!-- Contact Section -->
-  <div class="contact-container">
-    <div class="contact-image">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
-    </div>
+  <main id="content">
+    <div class="contact-container">
+      <!-- Left: Profile Image -->
+      <div class="contact-image">
+        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+      </div>
 
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-        <input type="text" name="_honey" style="display:none" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+      <!-- Right: Form -->
+      <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+          <!-- Honeypot (spam protection) -->
+          <input type="text" name="_honey" style="display:none" />
+          <!-- Disable CAPTCHA -->
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Redirect after success (update if needed) -->
+          <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="E-mail" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="send-button">Send Message</button>
-      </form>
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="email" name="email" placeholder="E-mail" required />
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+          <button type="submit" class="send-button">Send Message</button>
+        </form>
+      </div>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -121,6 +135,6 @@
     </div>
   </footer>
 
-  <!-- No hide-on-scroll JS here on purpose (keeps mobile/desktop predictable) -->
+  <!-- No hide-on-scroll JS on this page; CSS handles everything -->
 </body>
 </html>
