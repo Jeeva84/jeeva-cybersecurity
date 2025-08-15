@@ -3088,6 +3088,42 @@ body.page-specific::before{
   body.qr-visible .nav-bar{ top: 44px !important; }
   body.qr-visible{ padding-top: calc(56px + 44px) !important; }
 }
+/* ===== MOBILE NAV: compact + hide immediately on scroll ===== */
+@media (max-width: 768px) {
+  nav.nav-bar{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    padding: 10px 8px !important;
+    background: #1f1f1f !important;
+    z-index: 1000 !important;
+    transform: translateY(0);
+    transition: transform .22s ease-in-out !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  /* Hidden state toggled by JS */
+  nav.nav-bar.nav-hidden{ transform: translateY(-110%) !important; }
+
+  /* Keep links in ONE row with swipe-scroll (no vertical stack) */
+  nav .nav-links{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap !important;
+    gap: 12px !important;
+  }
+  nav .nav-links li{ flex: 0 0 auto !important; }
+
+  /* Make sure content starts below the fixed nav */
+  body{ padding-top: 56px !important; }
+}
+
+/* If the QR banner is visible, offset the nav and body so nothing overlaps */
+@media (max-width: 768px) {
+  body.qr-visible nav.nav-bar{ top: 44px !important; }
+  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
+}
+
 
 
 
