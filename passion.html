@@ -1,116 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeeva Kumaradas - My Passion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeeva Kumaradas - My Passion</title>
+
+  <!-- Main stylesheet (cache-busted so changes take effect) -->
+  <link rel="stylesheet" href="style.css?v=13" />
+
+  <!-- Page-specific fixes (safe overrides) -->
+  <style>
+    /* Keep video behind everything */
+    .video-background { z-index:-1 !important; }
+
+    /* Justify body copy on this page */
+    #passion p, #passion li { text-align: justify; }
+
+    /* Desktop: optional smooth hide-on-scroll */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{
+        transform: translateY(-110%);
+        transition: transform .24s ease;
+      }
+    }
+
+    /* Mobile hard reset: show nav in flow, all tabs visible */
+    @media (max-width:900px){
+      html, body, main { margin-top:0 !important; padding-top:0 !important; }
+
+      /* Nav in normal flow, visible, never covers content */
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        width:100% !important; background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 12px 0 !important;
+        transform:none !important; opacity:1 !important; visibility:visible !important;
+        height:auto !important; display:block !important;
+        box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+
+      /* Show ALL tabs in a tidy 2-col grid */
+      nav .nav-links{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:0 !important;
+        list-style:none !important; white-space:normal !important; overflow:visible !important;
+      }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      /* Make sure the portrait is never tucked under anything */
+      header .profile-pic{
+        width:220px !important; height:220px !important; object-fit:cover !important;
+        border-radius:50% !important; border:2px solid #fff !important;
+        box-shadow:0 0 15px rgba(0,0,0,.6) !important; margin-top:8px !important;
+      }
+    }
+  </style>
 </head>
 <body class="page-specific">
 
-    <div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <!-- Background video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-
-<header>
-    <div class="container">
-        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
-        
+  <!-- Header with profile image -->
+  <header>
+    <div class="container" style="text-align:center;">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
     </div>
-</header>
+  </header>
 
-<nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html" aria-current="page">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
+  <!-- Content -->
+  <div class="section-card">
+    <section class="container" id="passion">
+      <h2>My Passion for Cybersecurity</h2>
 
-<div class="section-card">
-<section class="container" id="passion">
-  <h2>My Passion for Cybersecurity</h2>
+      <p>
+        Cybersecurity is not just a career path for me — it is the foundation of my professional identity and personal mission.
+        In today’s hyper-connected world, where technology empowers every aspect of life, the threats that lurk in digital spaces are growing more sophisticated and relentless.
+        What drives me is the challenge of standing on the frontlines, defending not just systems and networks, but people — their privacy, their ideas, their livelihoods.
+      </p>
 
-  <p>
-    Cybersecurity is not just a career path for me — it is the foundation of my professional identity and personal mission. 
-    In today’s hyper-connected world, where technology empowers every aspect of life, the threats that lurk in digital spaces are growing more sophisticated and relentless.  
-    What drives me is the challenge of standing on the frontlines, defending not just systems and networks, but people — their privacy, their ideas, their livelihoods.
-  </p>
+      <p>
+        From an early stage in my career, I was captivated by the complexity and evolving nature of cybersecurity.
+        Unlike many fields, cybersecurity never remains static. Each day presents new challenges, new adversaries, and new opportunities to grow.
+        The dynamic landscape of cyber threats fuels my determination to stay sharp, to continuously learn, and to adapt proactively to protect against emerging risks.
+      </p>
 
-  <p>
-    From an early stage in my career, I was captivated by the complexity and evolving nature of cybersecurity. 
-    Unlike many fields, cybersecurity never remains static. Each day presents new challenges, new adversaries, and new opportunities to grow. 
-    The dynamic landscape of cyber threats fuels my determination to stay sharp, to continuously learn, and to adapt proactively to protect against emerging risks.
-  </p>
+      <p>
+        My passion extends beyond technical mastery. While I enjoy the intricacies of threat detection, vulnerability analysis, and incident response,
+        what truly motivates me is the broader purpose of cybersecurity: empowering trust, fostering innovation, and enabling businesses and individuals to operate with confidence in a digital world.
+        Cybersecurity is fundamentally about resilience — about ensuring that technology serves humanity safely, ethically, and effectively.
+      </p>
 
-  <p>
-    My passion extends beyond technical mastery. While I enjoy the intricacies of threat detection, vulnerability analysis, and incident response, 
-    what truly motivates me is the broader purpose of cybersecurity: empowering trust, fostering innovation, and enabling businesses and individuals to operate with confidence in a digital world.
-    Cybersecurity is fundamentally about resilience — about ensuring that technology serves humanity safely, ethically, and effectively.
-  </p>
+      <p>
+        Hands-on learning has always been at the core of my journey. I have built extensive home labs, simulating real-world attacks and defensive strategies to sharpen my technical skills.
+        I actively pursue certifications, stay engaged with cybersecurity communities, study adversary tactics, and follow industry research to remain current.
+        Every project, lab, or case study deepens my understanding and prepares me to tackle more complex challenges ahead.
+      </p>
 
-  <p>
-    Hands-on learning has always been at the core of my journey. I have built extensive home labs, simulating real-world attacks and defensive strategies to sharpen my technical skills. 
-    I actively pursue certifications, stay engaged with cybersecurity communities, study adversary tactics, and follow industry research to remain current. 
-    Every project, lab, or case study deepens my understanding and prepares me to tackle more complex challenges ahead.
-  </p>
+      <p>
+        Collaboration and knowledge-sharing are central to my philosophy. I believe that the strongest cybersecurity ecosystems are built not by individuals working in silos, but by teams that learn, adapt, and innovate together.
+        Whether it’s working alongside incident responders, red teamers, network engineers, or risk analysts, I thrive in environments where collective expertise strengthens our collective defenses.
+      </p>
 
-  <p>
-    Collaboration and knowledge-sharing are central to my philosophy. I believe that the strongest cybersecurity ecosystems are built not by individuals working in silos, but by teams that learn, adapt, and innovate together. 
-    Whether it’s working alongside incident responders, red teamers, network engineers, or risk analysts, I thrive in environments where collective expertise strengthens our collective defenses.
-  </p>
+      <p>
+        Looking forward, my aspiration is to contribute meaningfully to impactful cybersecurity initiatives — whether that's securing enterprise environments, advancing threat intelligence capabilities, mentoring the next generation of defenders,
+        or advocating for better security awareness at all levels of society.
+        I see cybersecurity not as a job, but as a mission — one that will continue evolving, challenging, and inspiring me for a lifetime.
+      </p>
 
-  <p>
-    Looking forward, my aspiration is to contribute meaningfully to impactful cybersecurity initiatives — whether that's securing enterprise environments, advancing threat intelligence capabilities, mentoring the next generation of defenders, 
-    or advocating for better security awareness at all levels of society. 
-    I see cybersecurity not as a job, but as a mission — one that will continue evolving, challenging, and inspiring me for a lifetime.
-  </p>
+      <p>
+        As technology evolves, so will the challenges we face. I am committed to advancing my skills, deepening my expertise, and contributing to a safer and more resilient digital future.
+      </p>
+    </section>
+  </div>
 
-  <p>
-    As technology evolves, so will the challenges we face. I am committed to advancing my skills, deepening my expertise, and contributing to a safer and more resilient digital future.
-  </p>
-
-</section>
-</div>
-
-
-<footer>
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-</footer>
+  </footer>
 
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
+  <!-- Behavior: hide nav on scroll ONLY on desktop -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
 
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-    
-
+      // Desktop only
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');
+          } else {
+            navbar.classList.remove('nav-hidden');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
+
 
