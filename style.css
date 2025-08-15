@@ -3906,6 +3906,50 @@ html{ scroll-behavior:smooth; }
     padding-top:0 !important;
   }
 }
+/* CONTACT PAGE — stop the form card from overlapping the photo on mobile */
+@media (max-width: 900px){
+  body.contact-page .contact-container{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin: 12px auto !important;
+    padding: 0 12px !important;
+  }
+
+  body.contact-page .contact-image{
+    order: 0;
+    margin: 8px 0 0 0 !important;
+    position: relative !important;
+    z-index: 1 !important;               /* keep image above */
+  }
+
+  body.contact-page .contact-image img{
+    position: static !important;
+    transform: none !important;
+    max-width: 320px !important;
+    width: 85% !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    border: 2px solid #fff !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
+  }
+
+  body.contact-page .contact-form{
+    order: 1;
+    margin-top: 0 !important;            /* neutralize any negative margins */
+    padding-top: 16px !important;
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  /* If any global “card” style is pulling upward, neutralize it here */
+  body.contact-page .section-card,
+  body.contact-page .card{
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+}
+
 
 
 
