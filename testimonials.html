@@ -1,105 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeeva Kumaradas - Testimonials</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeeva Kumaradas - Testimonials</title>
+
+  <!-- Main stylesheet (cache-busted so changes take effect) -->
+  <link rel="stylesheet" href="style.css?v=15" />
+
+  <!-- Page-specific safe overrides -->
+  <style>
+    /* keep background video behind everything */
+    .video-background { z-index:-1 !important; }
+
+    /* justify testimonial paragraphs */
+    #testimonials p { text-align: justify; }
+
+    /* Desktop: smooth hide-on-scroll only */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{
+        transform: translateY(-110%);
+        transition: transform .24s ease;
+      }
+    }
+
+    /* Mobile reset: nav visible, all tabs shown in grid, portrait sized */
+    @media (max-width:900px){
+      html, body, main { margin-top:0 !important; padding-top:0 !important; }
+
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        width:100% !important; background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 12px 0 !important;
+        transform:none !important; opacity:1 !important; visibility:visible !important;
+        height:auto !important; display:block !important;
+        box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+
+      nav .nav-links{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:0 !important;
+        list-style:none !important; white-space:normal !important; overflow:visible !important;
+      }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      header .profile-pic{
+        width:220px !important; height:220px !important; object-fit:cover !important;
+        border-radius:50% !important; border:2px solid #fff !important;
+        box-shadow:0 0 15px rgba(0,0,0,.6) !important; margin-top:8px !important;
+      }
+    }
+  </style>
 </head>
 <body class="page-specific">
 
-<div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <!-- Background Video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-
-<header>
-    <div class="container">
-        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
-        
+  <!-- Profile Picture -->
+  <header>
+    <div class="container" style="text-align:center;">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
     </div>
-</header>
+  </header>
 
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html" aria-current="page">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Testimonials -->
+  <div class="section-card">
+    <section class="container" id="testimonials">
+      <h2>Testimonials</h2>
 
+      <div class="testimonial">
+        <p>
+          "Jeeva was a standout student during his time at Fanshawe College. His consistent dedication to mastering cybersecurity concepts, combined with his hands-on approach to learning, demonstrated a strong foundation for a career in the security field. His growth mindset and problem-solving abilities will serve him well in the industry."
+        </p>
+        <p class="testimonial-author">
+          — <span>Mr. Stuart Budden</span>, Professor, Network Security &amp; Architecture Program, Fanshawe College
+        </p>
+      </div>
 
-<div class="section-card">
-<section class="container" id="testimonials">
-  <h2>Testimonials</h2>
+      <div class="testimonial">
+        <p>
+          "It was a pleasure working with Jeeva during his time at the Durham District School Board (DDSB). As a Cybersecurity Analyst, I observed firsthand his proactive approach to threat monitoring and incident response tasks. Jeeva's dedication to learning and improving his technical skills made him a reliable contributor to our cybersecurity operations."
+        </p>
+        <p class="testimonial-author">
+          — <span>Chris C</span>, Cybersecurity Analyst, Durham District School Board
+        </p>
+      </div>
 
-  <div class="testimonial">
-    <p>
-      "Jeeva was a standout student during his time at Fanshawe College. His consistent dedication to mastering cybersecurity concepts, combined with his hands-on approach to learning, demonstrated a strong foundation for a career in the security field. His growth mindset and problem-solving abilities will serve him well in the industry."
-    </p>
-    <p class="testimonial-author">
-      — <span>Mr. Stuart Budden</span>, Professor, Network Security & Architecture Program, Fanshawe College
-    </p>
+      <div class="testimonial">
+        <p>
+          "Jeeva demonstrated a strong technical foundation and a solution-focused mindset during our interactions. His enthusiasm for cybersecurity and commitment to continuous learning were clearly evident. Jeeva approaches challenges thoughtfully and shows great potential in translating security concepts into real-world solutions."
+        </p>
+        <p class="testimonial-author">
+          — <span>Raghu Kandasamy</span>, Solutions Architect, Canada Life
+        </p>
+      </div>
+    </section>
   </div>
 
-  <div class="testimonial">
-    <p>
-      "It was a pleasure working with Jeeva during his time at the Durham District School Board (DDSB). As a Cybersecurity Analyst, I observed firsthand his proactive approach to threat monitoring and incident response tasks. Jeeva's dedication to learning and improving his technical skills made him a reliable contributor to our cybersecurity operations."
-    </p>
-    <p class="testimonial-author">
-      — <span>Chris C</span>, Cybersecurity Analyst, Durham District School Board
-    </p>
-  </div>
-
-  <div class="testimonial">
-    <p>
-      "Jeeva demonstrated a strong technical foundation and a solution-focused mindset during our interactions. His enthusiasm for cybersecurity and commitment to continuous learning were clearly evident. Jeeva approaches challenges thoughtfully and shows great potential in translating security concepts into real-world solutions."
-    </p>
-    <p class="testimonial-author">
-      — <span>Raghu Kandasamy</span>, Solutions Architect, Canada Life
-    </p>
-  </div>
-
-</section>
-</div>   
-
-
-<footer>
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-</footer>
+  </footer>
 
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
+  <!-- Behavior: hide nav on scroll ONLY on desktop -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
 
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-    
-
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');
+          } else {
+            navbar.classList.remove('nav-hidden');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
+
+
 
