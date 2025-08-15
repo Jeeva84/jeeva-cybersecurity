@@ -3616,6 +3616,30 @@ html { scroll-behavior: smooth; }
 /* Optional: smooth anchor scrolling */
 html{ scroll-behavior:smooth; }
 
+/* ===== Mobile: guarantee content starts below banner + nav ===== */
+:root{
+  --bannerH: 0px;     /* set by JS */
+  --navH: 0px;        /* set by JS */
+  --top-offset: 120px;/* fallback if JS hasn't run yet */
+}
+
+@media (max-width: 900px){
+  /* Keep QR banner and nav fixed (you can keep your existing styles) */
+
+  /* Remove any old padding tricks that fight us */
+  body.page-specific{ padding-top: 0 !important; }
+
+  /* Insert a spacer before the page content equal to banner+nav height */
+  main#content::before{
+    content: "";
+    display: block;
+    height: var(--top-offset, 120px) !important;
+  }
+
+  /* If you still see clipping, give the very first hero a small extra nudge */
+  .split-hero{ margin-top: 0 !important; }
+}
+
 
 
 
