@@ -141,6 +141,7 @@
   <!-- Behavior scripts -->
   <script>
 (function () {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const navbar = document.querySelector("nav.nav-bar");
   const banner = document.getElementById("qr-banner");
   const params = new URLSearchParams(location.search);
@@ -162,39 +163,34 @@
     window.addEventListener("scroll", hideBannerOnScroll, { passive: true });
   }
 
-  /* --- Smooth, flicker-free nav hide/show (mobile & desktop) --- */
-  if (!navbar) return;
-  let lastY = window.scrollY || 0;
-  let ticking = false;
-  const delta = 6;  // minimal movement to toggle
+  /* --- Desktop only: smooth nav hide/show --- */
+  if (!isMobile && navbar) {
+    let lastY = window.scrollY || 0;
+    let ticking = false;
+    const delta = 6;
 
-  function onScroll() {
-    const y = window.scrollY || 0;
-
-    if (y <= 12) {
-      navbar.classList.remove("nav-hidden", "hidden-navbar");
-    } else if (y > lastY + delta) {
-      navbar.classList.add("nav-hidden", "hidden-navbar");   // scrolling down → hide
-    } else if (y < lastY - delta) {
-      navbar.classList.remove("nav-hidden", "hidden-navbar"); // scrolling up → show
+    function onScroll() {
+      const y = window.scrollY || 0;
+      if (y <= 12) {
+        navbar.classList.remove("nav-hidden", "hidden-navbar");
+      } else if (y > lastY + delta) {
+        navbar.classList.add("nav-hidden", "hidden-navbar");
+      } else if (y < lastY - delta) {
+        navbar.classList.remove("nav-hidden", "hidden-navbar");
+      }
+      lastY = y; ticking = false;
     }
 
-    lastY = y;
-    ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
   }
-
-  window.addEventListener("scroll", function () {
-    if (!ticking) {
-      requestAnimationFrame(onScroll);
-      ticking = true;
-    }
-  }, { passive: true });
 })();
 </script>
 
-
 </body>
 </html>
+
 
 
 
