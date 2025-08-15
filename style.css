@@ -3746,6 +3746,68 @@ html{ scroll-behavior:smooth; }
   .split-hero{ margin-top: 16px !important; padding-top: 16px !important; }
 }
 
+/* ===== UNIVERSAL MOBILE NAV FIX (<=900px) ===== */
+@media (max-width:900px){
+  /* remove old offsets that pushed content under the nav */
+  html, body { padding-top:0 !important; margin-top:0 !important; }
+
+  /* keep nav in normal flow and visible */
+  nav.nav-bar{
+    position: relative !important; top:auto !important; z-index:1000 !important;
+    width:100% !important; background:#1f1f1f !important;
+    padding:10px 8px !important; margin:0 0 12px 0 !important;
+    transform:none !important; opacity:1 !important; visibility:visible !important;
+    height:auto !important; display:block !important;
+    box-shadow:0 3px 10px rgba(0,0,0,.25);
+  }
+  /* neutralize any "hide on scroll" classes from old JS */
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden{
+    transform:none !important; display:block !important; height:auto !important;
+    opacity:1 !important; visibility:visible !important;
+  }
+
+  /* show ALL tabs in a tidy grid */
+  nav .nav-links{
+    display:grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap:10px !important;
+    margin:0 !important; padding:0 !important;
+    list-style:none !important; white-space:normal !important; overflow:visible !important;
+    visibility:visible !important; opacity:1 !important;
+  }
+  nav .nav-links li{ list-style:none !important; display:block !important; }
+  nav .nav-links a{
+    display:block !important; width:100% !important; text-align:center !important;
+    padding:12px 14px !important; color:#fff !important;
+    background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:10px !important; text-decoration:none !important;
+  }
+
+  /* make sure hero never hides under anything */
+  .split-hero, main > section:first-of-type{
+    margin-top:0 !important; padding-top:8px !important;
+  }
+
+  /* portrait size on small screens */
+  .hero-image img, header .profile-pic{
+    width:220px !important; height:220px !important; object-fit:cover !important;
+    border-radius:50% !important; border:2px solid #fff !important;
+    box-shadow:0 0 15px rgba(0,0,0,.6) !important;
+  }
+}
+
+/* ===== DESKTOP: give .nav-hidden a smooth hide effect (optional) ===== */
+@media (min-width:901px){
+  nav.nav-bar.nav-hidden{
+    transform: translateY(-110%);
+    transition: transform .24s ease;
+  }
+}
+
+/* Keep video firmly behind content everywhere */
+.video-background{ z-index:-1 !important; }
+
 
 
 
