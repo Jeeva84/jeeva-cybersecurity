@@ -1,134 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Home Labs</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=10" />
+
+  <!-- Optional font (keep if you use Poppins in style.css) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Keep your existing content styling -->
+  <style>
+    .main-content {
+      color:#fff; background:rgba(0,0,0,.5);
+      padding:2rem; border-radius:10px; margin:2rem auto; max-width:960px;
+    }
+    .section-card h2, .section-card ul, .section-card li, .section-card p { color:#fff; }
+  </style>
+
+  <!-- Mobile nav + overlap fix (applies even if older CSS exists) -->
+  <style>
+    /* Desktop: allow smooth hide if desired */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
+    }
+
+    /* Mobile: keep nav visible, never cover hero, show all tabs */
+    @media (max-width:900px){
+      html, body, main, #content { margin-top:0 !important; padding-top:0 !important; }
+      .video-background{ z-index:-1 !important; }
+
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        width:100% !important; background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 12px 0 !important;
+        transform:none !important; opacity:1 !important; visibility:visible !important;
+        height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+
+      nav .nav-links{
+        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:0 !important;
+        list-style:none !important; white-space:normal !important; overflow:visible !important;
+      }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      /* Make sure the portrait is never underneath the nav */
+      header .hero-image{ position:relative !important; z-index:1 !important; text-align:center !important; }
+      header .hero-image img{
+        width:220px !important; height:220px !important; object-fit:cover !important;
+        border-radius:50% !important; border:2px solid #fff !important;
+        box-shadow:0 0 15px rgba(0,0,0,.6) !important;
+        margin-top:8px !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-specific">
 
-  <div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <!-- Background Video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-
-<!-- ✅ Profile Picture First -->
-<div style="text-align: center; margin-top: 20px;">
-  <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
-</div>
-
-<!-- ✅ Navigation Bar Below Picture -->
-<nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-
-<!-- ✅ Main Content Starts -->
-<main class="main-content">
-
-  <h1>Home Labs</h1>
-
-  <!-- DNS Log Analysis Lab -->
-  <section class="section-card">
-    <h2>DNS Log Analysis Lab</h2>
-    <p>In this lab, I explored how DNS logs can reveal potential Indicators of Compromise (IoCs). By enabling detailed DNS auditing, I simulated suspicious behavior and investigated anomalous domain queries, helping me understand how DNS traffic often reveals malware communication attempts.</p>
-    <h3>Key Takeaways:</h3>
-    <ul>
-      <li>Enabled detailed DNS query logging on the host system.</li>
-      <li>Simulated real-world malware traffic using PowerShell scripts.</li>
-      <li>Analyzed Event Viewer logs to identify unusual domain lookups.</li>
-      <li>Tracked repeated beaconing behaviors from the system to specific domains.</li>
-      <li>Mapped suspicious activity back to responsible processes.</li>
+  <!-- Navigation FIRST (so it never overlays hero on load) -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html" aria-current="page">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/IYTg0SwUl3Q" frameborder="0" allowfullscreen></iframe>
-  </section>
+  </nav>
 
-   <!-- Time Synchronization Across Systems -->
-  <section class="section-card">
-    <h2>Time Synchronization Across Systems</h2>
-    <p>I completed a hands-on lab focused on managing and synchronizing time across multiple systems—an essential aspect of maintaining log integrity and supporting accurate forensic analysis</p>
-    <h3>Key Takeaways:</h3>
-    <ul>
-      <li>Worked within a lab environment using Kali Linux and Windows Server 2019 (including domain controller and client machines).</li>
-      <li>Compared and synchronized system and hardware clocks to ensure alignment.</li>
-      <li>Used timedatectl to configure accurate time zones for Linux systems.</li>
-      <li> Set up an internal NTP server to standardize time across all devices in the network.</li>
-    </ul>
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/so23IZZTAug" frameborder="0" allowfullscreen></iframe>
-  </section>
+  <!-- Profile Picture -->
+  <header>
+    <div class="hero-image">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+    </div>
+  </header>
 
-  <!-- Asset Discovery with Nmap -->
-  <section class="section-card">
-    <h2>Asset Discovery with Nmap</h2>
-    <p>I completed a hands-on lab focused on identifying assets and services within multiple network segments using Nmap, a powerful network scanning tool.</p>
-    <h3>Key Takeaways:</h3>
-    <ul>
-      <li>Performed ping sweeps to detect active hosts across internal and screened subnets.</li>
-      <li>Conducted SYN scans to identify open ports and map available services.</li>
-      <li>Used version detection to determine specific services and versions running on discovered ports.</li>
-      <li>Executed OS detection to fingerprint the operating systems of networked devices.</li>
-    </ul>
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/Jx1fNGRwprQ" frameborder="0" allowfullscreen></iframe>
-  </section>
+  <!-- Main Content -->
+  <main id="content" class="main-content">
 
-  <!-- Strengthening System Security and Mastering DNS Configuration -->
-  <section class="section-card">
-    <h2>Strengthening System Security and Mastering DNS Configuration</h2>
-    <p>I completed hands-on system security tasks to enhance network defenses and strengthen local DNS configurations in a lab environment..</p>
-    <h3>Key Takeaways:</h3>
-    <ul>
-      <li>Configured Windows Server firewall rules to block ICMP (ping) traffic, validating effective enforcement of security policies.</li>
-      <li>Edited /etc/hosts to enable local DNS resolution for juiceshop.local and verified domain accessibility using wget.</li>
-      <li>Reinforced practical skills in system hardening, DNS management, and connectivity troubleshooting.</li>
-    </ul>
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/jRicbPsq3lU" frameborder="0" allowfullscreen></iframe>
-  </section>
+    <h1>Home Labs</h1>
 
-</main>
+    <!-- DNS Log Analysis Lab -->
+    <section class="section-card">
+      <h2>DNS Log Analysis Lab</h2>
+      <p>In this lab, I explored how DNS logs can reveal potential Indicators of Compromise (IoCs). By enabling detailed DNS auditing, I simulated suspicious behavior and investigated anomalous domain queries, helping me understand how DNS traffic often reveals malware communication attempts.</p>
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>Enabled detailed DNS query logging on the host system.</li>
+        <li>Simulated real-world malware traffic using PowerShell scripts.</li>
+        <li>Analyzed Event Viewer logs to identify unusual domain lookups.</li>
+        <li>Tracked repeated beaconing behaviors from the system to specific domains.</li>
+        <li>Mapped suspicious activity back to responsible processes.</li>
+      </ul>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/IYTg0SwUl3Q" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-</footer>
+    <!-- Time Synchronization Across Systems -->
+    <section class="section-card">
+      <h2>Time Synchronization Across Systems</h2>
+      <p>I completed a hands-on lab focused on managing and synchronizing time across multiple systems—an essential aspect of maintaining log integrity and supporting accurate forensic analysis</p>
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>Worked within a lab environment using Kali Linux and Windows Server 2019 (including domain controller and client machines).</li>
+        <li>Compared and synchronized system and hardware clocks to ensure alignment.</li>
+        <li>Used timedatectl to configure accurate time zones for Linux systems.</li>
+        <li>Set up an internal NTP server to standardize time across all devices in the network.</li>
+      </ul>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/so23IZZTAug" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
+    <!-- Asset Discovery with Nmap -->
+    <section class="section-card">
+      <h2>Asset Discovery with Nmap</h2>
+      <p>I completed a hands-on lab focused on identifying assets and services within multiple network segments using Nmap, a powerful network scanning tool.</p>
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>Performed ping sweeps to detect active hosts across internal and screened subnets.</li>
+        <li>Conducted SYN scans to identify open ports and map available services.</li>
+        <li>Used version detection to determine specific services and versions running on discovered ports.</li>
+        <li>Executed OS detection to fingerprint the operating systems of networked devices.</li>
+      </ul>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/Jx1fNGRwprQ" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
+    <!-- Strengthening System Security and Mastering DNS Configuration -->
+    <section class="section-card">
+      <h2>Strengthening System Security and Mastering DNS Configuration</h2>
+      <p>I completed hands-on system security tasks to enhance network defenses and strengthen local DNS configurations in a lab environment.</p>
+      <h3>Key Takeaways:</h3>
+      <ul>
+        <li>Configured Windows Server firewall rules to block ICMP (ping) traffic, validating effective enforcement of security policies.</li>
+        <li>Edited /etc/hosts to enable local DNS resolution for juiceshop.local and verified domain accessibility using wget.</li>
+        <li>Reinforced practical skills in system hardening, DNS management, and connectivity troubleshooting.</li>
+      </ul>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/jRicbPsq3lU" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
+  </main>
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+  </footer>
 
+  <!-- Behavior: hide nav on scroll ONLY on desktop -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
+
+      // Enable hide-on-scroll only on desktop
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');
+            navbar.classList.remove('transparent');
+          } else {
+            navbar.classList.remove('nav-hidden');
+            navbar.classList.add('transparent');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
+
+
 
