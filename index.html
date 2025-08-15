@@ -146,21 +146,23 @@
   <!-- Behavior scripts -->
   <script>
 (function () {
-  const navbar = document.querySelector("nav.nav-bar");
-  const banner  = document.getElementById("qr-banner");
-  const params  = new URLSearchParams(location.search);
+  const mqMobile = window.matchMedia("(max-width: 768px)");
+  const navbar   = document.querySelector("nav.nav-bar");
+  const menu     = document.getElementById("primary-nav");
+  const toggle   = document.querySelector(".nav-toggle");
+  const banner   = document.getElementById("qr-banner");
+  const params   = new URLSearchParams(location.search);
 
-  // Show QR banner only with ?qr=1 or ref=qr, then fade/collapse on first scroll
+  /* --- QR banner: only with ?qr=1 or ref=qr, fade/collapse on first scroll --- */
   if ((params.get("qr") === "1" || params.get("ref") === "qr") && banner) {
     banner.hidden = false;
-    document.body.classList.add("qr-visible"); // offsets nav on mobile
-
+    document.body.classList.add("qr-visible");
     let collapsed = false;
     function hideBannerOnScroll() {
       if (collapsed) return;
       if (window.scrollY > 8) {
-        banner.classList.add("is-hidden");      // fades + collapses height
-        document.body.classList.remove("qr-visible"); // body/nav offset animates smoothly
+        banner.classList.add("is-hidden");
+        document.body.classList.remove("qr-visible");
         collapsed = true;
         window.removeEventListener("scroll", hideBannerOnScroll);
       }
@@ -168,37 +170,63 @@
     window.addEventListener("scroll", hideBannerOnScroll, { passive: true });
   }
 
-  // Smooth, flicker-free nav hide/show using rAF
-  if (!navbar) return;
-  let lastY = window.scrollY || 0;
-  let ticking = false;
-  const delta = 6;       // min movement before toggling
-
-  function onScroll() {
-    const y = window.scrollY || 0;
-
-    if (y <= 12) {
-      navbar.classList.remove("nav-hidden", "hidden-navbar");
-    } else if (y > lastY + delta) {
-      navbar.classList.add("nav-hidden", "hidden-navbar");   // scrolling down → hide
-    } else if (y < lastY - delta) {
-      navbar.classList.remove("nav-hidden", "hidden-navbar"); // scrolling up → show
+  /* --- Mobile: + / - toggle dropdown --- */
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.remove("open");
+    document.body.classList.remove("nav-open");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      const icon = toggle.querySelector(".toggle-icon");
+      if (icon) icon.textContent = "＋";
     }
-
-    lastY = y;
-    ticking = false;
   }
-  window.addEventListener("scroll", function () {
-    if (!ticking) {
-      requestAnimationFrame(onScroll);
-      ticking = true;
+  function openMenu() {
+    if (!menu) return;
+    menu.classList.add("open");
+    document.body.classList.add("nav-open");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "true");
+      const icon = toggle.querySelector(".toggle-icon");
+      if (icon) icon.textContent = "－";
     }
-  }, { passive: true });
+  }
+  if (mqMobile.matches && toggle && menu) {
+    toggle.addEventListener("click", function () {
+      if (menu.classList.contains("open")) closeMenu(); else openMenu();
+    });
+    // Close on scroll or tapping anywhere outside menu
+    window.addEventListener("scroll", closeMenu, { passive: true });
+    document.addEventListener("click", function (e) {
+      if (!navbar.contains(e.target)) closeMenu();
+    });
+  }
+
+  /* --- Desktop: smooth hide/show on scroll (mobile uses toggle only) --- */
+  if (!mqMobile.matches && navbar) {
+    let lastY = window.scrollY || 0, ticking = false, delta = 6;
+    function onScroll() {
+      const y = window.scrollY || 0;
+      if (y <= 12) {
+        navbar.classList.remove("nav-hidden", "hidden-navbar");
+      } else if (y > lastY + delta) {
+        navbar.classList.add("nav-hidden", "hidden-navbar");
+      } else if (y < lastY - delta) {
+        navbar.classList.remove("nav-hidden", "hidden-navbar");
+      }
+      lastY = y; ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+  }
 })();
 </script>
 
+
 </body>
 </html>
+
 
 
 
