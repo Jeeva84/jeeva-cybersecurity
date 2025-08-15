@@ -20,13 +20,13 @@
     #qr-banner[hidden]{ display:none !important; }
     #qr-banner{
       position: sticky; top: 0; z-index: 1100;
-      display: none;                /* default hidden until JS decides */
+      display: none; /* default hidden until JS decides */
       align-items: center; justify-content: space-between; gap: .65rem;
       padding: .7rem .9rem;
       background: rgba(255,255,255,0.96);
       color: #111;
       border-bottom: 1px solid rgba(0,0,0,.08);
-      max-height: 72px !important;  /* beat legacy 44px clamps */
+      max-height: 72px !important; /* beat legacy clamps */
       overflow: hidden;
       transition: max-height .25s ease, opacity .22s ease, padding .2s ease, border-width .2s ease;
     }
@@ -35,23 +35,25 @@
       appearance: none; border: 0; background: transparent; font-size: 18px; line-height: 1;
       cursor: pointer; color: #333; padding: .25rem .4rem;
     }
-    /* Force-show the banner if URL has ?qr=1 (body gets .qr-on) — overrides any "display:none !important" in old CSS */
+    /* Force-show the banner if URL has ?qr=1 (body gets .qr-on) */
     body.qr-on #qr-banner{ display:flex !important; }
 
     /* Make both CTAs orange (match your resume button) */
     .hero-cta .secondary-button{ background:#ff5722; color:#fff; border:none; }
     .hero-cta .secondary-button:hover{ background:#e64a19; }
 
+    /* Optional: tidy paragraph alignment in About */
+    .about-story p{ text-align: justify; }
+
     /* ===== Desktop: keep nav sticky if you like ===== */
     @media (min-width:901px){
       nav.nav-bar{ position: sticky; top:0; z-index:1000; }
-      /* if your CSS toggles .nav-hidden, this gives smooth hide */
       nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
     }
 
     /* ===== Mobile hard reset (<=900px): nav in flow, no overlap, all tabs visible ===== */
     @media (max-width:900px){
-      /* Remove old padding/offset tricks */
+      /* Remove old padding/offset tricks that caused overlap */
       body, body.page-specific{ padding-top:0 !important; }
       main#content::before{ content:none !important; display:none !important; }
 
@@ -63,20 +65,26 @@
         padding:10px 8px !important; margin:0 0 10px 0 !important;
         transform:none !important; visibility:visible !important; opacity:1 !important;
         box-shadow:0 3px 10px rgba(0,0,0,.25);
+        height:auto !important; display:block !important;
       }
       /* Neutralize any old hide classes */
-      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{
+        transform:none !important; display:block !important; height:auto !important;
+        opacity:1 !important; visibility:visible !important;
+      }
 
-      /* Show ALL tabs in a tidy 2-column grid */
+      /* Show ALL tabs in a tidy 2-column grid (no horizontal scroll) */
       nav .nav-links{
         display:grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap:8px !important;
+        gap:10px !important;
         margin:0 !important; padding:0 !important;
+        max-height:none !important; height:auto !important;
         overflow:visible !important; white-space:normal !important;
         list-style:none !important;
+        visibility:visible !important; opacity:1 !important;
       }
-      nav .nav-links li{ list-style:none !important; }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
       nav .nav-links a{
         display:block !important; width:100% !important; text-align:center !important;
         padding:12px 14px !important;
@@ -84,6 +92,7 @@
         background:rgba(255,255,255,.08) !important;
         border:1px solid rgba(255,255,255,.18) !important;
         border-radius:10px !important;
+        text-decoration:none !important;
       }
 
       /* Ensure hero never tucks under anything */
@@ -230,12 +239,12 @@
 
       // Show banner when URL has ?qr=1 or ref=qr (for QR scans)
       const showQR = ['1','true','yes'].includes((params.get('qr')||'').toLowerCase())
-                      || (params.get('ref')||'').toLowerCase() === 'qr';
+                     || (params.get('ref')||'').toLowerCase() === 'qr';
 
       try {
         const closed = sessionStorage.getItem('qrBannerClosed') === '1';
         if (banner && showQR && !closed) {
-          document.body.classList.add('qr-on'); // unlocks CSS override (beats old display:none !important)
+          document.body.classList.add('qr-on'); // unlocks CSS override
           banner.hidden = false;
 
           // Hide on first small scroll
@@ -263,9 +272,10 @@
         }
       } catch(e){ /* ignore storage issues */ }
 
-      // Remove any legacy onscroll handler that might hide the nav on mobile
-      window.onscroll = window.onscroll || null;
+      // Kill any legacy inline onscroll handler that might still be present
+      window.onscroll = null;
     })();
   </script>
 </body>
 </html>
+
