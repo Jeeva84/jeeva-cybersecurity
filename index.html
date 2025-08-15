@@ -140,31 +140,59 @@
 
   <!-- Behavior scripts -->
   <script>
-(function () {
-  const banner = document.getElementById("qr-banner");
+(function(){
+  const banner = document.getElementById('qr-banner');
   const params = new URLSearchParams(location.search);
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
 
-  // Show QR banner only with ?qr=1 or ref=qr, then fade/collapse on first scroll
-  if ((params.get("qr") === "1" || params.get("ref") === "qr") && banner) {
+  // Show banner only when ?qr=1 or ref=qr, then fade/slide it away on first scroll
+  if ((params.get('qr') === '1' || params.get('ref') === 'qr') && banner) {
     banner.hidden = false;
-    document.body.classList.add("qr-visible");
+    document.body.classList.add('qr-visible');
+
+    // Measure actual banner height for proper offset
+    const h = banner.offsetHeight || 56;
+    document.documentElement.style.setProperty('--qrh', h + 'px');
+
     let collapsed = false;
-    function hideBannerOnScroll() {
+    function hideBannerOnScroll(){
       if (collapsed) return;
-      if (window.scrollY > 8) {
-        banner.classList.add("is-hidden");
-        document.body.classList.remove("qr-visible");
+      if (window.scrollY > 4) {
+        banner.classList.add('is-hidden');
+        document.body.classList.remove('qr-visible');
         collapsed = true;
-        window.removeEventListener("scroll", hideBannerOnScroll);
+        // clear offset after animation
+        setTimeout(()=> {
+          document.documentElement.style.removeProperty('--qrh');
+        }, 300);
+        window.removeEventListener('scroll', hideBannerOnScroll);
       }
     }
-    window.addEventListener("scroll", hideBannerOnScroll, { passive: true });
+    window.addEventListener('scroll', hideBannerOnScroll, { passive: true });
+  }
+
+  // Desktop: keep your smooth hide/show; Mobile: no auto-hide
+  if (!isMobile) {
+    const navbar = document.querySelector('nav.nav-bar');
+    if (!navbar) return;
+    let lastY = window.scrollY || 0, ticking = false, delta = 6;
+    function onScroll(){
+      const y = window.scrollY || 0;
+      if (y <= 12) navbar.classList.remove('nav-hidden','hidden-navbar');
+      else if (y > lastY + delta) navbar.classList.add('nav-hidden','hidden-navbar');
+      else if (y < lastY - delta) navbar.classList.remove('nav-hidden','hidden-navbar');
+      lastY = y; ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
   }
 })();
 </script>
 
 </body>
 </html>
+
 
 
 
