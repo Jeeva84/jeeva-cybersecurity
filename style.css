@@ -2816,5 +2816,48 @@ body { padding-top: 70px !important; }
   }
   .about-me.dense{ padding: 16px !important; }
 }
+/* ===== FIXES: buttons + portrait shape (safe overrides) ===== */
+
+/* 1) Make "See my story" + "View labs" orange like Download Resume */
+.hero-cta .secondary-button {
+  background: #ff5722 !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 10px 24px rgba(255, 87, 34, .25);
+  font-weight: 700;
+}
+
+/* 2) Make the quick-links (See Labs & Projects / Certifications / Contact) orange */
+.about-facts .quick-links .chip {
+  background: #ff5722 !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 8px 20px rgba(255, 87, 34, .20);
+  font-weight: 700;
+}
+
+/* 3) Make "Quick Resume" in the CTA bar orange too */
+.cta-bar .secondary-button {
+  background: #ff5722 !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 10px 24px rgba(255, 87, 34, .25);
+  font-weight: 700;
+}
+
+/* 4) Fix portrait cropping/oval issue (force perfect circle, equal sides) */
+.hero-image img {
+  width: clamp(200px, 26vw, 280px) !important;
+  aspect-ratio: 1 / 1 !important;     /* keeps it square */
+  height: auto !important;            /* controlled by aspect-ratio */
+  object-fit: cover !important;
+  border-radius: 50% !important;      /* circle */
+  border: 3px solid #fff;             /* nice edge (optional) */
+  box-shadow: 0 12px 42px rgba(0,0,0,.35);
+}
+
+/* If any previous rules try to stretch images inside cards/sidebars */
+.about-facts img, .about-me img { height: auto !important; }
+
 
 
