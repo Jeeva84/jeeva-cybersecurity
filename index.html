@@ -11,68 +11,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <!-- Site Styles -->
+  <!-- Your main styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Minimal, safe overrides that will not fight your big CSS -->
-  <style id="mobile-hotfix">
-    /* Desktop QR banner (sticky, fades on first scroll via JS) */
-    .qr-banner[hidden] { display: none !important; }
-    .qr-banner {
+  <!-- Small, safe overrides so we don’t fight the big CSS -->
+  <style>
+    /* ---- QR banner: visible by default, fades away on first scroll or close ---- */
+    #qr-banner[hidden] { display: none !important; }
+    #qr-banner {
       position: sticky; top: 0; z-index: 1100;
-      display: flex; gap: .6rem; align-items: center;
-      padding: .65rem .9rem;
+      display: flex; gap: .65rem; align-items: center; justify-content: space-between;
+      padding: .7rem .9rem;
       background: rgba(255,255,255,0.96);
       color: #111;
       border-bottom: 1px solid rgba(0,0,0,.08);
-      transition: max-height .25s ease, opacity .22s ease, padding .2s ease;
-      max-height: 60px; overflow: hidden;
+      max-height: 70px; overflow: hidden;
+      transition: max-height .25s ease, opacity .22s ease, padding .2s ease, border-width .2s ease;
     }
-    .qr-banner.hidden { max-height: 0; opacity: 0; padding: 0 0; border-width: 0; }
+    #qr-banner.hidden { max-height: 0; opacity: 0; padding: 0 0; border-width: 0; }
+    #qr-banner .close {
+      appearance: none; border: 0; background: transparent; font-size: 18px; line-height: 1;
+      cursor: pointer; color: #333; padding: .25rem .4rem;
+    }
 
-    /* Desktop nav: allow smooth hide/show if your main CSS adds .nav-hidden */
+    /* Make both CTAs orange (match your resume button) */
+    .hero-cta .secondary-button { background: #ff5722; color: #fff; border: none; }
+    .hero-cta .secondary-button:hover { background: #e64a19; }
+
+    /* Desktop nav stays sticky (smooth if your CSS toggles .nav-hidden) */
     @media (min-width: 901px){
       nav.nav-bar { position: sticky; top: 0; z-index: 1000; }
       nav.nav-bar.nav-hidden { transform: translateY(-110%); transition: transform .24s ease; }
     }
 
-    /* ===== MOBILE HARD RESET (<=900px): nav in flow, no overlap, all tabs visible ===== */
-    @media (max-width:900px){
-      /* No top padding tricks from older CSS */
-      body, body.page-specific{ padding-top:0 !important; }
-      main#content::before{ content:none !important; display:none !important; }
+    /* ===== MOBILE RESET (<=900px): nav in flow, no overlap, all tabs visible ===== */
+    @media (max-width: 900px){
+      /* Remove old padding/offset tricks that caused overlap */
+      body, body.page-specific { padding-top: 0 !important; }
+      main#content::before { content: none !important; display: none !important; }
 
-      /* Hide QR banner on phones for stability (can re-enable later) */
-      #qr-banner{ display:none !important; }
-
-      /* Nav lives in normal flow; cannot cover hero */
+      /* Nav sits in normal flow (not fixed/sticky) so it cannot cover the hero */
       nav.nav-bar{
-        position: relative !important; top:auto !important;
-        z-index: 1 !important; width: 100% !important;
+        position: relative !important; top: auto !important; z-index: 1 !important;
+        width: 100% !important;
         background:#1f1f1f !important;
         padding:10px 8px !important; margin:0 0 10px 0 !important;
         transform:none !important; visibility:visible !important; opacity:1 !important;
         box-shadow:0 3px 10px rgba(0,0,0,.25);
       }
-      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden { transform: none !important; }
 
-      /* Show ALL tabs in a 2-column grid (no horizontal scroll) */
+      /* All tabs visible: 2-column grid */
       nav .nav-links{
         display:grid !important;
-        grid-template-columns:repeat(2, 1fr) !important;
-        gap:8px !important; margin:0 !important; padding:0 !important;
-        overflow:visible !important; white-space:normal !important; list-style:none !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin: 0 !important; padding: 0 !important;
+        overflow: visible !important; white-space: normal !important; list-style: none !important;
       }
-      nav .nav-links li{ list-style:none !important; }
+      nav .nav-links li{ list-style: none !important; }
       nav .nav-links a{
-        display:block !important; width:100% !important; text-align:center !important;
-        padding:12px 14px !important; color:#fff !important;
-        background:rgba(255,255,255,.08) !important;
-        border:1px solid rgba(255,255,255,.18) !important; border-radius:10px !important;
+        display: block !important; width: 100% !important; text-align: center !important;
+        padding: 12px 14px !important;
+        color: #fff !important;
+        background: rgba(255,255,255,.08) !important;
+        border: 1px solid rgba(255,255,255,.18) !important;
+        border-radius: 10px !important;
       }
 
-      /* First section breathes below the nav */
-      .split-hero{ margin-top:0 !important; padding-top:8px !important; }
+      /* Ensure hero never tucks under anything */
+      .split-hero{ margin-top: 0 !important; padding-top: 8px !important; }
 
       /* Slightly smaller portrait on small screens */
       .hero-image img{
@@ -80,11 +88,6 @@
         object-fit: cover !important; border-radius: 50% !important;
       }
     }
-
-    /* Make both CTAs orange without editing your big CSS */
-    .hero-cta .hero-button { margin-right: .2rem; }
-    .hero-cta .secondary-button { background: #ff5722; color: #fff; border: none; }
-    .hero-cta .secondary-button:hover { background: #e64a19; }
   </style>
 </head>
 
@@ -112,10 +115,13 @@
     </ul>
   </nav>
 
-  <!-- QR banner (shows only when ?qr=1 or ref=qr) -->
+  <!-- QR banner (now shows for first visit, no query needed; hides on scroll or ✕) -->
   <div id="qr-banner" class="qr-banner" hidden>
-    <strong>Thanks for scanning!</strong>
-    <span>You're in the right place — see my journey, labs, and how I can help your team.</span>
+    <div>
+      <strong>Thanks for scanning!</strong>
+      <span> You’re in the right place — see my journey, labs, and how I can help your team.</span>
+    </div>
+    <button class="close" aria-label="Close banner">✕</button>
   </div>
 
   <main id="content" role="main">
@@ -192,21 +198,59 @@
       </div>
 
       <div class="cta-bar" role="region" aria-label="Call to action">
-        <p><strong>Looking for a driven cybersecurity analyst?</strong> I’m ready
+        <p><strong>Looking for a driven cybersecurity analyst?</strong> I’m ready to contribute on day one.</p>
+        <div>
+          <a href="contact.html" class="hero-button">Contact Me</a>
+          <a href="resume.html" class="secondary-button">Quick Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.</p>
+    </div>
+  </footer>
 
+  <!-- Tiny, conflict-free behavior -->
+  <script>
+    (function () {
+      const banner  = document.getElementById('qr-banner');
+      const closeBtn = banner ? banner.querySelector('.close') : null;
 
+      // Show banner by default (first page load). Hide if user closed it once this session.
+      try {
+        const seen = sessionStorage.getItem('qrBannerClosed') === '1';
+        if (banner && !seen) {
+          banner.hidden = false;
 
+          // Hide on first scroll a bit
+          let collapsed = false;
+          function hideOnScroll() {
+            if (collapsed) return;
+            if (window.scrollY > 8) {
+              banner.classList.add('hidden');
+              setTimeout(() => { banner.hidden = true; }, 260);
+              sessionStorage.setItem('qrBannerClosed','1');
+              collapsed = true;
+              window.removeEventListener('scroll', hideOnScroll);
+            }
+          }
+          window.addEventListener('scroll', hideOnScroll, { passive: true });
 
-
-
-
-
-
-
-
-
-
-
-
-
+          // Hide on ✕ click
+          if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+              banner.classList.add('hidden');
+              setTimeout(() => { banner.hidden = true; }, 260);
+              sessionStorage.setItem('qrBannerClosed','1');
+            });
+          }
+        }
+      } catch(e) { /* ignore storage errors */ }
+    })();
+  </script>
+</body>
+</html>
