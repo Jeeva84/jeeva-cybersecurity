@@ -5,36 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=12" />
+  <!-- Main stylesheet (cache-busted so you see changes) -->
+  <link rel="stylesheet" href="style.css?v=14" />
 
-  <!-- Small page-specific tweaks -->
-  <style>
-    /* Make sure the video sits behind everything */
+  <!-- CONTACT-PAGE HOTFIX: lives after style.css so it wins -->
+  <style id="contact-hotfix">
+    /* General: keep video behind everything */
     .video-background { z-index:-1 !important; }
 
-    /* Match orange with hero buttons */
-    .send-button { background:#ff5722 !important; }
-    .send-button:hover { background:#e64a19 !important; }
-
-    /* Desktop: allow smooth hide if desired */
+    /* Desktop: allow smooth hide if your desktop CSS uses .nav-hidden */
     @media (min-width:901px){
       nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
     }
 
-    /* Mobile: keep nav visible, never cover content, show all tabs */
+    /* ---------- MOBILE FIXES (<=900px) ---------- */
     @media (max-width:900px){
-      html, body, main, #content { margin-top:0 !important; padding-top:0 !important; }
-
+      /* Never let nav cover content; show all tabs in grid */
       nav.nav-bar{
-        position:relative !important; top:auto !important; z-index:2 !important;
+        position: relative !important; top:auto !important; z-index:2 !important;
         width:100% !important; background:#1f1f1f !important;
         padding:10px 8px !important; margin:0 0 12px 0 !important;
         transform:none !important; opacity:1 !important; visibility:visible !important;
         height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
       }
       nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
-
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
         gap:10px !important; margin:0 !important; padding:0 !important;
@@ -42,20 +36,42 @@
       }
       nav .nav-links li{ list-style:none !important; display:block !important; }
       nav .nav-links a{
-        display:block !important; width:100% !important; text-align:center !important;
+        display:block !important; text-align:center !important;
         padding:12px 14px !important; color:#fff !important;
         background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      /* Ensure the contact content is never tucked under nav */
-      .contact-container{ margin-top:8px !important; }
+      /* Contact layout: stack, remove any negative margins, keep image fully visible */
+      .contact-container{
+        display:flex !important; flex-direction:column !important;
+        gap:16px !important; margin:8px auto !important; padding:0 12px !important;
+        position:relative !important; z-index:1 !important;
+      }
+      .contact-image{
+        order:0 !important; margin:0 !important; position:relative !important; z-index:1 !important;
+      }
       .contact-image img{
-        max-width:340px !important; width:90% !important; height:auto !important;
+        position:static !important; transform:none !important;
+        max-width:340px !important; width:86% !important; height:auto !important;
+        display:block !important; margin:0 auto !important;
         border-radius:20px !important; border:2px solid #fff !important;
-        box-shadow:0 8px 20px rgba(0,0,0,.4) !important;
+        box-shadow:0 8px 24px rgba(0,0,0,.35) !important;
+      }
+      .contact-form{
+        order:1 !important; margin-top:0 !important; padding-top:12px !important;
+        position:relative !important; z-index:0 !important;
+      }
+
+      /* Neutralize any global “card/section” pulls that might overlap the image */
+      .section-card, .card{
+        margin-top:0 !important; transform:none !important;
       }
     }
+
+    /* Match your orange buttons */
+    .send-button{ background:#ff5722 !important; }
+    .send-button:hover{ background:#e64a19 !important; }
   </style>
 </head>
 
@@ -84,20 +100,17 @@
 
   <!-- Contact Section -->
   <div class="contact-container">
-    <!-- Left: Profile Image -->
+    <!-- Photo -->
     <div class="contact-image">
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
 
-    <!-- Right: Form -->
+    <!-- Form -->
     <div class="contact-form">
       <h2>Contact Me</h2>
       <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-        <!-- Honeypot (spam protection) -->
         <input type="text" name="_honey" style="display:none" />
-        <!-- Disable CAPTCHA -->
         <input type="hidden" name="_captcha" value="false" />
-        <!-- Redirect after success (update this to your domain if you have thank-you.html there) -->
         <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
         <input type="text" name="name" placeholder="Full Name" required />
@@ -117,24 +130,28 @@
 
   <!-- Behavior: hide nav on scroll ONLY on desktop -->
   <script>
-(function(){
-  const navbar = document.querySelector('.nav-bar');
-  if (!navbar) return;
-  if (!window.matchMedia('(min-width:901px)').matches) return; // desktop only
-  let last = 0;
-  window.addEventListener('scroll', function(){
-    const y = window.pageYOffset || document.documentElement.scrollTop;
-    if (y > last && y > navbar.offsetHeight) {
-      navbar.classList.add('nav-hidden');
-    } else {
-      navbar.classList.remove('nav-hidden');
-    }
-    last = y <= 0 ? 0 : y;
-  }, { passive:true });
-})();
-</script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
 
+      // Desktop only; mobile keeps nav stable/visible
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let last = 0;
+        window.addEventListener('scroll', function(){
+          const y = window.pageYOffset || document.documentElement.scrollTop;
+          if (y > last && y > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');
+          } else {
+            navbar.classList.remove('nav-hidden');
+          }
+          last = y <= 0 ? 0 : y;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
+
+
 
 
