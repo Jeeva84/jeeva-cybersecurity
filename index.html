@@ -142,74 +142,66 @@
   <script>
 (function(){
   const isMobile = matchMedia('(max-width: 900px)').matches;
-  const banner = document.getElementById('qr-banner');
-  const navbar = document.querySelector('nav.nav-bar');
-  const params = new URLSearchParams(location.search);
+  const banner  = document.getElementById('qr-banner');
+  const navbar  = document.querySelector('nav.nav-bar');
+  const params  = new URLSearchParams(location.search);
 
-  function px(n){ return (n||0) + 'px'; }
+  const setVar = (k, v) => document.documentElement.style.setProperty(k, v + 'px');
 
-  function setOffsets(){
-    // measure live heights
-    const bh = (banner && !banner.hidden && !banner.classList.contains('is-hidden'))
-                ? banner.getBoundingClientRect().height : 0;
-    const nh = navbar ? navbar.getBoundingClientRect().height : 0;
-    document.documentElement.style.setProperty('--bannerH', px(bh));
-    document.documentElement.style.setProperty('--navH', px(nh));
-    document.documentElement.style.setProperty('--top-offset', px(bh + nh));
+  function measure(){
+    const bh = banner && !banner.hidden && !banner.classList.contains('is-hidden')
+      ? Math.ceil(banner.getBoundingClientRect().height) : 0;
+    const nh = navbar ? Math.ceil(navbar.getBoundingClientRect().height) : 0;
+    setVar('--bannerH', bh);
+    setVar('--navH', nh);
+    setVar('--top-offset', Math.max(120, bh + nh)); // 120px safety fallback
   }
 
-  /* Show banner only when ?qr=1 or ref=qr; hide it on first scroll */
+  /* Show QR banner only with ?qr=1 or ref=qr; hide on first scroll */
   if ((params.get('qr') === '1' || params.get('ref') === 'qr') && banner) {
     banner.hidden = false;
-    document.body.classList.add('qr-visible');
-    // initial measurement after it paints
-    requestAnimationFrame(setOffsets);
+    // measure once it paints
+    requestAnimationFrame(measure);
 
-    let collapsed = false;
-    function hideBannerOnScroll(){
-      if (collapsed) return;
+    let gone = false;
+    function collapseOnScroll(){
+      if (gone) return;
       if (window.scrollY > 4){
         banner.classList.add('is-hidden');
-        document.body.classList.remove('qr-visible');
-        collapsed = true;
-        // after the slide-away, recalc offsets and fully hide
-        setTimeout(() => {
-          banner.hidden = true;
-          setOffsets();
-        }, 280);
-        window.removeEventListener('scroll', hideBannerOnScroll);
+        gone = true;
+        setTimeout(() => { banner.hidden = true; measure(); }, 280);
+        window.removeEventListener('scroll', collapseOnScroll);
       }
     }
-    window.addEventListener('scroll', hideBannerOnScroll, { passive:true });
+    window.addEventListener('scroll', collapseOnScroll, { passive: true });
   } else {
-    // no banner -> still set offsets for nav
-    requestAnimationFrame(setOffsets);
+    requestAnimationFrame(measure);
   }
 
-  // Recompute on load, resize, orientation change (covers mobile address-bar changes)
-  window.addEventListener('load', setOffsets);
-  window.addEventListener('resize', setOffsets);
-  window.addEventListener('orientationchange', setOffsets);
+  // Recalculate when layout can change
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+  window.addEventListener('orientationchange', measure);
 
-  // Desktop only: keep your scroll hide/show; mobile keeps nav fixed
-  if (!isMobile && navbar){
-    let lastY = window.scrollY || 0, ticking = false, delta = 6;
-    function onScroll(){
-      const y = window.scrollY || 0;
-      if (y <= 12) navbar.classList.remove('nav-hidden','hidden-navbar');
-      else if (y > lastY + delta) navbar.classList.add('nav-hidden','hidden-navbar');
-      else if (y < lastY - delta) navbar.classList.remove('nav-hidden','hidden-navbar');
-      lastY = y; ticking = false;
-    }
+  // On mobile, the URL bar height changes on scroll; re-measure near top
+  if (isMobile){
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      if (!ticking){ requestAnimationFrame(onScroll); ticking = true; }
-    }, { passive:true });
+      if (window.scrollY < 24 && !ticking){
+        ticking = true;
+        requestAnimationFrame(() => { measure(); ticking = false; });
+      }
+    }, { passive: true });
   }
+
+  // Desktop: keep your scroll hide/show if you like (optional)
 })();
 </script>
 
+
 </body>
 </html>
+
 
 
 
