@@ -3730,6 +3730,22 @@ html{ scroll-behavior:smooth; }
   .split-hero{ margin-top:0 !important; padding-top:8px !important; }
 }
 
+/* ===== Extra mobile spacing fix (ensure nav never overlaps hero) ===== */
+@media (max-width:900px){
+  /* Make sure the nav is not sticky/fixed anywhere */
+  nav.nav-bar{
+    position: static !important;
+    z-index: auto !important;
+    margin: 0 0 16px 0 !important;  /* space under the nav */
+  }
+
+  /* No extra offsets above the content */
+  body, main, #content { margin-top: 0 !important; padding-top: 0 !important; }
+
+  /* Give the hero a little breathing room from the nav */
+  .split-hero{ margin-top: 16px !important; padding-top: 16px !important; }
+}
+
 
 
 
