@@ -3207,6 +3207,58 @@ html { scroll-behavior: smooth; }
   [id]{ scroll-margin-top: 64px; }
 }
 
+/* ===== Mobile dropdown nav (＋ / －) ===== */
+@media (max-width: 768px) {
+  /* Keep header fixed & compact */
+  nav.nav-bar{
+    position: fixed !important; top: 0; left: 0; right: 0;
+    z-index: 1000 !important; background: #1f1f1f !important;
+    padding: 10px 10px !important; box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+
+  /* Toggle button */
+  .nav-toggle{
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,.25); border-radius: 8px;
+    padding: 10px 12px; font-weight: 700; font-size: 16px;
+  }
+  .nav-toggle:focus{ outline: 2px solid #ff5722; outline-offset: 2px; }
+  .nav-toggle .toggle-icon{ font-size: 18px; line-height: 1; }
+
+  /* Collapsible menu (vertical list) */
+  nav .nav-links{
+    display: block !important;
+    overflow: hidden; max-height: 0;
+    transition: max-height .28s ease;
+    margin: 8px 0 0; padding: 0;
+    background: #1a1a1a; border: 1px solid rgba(255,255,255,.15); border-radius: 10px;
+  }
+  nav .nav-links.open{ max-height: 70vh; } /* big enough to show all */
+  nav .nav-links li{ list-style: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+  nav .nav-links li:last-child{ border-bottom: 0; }
+  nav .nav-links li a{
+    display: block; padding: 12px 14px; color: #f5f5f5;
+    text-decoration: none; font-weight: 700; font-size: 16px;
+  }
+  nav .nav-links li a:hover{ background: #ff5722; color: #fff; }
+
+  /* Page content offset (header height) */
+  body{ padding-top: 64px !important; }
+
+  /* Dim background when menu open (no extra HTML needed) */
+  body.nav-open::before{
+    content:""; position: fixed; inset: 0; z-index: 999;
+    background: rgba(0,0,0,.45);
+  }
+
+  /* Anchor targets won't hide under fixed header */
+  [id]{ scroll-margin-top: 72px; }
+}
+
+/* Optional: smooth scroll & snappier transitions */
+html { scroll-behavior: smooth; }
+
 
 
 
