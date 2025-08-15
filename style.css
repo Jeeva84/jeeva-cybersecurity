@@ -3259,6 +3259,61 @@ html { scroll-behavior: smooth; }
 /* Optional: smooth scroll & snappier transitions */
 html { scroll-behavior: smooth; }
 
+/* ===== Revert to smooth one-line mobile nav (no + menu) ===== */
+
+/* Hide any old toggle button if it exists */
+.nav-toggle { display: none !important; }
+
+/* Remove any old page-dimming overlay from past dropdown */
+body.nav-open::before { content: none !important; display: none !important; pointer-events: none !important; }
+
+/* Smooth scrolling and anchor offset */
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 72px; }
+
+/* Desktop keeps normal layout; Mobile gets fixed, compact, swipeable tabs */
+@media (max-width: 768px) {
+  nav.nav-bar{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1000 !important;
+    background: #1f1f1f !important;
+    padding: 10px 8px !important;
+    transform: translateY(0);
+    transition: transform .24s cubic-bezier(.22,1,.36,1) !important;
+    will-change: transform;
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  /* Hidden state the JS will toggle */
+  nav.nav-bar.nav-hidden,
+  nav.nav-bar.hidden-navbar { transform: translateY(-110%) !important; }
+
+  /* Make tabs one horizontal row with swipe scroll */
+  nav .nav-links{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap !important;
+    gap: 12px !important;
+    margin: 0; padding: 0;
+  }
+  nav .nav-links li{ list-style: none; flex: 0 0 auto !important; }
+  nav .nav-links li a{ display: inline-block; padding: 12px 14px; }
+
+  /* Ensure page content sits below the fixed bar (and below QR banner if visible) */
+  body{ padding-top: 56px !important; transition: padding-top .25s ease; }
+  body.qr-visible nav.nav-bar{ top: 44px !important; transition: top .25s ease; }
+  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
+}
+
+/* QR banner fade/collapse when JS adds .is-hidden */
+.qr-banner{
+  transition: max-height .28s ease, opacity .22s ease, padding .2s ease, border-width .2s ease;
+  max-height: 44px; overflow: hidden;
+}
+.qr-banner.is-hidden{ max-height:0; opacity:0; padding:0 0; border-width:0; }
+
 
 
 
