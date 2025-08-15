@@ -3371,6 +3371,54 @@ html { scroll-behavior: smooth; }
   }
 }
 
+/* ===== MOBILE NAV: fail-safe always visible, one-line, swipeable ===== */
+@media (max-width: 900px) {
+  /* Keep the bar fixed and on top */
+  nav.nav-bar{
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    background: #1f1f1f !important;
+    z-index: 2000 !important;
+    padding: 10px 8px !important;
+    transform: none !important;                 /* never slide away on mobile */
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+
+  /* One horizontal row with swipe-scroll (no wrapping, no hiding) */
+  nav .nav-links{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  nav .nav-links::-webkit-scrollbar{ display: none; }
+  nav .nav-links li{ list-style: none !important; flex: 0 0 auto !important; }
+  nav .nav-links a{
+    display: inline-block !important;
+    padding: 10px 14px !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.15) !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+  }
+
+  /* Cancel any old hide classes that might still be getting toggled */
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden{
+    transform: none !important;
+  }
+
+  /* Ensure page content is pushed below the fixed bar (and QR banner if shown) */
+  body.page-specific{ padding-top: 64px !important; }
+  body.qr-visible nav.nav-bar{ top: 44px !important; }
+  body.qr-visible.page-specific{ padding-top: calc(64px + 44px) !important; }
+}
+
 
 
 
