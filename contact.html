@@ -1,97 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=11" />
+
+  <!-- Small page-specific tweaks -->
+  <style>
+    /* Make sure the video sits behind everything */
+    .video-background { z-index:-1 !important; }
+
+    /* Match orange with hero buttons */
+    .send-button { background:#ff5722 !important; }
+    .send-button:hover { background:#e64a19 !important; }
+
+    /* Desktop: allow smooth hide if desired */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
+    }
+
+    /* Mobile: keep nav visible, never cover content, show all tabs */
+    @media (max-width:900px){
+      html, body, main, #content { margin-top:0 !important; padding-top:0 !important; }
+
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        width:100% !important; background:#1f1f1f !important;
+        padding:10px 8px !important; margin:0 0 12px 0 !important;
+        transform:none !important; opacity:1 !important; visibility:visible !important;
+        height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
+      }
+      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+
+      nav .nav-links{
+        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:0 !important;
+        list-style:none !important; white-space:normal !important; overflow:visible !important;
+      }
+      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      /* Ensure the contact content is never tucked under nav */
+      .contact-container{ margin-top:8px !important; }
+      .contact-image img{
+        max-width:340px !important; width:90% !important; height:auto !important;
+        border-radius:20px !important; border:2px solid #fff !important;
+        box-shadow:0 8px 20px rgba(0,0,0,.4) !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-specific">
-<div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-
-<!-- Navigation Bar -->
-<nav class="nav-bar">
-  <ul class="nav-links">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="labs.html">Home Labs</a></li>
-    <li><a href="passion.html">My Passion</a></li>
-    <li><a href="opportunities.html">Opportunities</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Contact Section -->
-<div class="contact-container">
-
-  <!-- Left Side - Big Profile Picture -->
-  <div class="contact-image">
-    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas">
+  <!-- Background video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 
-  <!-- Right Side - Contact Form -->
-  <div class="contact-form">
-    <h2>Contact Me</h2>
-    <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
 
-      <!-- Honeypot spam protection (optional) -->
-      <input type="text" name="_honey" style="display:none">
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <!-- Left: Profile Image -->
+    <div class="contact-image">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+    </div>
 
-      <!-- Disable CAPTCHA (optional) -->
-      <input type="hidden" name="_captcha" value="false">
+    <!-- Right: Form -->
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+        <!-- Honeypot (spam protection) -->
+        <input type="text" name="_honey" style="display:none" />
+        <!-- Disable CAPTCHA -->
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- Redirect after success (update this to your domain if you have thank-you.html there) -->
+        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-      <!-- Redirect after success (optional) -->
-      <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html">
-
-      <!-- Real Form Inputs -->
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="E-mail" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="send-button">Send Message</button>
-    </form>
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="E-mail" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="send-button">Send Message</button>
+      </form>
+    </div>
   </div>
 
-</div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+    </div>
+  </footer>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-wrapper">
-    <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-  </div>
-</footer>
+  <!-- Behavior: hide nav on scroll ONLY on desktop -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
 
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
-
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
-
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-  
-
+      // Desktop only
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('nav-hidden');
+            navbar.classList.remove('transparent');
+          } else {
+            navbar.classList.remove('nav-hidden');
+            navbar.classList.add('transparent');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 </body>
 </html>
-
