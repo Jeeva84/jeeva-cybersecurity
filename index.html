@@ -187,45 +187,30 @@
 
   <!-- Behavior scripts -->
   <script>
-  // Desktop-only: keep your current feel; mobile has no JS nav tricks
-  (function () {
-    const isMobile = window.matchMedia('(max-width: 900px)').matches;
-    const navbar = document.querySelector('nav.nav-bar');
-    const banner = document.getElementById('qr-banner');
-    const params = new URLSearchParams(location.search);
+(function(){
+  const isMobile = window.matchMedia('(max-width:900px)').matches;
+  const banner = document.getElementById('qr-banner');
+  const params = new URLSearchParams(location.search);
 
-    // Show QR banner only on desktop (mobile is CSS-hidden)
-    if (!isMobile && banner && (params.get('qr') === '1' || params.get('ref') === 'qr')) {
-      banner.hidden = false;
-      let gone = false;
-      window.addEventListener('scroll', function () {
-        if (!gone && window.scrollY > 10) {
-          banner.style.display = 'none';
-          gone = true;
-        }
-      }, { passive: true });
-    }
+  // Desktop only: show banner with ?qr=1 or ref=qr and hide on first scroll
+  if (!isMobile && banner && (params.get('qr')==='1' || params.get('ref')==='qr')) {
+    banner.hidden = false;
+    let gone = false;
+    window.addEventListener('scroll', () => {
+      if (!gone && window.scrollY > 10) { banner.style.display='none'; gone = true; }
+    }, {passive:true});
+  }
 
-    // Desktop smooth hide/show (optional)
-    if (!isMobile && navbar) {
-      let lastY = window.scrollY || 0, ticking = false, delta = 6;
-      function onScroll() {
-        const y = window.scrollY || 0;
-        if (y <= 12) navbar.classList.remove('nav-hidden','hidden-navbar');
-        else if (y > lastY + delta) navbar.classList.add('nav-hidden','hidden-navbar');
-        else if (y < lastY - delta) navbar.classList.remove('nav-hidden','hidden-navbar');
-        lastY = y; ticking = false;
-      }
-      window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
-      }, { passive: true });
-    }
-  })();
+  // Remove any previous window.onscroll overrides
+  window.onscroll = null;
+})();
 </script>
+
 
 
 </body>
 </html>
+
 
 
 
