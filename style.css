@@ -2989,6 +2989,9 @@ body.page-specific::before{
 .split-hero.compact-hero{ min-height: 62vh !important; }
 .about-me.dense{ margin-top: 12px !important; }
 
+/* Kill the animated ring behind the portrait */
+.hero-image::after { content: none !important; }
+
 
 
 
