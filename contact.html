@@ -5,77 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted so you see changes) -->
-  <link rel="stylesheet" href="style.css?v=14" />
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=20" />
 
-  <!-- CONTACT-PAGE HOTFIX: lives after style.css so it wins -->
-  <style id="contact-hotfix">
-    /* General: keep video behind everything */
-    .video-background { z-index:-1 !important; }
+  <!-- Page-scoped hotfix: sits AFTER style.css so it wins -->
+  <style>
+    /* --- Background video always behind content --- */
+    .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
+    .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* Desktop: allow smooth hide if your desktop CSS uses .nav-hidden */
-    @media (min-width:901px){
-      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
+    /* --- Navigation: visible, never covers content --- */
+    nav.nav-bar{
+      position:sticky !important; top:0 !important; z-index:5 !important;
+      background:#1f1f1f !important; margin:0 0 12px 0 !important;
+      transform:none !important; opacity:1 !important; visibility:visible !important;
+      box-shadow:0 3px 10px rgba(0,0,0,.25);
     }
+    /* neutralize any hide-on-scroll classes */
+    nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* ---------- MOBILE FIXES (<=900px) ---------- */
+    /* --- Contact layout --- */
+    .contact-container{
+      display:flex; align-items:flex-start; gap:32px;
+      max-width:1100px; margin:12px auto 40px; padding:0 16px;
+      position:relative; z-index:1;
+    }
+    .contact-image img{
+      display:block; width:320px; height:auto;
+      border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
+      position:static !important; transform:none !important;
+    }
+    .contact-form{ flex:1; min-width:0; }
+    .send-button{ background:#ff5722; }
+    .send-button:hover{ background:#e64a19; }
+
+    /* --- Footer tidy --- */
+    footer{ position:relative; z-index:1; }
+
+    /* ========== Mobile (<=900px) ========== */
     @media (max-width:900px){
-      /* Never let nav cover content; show all tabs in grid */
-      nav.nav-bar{
-        position: relative !important; top:auto !important; z-index:2 !important;
-        width:100% !important; background:#1f1f1f !important;
-        padding:10px 8px !important; margin:0 0 12px 0 !important;
-        transform:none !important; opacity:1 !important; visibility:visible !important;
-        height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
-      }
-      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+      html,body{ margin:0 !important; padding:0 !important; }
+      /* show all tabs in a grid; no overlap */
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-        gap:10px !important; margin:0 !important; padding:0 !important;
-        list-style:none !important; white-space:normal !important; overflow:visible !important;
+        gap:10px !important; list-style:none !important; margin:0 !important; padding:10px 8px !important;
       }
-      nav .nav-links li{ list-style:none !important; display:block !important; }
+      nav .nav-links li{ list-style:none !important; }
       nav .nav-links a{
         display:block !important; text-align:center !important;
         padding:12px 14px !important; color:#fff !important;
         background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
         border-radius:10px !important; text-decoration:none !important;
       }
-
-      /* Contact layout: stack, remove any negative margins, keep image fully visible */
-      .contact-container{
-        display:flex !important; flex-direction:column !important;
-        gap:16px !important; margin:8px auto !important; padding:0 12px !important;
-        position:relative !important; z-index:1 !important;
-      }
-      .contact-image{
-        order:0 !important; margin:0 !important; position:relative !important; z-index:1 !important;
-      }
+      /* stack image above form; make sure nothing hides it */
+      .contact-container{ flex-direction:column; gap:16px; margin-top:8px !important; }
+      .contact-image{ order:0 !important; }
+      .contact-form{ order:1 !important; padding-top:6px !important; }
       .contact-image img{
-        position:static !important; transform:none !important;
-        max-width:340px !important; width:86% !important; height:auto !important;
-        display:block !important; margin:0 auto !important;
-        border-radius:20px !important; border:2px solid #fff !important;
-        box-shadow:0 8px 24px rgba(0,0,0,.35) !important;
+        width:min(86%,340px) !important; height:auto !important; margin:0 auto !important;
       }
-      .contact-form{
-        order:1 !important; margin-top:0 !important; padding-top:12px !important;
-        position:relative !important; z-index:0 !important;
-      }
-
-      /* Neutralize any global “card/section” pulls that might overlap the image */
-      .section-card, .card{
-        margin-top:0 !important; transform:none !important;
-      }
+      /* kill any sneaky card pulls that could overlap */
+      .section-card, .card{ margin-top:0 !important; transform:none !important; }
     }
-
-    /* Match your orange buttons */
-    .send-button{ background:#ff5722 !important; }
-    .send-button:hover{ background:#e64a19 !important; }
   </style>
 </head>
 
-<body class="page-specific contact-page">
+<body class="page-specific">
   <!-- Background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
@@ -100,12 +95,10 @@
 
   <!-- Contact Section -->
   <div class="contact-container">
-    <!-- Photo -->
     <div class="contact-image">
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
 
-    <!-- Form -->
     <div class="contact-form">
       <h2>Contact Me</h2>
       <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
@@ -128,30 +121,6 @@
     </div>
   </footer>
 
-  <!-- Behavior: hide nav on scroll ONLY on desktop -->
-  <script>
-    (function(){
-      const navbar = document.querySelector('.nav-bar');
-      if (!navbar) return;
-
-      // Desktop only; mobile keeps nav stable/visible
-      if (window.matchMedia('(min-width: 901px)').matches) {
-        let last = 0;
-        window.addEventListener('scroll', function(){
-          const y = window.pageYOffset || document.documentElement.scrollTop;
-          if (y > last && y > navbar.offsetHeight) {
-            navbar.classList.add('nav-hidden');
-          } else {
-            navbar.classList.remove('nav-hidden');
-          }
-          last = y <= 0 ? 0 : y;
-        }, { passive:true });
-      }
-    })();
-  </script>
+  <!-- No hide-on-scroll JS here on purpose (keeps mobile/desktop predictable) -->
 </body>
 </html>
-
-
-
-
