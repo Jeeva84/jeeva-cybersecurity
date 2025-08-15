@@ -3684,6 +3684,52 @@ html{ scroll-behavior:smooth; }
   .split-hero { margin-top: 8px !important; }
 }
 
+/* ===== Force mobile nav to be visible on all pages (<=900px) ===== */
+@media (max-width:900px){
+  /* Remove old offsets that caused overlap */
+  body { padding-top:0 !important; }
+
+  /* Keep nav in normal flow and visible */
+  nav.nav-bar{
+    position: relative !important; top:auto !important; z-index:1000 !important;
+    width:100% !important;
+    background:#1f1f1f !important;
+    padding:10px 8px !important; margin:0 0 10px 0 !important;
+    transform:none !important; opacity:1 !important; visibility:visible !important;
+    height:auto !important; display:block !important;
+    box-shadow:0 3px 10px rgba(0,0,0,.25);
+  }
+  /* Neutralize any "hide on scroll" classes */
+  nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{
+    transform:none !important; display:block !important; height:auto !important;
+    opacity:1 !important; visibility:visible !important;
+  }
+
+  /* Show ALL tabs in a tidy 2-column grid */
+  nav .nav-links{
+    display:grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap:10px !important;
+    margin:0 !important; padding:0 !important;
+    max-height:none !important; height:auto !important;
+    overflow:visible !important; white-space:normal !important;
+    list-style:none !important; visibility:visible !important; opacity:1 !important;
+  }
+  nav .nav-links li{ list-style:none !important; display:block !important; }
+  nav .nav-links a{
+    display:block !important; width:100% !important; text-align:center !important;
+    padding:12px 14px !important;
+    color:#fff !important;
+    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:10px !important;
+    text-decoration:none !important;
+  }
+
+  /* Prevent hero from hiding under the nav */
+  .split-hero{ margin-top:0 !important; padding-top:8px !important; }
+}
+
 
 
 
