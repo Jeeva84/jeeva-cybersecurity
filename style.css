@@ -3474,6 +3474,74 @@ html { scroll-behavior: smooth; }
   nav.nav-bar.nav-hidden{ transform: none !important; }
 }
 
+/* ===== Mobile rescue: visible QR banner + visible nav (no auto-hide) ===== */
+@media (max-width: 900px) {
+  /* QR banner: fixed on top, full height, fades & slides away on first scroll */
+  .qr-banner{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 2000 !important;
+    display: flex; gap: .5rem; align-items: center;
+    padding: 10px 12px !important;
+    background: rgba(255,255,255,.97) !important;
+    color: #111 !important;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    line-height: 1.35; font-size: 15px;
+    max-height: none !important;     /* remove old 44px clamp */
+    overflow: visible !important;
+  }
+  .qr-banner[hidden]{ display: none !important; }
+  .qr-banner.is-hidden{
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  /* Nav bar: fixed under the banner, always visible on mobile */
+  nav.nav-bar{
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    z-index: 1500 !important;               /* under the banner */
+    background: #1f1f1f !important;
+    padding: 10px 8px !important;
+    transform: none !important;             /* cancel any slide-out */
+    visibility: visible !important; opacity: 1 !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  /* Neutralize any old hide classes */
+  nav.nav-bar.hidden-navbar,
+  nav.nav-bar.nav-hidden{ transform: none !important; }
+
+  /* One horizontal row you can swipe (nothing hidden) */
+  nav .nav-links{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap !important;
+    gap: 12px !important;
+    margin: 0 !important; padding: 0 !important;
+  }
+  nav .nav-links::-webkit-scrollbar{ display: none; }
+  nav .nav-links li{ list-style: none !important; flex: 0 0 auto !important; }
+  nav .nav-links a{
+    display: inline-block !important;
+    padding: 10px 14px !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    background: rgba(255,255,255,.06) !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Push page content below the fixed pieces */
+  body.page-specific{ padding-top: 112px !important; }  /* nav height */
+  body.qr-visible nav.nav-bar{ top: var(--qrh, 56px) !important; }
+  body.qr-visible.page-specific{
+    padding-top: calc(var(--qrh, 56px) + 112px) !important;
+  }
+}
+
 
 
 
