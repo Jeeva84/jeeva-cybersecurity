@@ -4288,6 +4288,15 @@ footer {
 #certifications .cert-media { text-align: center; }
 #certifications .cert-image { max-width: 260px; width: 100%; display: block; margin: 10px auto; }
 
+.site-footer .footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center !important; /* force center */
+}
+
 
 
 
