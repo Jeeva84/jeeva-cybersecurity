@@ -72,6 +72,51 @@
     @media (min-width:901px){ .footer-spacer{ height:40px; } }
     @media (max-width:900px){ .footer-spacer{ height:100px; } }
   </style>
+
+  <!-- HOTFIX: phone-only overrides must come AFTER all other styles -->
+  <style id="contact-hotfix">
+    /* Phone-only fixes */
+    @media (max-width: 900px){
+      /* Keep background video behind everything */
+      .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
+      .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
+
+      /* Nav stays in normal flow; never covers content */
+      nav.nav-bar{
+        position:relative !important; top:auto !important; z-index:2 !important;
+        transform:none !important; visibility:visible !important; opacity:1 !important;
+        margin:0 0 10px 0 !important;
+      }
+      .nav-bar.hidden-navbar, .nav-bar.nav-hidden{ transform:none !important; }
+
+      /* Nuke old offsets that push content under things */
+      html, body, main, #content{ margin-top:0 !important; padding-top:0 !important; }
+
+      /* Contact layout: single column, full form visible */
+      .contact-container{
+        display:flex !important; flex-direction:column !important; gap:12px !important;
+        margin:10px 12px 24px !important; padding:0 !important;
+        overflow:visible !important;
+      }
+
+      /* Hide the photo on phones so nothing gets covered */
+      .contact-image{ display:none !important; }
+
+      /* Form sizing */
+      .contact-form{
+        padding:16px !important; background:rgba(0,0,0,.55) !important;
+        border:1px solid rgba(255,255,255,.1) !important; border-radius:16px !important;
+        color:#fff !important; overflow:visible !important;
+      }
+      .contact-form h2{ font-size:21px !important; margin:0 0 8px !important; }
+      .contact-form form{ display:grid !important; gap:10px !important; }
+      .contact-form input{ height:44px !important; }
+      .contact-form textarea{ min-height:120px !important; resize:vertical !important; }
+
+      /* Footer breathing room */
+      footer .footer-wrapper{ padding-bottom:24px !important; }
+    }
+  </style>
 </head>
 
 <body class="page-specific contact-page">
@@ -148,6 +193,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
