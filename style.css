@@ -1139,7 +1139,6 @@ body {
   }
 }
 
-}
 
 /* Adjust the navbar style for sticky positioning */
 nav.nav-bar {
@@ -1578,17 +1577,7 @@ nav.nav-bar {
   }
 }
 
-/* For sticky navbar adjustments (scroll effect) */
-@media (max-width: 768px) {
-  window.onscroll = function () {
-    var navbar = document.querySelector(".nav-bar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      navbar.classList.add("hidden-navbar");
-    } else {
-      navbar.classList.remove("hidden-navbar");
-    }
-  };
-}
+
 /* --- General Styling --- */
 body {
   margin: 0;
@@ -4000,6 +3989,7 @@ html{ scroll-behavior:smooth; }
   .contact-image img{ width:clamp(360px,28vw,460px); }
   .contact-form textarea{ min-height:160px; }
 }
+
 
 
 
