@@ -4445,6 +4445,82 @@ nav.nav-bar ul {
     text-align: center;
   }
 }
+/* --- Global rhythm --- */
+:root{
+  --container: 1120px;
+  --radius: 18px;
+  --card-bg: rgba(15, 18, 22, 0.42);   /* glassy */
+  --card-stroke: rgba(255, 255, 255, 0.06);
+  --shadow: 0 12px 30px rgba(0,0,0,.28);
+}
+.container, .footer-inner { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+section { padding: 56px 0; }
+
+/* --- Hero: lighter + more space --- */
+.hero { padding-top: 72px; padding-bottom: 48px; }
+.hero h1 { font-size: clamp(34px, 6.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; }
+.hero p.lead { font-size: clamp(17px, 2.6vw, 20px); color: #d7dde6; opacity:.9; }
+
+/* --- “Cards” become soft glass panels --- */
+.card, .panel, .blurb {
+  background: var(--card-bg);
+  border: 1px solid var(--card-stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+.card:not(:last-child), .panel:not(:last-child){ margin-bottom: 18px; }
+
+/* --- Replace heavy boxes with light separators --- */
+.section-light .card, .no-box {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.section-light .card + .card { border-top: 1px solid rgba(255,255,255,.08); padding-top: 18px; }
+
+/* --- Lists: calmer bullets --- */
+ul { padding-left: 1.1rem; }
+ul li { margin: 6px 0; }
+ul li::marker { color: #ff6a2b; }
+
+/* --- Buttons: softer, friendlier --- */
+.btn, .download-button, .cta {
+  display:inline-block; border-radius: 999px; padding: 12px 20px;
+  background:#ff6a2b; color:#fff; font-weight:700; text-decoration:none;
+  box-shadow: 0 8px 24px rgba(255,106,43,.25);
+  transition: transform .06s ease, box-shadow .2s ease, background .2s;
+}
+.btn:hover, .download-button:hover {
+  transform: translateY(-1px);
+  background:#ff5a12;
+  box-shadow: 0 14px 32px rgba(255,106,43,.32);
+}
+.btn.ghost{ background:transparent; color:#ff6a2b; border:1px solid rgba(255,106,43,.35); }
+
+/* --- Two-column blocks: more air on desktop, single column on mobile --- */
+.grid-2 { display:grid; gap:22px; grid-template-columns: 1.4fr 1fr; }
+@media (max-width: 900px){ .grid-2 { grid-template-columns: 1fr; } }
+
+/* --- Typography polish --- */
+h2 { font-size: clamp(22px, 4.5vw, 32px); margin: 0 0 12px; letter-spacing:-.01em; }
+p { line-height: 1.65; color:#e6ebf2; }
+strong { font-weight: 700; }
+
+/* --- Nav & footer keep the full-bleed, but slimmer --- */
+.nav-bar { padding: 10px 0; }
+.site-footer { padding: 16px 0; }
+
+/* --- Hero info pill (replaces box behind your bullet list) --- */
+.hero-pill {
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
 
 
 
