@@ -5,83 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Your main stylesheet (cache-busted so phones refresh it) -->
-  <link rel="stylesheet" href="style.css?v=21" />
+  <!-- main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=13" />
 
-  <!-- Page-scoped hotfix so the photo never gets covered on mobile -->
   <style>
-  /* Background video behind everything */
-  .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
-  .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
+    /* --- background video behind everything --- */
+    .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
+    .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-  /* Nav visible and in-flow; neutralize any hide-on-scroll classes */
-  nav.nav-bar{
-    position:sticky !important; top:0 !important; z-index:5 !important;
-    background:#1f1f1f !important; margin:0 0 12px 0 !important;
-    transform:none !important; opacity:1 !important; visibility:visible !important;
-    box-shadow:0 3px 10px rgba(0,0,0,.25);
-  }
-  nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
-
-  /* Contact layout (desktop) */
-  .contact-container{
-    display:flex; align-items:flex-start; gap:32px;
-    max-width:1100px; margin:12px auto 40px; padding:0 16px;
-    position:relative; z-index:1;
-  }
-
-  /* DESKTOP: make photo big again */
-  .contact-image img{
-    display:block;
-    width:clamp(360px, 28vw, 460px);  /* grows with screen, max ~460px */
-    height:auto; object-fit:cover;
-    border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
-    position:static !important; transform:none !important;
-  }
-
-  .contact-form{ flex:1; min-width:0; }
-  .send-button{ background:#ff5722; border:none; color:#fff; padding:14px 18px; border-radius:12px; font-weight:700; }
-  .send-button:hover{ background:#e64a19; }
-
-  /* ===== Mobile (<=900px) ===== */
-  @media (max-width:900px){
-    html, body, main, #content { margin:0 !important; padding:0 !important; }
-
-    /* Nav: 2-column grid, never overlaps content */
-    nav.nav-bar{ position:relative !important; }
-    nav .nav-links{
-      display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-      gap:10px !important; list-style:none !important; margin:0 !important; padding:10px 8px !important;
+    /* --- nav: visible, never covers content --- */
+    nav.nav-bar{
+      position:sticky !important; top:0 !important; z-index:5 !important;
+      background:#1f1f1f !important; margin:0 0 12px 0 !important;
+      transform:none !important; opacity:1 !important; visibility:visible !important;
+      box-shadow:0 3px 10px rgba(0,0,0,.25);
     }
-    nav .nav-links li{ list-style:none !important; }
-    nav .nav-links a{
-      display:block !important; text-align:center !important;
-      padding:12px 14px !important; color:#fff !important;
-      background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
-      border-radius:10px !important; text-decoration:none !important;
+    nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
+
+    /* --- contact layout (desktop) --- */
+    .contact-container{
+      display:flex; align-items:flex-start; gap:32px;
+      max-width:1100px; margin:12px auto 40px; padding:0 16px;
+      position:relative; z-index:1;
+    }
+    .contact-image img{
+      display:block;
+      width:clamp(360px, 28vw, 460px);
+      height:auto; object-fit:cover;
+      border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
 
-    /* PHONE: hide the photo completely so nothing is covered */
-    .contact-image{ display:none !important; }
+    .contact-form{
+      flex:1; min-width:0;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+      padding:22px;
+      color:#fff;
+    }
+    .contact-form h2{
+      margin:0 0 14px 0;
+      color:#ffe082; /* soft gold like other headings */
+      font-weight:700;
+    }
+    .contact-form form{
+      display:grid; gap:14px; /* <-- guarantees all fields show in order */
+    }
+    .contact-form input,
+    .contact-form textarea{
+      width:100%; box-sizing:border-box;
+      background:#1b1b1b; color:#fff;
+      border:1px solid #3a3a3a; border-radius:12px;
+      padding:12px 14px; font-size:16px;
+    }
+    .contact-form textarea{ resize:vertical; min-height:140px; }
+    .send-button{
+      background:#ff5722; color:#fff; border:none;
+      padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer;
+    }
+    .send-button:hover{ background:#e64a19; }
 
-    /* Stack & space */
-    .contact-container{ flex-direction:column; gap:16px; margin-top:8px !important; }
-    .section-card, .card{ margin-top:0 !important; transform:none !important; }
-  }
-</style>
+    /* --- desktop-only smooth hide (optional) --- */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
+    }
 
+    /* --- MOBILE (<=900px) --- */
+    @media (max-width:900px){
+      html, body, main, #content { margin:0 !important; padding:0 !important; }
+
+      /* nav in 2-column grid so it never overlaps content */
+      nav.nav-bar{ position:relative !important; }
+      nav .nav-links{
+        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; list-style:none !important;
+        margin:0 !important; padding:10px 8px !important;
+      }
+      nav .nav-links li{ list-style:none !important; }
+      nav .nav-links a{
+        display:block !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+
+      /* hide the photo on phones so nothing gets covered */
+      .contact-image{ display:none !important; }
+
+      /* stack and space form nicely */
+      .contact-container{ flex-direction:column; gap:12px; margin-top:8px !important; padding:0 12px; }
+      .contact-form{ padding:18px; }
+      .contact-form textarea{ min-height:180px; }
+    }
+  </style>
 </head>
 
 <body class="page-specific">
-  <!-- Background video -->
+  <!-- background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
       <source src="videos/nmap-lab.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
     </video>
   </div>
 
-  <!-- Navigation -->
+  <!-- nav -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -95,43 +122,56 @@
     </ul>
   </nav>
 
-  <!-- Contact Section -->
-  <main id="content">
-    <div class="contact-container">
-      <!-- Left: Profile Image -->
-      <div class="contact-image">
-        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
-      </div>
-
-      <!-- Right: Form -->
-      <div class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-          <!-- Honeypot (spam protection) -->
-          <input type="text" name="_honey" style="display:none" />
-          <!-- Disable CAPTCHA -->
-          <input type="hidden" name="_captcha" value="false" />
-          <!-- Redirect after success (update if needed) -->
-          <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
-
-          <input type="text" name="name" placeholder="Full Name" required />
-          <input type="email" name="email" placeholder="E-mail" required />
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-          <button type="submit" class="send-button">Send Message</button>
-        </form>
-      </div>
+  <!-- contact -->
+  <div class="contact-container">
+    <div class="contact-image">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
-  </main>
 
-  <!-- Footer -->
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+        <!-- spam trap / options -->
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+
+        <input type="text"   name="name"  placeholder="Full Name" required />
+        <input type="email"  name="email" placeholder="E-mail"    required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit" class="send-button">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- footer -->
   <footer>
     <div class="footer-wrapper">
       <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
     </div>
   </footer>
 
-  <!-- No hide-on-scroll JS on this page; CSS handles everything -->
+  <!-- desktop-only hide-on-scroll (mobile does nothing) -->
+  <script>
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
+      if (!window.matchMedia('(min-width:901px)').matches) return;
+
+      let last = 0;
+      window.addEventListener('scroll', function(){
+        const y = window.pageYOffset || document.documentElement.scrollTop;
+        if (y > last && y > navbar.offsetHeight) {
+          navbar.classList.add('nav-hidden');
+        } else {
+          navbar.classList.remove('nav-hidden');
+        }
+        last = y <= 0 ? 0 : y;
+      }, { passive:true });
+    })();
+  </script>
 </body>
 </html>
+
+
 
