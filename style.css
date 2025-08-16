@@ -4732,6 +4732,29 @@ main#content section.split-hero.compact-hero{
 @media (max-width:900px){
   .about-grid{ grid-template-columns:1fr; padding:0 20px; }
 }
+/* Mobile: make the about cards use the full width with small gutters */
+@media (max-width: 900px) {
+  .about-me .about-grid {
+    max-width: none;          /* don't clamp the container */
+    width: 100%;
+    margin: 24px 0;           /* lighter vertical spacing */
+    padding: 0 16px;          /* small, even side padding */
+    grid-template-columns: 1fr;   /* single column */
+    gap: 16px;
+  }
+
+  .about-story,
+  .about-facts {
+    width: 100%;
+    padding: 16px;            /* lighter padding so it doesn't feel cramped */
+  }
+
+  /* Kill justification on small screens—use normal left alignment */
+  .about-story p {
+    text-align: left !important;
+  }
+}
+
 
 
 
