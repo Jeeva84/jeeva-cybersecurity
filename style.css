@@ -4004,6 +4004,35 @@ body { overflow-x: hidden; } /* prevent sideways scroll from full-bleed sections
   margin-right: -50vw;
 }
 
+/* make a section stretch edge-to-edge even inside a centered wrapper */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ensure the bars actually fill with color */
+.nav-bar,
+footer {
+  background: #1f1f1f;   /* your grey/black bar color */
+  margin: 0;             /* remove side gaps */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+html, body { margin: 0; overflow-x: hidden; } /* prevents sideways scroll */
+
+/* === Constrain content inside === */
+.contact-container,
+.footer-wrapper {
+  max-width: 1100px;     
+  margin: 0 auto;
+  padding: 0 20px;       
+}
+
 
 
 
