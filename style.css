@@ -4058,6 +4058,24 @@ footer {
   padding-left: 0;
   padding-right: 0;
 }
+/* Certifications: fix weird wrapping on mobile */
+.certifications-section { text-align: left; }
+
+.certifications-section p,
+.certifications-section li {
+  text-align: left;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;    /* allow long codes to wrap */
+  hyphens: auto;              /* nicer hyphenation where supported */
+}
+
+/* If your details use <br> to force new lines, hide them on small screens */
+@media (max-width: 640px) {
+  .certifications-section br { display: none; }
+}
+
 
 
 
