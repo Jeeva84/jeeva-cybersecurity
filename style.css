@@ -4528,4 +4528,29 @@ strong { font-weight: 700; }
   flex-direction: column;
   justify-content: center;
 }
+/* Make split-hero act like the container */
+.split-hero {
+  max-width: 1200px;
+  margin: 0 auto;          /* centers everything */
+  padding: 0 40px;         /* left/right breathing room */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;               /* spacing between text and photo */
+}
+
+/* Keep text flexible */
+.hero-text {
+  flex: 1;
+}
+
+/* Limit and style the image */
+.hero-image img {
+  border-radius: 50%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+}
+
+
 
