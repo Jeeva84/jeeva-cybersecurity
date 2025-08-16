@@ -5,98 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- cache-bust your main css -->
-  <link rel="stylesheet" href="style.css?v=21" />
+  <!-- main stylesheet (bust cache once) -->
+  <link rel="stylesheet" href="style.css?v=24" />
 
   <style>
-    /* background video behind everything */
-    .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
-    .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
+    /* ---- Background video behind everything ---- */
+    .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+    .video-background video{ width:100%; height:100%; object-fit:cover; }
 
-    /* nav never covers content */
+    /* ---- Nav ---- */
     nav.nav-bar{
       position:sticky; top:0; z-index:5;
-      background:#1f1f1f; margin:0 0 12px 0;
-      box-shadow:0 3px 10px rgba(0,0,0,.25);
-      transform:none !important; opacity:1 !important; visibility:visible !important;
+      background:#1f1f1f; margin:0 0 12px 0; box-shadow:0 3px 10px rgba(0,0,0,.25);
     }
-    nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* desktop layout */
+    /* ---- Contact layout (desktop) ---- */
     .contact-container{
       display:flex; gap:32px; align-items:flex-start;
-      max-width:1100px; margin:12px auto 40px; padding:0 16px;
-      position:relative; z-index:1;
+      max-width:1100px; margin:12px auto 40px; padding:0 16px; position:relative; z-index:1;
     }
     .contact-image img{
       display:block; width:clamp(360px,28vw,460px); height:auto; object-fit:cover;
       border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
     .contact-form{
-      flex:1; min-width:0;
-      background:rgba(0,0,0,.55);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px; padding:22px; color:#fff;
+      flex:1; min-width:0; background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:22px; color:#fff;
     }
-    .contact-form h2{ margin:0 0 14px; color:#ffe082; font-weight:700; }
+    .contact-form h2{ margin:0 0 14px; font-weight:700; color:#ffe082; }
     .contact-form form{ display:grid; gap:14px; }
     .contact-form input, .contact-form textarea{
-      width:100%; box-sizing:border-box;
-      background:#1b1b1b; color:#fff; border:1px solid #3a3a3a;
-      border-radius:12px; padding:12px 14px; font-size:16px;
+      width:100%; box-sizing:border-box; background:#1b1b1b; color:#fff;
+      border:1px solid #3a3a3a; border-radius:12px; padding:12px 14px; font-size:16px;
     }
     .contact-form textarea{ resize:vertical; min-height:160px; }
-    .send-button{ background:#ff5722; color:#fff; border:none; padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer; }
-    .send-button:hover{ background:#e64a19; }
+    .send-button{ background:#ff5722; color:#fff; border:0; padding:14px 18px; border-radius:12px; font-weight:700; }
 
-    /* desktop-only optional hide animation */
-    @media (min-width:901px){
-      nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
-    }
-
-    /* MOBILE FIXES */
+    /* ---- Mobile (<=900px) ---- */
     @media (max-width:900px){
-      /* keep nav in flow and show tabs as a grid */
+      /* compact nav in 2 columns */
       nav.nav-bar{ position:relative !important; }
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-        gap:10px !important; margin:0 !important; padding:10px 8px !important; list-style:none !important;
+        gap:8px !important; margin:0 !important; padding:8px !important; list-style:none !important;
       }
-      nav .nav-links li{ list-style:none !important; }
       nav .nav-links a{
-        display:block !important; text-align:center !important;
-        padding:12px 14px !important; color:#fff !important;
-        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        display:block !important; text-align:center !important; padding:10px 12px !important;
+        color:#fff !important; background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      /* HIDE the photo on phones to stop any overlap */
-      .contact-image, .contact-image *{ display:none !important; }
+      /* hide the photo on phones (prevents half-photo) */
+      .contact-image{ display:none !important; }
 
-      /* tighter form so all fields are visible at the top */
-      .contact-container{ flex-direction:column; gap:12px; margin:10px 12px 28px !important; padding:0 !important; }
-      .contact-form{ padding:16px !important; }
-      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
-      .contact-form form{ gap:10px !important; }
-      .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:110px !important; }
+      /* tighter form so everything fits */
+      .contact-container{ flex-direction:column; gap:10px; margin:10px 12px 24px; padding:0; }
+      .contact-form{ padding:16px; }
+      .contact-form h2{ font-size:21px; margin-bottom:8px; }
+      .contact-form form{ gap:10px; }
+      .contact-form input{ height:44px; }
+      .contact-form textarea{ min-height:120px; }
     }
 
-    /* push footer a bit */
+    /* push footer a bit on small screens */
     @media (min-width:901px){ .footer-spacer{ height:40px; } }
     @media (max-width:900px){ .footer-spacer{ height:100px; } }
   </style>
 </head>
 
 <body class="page-specific">
-  <!-- background video -->
+  <!-- Background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
       <source src="videos/nmap-lab.mp4" type="video/mp4" />
     </video>
   </div>
 
-  <!-- nav -->
+  <!-- Navigation -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -110,24 +95,22 @@
     </ul>
   </nav>
 
-  <!-- contact -->
-  <div class="contact-container" id="contact-top">
+  <!-- Contact -->
+  <div class="contact-container">
     <div class="contact-image">
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
 
-    <div class="contact-form">
+    <div class="contact-form" id="contactFormCard">
       <h2>Contact Me</h2>
-      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST" novalidate>
-        <input type="text"   name="name"  placeholder="Full Name" required />
-        <input type="email"  name="email" placeholder="E-mail" required />
-        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-
-        <!-- spam/options -->
+      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
         <input type="text" name="_honey" style="display:none" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
+        <input type="text"   name="name"  placeholder="Full Name" required />
+        <input type="email"  name="email" placeholder="E-mail"    required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
         <button type="submit" class="send-button">Send Message</button>
       </form>
     </div>
@@ -135,34 +118,41 @@
 
   <div class="footer-spacer" aria-hidden="true"></div>
 
-  <!-- footer -->
   <footer>
     <div class="footer-wrapper">
       <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
     </div>
   </footer>
 
-  <!-- Mobile: disable scroll restoration and jump to very top -->
+  <!-- Mobile snap-to-form & anti scroll-restore -->
   <script>
-    (function () {
-      // 1) stop the browser from restoring an old scroll position
-      try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
+  (function () {
+    // Stop the browser from restoring an old scroll position
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
 
-      // 2) on phones, force the page to the very top
-      if (window.matchMedia('(max-width: 900px)').matches) {
-        const toTop = () => {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-          window.scrollTo(0, 0);
-        };
-        toTop();
-        window.addEventListener('load', () => setTimeout(toTop, 0), { once:true });
-        window.addEventListener('pageshow', () => setTimeout(toTop, 0));
+    function snapToForm() {
+      if (!window.matchMedia('(max-width: 900px)').matches) return; // mobile only
+      const nav = document.querySelector('.nav-bar');
+      const card = document.getElementById('contactFormCard');
+      if (!card) return;
+      // Blur anything auto-focused so keyboard doesn't jump the page
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
       }
-    })();
+      const navH = nav ? nav.getBoundingClientRect().height : 0;
+      const target = card.getBoundingClientRect().top + window.scrollY - navH - 8;
+      window.scrollTo({ top: Math.max(0, target), left: 0, behavior: 'auto' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => setTimeout(snapToForm, 0), { once:true });
+    window.addEventListener('load',       () => setTimeout(snapToForm, 0), { once:true });
+    // Run again when returning from another page (bfcache)
+    window.addEventListener('pageshow',   () => setTimeout(snapToForm, 0));
+  })();
   </script>
 </body>
 </html>
+
 
 
 
