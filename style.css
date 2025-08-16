@@ -4598,6 +4598,56 @@ strong { font-weight: 700; }
   }
 }
 
+/* === FORCE the hero to spread left/right (desktop) === */
+main#content section.split-hero.compact-hero {
+  width: 100% !important;
+  max-width: 1400px !important;         /* allow wider hero */
+  margin: 0 auto !important;            /* centered overall */
+  padding-left: 64px !important;        /* small gutters */
+  padding-right: 64px !important;
+
+  display: flex !important;             /* text + photo side-by-side */
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 40px !important;
+}
+
+/* Text block: keep readable width, no extra centering */
+main#content section.split-hero.compact-hero .hero-text {
+  flex: 1 1 60% !important;
+  max-width: 680px !important;          /* comfortable line length */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Image block stays to the right */
+main#content section.split-hero.compact-hero .hero-image {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+}
+main#content section.split-hero.compact-hero .hero-image img {
+  display: block !important;
+  border-radius: 50% !important;
+  max-width: 300px !important;
+  height: auto !important;
+}
+
+/* === Mobile: stack vertically, centered === */
+@media (max-width: 900px) {
+  main#content section.split-hero.compact-hero {
+    flex-direction: column !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    text-align: center !important;
+  }
+  main#content section.split-hero.compact-hero .hero-text {
+    max-width: none !important;
+  }
+  main#content section.split-hero.compact-hero .hero-image img {
+    max-width: 200px !important;
+  }
+}
+
 
 
 
