@@ -3989,6 +3989,21 @@ html{ scroll-behavior:smooth; }
   .contact-image img{ width:clamp(360px,28vw,460px); }
   .contact-form textarea{ min-height:160px; }
 }
+/* put this in your main CSS */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { overflow-x: hidden; } /* prevent sideways scroll from full-bleed sections */
+
+/* Full-bleed utility: makes a section stretch edge-to-edge even inside a centered container */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 
 
 
