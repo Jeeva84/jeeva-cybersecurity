@@ -6,7 +6,7 @@
   <title>Jeeva Kumaradas - Contact</title>
 
   <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=19" />
+  <link rel="stylesheet" href="style.css?v=20" />
 
   <style>
     /* Background video behind everything */
@@ -22,7 +22,7 @@
     }
     nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* Desktop contact layout */
+    /* Desktop layout */
     .contact-container{
       display:flex; align-items:flex-start; gap:32px;
       max-width:1100px; margin:12px auto 40px; padding:0 16px;
@@ -42,23 +42,16 @@
       padding:22px;
       color:#fff;
     }
-    .contact-form h2{
-      margin:0 0 14px 0;
-      color:#ffe082; font-weight:700;
-    }
+    .contact-form h2{ margin:0 0 14px 0; color:#ffe082; font-weight:700; }
     .contact-form form{ display:grid; gap:14px; }
-    .contact-form input,
-    .contact-form textarea{
+    .contact-form input, .contact-form textarea{
       width:100%; box-sizing:border-box;
       background:#1b1b1b; color:#fff;
       border:1px solid #3a3a3a; border-radius:12px;
       padding:12px 14px; font-size:16px;
     }
     .contact-form textarea{ resize:vertical; min-height:160px; }
-    .send-button{
-      background:#ff5722; color:#fff; border:none;
-      padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer;
-    }
+    .send-button{ background:#ff5722; color:#fff; border:none; padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer; }
     .send-button:hover{ background:#e64a19; }
 
     /* Desktop-only smooth hide (optional) */
@@ -66,9 +59,8 @@
       nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
     }
 
-    /* MOBILE (<=900px): photo hidden, full form visible, smaller textarea */
+    /* Mobile: keep nav in flow, 2-col tabs, HIDE photo, shrink textarea */
     @media (max-width:900px){
-      /* Nav as grid; never overlaps content */
       nav.nav-bar{ position:relative !important; }
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
@@ -83,10 +75,7 @@
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      /* Hard-hide the photo so it cannot cover fields */
-      .contact-image, .contact-image *{ display:none !important; }
-
-      /* Tight, readable form */
+      .contact-image, .contact-image *{ display:none !important; }  /* <- photo hidden on phones */
       .contact-container{ flex-direction:column; gap:12px; margin:10px 12px 28px !important; padding:0 !important; }
       .contact-form{ padding:16px !important; }
       .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
@@ -95,7 +84,6 @@
       .contact-form textarea{ min-height:110px !important; } /* smaller so name/email stay in view */
     }
 
-    /* Spacer keeps footer from crowding */
     @media (min-width:901px){ .footer-spacer{ height:40px; } }
     @media (max-width:900px){ .footer-spacer{ height:100px; } }
   </style>
@@ -132,14 +120,15 @@
     <div class="contact-form">
       <h2>Contact Me</h2>
       <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-        <!-- spam trap / options -->
+        <input type="text"   name="name"  placeholder="Full Name" required autofocus />
+        <input type="email"  name="email" placeholder="E-mail"    required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+
+        <!-- spam/options -->
         <input type="text" name="_honey" style="display:none" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-        <input type="text"   name="name"  placeholder="Full Name" required />
-        <input type="email"  name="email" placeholder="E-mail"    required />
-        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
         <button type="submit" class="send-button">Send Message</button>
       </form>
     </div>
@@ -154,19 +143,24 @@
     </div>
   </footer>
 
-  <!-- Fix: some phones restore a previous scroll; force top on load (mobile only) -->
+  <!-- Mobile: aggressively force the page to the top so Name/Email are visible -->
   <script>
     (function(){
-      if (window.matchMedia('(max-width: 900px)').matches) {
-        // Remove any hash and ensure we start at top
-        try { if (location.hash) history.replaceState(null, '', location.pathname); } catch(e){}
-        window.scrollTo(0,0);
-        setTimeout(()=>window.scrollTo(0,0), 60); // second nudge after layout
-      }
+      if (!window.matchMedia('(max-width: 900px)').matches) return;
+
+      const forceTop = () => { try { window.scrollTo(0,0); } catch(e){} };
+      // Remove any hash and ensure top on paint and after layout
+      try { if (location.hash) history.replaceState(null, '', location.pathname); } catch(e){}
+      forceTop();
+      setTimeout(forceTop, 80);
+      setTimeout(forceTop, 300);
+      window.addEventListener('load', () => setTimeout(forceTop, 0), { once:true });
+      window.addEventListener('pageshow', () => setTimeout(forceTop, 0), { once:true });
     })();
   </script>
 </body>
 </html>
+
 
 
 
