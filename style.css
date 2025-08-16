@@ -4754,6 +4754,31 @@ main#content section.split-hero.compact-hero{
     text-align: left !important;
   }
 }
+@media (max-width: 900px) {
+  .about-me .about-grid {
+    max-width: none;
+    width: 100%;
+    margin: 24px 0;
+    padding: 0 16px;         /* small side gutters */
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-story,
+  .about-facts {
+    width: 100%;
+    padding: 16px;           /* smaller padding */
+  }
+
+  /* Force left-aligned text */
+  .about-story h2,
+  .about-story p,
+  .about-story ul,
+  .about-story li {
+    text-align: left !important;
+  }
+}
+
 
 
 
