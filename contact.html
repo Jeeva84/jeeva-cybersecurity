@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=31" />
+  <!-- Your main stylesheet (cache-busted just in case) -->
+  <link rel="stylesheet" href="style.css?v=33" />
 
   <style>
-    /* ---------- Background video behind everything ---------- */
+    /* ---------- Background video (behind everything) ---------- */
     .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
     .video-background video{ width:100%; height:100%; object-fit:cover; }
 
@@ -31,7 +31,6 @@
     .contact-form{
       flex:1; min-width:0; background:rgba(0,0,0,.55);
       border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:22px; color:#fff;
-      scroll-margin-top: 90px; /* if the browser jumps, keep it below the nav */
     }
     .contact-form h2{ margin:0 0 14px; font-weight:700; color:#ffe082; }
     .contact-form form{ display:grid; gap:14px; }
@@ -41,81 +40,49 @@
     }
     .contact-form textarea{ resize:vertical; min-height:160px; }
     .send-button{ background:#ff5722; color:#fff; border:0; padding:14px 18px; border-radius:12px; font-weight:700; }
+    .send-button:hover{ background:#e64a19; }
 
-    /* ---------- Mobile (<=900px) ---------- */
+    /* ---------- MOBILE “FRAMED FORM” (<=900px) ---------- */
     @media (max-width:900px){
-      /* compact nav in 2 columns */
-      nav.nav-bar{ position:relative !important; }
-      nav .nav-links{
-        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-        gap:8px !important; margin:0 !important; padding:8px !important; list-style:none !important;
-      }
-      nav .nav-links a{
-        display:block !important; text-align:center !important; padding:10px 12px !important;
-        color:#fff !important; background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
-        border-radius:10px !important; text-decoration:none !important;
-      }
+      /* Keep nav in the flow so it never overlaps content */
+      nav.nav-bar{ position:relative !important; margin:0 0 10px 0 !important; }
 
-      /* *** Hard rule: NEVER show the photo on phones *** */
+      /* Hide the photo on phones so the form has room */
       .contact-image{ display:none !important; }
 
-      /* tighter card so the whole thing fits */
-      .contact-container{ flex-direction:column; gap:10px; margin:10px 12px 24px; padding:0; }
-      .contact-form{ padding:16px; }
-      .contact-form h2{ font-size:21px; margin-bottom:8px; }
-      .contact-form form{ gap:10px; }
-      .contact-form input{ height:44px; }
-      .contact-form textarea{ min-height:120px; }
+      /* Stack and add breathing room */
+      .contact-container{
+        flex-direction:column !important;
+        gap:10px !important;
+        margin:10px 12px 16px !important;
+        padding:0 !important;
+      }
+
+      /*
+        FRAME: make the form scroll INSIDE the card so it always fits
+        Viewport height (100dvh) minus ~120px for header/margins
+      */
+      .contact-frame{
+        max-height: calc(100dvh - 120px) !important;
+        overflow:auto !important;
+        overscroll-behavior: contain !important;
+        -webkit-overflow-scrolling: touch !important;
+        border-radius:16px !important;  /* matches the form */
+      }
+
+      .contact-form{
+        padding:16px !important;
+        border-radius:16px !important;
+      }
+      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
+      .contact-form form{ gap:10px !important; }
+      .contact-form input{ height:44px !important; }
+      .contact-form textarea{ min-height:120px !important; }
     }
 
     /* small footer spacer so it never crowds the form */
     @media (min-width:901px){ .footer-spacer{ height:40px; } }
-    @media (max-width:900px){ .footer-spacer{ height:100px; } }
-  </style>
-
-  <!-- HOTFIX: phone-only overrides must come AFTER all other styles -->
-  <style id="contact-hotfix">
-    /* Phone-only fixes */
-    @media (max-width: 900px){
-      /* Keep background video behind everything */
-      .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
-      .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
-
-      /* Nav stays in normal flow; never covers content */
-      nav.nav-bar{
-        position:relative !important; top:auto !important; z-index:2 !important;
-        transform:none !important; visibility:visible !important; opacity:1 !important;
-        margin:0 0 10px 0 !important;
-      }
-      .nav-bar.hidden-navbar, .nav-bar.nav-hidden{ transform:none !important; }
-
-      /* Nuke old offsets that push content under things */
-      html, body, main, #content{ margin-top:0 !important; padding-top:0 !important; }
-
-      /* Contact layout: single column, full form visible */
-      .contact-container{
-        display:flex !important; flex-direction:column !important; gap:12px !important;
-        margin:10px 12px 24px !important; padding:0 !important;
-        overflow:visible !important;
-      }
-
-      /* Hide the photo on phones so nothing gets covered */
-      .contact-image{ display:none !important; }
-
-      /* Form sizing */
-      .contact-form{
-        padding:16px !important; background:rgba(0,0,0,.55) !important;
-        border:1px solid rgba(255,255,255,.1) !important; border-radius:16px !important;
-        color:#fff !important; overflow:visible !important;
-      }
-      .contact-form h2{ font-size:21px !important; margin:0 0 8px !important; }
-      .contact-form form{ display:grid !important; gap:10px !important; }
-      .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:120px !important; resize:vertical !important; }
-
-      /* Footer breathing room */
-      footer .footer-wrapper{ padding-bottom:24px !important; }
-    }
+    @media (max-width:900px){ .footer-spacer{ height:80px; } }
   </style>
 </head>
 
@@ -147,18 +114,21 @@
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
 
-    <div class="contact-form" id="contactCard">
-      <h2>Contact Me</h2>
-      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-        <input type="text" name="_honey" style="display:none" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+    <!-- NEW: frame wraps the form so it scrolls inside on mobile -->
+    <div class="contact-frame" role="region" aria-label="Contact form frame">
+      <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+          <input type="text" name="_honey" style="display:none" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-        <input type="text"   name="name"  placeholder="Full Name" required />
-        <input type="email"  name="email" placeholder="E-mail"    required />
-        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-        <button type="submit" class="send-button">Send Message</button>
-      </form>
+          <input type="text"   name="name"  placeholder="Full Name" required />
+          <input type="email"  name="email" placeholder="E-mail"    required />
+          <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+          <button type="submit" class="send-button">Send Message</button>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -169,30 +139,9 @@
       <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
     </div>
   </footer>
-
-  <!-- Mobile: snap to the top of the card to avoid half-visible form -->
-  <script>
-  (function () {
-    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
-    function snap() {
-      if (!window.matchMedia('(max-width: 900px)').matches) return;
-      const nav  = document.querySelector('.nav-bar');
-      const card = document.getElementById('contactCard');
-      if (!card) return;
-      if (document.activeElement && typeof document.activeElement.blur === 'function') {
-        document.activeElement.blur();
-      }
-      const navH = nav ? nav.getBoundingClientRect().height : 0;
-      const y = card.getBoundingClientRect().top + window.scrollY - navH - 8;
-      window.scrollTo({ top: Math.max(0, y), left: 0, behavior: 'auto' });
-    }
-    document.addEventListener('DOMContentLoaded', () => setTimeout(snap, 0), { once:true });
-    window.addEventListener('load', () => setTimeout(snap, 0), { once:true });
-    window.addEventListener('pageshow', () => setTimeout(snap, 0));
-  })();
-  </script>
 </body>
 </html>
+
 
 
 
