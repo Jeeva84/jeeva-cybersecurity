@@ -4337,6 +4337,30 @@ footer {
   text-align: center;
 }
 
+/* Center certificate image on all screens */
+#certifications .cert-media {
+  display: flex !important;          /* ignore parent text-align */
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make sure no global float or width rule pushes it right */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);           /* scale down on mobile, cap on desktop */
+  height: auto;
+  display: block;
+  margin: 12px 0;                    /* vertical spacing */
+}
+
+/* Center the download button under the image */
+#certifications .download-button {
+  display: inline-block;
+  margin: 10px auto 0;
+  text-align: center;
+}
+
 
 
 
