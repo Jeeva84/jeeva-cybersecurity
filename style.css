@@ -4872,6 +4872,35 @@ main#content section.split-hero.compact-hero{
     white-space:normal !important;
   }
 }
+/* Section wrapping both story + what I bring */
+.info-section {
+  display: grid;
+  grid-template-columns: 1.6fr 1.2fr;   /* wider right column */
+  gap: 32px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 60px;                      /* more breathing room */
+}
+.info-section .card {
+  background: #111;
+  border-radius: 10px;
+  padding: 28px 32px;   /* more horizontal padding */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: justify;  /* spreads text */
+  text-justify: inter-word;
+}
+@media (max-width: 900px) {
+  .info-section {
+    grid-template-columns: 1fr;   /* stack vertically */
+    padding: 0 20px;              /* reduce padding on small screens */
+  }
+
+  .info-section .card {
+    padding: 20px;
+    text-align: left;             /* justify is too heavy on tiny screens */
+  }
+}
+
 
 
 
