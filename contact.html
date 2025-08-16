@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted just in case) -->
-  <link rel="stylesheet" href="style.css?v=18" />
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=19" />
 
-  <!-- Page-specific styles (self-contained + hard overrides) -->
   <style>
-    /* --- Background video behind everything --- */
+    /* Background video behind everything */
     .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
     .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* --- Nav: visible, never covering content --- */
+    /* Nav visible and never covering content */
     nav.nav-bar{
       position:sticky; top:0; z-index:5;
       background:#1f1f1f; margin:0 0 12px 0;
@@ -23,7 +22,7 @@
     }
     nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* --- Desktop contact layout --- */
+    /* Desktop contact layout */
     .contact-container{
       display:flex; align-items:flex-start; gap:32px;
       max-width:1100px; margin:12px auto 40px; padding:0 16px;
@@ -62,14 +61,14 @@
     }
     .send-button:hover{ background:#e64a19; }
 
-    /* --- Desktop-only smooth hide (optional) --- */
+    /* Desktop-only smooth hide (optional) */
     @media (min-width:901px){
       nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
     }
 
-    /* --- MOBILE (<=900px): photo hidden, nav in-flow, full form visible --- */
+    /* MOBILE (<=900px): photo hidden, full form visible, smaller textarea */
     @media (max-width:900px){
-      /* Nav shows as a tidy grid and never overlaps */
+      /* Nav as grid; never overlaps content */
       nav.nav-bar{ position:relative !important; }
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
@@ -84,19 +83,19 @@
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      /* Hard hide ANY profile image block on this page */
+      /* Hard-hide the photo so it cannot cover fields */
       .contact-image, .contact-image *{ display:none !important; }
 
-      /* Form spacing so everything is visible */
+      /* Tight, readable form */
       .contact-container{ flex-direction:column; gap:12px; margin:10px 12px 28px !important; padding:0 !important; }
       .contact-form{ padding:16px !important; }
       .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
       .contact-form form{ gap:10px !important; }
       .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:120px !important; }
+      .contact-form textarea{ min-height:110px !important; } /* smaller so name/email stay in view */
     }
 
-    /* Footer spacer to avoid cramping on small screens */
+    /* Spacer keeps footer from crowding */
     @media (min-width:901px){ .footer-spacer{ height:40px; } }
     @media (max-width:900px){ .footer-spacer{ height:100px; } }
   </style>
@@ -146,7 +145,6 @@
     </div>
   </div>
 
-  <!-- Spacer to push footer down on small screens -->
   <div class="footer-spacer" aria-hidden="true"></div>
 
   <!-- Footer -->
@@ -156,26 +154,20 @@
     </div>
   </footer>
 
-  <!-- Desktop-only hide-on-scroll (mobile does nothing) -->
+  <!-- Fix: some phones restore a previous scroll; force top on load (mobile only) -->
   <script>
     (function(){
-      const navbar = document.querySelector('.nav-bar');
-      if (!navbar) return;
-      if (!window.matchMedia('(min-width:901px)').matches) return;
-      let last = 0;
-      window.addEventListener('scroll', function(){
-        const y = window.pageYOffset || document.documentElement.scrollTop;
-        if (y > last && y > navbar.offsetHeight) {
-          navbar.classList.add('nav-hidden');
-        } else {
-          navbar.classList.remove('nav-hidden');
-        }
-        last = y <= 0 ? 0 : y;
-      }, { passive:true });
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        // Remove any hash and ensure we start at top
+        try { if (location.hash) history.replaceState(null, '', location.pathname); } catch(e){}
+        window.scrollTo(0,0);
+        setTimeout(()=>window.scrollTo(0,0), 60); // second nudge after layout
+      }
     })();
   </script>
 </body>
 </html>
+
 
 
 
