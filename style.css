@@ -4150,6 +4150,65 @@ footer {
   }
 }
 
+/* --- Certifications hard reset (scoped) --- */
+#certifications, 
+#certifications * {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  letter-spacing: normal !important;
+}
+
+/* Ensure list items are NOT flex/grid from global rules */
+#certifications .cert-list > li {
+  display: block !important;
+}
+
+/* Layout for the detail list */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+}
+
+/* Make each term/value a clean block line */
+#certifications .cert-meta dt,
+#certifications .cert-meta dd {
+  display: block !important;
+  margin: 0;
+}
+
+/* On small screens, stack the pairs vertically */
+@media (max-width: 600px) {
+  #certifications .cert-meta { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* Tidy up bullets and spacing */
+#certifications .cert-list { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: grid; 
+  gap: 24px; 
+}
+
+#certifications .cert-card { 
+  background: rgba(0,0,0,.35); 
+  border-radius: 12px; 
+  padding: 20px; 
+}
+
+#certifications .cert-card h3 { 
+  margin: 0 0 8px; 
+}
+
+/* If any <br> slipped in, kill them on mobile */
+@media (max-width: 640px) {
+  #certifications br { display: none !important; }
+}
+
 
 
 
