@@ -6,15 +6,15 @@
   <title>Jeeva Kumaradas - Contact</title>
 
   <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="stylesheet" href="style.css?v=18" />
 
   <!-- Page-specific styles -->
   <style>
-    /* Background video sits behind everything */
+    /* Background video behind everything (fixes overlap on mobile) */
     .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
     .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* Nav: visible, never covers content */
+    /* Nav visible and never covering content */
     nav.nav-bar{
       position:sticky; top:0; z-index:5;
       background:#1f1f1f; margin:0 0 12px 0;
@@ -66,7 +66,7 @@
       nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
     }
 
-    /* Mobile (<=900px): keep nav in flow, show 2-col tabs, hide photo */
+    /* Mobile: keep nav in flow, 2-col tabs, show photo ABOVE the form */
     @media (max-width:900px){
       nav.nav-bar{ position:relative !important; }
       nav .nav-links{
@@ -82,31 +82,24 @@
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      .contact-image{ display:none !important; }
-      .contact-container{ flex-direction:column; gap:12px; margin-top:8px; padding:0 12px; }
-      .contact-form{ padding:18px; }
-      .contact-form textarea{ min-height:140px; }
-    }
-  </style>
+      .contact-container{ flex-direction:column; gap:12px; margin:8px 12px 20px; padding:0; }
+      .contact-image{ display:block; text-align:center; margin:6px 0 10px; }
+      .contact-image img{
+        width:min(360px, 78vw); height:auto;
+        border-radius:18px; border:2px solid #fff;
+        box-shadow:0 8px 20px rgba(0,0,0,.35);
+      }
 
-  <!-- Your requested mobile/desktop tuning block -->
-  <style id="contact-mobile-fix">
-    /* Desktop keeps roomy textarea */
-    @media (min-width:901px){
-      .contact-form textarea{ min-height:160px; }
-      .footer-spacer{ height:40px !important; }
+      .contact-form{ padding:16px; }
+      .contact-form h2{ font-size:21px; margin-bottom:8px; }
+      .contact-form form{ gap:10px; }
+      .contact-form input{ height:44px; }
+      .contact-form textarea{ min-height:120px; }
     }
-    /* Mobile: smaller form, clear spacing */
-    @media (max-width:900px){
-      nav.nav-bar{ position:relative !important; }
-      .contact-container{ margin:8px 12px 20px !important; padding-bottom:12px !important; }
-      .contact-form{ padding:16px !important; }
-      .contact-form h2{ font-size:20px !important; margin-bottom:8px !important; }
-      .contact-form form{ gap:10px !important; }
-      .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:120px !important; }
-      .footer-spacer{ height:80px !important; }
-    }
+
+    /* Spacer for pushing footer down on small screens */
+    @media (min-width:901px){ .footer-spacer{ height:40px; } }
+    @media (max-width:900px){ .footer-spacer{ height:100px; } }
   </style>
 </head>
 
@@ -184,6 +177,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
