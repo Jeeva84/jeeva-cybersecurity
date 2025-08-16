@@ -4395,6 +4395,57 @@ nav.nav-bar ul {
   max-width: 100%;                 /* let it use full width */
 }
 
+/* === Mobile layout: use full width with small gutters === */
+@media (max-width: 640px) {
+  /* any common wrappers you use */
+  .container,
+  .section,
+  .section-inner,
+  .content-wrap,
+  .hero,
+  .intro,
+  .panel,
+  .contact-container {
+    width: 100%;
+    max-width: none;           /* remove desktop max-widths */
+    margin: 0 auto;
+    padding-left: 16px;        /* small, even side gutters */
+    padding-right: 16px;
+  }
+
+  /* kill multi-column layouts on mobile */
+  .two-col, .hero-grid, .grid, .row {
+    display: block !important;           /* or grid -> 1 column */
+  }
+  .two-col > *, .hero-grid > *, .grid > *, .row > * {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 16px 0;
+  }
+
+  /* text blocks shouldn’t be clamped to a narrow width */
+  .text-col, .hero-text, .left-col, .right-col {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* lists look cramped without padding on small screens */
+  ul { padding-left: 1.1rem; }
+
+  /* big headings: avoid weird wrapping */
+  h1, .hero h1 { font-size: clamp(24px, 8vw, 36px); line-height: 1.2; }
+  h2 { font-size: clamp(20px, 6.5vw, 30px); line-height: 1.25; }
+
+  /* CTA buttons: centered and not edge-to-edge unless you want it */
+  .btn, .download-button {
+    display: block;
+    width: auto;
+    max-width: 520px;
+    margin: 12px auto;
+    text-align: center;
+  }
+}
+
 
 
 
