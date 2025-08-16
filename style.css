@@ -4324,6 +4324,18 @@ footer {
   }
 }
 
+#certifications img.cert-image {
+  display: block;           /* makes it behave like a block element */
+  margin: 0 auto;           /* auto left & right = center horizontally */
+  max-width: 100%;          /* prevent overflow on small screens */
+  height: auto;             /* keep proportions */
+}
+
+#certifications .download-button {
+  display: inline-block;
+  margin: 10px auto;
+  text-align: center;
+}
 
 
 
