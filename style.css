@@ -4244,6 +4244,50 @@ footer {
   font-size: 0.9rem;
   text-align: center;   /* centers the text */
 }
+/* ==== CERTIFICATIONS: mobile fix & hard reset ==== */
+#certifications { text-align: left !important; }
+
+#certifications h2,
+#certifications h3,
+#certifications p,
+#certifications li,
+#certifications dt,
+#certifications dd {
+  white-space: normal !important;      /* no forced breaks */
+  word-break: normal !important;        /* undo break-all/anywhere */
+  overflow-wrap: break-word !important; /* wrap only when needed */
+  letter-spacing: normal !important;
+  text-align: left !important;
+}
+
+/* remove bullets / weird list spacing */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+/* detail grid (dt/dd) */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+#certifications .cert-meta dt { font-weight: 600; margin: 0; }
+#certifications .cert-meta dd { margin: 0; }
+
+/* phone layout: stack labels over values */
+@media (max-width: 600px) {
+  #certifications h2 { font-size: 1.8rem; line-height: 1.2; } /* stop the title from breaking oddly */
+  #certifications .cert-meta { grid-template-columns: 1fr !important; }
+}
+
+/* optional: center the certificate image and button */
+#certifications .cert-media { text-align: center; }
+#certifications .cert-image { max-width: 260px; width: 100%; display: block; margin: 10px auto; }
+
 
 
 
