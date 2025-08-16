@@ -1,310 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jeeva Kumaradas - Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeeva Kumaradas - Contact</title>
 
-    <link rel="stylesheet" href="style.css?v=20" />
+  <!-- cache-bust your main css -->
+  <link rel="stylesheet" href="style.css?v=21" />
 
-    <style>
-        /* General Reset/Base for better mobile rendering */
-        html, body {
-            height: 100%; /* Ensure body takes full height */
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            overflow-y: auto; /* Allow vertical scroll if content exceeds viewport */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            scroll-padding-top: 60px; /* Account for potential sticky nav height */
-            margin: 0; /* Ensure no default body margin */
-            padding: 0; /* Ensure no default body padding */
-        }
+  <style>
+    /* background video behind everything */
+    .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
+    .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-        /* Background video behind everything */
-        .video-background {
-            position: fixed !important;
-            inset: 0 !important;
-            z-index: -1 !important;
-            pointer-events: none !important;
-        }
-        .video-background video {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-        }
+    /* nav never covers content */
+    nav.nav-bar{
+      position:sticky; top:0; z-index:5;
+      background:#1f1f1f; margin:0 0 12px 0;
+      box-shadow:0 3px 10px rgba(0,0,0,.25);
+      transform:none !important; opacity:1 !important; visibility:visible !important;
+    }
+    nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-        /* Nav visible and never covering content */
-        nav.nav-bar {
-            position: sticky;
-            top: 0;
-            z-index: 5;
-            background: #1f1f1f;
-            margin: 0; /* Remove top/bottom margin */
-            box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
-            transform: none !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            height: auto; /* Allow content to dictate height */
-        }
-        nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar {
-            transform: none !important;
-        }
+    /* desktop layout */
+    .contact-container{
+      display:flex; gap:32px; align-items:flex-start;
+      max-width:1100px; margin:12px auto 40px; padding:0 16px;
+      position:relative; z-index:1;
+    }
+    .contact-image img{
+      display:block; width:clamp(360px,28vw,460px); height:auto; object-fit:cover;
+      border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
+    }
+    .contact-form{
+      flex:1; min-width:0;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px; padding:22px; color:#fff;
+    }
+    .contact-form h2{ margin:0 0 14px; color:#ffe082; font-weight:700; }
+    .contact-form form{ display:grid; gap:14px; }
+    .contact-form input, .contact-form textarea{
+      width:100%; box-sizing:border-box;
+      background:#1b1b1b; color:#fff; border:1px solid #3a3a3a;
+      border-radius:12px; padding:12px 14px; font-size:16px;
+    }
+    .contact-form textarea{ resize:vertical; min-height:160px; }
+    .send-button{ background:#ff5722; color:#fff; border:none; padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer; }
+    .send-button:hover{ background:#e64a19; }
 
-        /* Desktop layout */
-        .contact-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 32px;
-            max-width: 1100px;
-            margin: 12px auto 40px;
-            padding: 0 16px;
-            position: relative;
-            z-index: 1;
-            box-sizing: border-box; /* Include padding in element's total width and height */
-            flex: 1; /* Allow container to grow if it's within a flex parent */
-            min-height: calc(100vh - 120px); /* Desktop min-height to push footer down */
-        }
-        .contact-image img {
-            display: block;
-            width: clamp(360px, 28vw, 460px);
-            height: auto;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 2px solid #fff;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
-        }
-        .contact-form {
-            flex: 1;
-            min-width: 0;
-            background: rgba(0, 0, 0, .55);
-            border: 1px solid rgba(255, 255, 255, .1);
-            border-radius: 16px;
-            padding: 22px;
-            color: #fff;
-            box-sizing: border-box;
-            display: flex; /* Make the form content flexible */
-            flex-direction: column; /* Stack vertically */
-        }
-        .contact-form h2 {
-            margin: 0 0 14px 0;
-            color: #ffe082;
-            font-weight: 700;
-        }
-        .contact-form form {
-            display: flex; /* Make the inner form flexible */
-            flex-direction: column; /* Stack its elements vertically */
-            gap: 14px;
-            flex-grow: 1; /* Allow the form itself to grow */
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            box-sizing: border-box;
-            background: #1b1b1b;
-            color: #fff;
-            border: 1px solid #3a3a3a;
-            border-radius: 12px;
-            padding: 12px 14px;
-            font-size: 16px;
-        }
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 160px;
-            flex-grow: 1; /* Allow textarea to take available space */
-        }
-        .send-button {
-            background: #ff5722;
-            color: #fff;
-            border: none;
-            padding: 14px 18px;
-            border-radius: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s ease; /* Smooth transition for hover */
-            margin-top: auto; /* Pushes button to the bottom in a flex column */
-        }
-        .send-button:hover {
-            background: #e64a19;
-        }
+    /* desktop-only optional hide animation */
+    @media (min-width:901px){
+      nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
+    }
 
-        /* Desktop-only smooth hide (optional) */
-        @media (min-width: 901px) {
-            nav.nav-bar.nav-hidden {
-                transform: translateY(-110%);
-                transition: transform .24s ease;
-            }
-        }
+    /* MOBILE FIXES */
+    @media (max-width:900px){
+      /* keep nav in flow and show tabs as a grid */
+      nav.nav-bar{ position:relative !important; }
+      nav .nav-links{
+        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important; margin:0 !important; padding:10px 8px !important; list-style:none !important;
+      }
+      nav .nav-links li{ list-style:none !important; }
+      nav .nav-links a{
+        display:block !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
 
-        /* Mobile: keep nav in flow, 2-col tabs, HIDE photo, shrink textarea */
-        @media (max-width: 900px) {
-            nav.nav-bar {
-                position: relative !important; /* Ensure nav is in document flow */
-                margin-bottom: 16px; /* Add some space below nav */
-            }
-            nav .nav-links {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 10px !important;
-                list-style: none !important;
-                margin: 0 !important;
-                padding: 10px 8px !important;
-            }
-            nav .nav-links li {
-                list-style: none !important;
-            }
-            nav .nav-links a {
-                display: block !important;
-                text-align: center !important;
-                padding: 12px 14px !important;
-                color: #fff !important;
-                background: rgba(255, 255, 255, .08) !important;
-                border: 1px solid rgba(255, 255, 255, .18) !important;
-                border-radius: 10px !important;
-                text-decoration: none !important;
-            }
+      /* HIDE the photo on phones to stop any overlap */
+      .contact-image, .contact-image *{ display:none !important; }
 
-            .contact-image, .contact-image * {
-                display: none !important; /* Photo hidden on phones */
-            }
-            .contact-container {
-                flex-direction: column;
-                gap: 12px;
-                margin: 10px 12px 28px !important;
-                padding: 0 !important;
-                /* Crucial: Allow container to take up at least remaining viewport space */
-                min-height: calc(100vh - var(--nav-height, 60px) - var(--footer-height, 100px) - 20px); /* Adjust margins/gaps */
-                justify-content: flex-start; /* Align content to the top */
-                box-sizing: border-box;
-                width: calc(100% - 24px); /* Account for horizontal margins */
-            }
-            .contact-form {
-                padding: 16px !important;
-                flex-grow: 1; /* Allow form to take available space */
-                display: flex; /* Make it a flex container */
-                flex-direction: column; /* Stack its contents */
-                height: auto; /* Allow height to be determined by content */
-                min-height: unset; /* Remove any restrictive min-height */
-            }
-            .contact-form h2 {
-                font-size: 21px !important;
-                margin-bottom: 8px !important;
-            }
-            .contact-form form {
-                display: flex; /* Ensure the inner form is also flex */
-                flex-direction: column;
-                gap: 10px !important;
-                flex-grow: 1; /* Allow the form elements to take available space */
-            }
-            .contact-form input {
-                 height: 44px !important; /* Consistent height for inputs */
-            }
-            .contact-form textarea {
-                min-height: 110px !important; /* smaller so name/email stay in view */
-                flex-grow: 1; /* Allow textarea to grow/shrink */
-            }
-            .send-button {
-                margin-top: auto; /* Pushes button to the bottom if container grows */
-            }
-        }
+      /* tighter form so all fields are visible at the top */
+      .contact-container{ flex-direction:column; gap:12px; margin:10px 12px 28px !important; padding:0 !important; }
+      .contact-form{ padding:16px !important; }
+      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
+      .contact-form form{ gap:10px !important; }
+      .contact-form input{ height:44px !important; }
+      .contact-form textarea{ min-height:110px !important; }
+    }
 
-        @media (min-width: 901px) {
-            .footer-spacer { height: 40px; }
-        }
-        @media (max-width: 900px) {
-            .footer-spacer { height: 100px; } /* Increased spacer for mobile */
-        }
-
-        /* Ensure footer is at the bottom of the content */
-        footer {
-            width: 100%;
-            background: #1f1f1f;
-            color: #ccc;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 -3px 10px rgba(0,0,0,.25);
-            position: relative;
-            z-index: 2;
-        }
-        .footer-wrapper {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-    </style>
+    /* push footer a bit */
+    @media (min-width:901px){ .footer-spacer{ height:40px; } }
+    @media (max-width:900px){ .footer-spacer{ height:100px; } }
+  </style>
 </head>
 
 <body class="page-specific">
-    <div class="video-background" aria-hidden="true">
-        <video autoplay muted loop playsinline>
-            <source src="videos/nmap-lab.mp4" type="video/mp4" />
-        </video>
+  <!-- background video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- nav -->
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- contact -->
+  <div class="contact-container" id="contact-top">
+    <div class="contact-image">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
 
-    <nav class="nav-bar">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="labs.html">Home Labs</a></li>
-            <li><a href="passion.html">My Passion</a></li>
-            <li><a href="opportunities.html">Opportunities</a></li>
-            <li><a href="certifications.html">Certifications</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="contact.html" aria-current="page">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST" novalidate>
+        <input type="text"   name="name"  placeholder="Full Name" required />
+        <input type="email"  name="email" placeholder="E-mail" required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
 
-    <div class="contact-container">
-        <div class="contact-image">
-            <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
-        </div>
+        <!-- spam/options -->
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-        <div class="contact-form">
-            <h2>Contact Me</h2>
-            <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required autofocus />
-                <input type="email" name="email" placeholder="E-mail" required />
-                <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-
-                <input type="text" name="_honey" style="display:none" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
-
-                <button type="submit" class="send-button">Send Message</button>
-            </form>
-        </div>
+        <button type="submit" class="send-button">Send Message</button>
+      </form>
     </div>
+  </div>
 
-    <div class="footer-spacer" aria-hidden="true"></div>
+  <div class="footer-spacer" aria-hidden="true"></div>
 
-    <footer>
-        <div class="footer-wrapper">
-            <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-        </div>
-    </footer>
+  <!-- footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+    </div>
+  </footer>
 
-    <script>
-        (function(){
-            // Only run on mobile screen sizes
-            if (!window.matchMedia('(max-width: 900px)').matches) return;
+  <!-- Mobile: disable scroll restoration and jump to very top -->
+  <script>
+    (function () {
+      // 1) stop the browser from restoring an old scroll position
+      try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e){}
 
-            const forceTop = () => {
-                // Check if scroll is needed before forcing, to avoid fighting user
-                if (window.scrollY > 0) {
-                    try { window.scrollTo({ top: 0, behavior: 'instant' }); } catch(e){}
-                }
-            };
-
-            // Remove any hash to prevent scrolling to an anchor
-            try { if (location.hash) history.replaceState(null, '', location.pathname); } catch(e){}
-
-            // Attempt to scroll to top after layout rendering
-            window.addEventListener('load', () => setTimeout(forceTop, 0), { once:true });
-            window.addEventListener('pageshow', () => setTimeout(forceTop, 0), { once:true });
-            // Also on orientation change or resize if mobile browser resizes viewport
-            window.addEventListener('orientationchange', forceTop);
-            window.addEventListener('resize', forceTop);
-        })();
-    </script>
+      // 2) on phones, force the page to the very top
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        const toTop = () => {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+          window.scrollTo(0, 0);
+        };
+        toTop();
+        window.addEventListener('load', () => setTimeout(toTop, 0), { once:true });
+        window.addEventListener('pageshow', () => setTimeout(toTop, 0));
+      }
+    })();
+  </script>
 </body>
 </html>
+
+
 
 
 
