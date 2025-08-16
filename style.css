@@ -4901,6 +4901,96 @@ main#content section.split-hero.compact-hero{
   }
 }
 
+/* === DESKTOP: spread the whole "About" section edge-to-edge with small gutters === */
+@media (min-width: 901px) {
+  section.about-me {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* the grid that holds "From Factory..." + "What I bring" */
+  section.about-me .about-grid {
+    width: 100% !important;
+    max-width: 1600px !important;          /* allow a wider block */
+    margin: 40px auto !important;
+    padding: 0 64px !important;             /* small, even side gutters */
+    display: grid !important;
+    grid-template-columns: 1.8fr 1.2fr !important;  /* make right column wider */
+    gap: 48px !important;
+    align-items: start !important;
+  }
+
+  /* both cards get the same roomy padding and no hidden clamps */
+  section.about-me .about-story,
+  section.about-me .about-facts {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 28px 32px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.28) !important;
+    border: 1px solid rgba(255,255,255,.06) !important;
+  }
+
+  /* ensure "What I bring" contents use the full width of its column */
+  section.about-me .about-facts h3,
+  section.about-me .about-facts ul,
+  section.about-me .about-facts li {
+    text-align: left !important;
+  }
+
+  /* clean, tighter list spacing on desktop */
+  section.about-me .about-facts .skills-list {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  section.about-me .about-facts .skills-list li {
+    margin: 10px 0 14px !important;
+    line-height: 1.55 !important;
+    white-space: normal !important;
+  }
+}
+
+/* === MOBILE: full width with small gutters and readable text === */
+@media (max-width: 900px) {
+  section.about-me { padding: 0 !important; margin: 0 !important; }
+
+  section.about-me .about-grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 16px 0 !important;
+    padding: 0 12px !important;           /* tiny gutters on phones */
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  section.about-me .about-story,
+  section.about-me .about-facts {
+    width: 100% !important;
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  section.about-me .about-story h2,
+  section.about-me .about-story p,
+  section.about-me .about-story ul,
+  section.about-me .about-story li,
+  section.about-me .about-facts h3,
+  section.about-me .about-facts ul,
+  section.about-me .about-facts li {
+    text-align: left !important;          /* avoid the “centered” look */
+  }
+
+  section.about-me .about-facts .skills-list li {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    hyphens: auto !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
 
 
 
