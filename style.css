@@ -4297,6 +4297,33 @@ footer {
   text-align: center !important; /* force center */
 }
 
+/* ---- FIX mobile word splitting in Certifications ---- */
+@media (max-width: 640px) {
+  /* hard reset for this section */
+  #certifications, #certifications * {
+    word-break: keep-all !important;     /* never break inside words */
+    overflow-wrap: normal !important;     /* wrap only at spaces */
+    white-space: normal !important;
+    hyphens: none !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+  }
+
+  /* title sizing so it fits without breaking weirdly */
+  #certifications h2 {
+    font-size: clamp(22px, 6vw, 34px);
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  /* if you’re using the dl/dt/dd layout */
+  #certifications .cert-meta {
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* label above value */
+    gap: 6px 12px;
+  }
+}
+
 
 
 
