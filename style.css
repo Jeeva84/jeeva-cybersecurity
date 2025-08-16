@@ -4778,6 +4778,49 @@ main#content section.split-hero.compact-hero{
     text-align: left !important;
   }
 }
+/* ==== MOBILE FIX: make "From Factory..." card full width ==== */
+@media (max-width: 900px) {
+  /* kill any desktop clamps/gutters on this section */
+  section.about-me {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  section.about-me .about-grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 16px 0 !important;
+    padding: 0 12px !important;      /* small even side gutters */
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* the black card and the sidebar both span full width */
+  section.about-me .about-story,
+  section.about-me .about-facts {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  /* stop justified text from "centering" visually */
+  section.about-me .about-story h2,
+  section.about-me .about-story p,
+  section.about-me .about-story ul,
+  section.about-me .about-story li {
+    text-align: left !important;
+  }
+
+  /* safer line wrapping on narrow screens */
+  section.about-me .about-story p {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
 
 
 
