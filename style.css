@@ -3950,14 +3950,6 @@ html{ scroll-behavior:smooth; }
   }
 }
 
-/* Add this ONLY for debugging within your <style> tags */
-.contact-container { border: 2px solid limegreen !important; }
-.contact-form { border: 2px solid yellow !important; }
-.contact-form form { border: 2px solid purple !important; }
-.contact-form textarea { border: 2px solid cyan !important; }
-body { border: 5px solid red !important; }
-html { border: 5px solid blue !important; }
-
 
 
 
