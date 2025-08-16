@@ -1,164 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeeva Kumaradas - Contact</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=20" />
+    <link rel="stylesheet" href="style.css?v=20" />
 
-  <style>
-    /* Background video behind everything */
-    .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
-    .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
+    <style>
+        /* General Reset/Base for better mobile rendering */
+        html, body {
+            height: 100%; /* Ensure body takes full height */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-y: auto; /* Allow vertical scroll if content exceeds viewport */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scroll-padding-top: 60px; /* Account for potential sticky nav height */
+        }
 
-    /* Nav visible and never covering content */
-    nav.nav-bar{
-      position:sticky; top:0; z-index:5;
-      background:#1f1f1f; margin:0 0 12px 0;
-      box-shadow:0 3px 10px rgba(0,0,0,.25);
-      transform:none !important; opacity:1 !important; visibility:visible !important;
-    }
-    nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
+        /* Background video behind everything */
+        .video-background {
+            position: fixed !important;
+            inset: 0 !important;
+            z-index: -1 !important;
+            pointer-events: none !important;
+        }
+        .video-background video {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
 
-    /* Desktop layout */
-    .contact-container{
-      display:flex; align-items:flex-start; gap:32px;
-      max-width:1100px; margin:12px auto 40px; padding:0 16px;
-      position:relative; z-index:1;
-    }
-    .contact-image img{
-      display:block;
-      width:clamp(360px, 28vw, 460px);
-      height:auto; object-fit:cover;
-      border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
-    }
-    .contact-form{
-      flex:1; min-width:0;
-      background:rgba(0,0,0,.55);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px;
-      padding:22px;
-      color:#fff;
-    }
-    .contact-form h2{ margin:0 0 14px 0; color:#ffe082; font-weight:700; }
-    .contact-form form{ display:grid; gap:14px; }
-    .contact-form input, .contact-form textarea{
-      width:100%; box-sizing:border-box;
-      background:#1b1b1b; color:#fff;
-      border:1px solid #3a3a3a; border-radius:12px;
-      padding:12px 14px; font-size:16px;
-    }
-    .contact-form textarea{ resize:vertical; min-height:160px; }
-    .send-button{ background:#ff5722; color:#fff; border:none; padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer; }
-    .send-button:hover{ background:#e64a19; }
+        /* Nav visible and never covering content */
+        nav.nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: #1f1f1f;
+            margin: 0 0 12px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+            transform: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar {
+            transform: none !important;
+        }
 
-    /* Desktop-only smooth hide (optional) */
-    @media (min-width:901px){
-      nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
-    }
+        /* Desktop layout */
+        .contact-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 12px auto 40px;
+            padding: 0 16px;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        .contact-image img {
+            display: block;
+            width: clamp(360px, 28vw, 460px);
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 2px solid #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 0;
+            background: rgba(0, 0, 0, .55);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 16px;
+            padding: 22px;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        .contact-form h2 {
+            margin: 0 0 14px 0;
+            color: #ffe082;
+            font-weight: 700;
+        }
+        .contact-form form {
+            display: grid;
+            gap: 14px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            background: #1b1b1b;
+            color: #fff;
+            border: 1px solid #3a3a3a;
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 160px;
+        }
+        .send-button {
+            background: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease; /* Smooth transition for hover */
+        }
+        .send-button:hover {
+            background: #e64a19;
+        }
 
-    /* Mobile: keep nav in flow, 2-col tabs, HIDE photo, shrink textarea */
-    @media (max-width:900px){
-      nav.nav-bar{ position:relative !important; }
-      nav .nav-links{
-        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-        gap:10px !important; list-style:none !important;
-        margin:0 !important; padding:10px 8px !important;
-      }
-      nav .nav-links li{ list-style:none !important; }
-      nav .nav-links a{
-        display:block !important; text-align:center !important;
-        padding:12px 14px !important; color:#fff !important;
-        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
-        border-radius:10px !important; text-decoration:none !important;
-      }
+        /* Desktop-only smooth hide (optional) */
+        @media (min-width: 901px) {
+            nav.nav-bar.nav-hidden {
+                transform: translateY(-110%);
+                transition: transform .24s ease;
+            }
+        }
 
-      .contact-image, .contact-image *{ display:none !important; }  /* <- photo hidden on phones */
-      .contact-container{ flex-direction:column; gap:12px; margin:10px 12px 28px !important; padding:0 !important; }
-      .contact-form{ padding:16px !important; }
-      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
-      .contact-form form{ gap:10px !important; }
-      .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:110px !important; } /* smaller so name/email stay in view */
-    }
+        /* Mobile: keep nav in flow, 2-col tabs, HIDE photo, shrink textarea */
+        @media (max-width: 900px) {
+            nav.nav-bar {
+                position: relative !important; /* Ensure nav is in document flow */
+                margin-bottom: 16px; /* Add some space below nav */
+            }
+            nav .nav-links {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+                list-style: none !important;
+                margin: 0 !important;
+                padding: 10px 8px !important;
+            }
+            nav .nav-links li {
+                list-style: none !important;
+            }
+            nav .nav-links a {
+                display: block !important;
+                text-align: center !important;
+                padding: 12px 14px !important;
+                color: #fff !important;
+                background: rgba(255, 255, 255, .08) !important;
+                border: 1px solid rgba(255, 255, 255, .18) !important;
+                border-radius: 10px !important;
+                text-decoration: none !important;
+            }
 
-    @media (min-width:901px){ .footer-spacer{ height:40px; } }
-    @media (max-width:900px){ .footer-spacer{ height:100px; } }
-  </style>
+            .contact-image, .contact-image * {
+                display: none !important; /* Photo hidden on phones */
+            }
+            .contact-container {
+                flex-direction: column;
+                gap: 12px;
+                margin: 10px 12px 28px !important;
+                padding: 0 !important;
+                /* Ensure container can stretch and content is at top */
+                min-height: calc(100vh - 60px - 100px); /* Approx. viewport height - nav - footer */
+                justify-content: flex-start;
+                box-sizing: border-box;
+            }
+            .contact-form {
+                padding: 16px !important;
+                flex-grow: 1; /* Allow form to take available space */
+                display: flex; /* Use flexbox for inner form elements */
+                flex-direction: column; /* Stack them vertically */
+                height: auto; /* Allow height to be determined by content */
+                min-height: unset; /* Remove any restrictive min-height */
+            }
+            .contact-form h2 {
+                font-size: 21px !important;
+                margin-bottom: 8px !important;
+            }
+            .contact-form form {
+                display: flex; /* Change form itself to flex to better control spacing */
+                flex-direction: column;
+                gap: 10px !important;
+                flex-grow: 1; /* Allow form elements to take available space */
+            }
+            .contact-form input, .contact-form textarea {
+                 height: 44px !important; /* Consistent height for inputs */
+            }
+            .contact-form textarea {
+                min-height: 110px !important; /* smaller so name/email stay in view */
+                flex-grow: 1; /* Allow textarea to grow/shrink */
+            }
+            .send-button {
+                margin-top: auto; /* Pushes button to the bottom if container grows */
+            }
+        }
+
+        @media (min-width: 901px) {
+            .footer-spacer { height: 40px; }
+        }
+        @media (max-width: 900px) {
+            .footer-spacer { height: 100px; } /* Increased spacer for mobile */
+        }
+
+        /* Ensure footer is at the bottom of the content */
+        footer {
+            width: 100%;
+            background: #1f1f1f;
+            color: #ccc;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 -3px 10px rgba(0,0,0,.25);
+            position: relative; /* Changed from fixed if it was to ensure it's at content end */
+            z-index: 2;
+        }
+        .footer-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+    </style>
 </head>
 
 <body class="page-specific">
-  <!-- Background video -->
-  <div class="video-background" aria-hidden="true">
-    <video autoplay muted loop playsinline>
-      <source src="videos/nmap-lab.mp4" type="video/mp4" />
-    </video>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="nav-bar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="labs.html">Home Labs</a></li>
-      <li><a href="passion.html">My Passion</a></li>
-      <li><a href="opportunities.html">Opportunities</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="contact.html" aria-current="page">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Contact -->
-  <div class="contact-container">
-    <div class="contact-image">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+    <div class="video-background" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+            <source src="videos/nmap-lab.mp4" type="video/mp4" />
+        </video>
     </div>
 
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-        <input type="text"   name="name"  placeholder="Full Name" required autofocus />
-        <input type="email"  name="email" placeholder="E-mail"    required />
-        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="labs.html">Home Labs</a></li>
+            <li><a href="passion.html">My Passion</a></li>
+            <li><a href="opportunities.html">Opportunities</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- spam/options -->
-        <input type="text" name="_honey" style="display:none" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+    <div class="contact-container">
+        <div class="contact-image">
+            <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+        </div>
 
-        <button type="submit" class="send-button">Send Message</button>
-      </form>
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required autofocus />
+                <input type="email" name="email" placeholder="E-mail" required />
+                <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+
+                <input type="text" name="_honey" style="display:none" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+
+                <button type="submit" class="send-button">Send Message</button>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <div class="footer-spacer" aria-hidden="true"></div>
+    <div class="footer-spacer" aria-hidden="true"></div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-wrapper">
-      <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
-    </div>
-  </footer>
+    <footer>
+        <div class="footer-wrapper">
+            <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
+        </div>
+    </footer>
 
-  <!-- Mobile: aggressively force the page to the top so Name/Email are visible -->
-  <script>
-    (function(){
-      if (!window.matchMedia('(max-width: 900px)').matches) return;
-
-      const forceTop = () => { try { window.scrollTo(0,0); } catch(e){} };
-      // Remove any hash and ensure top on paint and after layout
-      try { if (location.hash) history.replaceState(null, '', location.pathname); } catch(e){}
-      forceTop();
-      setTimeout(forceTop, 80);
-      setTimeout(forceTop, 300);
-      window.addEventListener('load', () => setTimeout(forceTop, 0), { once:true });
-      window.addEventListener('pageshow', () => setTimeout(forceTop, 0), { once:true });
-    })();
-  </script>
-</body>
+    </body>
 </html>
 
 
