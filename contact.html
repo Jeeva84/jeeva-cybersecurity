@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=13" />
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=16" />
 
+  <!-- Page-specific styles -->
   <style>
-    /* --- background video behind everything --- */
+    /* Background video sits behind everything */
     .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
     .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* --- nav: visible, never covers content --- */
+    /* Nav: visible, never covers content */
     nav.nav-bar{
-      position:sticky !important; top:0 !important; z-index:5 !important;
-      background:#1f1f1f !important; margin:0 0 12px 0 !important;
-      transform:none !important; opacity:1 !important; visibility:visible !important;
+      position:sticky; top:0; z-index:5;
+      background:#1f1f1f; margin:0 0 12px 0;
       box-shadow:0 3px 10px rgba(0,0,0,.25);
     }
     nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* --- contact layout (desktop) --- */
+    /* Contact layout (desktop) */
     .contact-container{
       display:flex; align-items:flex-start; gap:32px;
       max-width:1100px; margin:12px auto 40px; padding:0 16px;
@@ -34,7 +34,6 @@
       height:auto; object-fit:cover;
       border-radius:20px; border:2px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
-
     .contact-form{
       flex:1; min-width:0;
       background:rgba(0,0,0,.55);
@@ -45,12 +44,9 @@
     }
     .contact-form h2{
       margin:0 0 14px 0;
-      color:#ffe082; /* soft gold like other headings */
-      font-weight:700;
+      color:#ffe082; font-weight:700;
     }
-    .contact-form form{
-      display:grid; gap:14px; /* <-- guarantees all fields show in order */
-    }
+    .contact-form form{ display:grid; gap:14px; }
     .contact-form input,
     .contact-form textarea{
       width:100%; box-sizing:border-box;
@@ -58,23 +54,20 @@
       border:1px solid #3a3a3a; border-radius:12px;
       padding:12px 14px; font-size:16px;
     }
-    .contact-form textarea{ resize:vertical; min-height:140px; }
+    .contact-form textarea{ resize:vertical; min-height:160px; }
     .send-button{
       background:#ff5722; color:#fff; border:none;
       padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer;
     }
     .send-button:hover{ background:#e64a19; }
 
-    /* --- desktop-only smooth hide (optional) --- */
+    /* Desktop-only smooth hide (optional) */
     @media (min-width:901px){
       nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
     }
 
-    /* --- MOBILE (<=900px) --- */
+    /* Mobile (<=900px): keep nav in flow, show 2-col tabs, hide photo */
     @media (max-width:900px){
-      html, body, main, #content { margin:0 !important; padding:0 !important; }
-
-      /* nav in 2-column grid so it never overlaps content */
       nav.nav-bar{ position:relative !important; }
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
@@ -89,26 +82,43 @@
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      /* hide the photo on phones so nothing gets covered */
       .contact-image{ display:none !important; }
-
-      /* stack and space form nicely */
-      .contact-container{ flex-direction:column; gap:12px; margin-top:8px !important; padding:0 12px; }
+      .contact-container{ flex-direction:column; gap:12px; margin-top:8px; padding:0 12px; }
       .contact-form{ padding:18px; }
-      .contact-form textarea{ min-height:180px; }
+      .contact-form textarea{ min-height:140px; }
+    }
+  </style>
+
+  <!-- Your requested mobile/desktop tuning block -->
+  <style id="contact-mobile-fix">
+    /* Desktop keeps roomy textarea */
+    @media (min-width:901px){
+      .contact-form textarea{ min-height:160px; }
+      .footer-spacer{ height:40px !important; }
+    }
+    /* Mobile: smaller form, clear spacing */
+    @media (max-width:900px){
+      nav.nav-bar{ position:relative !important; }
+      .contact-container{ margin:8px 12px 20px !important; padding-bottom:12px !important; }
+      .contact-form{ padding:16px !important; }
+      .contact-form h2{ font-size:20px !important; margin-bottom:8px !important; }
+      .contact-form form{ gap:10px !important; }
+      .contact-form input{ height:44px !important; }
+      .contact-form textarea{ min-height:120px !important; }
+      .footer-spacer{ height:80px !important; }
     }
   </style>
 </head>
 
 <body class="page-specific">
-  <!-- background video -->
+  <!-- Background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
       <source src="videos/nmap-lab.mp4" type="video/mp4" />
     </video>
   </div>
 
-  <!-- nav -->
+  <!-- Navigation -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -122,7 +132,7 @@
     </ul>
   </nav>
 
-  <!-- contact -->
+  <!-- Contact -->
   <div class="contact-container">
     <div class="contact-image">
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
@@ -144,20 +154,22 @@
     </div>
   </div>
 
-  <!-- footer -->
+  <!-- Spacer to push footer down on small screens -->
+  <div class="footer-spacer" aria-hidden="true"></div>
+
+  <!-- Footer -->
   <footer>
     <div class="footer-wrapper">
       <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
     </div>
   </footer>
 
-  <!-- desktop-only hide-on-scroll (mobile does nothing) -->
+  <!-- Desktop-only hide-on-scroll (mobile does nothing) -->
   <script>
     (function(){
       const navbar = document.querySelector('.nav-bar');
       if (!navbar) return;
       if (!window.matchMedia('(min-width:901px)').matches) return;
-
       let last = 0;
       window.addEventListener('scroll', function(){
         const y = window.pageYOffset || document.documentElement.scrollTop;
@@ -172,6 +184,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
