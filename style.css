@@ -4236,6 +4236,15 @@ footer {
 }
 #certifications li { display: block !important; }
 
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;   /* centers the text */
+}
+
 
 
 
