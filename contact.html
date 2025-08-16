@@ -15,6 +15,8 @@
             overflow-y: auto; /* Allow vertical scroll if content exceeds viewport */
             -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
             scroll-padding-top: 60px; /* Account for potential sticky nav height */
+            margin: 0; /* Ensure no default body margin */
+            padding: 0; /* Ensure no default body padding */
         }
 
         /* Background video behind everything */
@@ -36,11 +38,12 @@
             top: 0;
             z-index: 5;
             background: #1f1f1f;
-            margin: 0 0 12px 0;
+            margin: 0; /* Remove top/bottom margin */
             box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
             transform: none !important;
             opacity: 1 !important;
             visibility: visible !important;
+            height: auto; /* Allow content to dictate height */
         }
         nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar {
             transform: none !important;
@@ -57,6 +60,8 @@
             position: relative;
             z-index: 1;
             box-sizing: border-box; /* Include padding in element's total width and height */
+            flex: 1; /* Allow container to grow if it's within a flex parent */
+            min-height: calc(100vh - 120px); /* Desktop min-height to push footer down */
         }
         .contact-image img {
             display: block;
@@ -76,6 +81,8 @@
             padding: 22px;
             color: #fff;
             box-sizing: border-box;
+            display: flex; /* Make the form content flexible */
+            flex-direction: column; /* Stack vertically */
         }
         .contact-form h2 {
             margin: 0 0 14px 0;
@@ -83,8 +90,10 @@
             font-weight: 700;
         }
         .contact-form form {
-            display: grid;
+            display: flex; /* Make the inner form flexible */
+            flex-direction: column; /* Stack its elements vertically */
             gap: 14px;
+            flex-grow: 1; /* Allow the form itself to grow */
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
@@ -99,6 +108,7 @@
         .contact-form textarea {
             resize: vertical;
             min-height: 160px;
+            flex-grow: 1; /* Allow textarea to take available space */
         }
         .send-button {
             background: #ff5722;
@@ -109,6 +119,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: background 0.2s ease; /* Smooth transition for hover */
+            margin-top: auto; /* Pushes button to the bottom in a flex column */
         }
         .send-button:hover {
             background: #e64a19;
@@ -158,16 +169,17 @@
                 gap: 12px;
                 margin: 10px 12px 28px !important;
                 padding: 0 !important;
-                /* Ensure container can stretch and content is at top */
-                min-height: calc(100vh - 60px - 100px); /* Approx. viewport height - nav - footer */
-                justify-content: flex-start;
+                /* Crucial: Allow container to take up at least remaining viewport space */
+                min-height: calc(100vh - var(--nav-height, 60px) - var(--footer-height, 100px) - 20px); /* Adjust margins/gaps */
+                justify-content: flex-start; /* Align content to the top */
                 box-sizing: border-box;
+                width: calc(100% - 24px); /* Account for horizontal margins */
             }
             .contact-form {
                 padding: 16px !important;
                 flex-grow: 1; /* Allow form to take available space */
-                display: flex; /* Use flexbox for inner form elements */
-                flex-direction: column; /* Stack them vertically */
+                display: flex; /* Make it a flex container */
+                flex-direction: column; /* Stack its contents */
                 height: auto; /* Allow height to be determined by content */
                 min-height: unset; /* Remove any restrictive min-height */
             }
@@ -176,12 +188,12 @@
                 margin-bottom: 8px !important;
             }
             .contact-form form {
-                display: flex; /* Change form itself to flex to better control spacing */
+                display: flex; /* Ensure the inner form is also flex */
                 flex-direction: column;
                 gap: 10px !important;
-                flex-grow: 1; /* Allow form elements to take available space */
+                flex-grow: 1; /* Allow the form elements to take available space */
             }
-            .contact-form input, .contact-form textarea {
+            .contact-form input {
                  height: 44px !important; /* Consistent height for inputs */
             }
             .contact-form textarea {
@@ -208,7 +220,7 @@
             padding: 15px 0;
             text-align: center;
             box-shadow: 0 -3px 10px rgba(0,0,0,.25);
-            position: relative; /* Changed from fixed if it was to ensure it's at content end */
+            position: relative;
             z-index: 2;
         }
         .footer-wrapper {
@@ -268,8 +280,32 @@
         </div>
     </footer>
 
-    </body>
+    <script>
+        (function(){
+            // Only run on mobile screen sizes
+            if (!window.matchMedia('(max-width: 900px)').matches) return;
+
+            const forceTop = () => {
+                // Check if scroll is needed before forcing, to avoid fighting user
+                if (window.scrollY > 0) {
+                    try { window.scrollTo({ top: 0, behavior: 'instant' }); } catch(e){}
+                }
+            };
+
+            // Remove any hash to prevent scrolling to an anchor
+            try { if (location.hash) history.replaceState(null, '', location.pathname); } catch(e){}
+
+            // Attempt to scroll to top after layout rendering
+            window.addEventListener('load', () => setTimeout(forceTop, 0), { once:true });
+            window.addEventListener('pageshow', () => setTimeout(forceTop, 0), { once:true });
+            // Also on orientation change or resize if mobile browser resizes viewport
+            window.addEventListener('orientationchange', forceTop);
+            window.addEventListener('resize', forceTop);
+        })();
+    </script>
+</body>
 </html>
+
 
 
 
