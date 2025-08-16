@@ -4360,6 +4360,31 @@ footer {
   margin: 10px auto 0;
   text-align: center;
 }
+/* Wrap image + button in a centered column */
+#certifications .cert-media {
+  display: flex !important;
+  flex-direction: column;   /* stack image and button vertically */
+  align-items: center;      /* center both image and button */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Certificate image */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);
+  height: auto;
+  display: block;
+  margin: 12px auto;
+}
+
+/* Download button */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+
 
 
 
