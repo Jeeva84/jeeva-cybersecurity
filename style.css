@@ -4820,6 +4820,59 @@ main#content section.split-hero.compact-hero{
     word-break: normal;
   }
 }
+/* ===== MOBILE FIXES for "What I bring" card ===== */
+@media (max-width: 900px) {
+
+  /* Let the grid span the screen with small gutters */
+  section.about-me .about-grid{
+    width:100% !important;
+    max-width:none !important;
+    margin:16px 0 !important;
+    padding:0 12px !important;      /* small, even side gutters */
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+
+  /* Make the "What I bring" box full width and roomier */
+  section.about-me .about-facts{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:18px 16px !important;   /* a touch more space inside */
+    border-radius:14px !important;
+  }
+
+  /* Tighter, readable typography */
+  section.about-me .about-facts h3{
+    font-size:22px !important;
+    line-height:1.2 !important;
+    margin-bottom:10px !important;
+    text-align:left !important;
+  }
+
+  section.about-me .about-facts .skills-list{
+    display:block !important;       /* single column on mobile */
+    gap:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  section.about-me .about-facts .skills-list li{
+    font-size:16px !important;
+    line-height:1.55 !important;
+    margin:10px 0 !important;
+    text-align:left !important;     /* stop “justified” look */
+    hyphens:auto !important;
+    overflow-wrap:break-word !important;
+    word-break:normal !important;
+  }
+
+  /* Avoid oversized bold labels forcing odd breaks */
+  section.about-me .about-facts .skills-list li strong{
+    white-space:normal !important;
+  }
+}
+
 
 
 
