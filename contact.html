@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Your main stylesheet (cache-busted just in case) -->
-  <link rel="stylesheet" href="style.css?v=33" />
+  <!-- Main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=34" />
 
   <style>
-    /* ---------- Background video (behind everything) ---------- */
+    /* ---------- Background video behind everything ---------- */
     .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
     .video-background video{ width:100%; height:100%; object-fit:cover; }
 
-    /* ---------- Nav ---------- */
+    /* ---------- Nav (desktop default) ---------- */
     nav.nav-bar{
       position:sticky; top:0; z-index:5;
       background:#1f1f1f; margin:0 0 12px 0; box-shadow:0 3px 10px rgba(0,0,0,.25);
@@ -42,42 +42,16 @@
     .send-button{ background:#ff5722; color:#fff; border:0; padding:14px 18px; border-radius:12px; font-weight:700; }
     .send-button:hover{ background:#e64a19; }
 
-    /* ---------- MOBILE “FRAMED FORM” (<=900px) ---------- */
+    /* ---------- Mobile base (we'll “nuke override” again at the end) ---------- */
     @media (max-width:900px){
-      /* Keep nav in the flow so it never overlaps content */
-      nav.nav-bar{ position:relative !important; margin:0 0 10px 0 !important; }
-
-      /* Hide the photo on phones so the form has room */
-      .contact-image{ display:none !important; }
-
-      /* Stack and add breathing room */
-      .contact-container{
-        flex-direction:column !important;
-        gap:10px !important;
-        margin:10px 12px 16px !important;
-        padding:0 !important;
-      }
-
-      /*
-        FRAME: make the form scroll INSIDE the card so it always fits
-        Viewport height (100dvh) minus ~120px for header/margins
-      */
-      .contact-frame{
-        max-height: calc(100dvh - 120px) !important;
-        overflow:auto !important;
-        overscroll-behavior: contain !important;
-        -webkit-overflow-scrolling: touch !important;
-        border-radius:16px !important;  /* matches the form */
-      }
-
-      .contact-form{
-        padding:16px !important;
-        border-radius:16px !important;
-      }
-      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
-      .contact-form form{ gap:10px !important; }
-      .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:120px !important; }
+      nav.nav-bar{ position:relative; margin:0 0 10px 0; }
+      .contact-container{ flex-direction:column; gap:10px; margin:10px 12px 16px; padding:0; }
+      .contact-image{ display:none; }              /* hide photo on phones */
+      .contact-form{ padding:16px; }
+      .contact-form h2{ font-size:21px; margin-bottom:8px; }
+      .contact-form form{ gap:10px; }
+      .contact-form input{ height:44px; }
+      .contact-form textarea{ min-height:120px; }
     }
 
     /* small footer spacer so it never crowds the form */
@@ -114,21 +88,18 @@
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
 
-    <!-- NEW: frame wraps the form so it scrolls inside on mobile -->
-    <div class="contact-frame" role="region" aria-label="Contact form frame">
-      <div class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-          <input type="text" name="_honey" style="display:none" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-          <input type="text"   name="name"  placeholder="Full Name" required />
-          <input type="email"  name="email" placeholder="E-mail"    required />
-          <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-          <button type="submit" class="send-button">Send Message</button>
-        </form>
-      </div>
+        <input type="text"   name="name"  placeholder="Full Name" required />
+        <input type="email"  name="email" placeholder="E-mail"    required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit" class="send-button">Send Message</button>
+      </form>
     </div>
   </div>
 
@@ -139,8 +110,58 @@
       <p>&copy; 2025 Jeeva Kumaradas. Built with Love and Dedication to Cybersecurity.</p>
     </div>
   </footer>
+
+  <!-- ************ NUCLEAR MOBILE OVERRIDE (wins over style.css) ************ -->
+  <style id="nuclear-contact-mobile-fix">
+    @media (max-width: 900px){
+      /* Kill any global offsets + fixed headers on this page only */
+      body.contact-page, body.page-specific.contact-page {
+        padding-top: 0 !important; margin-top: 0 !important;
+      }
+      body.page-specific.contact-page > nav.nav-bar,
+      body.contact-page nav.nav-bar{
+        position: relative !important;
+        top: auto !important;
+        transform: none !important;
+        height: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+      }
+      body.contact-page .nav-bar.nav-hidden,
+      body.contact-page .nav-bar.hidden-navbar{ transform: none !important; }
+
+      /* 100% hide the photo on phones so the form is never covered */
+      body.contact-page .contact-image{ display: none !important; }
+
+      /* Make sure the form card is fully in the normal flow and visible */
+      body.contact-page .contact-container{
+        display: block !important;
+        margin: 10px 12px 20px !important;
+        padding: 0 !important;
+        position: static !important;
+      }
+      body.contact-page .contact-form{
+        position: static !important;
+        margin: 0 !important; padding: 16px !important;
+        background: rgba(0,0,0,.55) !important;
+        border: 1px solid rgba(255,255,255,.1) !important;
+        border-radius: 16px !important;
+        color: #fff !important;
+        overflow: visible !important;
+      }
+      body.contact-page .contact-form form{ display: grid !important; gap: 10px !important; }
+      body.contact-page .contact-form input{ height: 44px !important; }
+      body.contact-page .contact-form textarea{ min-height: 120px !important; }
+
+      /* Keep video under everything on phones */
+      body.contact-page .video-background{ position: fixed !important; inset: 0 !important; z-index: -1 !important; }
+    }
+  </style>
+  <!-- No JS here on purpose (old auto-scroll was causing jumps) -->
 </body>
 </html>
+
 
 
 
