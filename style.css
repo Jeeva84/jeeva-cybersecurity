@@ -4209,6 +4209,33 @@ footer {
   #certifications br { display: none !important; }
 }
 
+/* Keep cert labels/values tidy on phones */
+@media (max-width: 600px) {
+  #certifications .cert-meta {
+    grid-template-columns: 1fr !important; /* stack label over value */
+  }
+  #certifications .cert-meta dt,
+  #certifications .cert-meta dd {
+    display: block !important;
+    margin: 0;
+    line-height: 1.4;
+  }
+  /* critical: prevent words splitting onto separate lines */
+  #certifications .cert-meta dd {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+}
+
+/* remove bullets/margins that may be styled globally */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
 
 
 
