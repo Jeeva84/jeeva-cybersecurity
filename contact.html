@@ -5,33 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Contact</title>
 
-  <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=16" />
+  <!-- Main stylesheet (cache-busted just in case) -->
+  <link rel="stylesheet" href="style.css?v=18" />
 
-  <!-- Page-specific styles -->
-  <style id="contact-mobile-final">
-    @media (max-width:900px){
-      
-      .contact-container{ margin:10px 12px 28px !important; }
-      .contact-form{ padding:16px !important; }
-      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
-      .contact-form input{ height:44px !important; }
-      .contact-form textarea{ min-height:120px !important; }
-    }
- 
-    /* Background video behind everything (fixes overlap on mobile) */
+  <!-- Page-specific styles (self-contained + hard overrides) -->
+  <style>
+    /* --- Background video behind everything --- */
     .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; pointer-events:none !important; }
     .video-background video{ width:100% !important; height:100% !important; object-fit:cover !important; }
 
-    /* Nav visible and never covering content */
+    /* --- Nav: visible, never covering content --- */
     nav.nav-bar{
       position:sticky; top:0; z-index:5;
       background:#1f1f1f; margin:0 0 12px 0;
       box-shadow:0 3px 10px rgba(0,0,0,.25);
+      transform:none !important; opacity:1 !important; visibility:visible !important;
     }
     nav.nav-bar.nav-hidden, nav.nav-bar.hidden-navbar{ transform:none !important; }
 
-    /* Contact layout (desktop) */
+    /* --- Desktop contact layout --- */
     .contact-container{
       display:flex; align-items:flex-start; gap:32px;
       max-width:1100px; margin:12px auto 40px; padding:0 16px;
@@ -70,13 +62,14 @@
     }
     .send-button:hover{ background:#e64a19; }
 
-    /* Desktop-only smooth hide (optional) */
+    /* --- Desktop-only smooth hide (optional) --- */
     @media (min-width:901px){
       nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
     }
 
-    /* Mobile: keep nav in flow, 2-col tabs, show photo ABOVE the form */
+    /* --- MOBILE (<=900px): photo hidden, nav in-flow, full form visible --- */
     @media (max-width:900px){
+      /* Nav shows as a tidy grid and never overlaps */
       nav.nav-bar{ position:relative !important; }
       nav .nav-links{
         display:grid !important; grid-template-columns:repeat(2,1fr) !important;
@@ -91,22 +84,19 @@
         border-radius:10px !important; text-decoration:none !important;
       }
 
-      .contact-container{ flex-direction:column; gap:12px; margin:8px 12px 20px; padding:0; }
-      .contact-image{ display:block; text-align:center; margin:6px 0 10px; }
-      .contact-image img{
-        width:min(360px, 78vw); height:auto;
-        border-radius:18px; border:2px solid #fff;
-        box-shadow:0 8px 20px rgba(0,0,0,.35);
-      }
+      /* Hard hide ANY profile image block on this page */
+      .contact-image, .contact-image *{ display:none !important; }
 
-      .contact-form{ padding:16px; }
-      .contact-form h2{ font-size:21px; margin-bottom:8px; }
-      .contact-form form{ gap:10px; }
-      .contact-form input{ height:44px; }
-      .contact-form textarea{ min-height:120px; }
+      /* Form spacing so everything is visible */
+      .contact-container{ flex-direction:column; gap:12px; margin:10px 12px 28px !important; padding:0 !important; }
+      .contact-form{ padding:16px !important; }
+      .contact-form h2{ font-size:21px !important; margin-bottom:8px !important; }
+      .contact-form form{ gap:10px !important; }
+      .contact-form input{ height:44px !important; }
+      .contact-form textarea{ min-height:120px !important; }
     }
 
-    /* Spacer for pushing footer down on small screens */
+    /* Footer spacer to avoid cramping on small screens */
     @media (min-width:901px){ .footer-spacer{ height:40px; } }
     @media (max-width:900px){ .footer-spacer{ height:100px; } }
   </style>
@@ -186,6 +176,7 @@
   </script>
 </body>
 </html>
+
 
 
 
