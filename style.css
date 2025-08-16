@@ -4647,6 +4647,36 @@ main#content section.split-hero.compact-hero .hero-image img {
     max-width: 200px !important;
   }
 }
+/* Hero container */
+main#content section.split-hero.compact-hero {
+  width: 100%;
+  max-width: 1600px;        /* wider hero area */
+  margin: 0 auto;
+  padding-left: 80px;       /* small margins only */
+  padding-right: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Section wrapping both note + what I bring */
+.info-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;   /* Note is bigger, What I bring is narrower */
+  gap: 24px;                        /* space between */
+  max-width: 1400px;
+  margin: 40px auto;                /* center on page */
+  padding: 0 40px;
+}
+
+/* Each card has same styling */
+.info-section .card {
+  background: #111;                 /* match theme */
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
 
 
