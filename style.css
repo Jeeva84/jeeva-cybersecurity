@@ -4076,6 +4076,80 @@ footer {
   .certifications-section br { display: none; }
 }
 
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.cert-card {
+  background: rgba(0,0,0,0.35); /* subtle background */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cert-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #f0c33c; /* highlight title */
+}
+
+.cert-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+
+.cert-meta dt {
+  font-weight: 600;
+  color: #fff;
+}
+
+.cert-meta dd {
+  margin: 0;
+  color: #ddd;
+  overflow-wrap: anywhere; /* lets long codes wrap nicely */
+}
+
+.cert-media {
+  text-align: center;
+}
+
+.cert-image {
+  max-width: 260px;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  display: block;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.download-button:hover {
+  background: #e64a19;
+}
+
+/* mobile: stack meta vertically */
+@media (max-width: 600px) {
+  .cert-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
