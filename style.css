@@ -4033,6 +4033,32 @@ html, body { margin: 0; overflow-x: hidden; } /* prevents sideways scroll */
   padding: 0 20px;       
 }
 
+/* Reset browser default spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents sideways scroll from full-bleed */
+}
+
+/* Full-bleed utility */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Nav + Footer background bars */
+.nav-bar,
+footer {
+  background: #1f1f1f;  /* same as your other pages */
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 
 
 
