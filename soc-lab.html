@@ -13,14 +13,46 @@
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
     a{color:var(--accent);text-decoration:none}
     .wrap{max-width:1100px;margin:0 auto;padding:36px 20px}
-    .nav{display:flex;gap:18px;align-items:center;margin-bottom:18px}
-    .nav a{padding:8px 10px;border:1px solid transparent;border-radius:10px}
-    .nav a.active,.nav a:hover{border-color:var(--accent)}
+
+    /* Navbar */
+    .nav-bar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#1f1f1f;
+      margin:0 0 24px 0;
+      box-shadow:0 3px 10px rgba(0,0,0,.25);
+    }
+    .nav-links{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+    }
+    .nav-links a{
+      display:inline-block;
+      padding:12px 16px;
+      color:#e5e7eb;
+      font-weight:500;
+      border-bottom:2px solid transparent;
+      transition:0.2s;
+    }
+    .nav-links a:hover{
+      border-bottom:2px solid var(--accent);
+      color:var(--accent);
+    }
+    .nav-links a.active{
+      border-bottom:2px solid var(--accent);
+      color:var(--accent);
+    }
+
     .hero{display:grid;gap:18px}
     .title{font-size:38px;line-height:1.1;margin:6px 0}
     .sub{color:var(--muted);max-width:80ch}
     .video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000}
-    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video video{position:absolute;inset:0;width:100%;height:100%;border:0}
     .section{margin-top:28px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
     .grid{display:grid;gap:18px}
@@ -34,16 +66,27 @@
     code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
     .hr{height:1px;background:var(--line);margin:28px 0}
     .muted{color:var(--muted)}
+
+    /* Download button */
+    .download-btn {
+      display:inline-block;
+      background:var(--accent);
+      color:#0f172a;
+      font-weight:600;
+      padding:10px 16px;
+      border-radius:8px;
+      text-decoration:none;
+      transition:background 0.2s ease;
+    }
+    .download-btn:hover {
+      background:#0ea5e9;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- Simple “tabs” -->
-    <body>
-  <div class="wrap">
-
-    <!-- Full Site Navigation -->
+    <!-- Navigation -->
     <nav class="nav-bar">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -58,181 +101,52 @@
       </ul>
     </nav>
 
-
     <!-- Hero -->
     <header class="hero">
-      <div>
-        <div class="title">SOC Home Lab</div>
-        <p class="sub">
-          A hands-on SOC environment I built to practice attack simulation (Kali/Hydra), detection and monitoring
-          (Splunk), vulnerability management (Nessus), and digital forensics (Autopsy). This page documents the full journey:
-          architecture, commands, troubleshooting, skills, and outcomes.
-        </p>
-        <div class="chips">
-          <span class="chip">pfSense</span><span class="chip">Kali Linux</span><span class="chip">Ubuntu (SSH)</span>
-          <span class="chip">Windows 10</span><span class="chip">Windows Server (AD)</span>
-          <span class="chip">Splunk Enterprise</span><span class="chip">Nessus</span><span class="chip">Autopsy</span>
-        </div>
-      </div>
-
-      <!-- Video area (YouTube embed). If you only have LinkedIn, replace with a thumbnail link. -->
-      <div class="video">
-  <video controls playsinline width="100%" poster="images/soc-lab-thumb.jpg">
-    <source src="videos/Soc-lab.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-    </div>
-      <p style="margin-top:12px; text-align:center">
-  <a class="download-btn" href="videos/Soc-lab.mp4" download>⬇ Download Video (MP4)</a>
-      </p>
+      <h1 class="title">SOC Home Lab</h1>
+      <p class="sub">A complete SOC lab I built from scratch — configuring networks, simulating attacks, forwarding logs, monitoring with Splunk, scanning with Nessus, and investigating with Autopsy.</p>
     </header>
 
-    <div class="hr"></div>
+    <!-- Video -->
+    <div class="video">
+      <video controls playsinline width="100%" poster="images/soc-lab-thumb.jpg">
+        <source src="videos/Soc-lab.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <p style="margin-top:8px">
+      <a href="videos/Soc-lab.mp4" class="download-btn" download>Download the video (MP4)</a>
+    </p>
 
-    <!-- Overview -->
-    <section class="section card">
-      <h2>Overview</h2>
-      <p>
-        To strengthen my hands-on cybersecurity skills, I designed and implemented a Security Operations Center (SOC) home lab.
-        The lab simulates a real-world enterprise environment, allowing me to practice attack simulation, detection,
-        monitoring, vulnerability management, and forensics. It demonstrates the ability to build, troubleshoot, and operate
-        a SOC environment from scratch using industry-standard tools.
-      </p>
-    </section>
-
-    <!-- Architecture -->
-    <section class="section card">
-      <h2>Lab Architecture</h2>
-      <ul>
-        <li><strong>pfSense</strong> — Firewall/gateway; controlled inbound/outbound traffic and resolved Kali connectivity.</li>
-        <li><strong>Windows 10</strong> — End-user workstation simulation.</li>
-        <li><strong>Linux Server (Ubuntu)</strong> — Target with OpenSSH enabled for brute-force testing.</li>
-        <li><strong>Windows Server (Domain Controller)</strong> — Active Directory.</li>
-        <li><strong>Kali Linux</strong> — Attacker machine (Hydra).</li>
-        <li><strong>Splunk Enterprise</strong> — SIEM for log collection/monitoring.</li>
-        <li><strong>Nessus Essentials</strong> — Vulnerability scanning/reporting.</li>
-        <li><strong>Autopsy</strong> — Forensic analysis of <code>.E01</code> images.</li>
-      </ul>
-    </section>
-
-    <!-- Activities -->
-    <section class="section grid two">
+    <!-- Sections -->
+    <section class="section">
       <div class="card">
-        <h2>Network & Troubleshooting</h2>
+        <h2>Setup</h2>
         <ul>
-          <li>Configured pfSense firewall and NAT rules for controlled egress/ingress.</li>
-          <li>Fixed Kali Linux internet by adjusting pfSense policies and validating with <code>ping</code> / <code>apt</code>.</li>
-        </ul>
-        <pre><code># quick checks
-ping 8.8.8.8
-traceroute 8.8.8.8
-ip a
-sudo tcpdump -i eth0</code></pre>
-      </div>
-
-      <div class="card">
-        <h2>Attack Simulation (Red Team)</h2>
-        <p>From Kali Linux, I simulated brute force and reconnaissance.</p>
-        <pre><code># Create test user on the Linux target
-sudo adduser jeeva
-sudo passwd jeeva  # set: 123456
-
-# Hydra brute force (small list)
-hydra -l jeeva -P /root/top10.txt ssh://10.0.10.22
-
-# Hydra brute force (large list + verbose)
-sudo gzip -d /usr/share/wordlists/rockyou.txt.gz   # if still gzipped
-hydra -l jeeva -P /usr/share/wordlists/rockyou.txt ssh://10.0.10.22 -t 4 -V
-
-# Port/service discovery pre-attack
-nmap -sV -p- 10.0.10.22</code></pre>
-        <p class="muted">Failed logins recorded in <code>/var/log/auth.log</code> on the target.</p>
-      </div>
-
-      <div class="card">
-        <h2>Log Monitoring (Blue Team)</h2>
-        <p>Configured Splunk to ingest Linux authentication and system logs.</p>
-        <pre><code># Add inputs (do not publish real credentials in public repos)
-sudo /opt/splunk/bin/splunk add monitor /var/log/auth.log \
-  -sourcetype linux_secure -index main -auth 'admin:&lt;redacted&gt;'
-
-sudo /opt/splunk/bin/splunk add monitor /var/log/syslog \
-  -sourcetype syslog -index main -auth 'admin:&lt;redacted&gt;'
-
-sudo /opt/splunk/bin/splunk restart
-
-# SPL: view failed/successful SSH attempts
-index=main sourcetype=linux_secure "Failed password"
-index=main sourcetype=linux_secure "Accepted password"
-index=main sourcetype=linux_secure jeeva</code></pre>
-      </div>
-
-      <div class="card">
-        <h2>Vulnerability Management (Nessus)</h2>
-        <p>Scanned Linux & Windows targets and exported reports for correlation.</p>
-        <pre><code># start service (local lab)
-sudo systemctl start nessusd.service
-
-# web UI
-# https://127.0.0.1:8834/
-
-# CLI examples (path may vary by install)
-sudo /opt/nessus/sbin/nessuscli update --plugins
-sudo /opt/nessus/sbin/nessuscli scan launch &lt;scan-uuid&gt;</code></pre>
-      </div>
-
-      <div class="card">
-        <h2>Digital Forensics (Autopsy)</h2>
-        <p>Analyzed <code>.E01</code> disk images for artifacts and file system evidence.</p>
-        <pre><code># In Autopsy:
-File &gt; New Case &gt; Add Data Source &gt; Select .E01
-
-# If no files appear:
-- Reindex the image
-- Ensure evidence type = Disk Image
-- Confirm partitions parsed</code></pre>
-      </div>
-    </section>
-
-    <!-- Challenges -->
-    <section class="section card">
-      <h2>Challenges & Solutions</h2>
-      <ul>
-        <li><strong>Kali had no internet</strong> → fixed via pfSense NAT/firewall rules.</li>
-        <li><strong>Hydra wordlist missing</strong> → created/used <code>top10.txt</code> and <code>rockyou.txt</code>.</li>
-        <li><strong>Splunk not showing logs</strong> → added <code>auth.log</code>/<code>syslog</code> inputs and restarted Splunk.</li>
-        <li><strong>Autopsy empty evidence</strong> → reindexed the <code>.E01</code> image and corrected settings.</li>
-        <li><strong>OBS mic not recording</strong> → selected the external USB microphone in Windows & OBS.</li>
-      </ul>
-    </section>
-
-    <!-- Skills -->
-    <section class="section grid two">
-      <div class="card">
-        <h2>Skills Gained</h2>
-        <ul>
-          <li>Incident response workflow (detect → analyze → verify).</li>
-          <li>SIEM administration (Splunk inputs, SPL searches, basic dashboards).</li>
-          <li>Threat simulation (Hydra) & log interpretation.</li>
-          <li>Vulnerability management (Nessus scanning & reporting).</li>
-          <li>Digital forensics (Autopsy case handling & artifact review).</li>
-          <li>Network/firewall troubleshooting with pfSense.</li>
+          <li>VMware Workstation with custom VMnets for segmented VLANs.</li>
+          <li>pfSense firewall as gateway with manual inbound/outbound rules (fixed Kali internet issue).</li>
+          <li>Windows 10 (endpoint), Ubuntu (server/log forwarder), Domain Controller.</li>
+          <li>Splunk for log monitoring, Nessus for vulnerability scanning, Autopsy for forensics.</li>
         </ul>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Commands Used</h2>
+        <pre><code>sudo /opt/splunk/bin/splunk add monitor /var/log/auth.log -sourcetype linux_secure -index main -auth admin:Johnathan@21
+hydra -l jeeva -P /root/top10.txt ssh://10.0.10.25
+</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="card">
         <h2>Conclusion</h2>
-        <p>
-          Building this SOC lab has been more than a technical exercise — it brought my passion for cybersecurity to life.
-          Every challenge, from firewall troubleshooting to forensic analysis, pushed me to think like a real analyst and
-          confirmed this is the path I want to pursue. Cybersecurity is more than a job for me — it’s a calling. This project
-          reflects my determination, curiosity, and commitment to grow into a skilled defender who can protect organizations
-          and keep learning every day.
-        </p>
+        <p>This project represents more than just a technical exercise — it reflects my passion and dream to work in cybersecurity. Every troubleshooting step, every log parsed, and every attack simulated taught me persistence and real-world problem-solving. Building this SOC lab is a foundation I’m proud of and a step closer to my goal of becoming a skilled cybersecurity analyst.</p>
       </div>
     </section>
 
-    <div class="hr"></div>
-    <p class="muted">Tip: if you only have a LinkedIn video, replace the iframe with a thumbnail image that links to your post.</p>
   </div>
 </body>
 </html>
