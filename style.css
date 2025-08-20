@@ -5036,6 +5036,39 @@ main#content section.split-hero.compact-hero{
   scroll-margin-top: 64px; /* keeps headings from hiding under the nav */
 }
 
+/* --- Global mobile navbar fix --- */
+:root { --nav-h: 60px; }            /* default mobile height */
+
+@media (min-width: 769px) {
+  :root { --nav-h: 72px; }          /* desktop/tablet height if your bar is taller */
+}
+
+/* Make the nav fixed on all pages so it doesn’t overlap scrolling content */
+.nav-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+
+/* Push the whole page content down below the fixed nav */
+body {
+  padding-top: var(--nav-h);
+}
+
+/* Let tabs scroll horizontally on small screens */
+.nav-links {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  gap: 12px;
+  padding: 8px 10px;               /* a bit tighter on mobile */
+}
+.nav-links li { display: inline; }
+.nav-links a { display: inline-block; padding: 10px 12px; }
+
+/* If you use in-page anchors (#section), prevent headings from hiding under the nav */
+:target { scroll-margin-top: calc(var(--nav-h) + 8px); }
+
 
 
 
