@@ -5200,6 +5200,30 @@ body.soc-page{
 .soc-card h2{ margin: 0 0 8px; }
 .soc-section{ margin: 22px 0; }
 
+/* --- SOC page adjustments --- */
+
+/* reduce the nav spacer just a bit */
+body.soc-page .nav-spacer {
+  height: 70px; /* was 86px */
+}
+
+/* tighten hero text spacing */
+body.soc-page .split-hero.compact-hero h1 {
+  margin-bottom: 8px; /* was probably ~20px */
+}
+
+body.soc-page .split-hero.compact-hero p.tagline {
+  margin-top: 0;
+  margin-bottom: 10px; /* reduce gap under paragraph */
+  line-height: 1.4;    /* a bit denser text */
+}
+
+/* tighter spacing between paragraphs site-wide */
+body.soc-page p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; /* default is usually 1em */
+}
+
 
 
 
