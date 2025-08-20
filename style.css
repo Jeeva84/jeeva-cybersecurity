@@ -5224,6 +5224,62 @@ body.soc-page p {
   margin-bottom: 0.5em; /* default is usually 1em */
 }
 
+/* =========================
+   SOC page spacing tighten
+   ========================= */
+body.soc-page .nav-spacer{
+  height: 56px !important;           /* was ~86px */
+}
+
+/* Pull the hero block up & make it denser */
+body.soc-page .split-hero.compact-hero{
+  padding-top: 8px !important;
+  padding-bottom: 12px !important;
+  row-gap: 8px !important;
+  min-height: auto !important;       /* don't force extra height */
+}
+
+body.soc-page .split-hero.compact-hero .hero-text h1{
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+  line-height: 1.15 !important;
+}
+
+body.soc-page .split-hero.compact-hero .hero-text .tagline{
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+  max-width: 70ch;                   /* keep nice line length */
+}
+
+/* General paragraph spacing inside SOC page */
+body.soc-page p{
+  margin: 0.35em 0 !important;       /* default is ~1em */
+  line-height: 1.55 !important;
+}
+
+/* Cards / sections spacing tighter */
+body.soc-page .soc-section{
+  margin: 18px 0 !important;         /* was ~28px */
+}
+body.soc-page .soc-card{
+  padding: 16px !important;          /* was ~20px */
+}
+body.soc-page .soc-card h2{
+  margin: 0 0 8px 0 !important;
+}
+
+/* Chips row margin smaller */
+body.soc-page .soc-badges{
+  margin: 8px 0 14px !important;
+}
+
+/* Video wrapper: keep full width, a bit closer to chips */
+body.soc-page .video-wrap{
+  max-width: 980px;
+  margin: 12px auto 18px !important;
+}
+
 
 
 
