@@ -5005,6 +5005,37 @@ main#content section.split-hero.compact-hero{
   background:#0ea5e9; /* darker accent on hover */
 }
 
+/* Keep desktop behavior as-is; tune mobile */
+@media (max-width: 768px) {
+  /* Make the bar fixed so it doesn’t jump, and ensure it sits on top */
+  .nav-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+  }
+
+  /* Spacer to push content below the fixed navbar */
+  .nav-spacer {
+    height: 56px; /* match the visual height of your nav */
+  }
+
+  /* Let the tabs scroll horizontally on small screens */
+  .nav-links {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding: 8px 10px;
+  }
+  .nav-links li { display: inline; }
+  .nav-links a { display: inline-block; padding: 10px 12px; }
+}
+
+/* Optional: make anchor jumps account for the fixed header */
+:target {
+  scroll-margin-top: 64px; /* keeps headings from hiding under the nav */
+}
+
 
 
 
