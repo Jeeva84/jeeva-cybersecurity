@@ -4991,6 +4991,20 @@ main#content section.split-hero.compact-hero{
   }
 }
 
+.download-btn {
+  display:inline-block;
+  background:var(--accent);
+  color:#0f172a;
+  font-weight:600;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  transition:background 0.2s ease;
+}
+.download-btn:hover {
+  background:#0ea5e9; /* darker accent on hover */
+}
+
 
 
 
