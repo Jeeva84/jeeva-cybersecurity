@@ -3,125 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOC Home Lab | Portfolio</title>
+  <title>SOC Home Lab | Jeeva Kumaradas</title>
   <meta name="description" content="SOC Home Lab project — attack simulation, Splunk monitoring, Nessus scanning, and Autopsy forensics." />
+
+  <!-- Match index.html font + icon imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Use the same site stylesheet as the homepage -->
+  <link rel="stylesheet" href="style.css?v=31" />
+
+  <!-- Page-specific tiny overrides only (kept minimal) -->
   <style>
-    :root{
-      --bg:#0f172a; --text:#e5e7eb; --muted:#9ca3af; --line:#1e293b; --card:#0b1220;
-      --chip:#1f2937; --accent:#38bdf8; --code:#0a0f1c;
-      --nav-h:72px;
-    }
-    @media (max-width: 768px){ :root{ --nav-h:60px; } }
-
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none}
-
-    /* --- GLOBAL NAVBAR (full width, fixed) --- */
-    .nav-bar{
-      position:fixed; top:0; left:0; right:0; z-index:1000;
-      background:#1f1f1f; box-shadow:0 3px 10px rgba(0,0,0,.25);
-      height:var(--nav-h); display:flex; align-items:center;
-    }
-    .nav-links{ 
-      list-style:none; margin:0; padding:0 16px; display:flex; gap:20px;
-      overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch;
-      width:100%; justify-content:center;
-    }
-    .nav-links li{ list-style:none }
-    .nav-links a{
-      display:inline-block; padding:12px 16px; color:#e5e7eb; font-weight:600;
-      border-bottom:2px solid transparent; transition:0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active{
-      border-bottom:2px solid var(--accent); color:var(--accent);
-    }
-
-    /* Push all page content below the fixed nav */
-    body{ padding-top:var(--nav-h); }
-
-    /* --- Page layout --- */
-    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px}
-    .hero{display:grid;gap:18px}
-    .title{font-size:38px;line-height:1.1;margin:6px 0}
-    .sub{color:var(--muted);max-width:80ch}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
-    .chip{background:var(--chip);color:#d1d5db;border:1px solid #243244;border-radius:999px;padding:6px 10px;font-size:12px}
-
-    .video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000}
-    .video video{position:absolute;inset:0;width:100%;height:100%;border:0}
-
-    .section{margin-top:28px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-    .grid{display:grid;gap:18px}
-    @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
-
-    h2{font-size:22px;margin:0 0 12px}
-    h3{font-size:18px;margin:14px 0 6px;color:#cbd5e1}
-    ul{margin:10px 0 0 20px}
-    li{margin:6px 0}
-    .hr{height:1px;background:var(--line);margin:28px 0}
-    .muted{color:var(--muted)}
-    .card p{font-size:15.5px;line-height:1.7}
-    .card li{line-height:1.6}
-
-    pre{background:var(--code);border:1px solid #1b2433;border-radius:10px;padding:14px;overflow:auto}
-    code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
-
+    /* Match index nav behavior on mobile (inherits your global rules) */
+    .soc-badges { display:flex; flex-wrap:wrap; gap:8px; margin:.5rem 0 0; }
+    .soc-badges .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:#dfe6ee; padding:6px 10px; border-radius:999px; font-size:12px; }
+    .video-frame{ position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:14px; border:1px solid rgba(255,255,255,.15); background:#000; }
+    .video-frame video{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .card.soc { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:22px; }
+    pre.soc{ background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:14px; overflow:auto; }
     .download-btn{
-      display:inline-block;background:var(--accent);color:#0f172a;font-weight:600;
-      padding:10px 16px;border-radius:8px;text-decoration:none;transition:background .2s ease;
+      display:inline-block; background:#38bdf8; color:#0f172a; font-weight:600;
+      padding:10px 16px; border-radius:8px; text-decoration:none; transition:background .2s ease;
     }
-    .download-btn:hover{background:#0ea5e9}
-
-    /* Prevent in-page anchors from hiding under fixed nav (if you add any #links) */
-    :target{ scroll-margin-top: calc(var(--nav-h) + 8px); }
+    .download-btn:hover{ background:#0ea5e9; }
+    /* Make code inline readable on dark */
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   </style>
 </head>
-<body>
 
-  <!-- FULL-WIDTH NAV lives OUTSIDE the content wrapper -->
+<!-- Use the same body class the homepage uses so mobile/nav rules apply -->
+<body class="page-specific">
+
+  <!-- Same NAV as index.html -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="labs.html">Home Labs</a></li>
       <li><a href="passion.html">My Passion</a></li>
-      <li><a href="soc-lab.html" class="active">SOC Lab</a></li>
+      <li><a href="soc-lab.html" aria-current="page">SOC Lab</a></li>
       <li><a href="opportunities.html">Opportunities</a></li>
       <li><a href="certifications.html">Certifications</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+  <div class="nav-spacer"></div>
 
-  <div class="wrap">
-    <!-- Hero -->
-    <header class="hero">
-      <h1 class="title">SOC Home Lab</h1>
-      <p class="sub">
-        A complete SOC lab I built from scratch — configuring networks, simulating attacks, forwarding logs, monitoring with Splunk,
-        scanning with Nessus, and investigating with Autopsy.
-      </p>
-      <div class="chips">
-        <span class="chip">pfSense</span><span class="chip">Kali Linux</span><span class="chip">Ubuntu (SSH)</span>
-        <span class="chip">Windows 10</span><span class="chip">Windows Server (AD)</span>
-        <span class="chip">Splunk Enterprise</span><span class="chip">Nessus</span><span class="chip">Autopsy</span>
+  <main id="content" role="main">
+    <!-- HERO (same split layout with round photo) -->
+    <section class="split-hero compact-hero">
+      <div class="hero-text">
+        <h1>SOC Home Lab</h1>
+        <p class="tagline">
+          A complete SOC lab I built from scratch — configuring networks, simulating attacks, forwarding logs,
+          monitoring with Splunk, scanning with Nessus, and investigating with Autopsy.
+        </p>
+        <div class="soc-badges">
+          <span class="chip">pfSense</span>
+          <span class="chip">Kali Linux</span>
+          <span class="chip">Ubuntu (SSH)</span>
+          <span class="chip">Windows 10</span>
+          <span class="chip">Windows Server (AD)</span>
+          <span class="chip">Splunk Enterprise</span>
+          <span class="chip">Nessus</span>
+          <span class="chip">Autopsy</span>
+        </div>
       </div>
-    </header>
+      <div class="hero-image">
+        <!-- same portrait as homepage -->
+        <img src="images/jeeva-profile.png" alt="Portrait of Jeeva Kumaradas" />
+      </div>
+    </section>
 
-    <!-- Video -->
-    <div class="video">
-      <video controls playsinline width="100%" poster="images/soc-lab-thumb.jpg">
-        <source src="videos/Soc-lab.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
-    <p style="margin-top:12px;text-align:center">
-      <a href="videos/Soc-lab.mp4" class="download-btn" download>⬇ Download the video (MP4)</a>
-    </p>
+    <!-- VIDEO -->
+    <section class="section">
+      <div class="video-frame">
+        <video controls playsinline width="100%" poster="images/soc-lab-thumb.jpg">
+          <source src="videos/Soc-lab.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <p style="margin-top:12px; text-align:center;">
+        <a href="videos/Soc-lab.mp4" class="download-btn" download>Download the video (MP4)</a>
+      </p>
+    </section>
 
-    <!-- Overview -->
-    <section class="section card">
+    <!-- OVERVIEW -->
+    <section class="section card soc">
       <h2>Overview</h2>
       <p>
         To strengthen my hands-on cybersecurity skills, I designed and implemented a Security Operations Center (SOC) home lab.
@@ -131,8 +103,8 @@
       </p>
     </section>
 
-    <!-- Architecture -->
-    <section class="section card">
+    <!-- ARCHITECTURE -->
+    <section class="section card soc">
       <h2>Lab Architecture</h2>
       <ul>
         <li><strong>VMware Workstation</strong> with custom VM networks (VMnet2, VMnet3, etc.) for VLAN segmentation.</li>
@@ -147,16 +119,16 @@
       </ul>
     </section>
 
-    <!-- Key Activities -->
-    <section class="section card">
+    <!-- KEY ACTIVITIES -->
+    <section class="section card soc">
       <h2>Key Activities</h2>
 
-      <h3>Network &amp; Troubleshooting</h3>
+      <h3>Network & Troubleshooting</h3>
       <ul>
         <li>Built pfSense policies for controlled egress/ingress; validated with <code>ping</code>, <code>traceroute</code>, and <code>tcpdump</code>.</li>
         <li>Resolved Kali connectivity by correcting DNS/mirror settings and pfSense NAT/firewall rules.</li>
       </ul>
-      <pre><code>ping 8.8.8.8
+      <pre class="soc"><code>ping 8.8.8.8
 traceroute 8.8.8.8
 ip a
 sudo tcpdump -i eth0
@@ -166,7 +138,7 @@ sudo tcpdump -i eth0
       <ul>
         <li>Created test account on Linux target and simulated SSH brute force with Hydra.</li>
       </ul>
-      <pre><code># Create a user on the target
+      <pre class="soc"><code># Create a user on the target
 sudo adduser jeeva
 sudo passwd jeeva    # set: 123456 (lab only)
 
@@ -186,7 +158,7 @@ nmap -sV -p- 10.0.10.25
       <ul>
         <li>Added <code>auth.log</code> and <code>syslog</code> to Splunk, restarted, and built searches to verify activity.</li>
       </ul>
-      <pre><code># Add inputs (credentials redacted for public repo)
+      <pre class="soc"><code># Add inputs (credentials redacted for public repo)
 sudo /opt/splunk/bin/splunk add monitor /var/log/auth.log \
   -sourcetype linux_secure -index main -auth 'admin:&lt;redacted&gt;'
 
@@ -205,7 +177,7 @@ index=main sourcetype=linux_secure jeeva
       <ul>
         <li>Scanned Linux/Windows hosts with Nessus; reviewed and exported results.</li>
       </ul>
-      <pre><code># start local service
+      <pre class="soc"><code># start local service
 sudo systemctl start nessusd.service
 # Web UI: https://127.0.0.1:8834/
 # CLI (path may vary)
@@ -217,7 +189,7 @@ sudo /opt/nessus/sbin/nessuscli scan launch &lt;scan-uuid&gt;
       <ul>
         <li>Loaded <code>.E01</code> images into Autopsy; analyzed partitions, files, and metadata.</li>
       </ul>
-      <pre><code># Autopsy workflow
+      <pre class="soc"><code># Autopsy workflow
 File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
 
 # If nothing shows:
@@ -227,9 +199,9 @@ File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
 </code></pre>
     </section>
 
-    <!-- Challenges -->
-    <section class="section card">
-      <h2>Challenges &amp; Solutions</h2>
+    <!-- CHALLENGES -->
+    <section class="section card soc">
+      <h2>Challenges & Solutions</h2>
       <ul>
         <li><strong>Kali had no internet</strong> → Fixed with pfSense NAT + firewall rules and DNS/mirror checks.</li>
         <li><strong>Hydra wordlist missing</strong> → Created <code>top10.txt</code> and used <code>rockyou.txt</code>.</li>
@@ -238,8 +210,8 @@ File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
       </ul>
     </section>
 
-    <!-- Skills -->
-    <section class="section card">
+    <!-- SKILLS -->
+    <section class="section card soc">
       <h2>Skills Gained</h2>
       <ul>
         <li><strong>Incident Response Workflow</strong> → From attack simulation to detection and correlation.</li>
@@ -250,8 +222,8 @@ File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
       </ul>
     </section>
 
-    <!-- Conclusion -->
-    <section class="section card">
+    <!-- CONCLUSION -->
+    <section class="section card soc">
       <h2>Conclusion</h2>
       <p>
         Building this SOC lab has been more than a technical exercise — it brought my passion for cybersecurity to life.
@@ -270,7 +242,16 @@ File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
         it’s a calling.
       </p>
     </section>
+  </main>
 
-  </div>
+  <!-- Same footer as homepage (optional) -->
+  <footer class="site-footer full-bleed">
+    <div class="footer-inner">
+      © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
+    </div>
+  </footer>
+
+  <!-- Kill legacy onscroll handlers just like index -->
+  <script>window.onscroll = null;</script>
 </body>
 </html>
