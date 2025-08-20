@@ -3,41 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOC Home Lab | Jeeva Kumaradas</title>
+  <title>SOC Home Lab | Portfolio</title>
   <meta name="description" content="SOC Home Lab project — attack simulation, Splunk monitoring, Nessus scanning, and Autopsy forensics." />
 
-  <!-- Match index.html font + icon imports -->
+  <!-- Use the same global CSS & fonts as index.html -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-  <!-- Use the same site stylesheet as the homepage -->
   <link rel="stylesheet" href="style.css?v=31" />
 
-  <!-- Page-specific tiny overrides only (kept minimal) -->
+  <!-- Minimal page-specific helpers (do NOT restyle body/background/hero here) -->
   <style>
-    /* Match index nav behavior on mobile (inherits your global rules) */
-    .soc-badges { display:flex; flex-wrap:wrap; gap:8px; margin:.5rem 0 0; }
-    .soc-badges .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:#dfe6ee; padding:6px 10px; border-radius:999px; font-size:12px; }
-    .video-frame{ position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:14px; border:1px solid rgba(255,255,255,.15); background:#000; }
-    .video-frame video{ position:absolute; inset:0; width:100%; height:100%; border:0; }
-    .card.soc { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:22px; }
-    pre.soc{ background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:14px; overflow:auto; }
-    .download-btn{
-      display:inline-block; background:#38bdf8; color:#0f172a; font-weight:600;
-      padding:10px 16px; border-radius:8px; text-decoration:none; transition:background .2s ease;
+    /* spacer so content never hides under sticky nav */
+    .nav-spacer { height: 86px; } /* matches your index; adjust if your nav height changes */
+
+    /* badges row under hero */
+    .soc-badges { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 24px; }
+    .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:#e8eefc;
+            padding:6px 10px; border-radius:999px; font-size:12px; }
+
+    /* Video wrapper like other cards */
+    .video-card { background: rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.08);
+                  border-radius:16px; overflow:hidden; }
+    .video-card video { display:block; width:100%; height:auto; }
+    .video-download { text-align:center; margin-top:10px; }
+    .download-btn { display:inline-block; background:#ff5722; color:#fff; padding:10px 16px;
+                    border-radius:10px; text-decoration:none; font-weight:600; }
+    .download-btn:hover { background:#e64a19; }
+
+    /* content sections look like cards */
+    .soc-section { margin:28px 0; }
+    .soc-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 20px;
     }
-    .download-btn:hover{ background:#0ea5e9; }
-    /* Make code inline readable on dark */
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .soc-card h2 { margin-top:0; }
+    pre { background: rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.1);
+          border-radius:12px; padding:14px; overflow:auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:13px; }
   </style>
 </head>
 
-<!-- Use the same body class the homepage uses so mobile/nav rules apply -->
 <body class="page-specific">
-
-  <!-- Same NAV as index.html -->
+  <!-- Navigation (same as index.html) -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -54,95 +65,98 @@
   <div class="nav-spacer"></div>
 
   <main id="content" role="main">
-    <!-- HERO (same split layout with round photo) -->
-    <section class="hero-section">
-  <div>
-    <h1>SOC Home Lab</h1>
-    <p>
-      A complete SOC lab I built from scratch — configuring networks, simulating attacks,
-      forwarding logs, monitoring with Splunk, scanning with Nessus, and investigating with Autopsy.
-    </p>
-  </div>
-  <img src="images/profile.jpg" alt="Profile picture">
-</section>
-
-        <div class="soc-badges">
-          <span class="chip">pfSense</span>
-          <span class="chip">Kali Linux</span>
-          <span class="chip">Ubuntu (SSH)</span>
-          <span class="chip">Windows 10</span>
-          <span class="chip">Windows Server (AD)</span>
-          <span class="chip">Splunk Enterprise</span>
-          <span class="chip">Nessus</span>
-          <span class="chip">Autopsy</span>
-        </div>
+    <!-- HERO — reuse EXACT layout from index so fonts/spacing/profile match -->
+    <section class="split-hero compact-hero" aria-labelledby="soc-title">
+      <div class="hero-text">
+        <h1 id="soc-title">SOC Home Lab</h1>
+        <p class="tagline">
+          A complete SOC lab I built from scratch — configuring networks, simulating attacks,
+          forwarding logs, monitoring with Splunk, scanning with Nessus, and investigating with Autopsy.
+        </p>
       </div>
       <div class="hero-image">
-        <!-- same portrait as homepage -->
+        <!-- same portrait file you use on index -->
         <img src="images/jeeva-profile.png" alt="Portrait of Jeeva Kumaradas" />
       </div>
     </section>
 
-    <!-- VIDEO -->
-    <section class="section">
-      <div class="video-frame">
-        <video controls playsinline width="100%" poster="images/soc-lab-thumb.jpg">
+    <!-- Tech chips -->
+    <div class="soc-badges">
+      <span class="chip">pfSense</span>
+      <span class="chip">Kali Linux</span>
+      <span class="chip">Ubuntu (SSH)</span>
+      <span class="chip">Windows 10</span>
+      <span class="chip">Windows Server (AD)</span>
+      <span class="chip">Splunk Enterprise</span>
+      <span class="chip">Nessus</span>
+      <span class="chip">Autopsy</span>
+    </div>
+
+    <!-- Video -->
+    <section class="soc-section">
+      <div class="video-card">
+        <video controls playsinline poster="images/soc-lab-thumb.jpg">
           <source src="videos/Soc-lab.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
       </div>
-      <p style="margin-top:12px; text-align:center;">
-        <a href="videos/Soc-lab.mp4" class="download-btn" download>Download the video (MP4)</a>
-      </p>
+      <div class="video-download">
+        <a class="download-btn" href="videos/Soc-lab.mp4" download>Download the video (MP4)</a>
+      </div>
     </section>
 
-    <!-- OVERVIEW -->
-    <section class="section card soc">
-      <h2>Overview</h2>
-      <p>
-        To strengthen my hands-on cybersecurity skills, I designed and implemented a Security Operations Center (SOC) home lab.
-        The lab simulates a real-world enterprise environment, allowing me to practice attack simulation, detection, monitoring,
-        vulnerability management, and forensics. This project demonstrates my ability to build, troubleshoot, and operate a SOC
-        environment from scratch using industry-standard tools.
-      </p>
+    <!-- Overview -->
+    <section class="soc-section">
+      <div class="soc-card">
+        <h2>Overview</h2>
+        <p>
+          To strengthen my hands-on cybersecurity skills, I designed and implemented a Security Operations Center (SOC) home lab.
+          The lab simulates a real-world enterprise environment, allowing me to practice attack simulation, detection, monitoring,
+          vulnerability management, and forensics. This project demonstrates my ability to build, troubleshoot, and operate a SOC
+          environment from scratch using industry-standard tools.
+        </p>
+      </div>
     </section>
 
-    <!-- ARCHITECTURE -->
-    <section class="section card soc">
-      <h2>Lab Architecture</h2>
-      <ul>
-        <li><strong>VMware Workstation</strong> with custom VM networks (VMnet2, VMnet3, etc.) for VLAN segmentation.</li>
-        <li><strong>pfSense</strong> — Firewall/gateway controlling inbound/outbound traffic; fixed Kali internet via NAT and rules.</li>
-        <li><strong>Windows 10</strong> — End-user workstation.</li>
-        <li><strong>Linux Server (Ubuntu)</strong> — SSH target for attack simulation.</li>
-        <li><strong>Windows Server (Domain Controller)</strong> — Active Directory.</li>
-        <li><strong>Kali Linux</strong> — Attacker box for brute force and recon.</li>
-        <li><strong>Splunk Enterprise</strong> — Central log collection, parsing, and monitoring.</li>
-        <li><strong>Nessus Essentials</strong> — Vulnerability scanning and reporting.</li>
-        <li><strong>Autopsy</strong> — Forensic analysis of disk images (<code>.E01</code>).</li>
-      </ul>
+    <!-- Architecture -->
+    <section class="soc-section">
+      <div class="soc-card">
+        <h2>Lab Architecture</h2>
+        <ul>
+          <li><strong>VMware Workstation</strong> with custom VM networks (VMnet2, VMnet3, etc.) for VLAN segmentation.</li>
+          <li><strong>pfSense</strong> — Firewall/gateway controlling inbound/outbound traffic; fixed Kali internet via NAT and rules.</li>
+          <li><strong>Windows 10</strong> — End-user workstation.</li>
+          <li><strong>Linux Server (Ubuntu)</strong> — SSH target for attack simulation.</li>
+          <li><strong>Windows Server (Domain Controller)</strong> — Active Directory.</li>
+          <li><strong>Kali Linux</strong> — Attacker box for brute force and recon.</li>
+          <li><strong>Splunk Enterprise</strong> — Central log collection, parsing, and monitoring.</li>
+          <li><strong>Nessus Essentials</strong> — Vulnerability scanning and reporting.</li>
+          <li><strong>Autopsy</strong> — Forensic analysis of disk images (<code>.E01</code>).</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- KEY ACTIVITIES -->
-    <section class="section card soc">
-      <h2>Key Activities</h2>
+    <!-- Key Activities -->
+    <section class="soc-section">
+      <div class="soc-card">
+        <h2>Key Activities</h2>
 
-      <h3>Network & Troubleshooting</h3>
-      <ul>
-        <li>Built pfSense policies for controlled egress/ingress; validated with <code>ping</code>, <code>traceroute</code>, and <code>tcpdump</code>.</li>
-        <li>Resolved Kali connectivity by correcting DNS/mirror settings and pfSense NAT/firewall rules.</li>
-      </ul>
-      <pre class="soc"><code>ping 8.8.8.8
+        <h3>Network & Troubleshooting</h3>
+        <ul>
+          <li>Built pfSense policies for controlled egress/ingress; validated with <code>ping</code>, <code>traceroute</code>, and <code>tcpdump</code>.</li>
+          <li>Resolved Kali connectivity by correcting DNS/mirror settings and pfSense NAT/firewall rules.</li>
+        </ul>
+<pre><code>ping 8.8.8.8
 traceroute 8.8.8.8
 ip a
 sudo tcpdump -i eth0
 </code></pre>
 
-      <h3>Attack Simulation (Red Team)</h3>
-      <ul>
-        <li>Created test account on Linux target and simulated SSH brute force with Hydra.</li>
-      </ul>
-      <pre class="soc"><code># Create a user on the target
+        <h3>Attack Simulation (Red Team)</h3>
+        <ul>
+          <li>Created test account on the Linux target and simulated SSH brute force with Hydra.</li>
+        </ul>
+<pre><code># Create a user on the target
 sudo adduser jeeva
 sudo passwd jeeva    # set: 123456 (lab only)
 
@@ -156,13 +170,13 @@ hydra -l jeeva -P /usr/share/wordlists/rockyou.txt ssh://10.0.10.25 -t 4 -V
 # Recon
 nmap -sV -p- 10.0.10.25
 </code></pre>
-      <p>Failed/successful attempts landed in <code>/var/log/auth.log</code> on the target.</p>
+        <p>Failed/successful attempts landed in <code>/var/log/auth.log</code> on the target.</p>
 
-      <h3>Log Monitoring (Blue Team)</h3>
-      <ul>
-        <li>Added <code>auth.log</code> and <code>syslog</code> to Splunk, restarted, and built searches to verify activity.</li>
-      </ul>
-      <pre class="soc"><code># Add inputs (credentials redacted for public repo)
+        <h3>Log Monitoring (Blue Team)</h3>
+        <ul>
+          <li>Added <code>auth.log</code> and <code>syslog</code> to Splunk, restarted, and built searches to verify activity.</li>
+        </ul>
+<pre><code># Add inputs (credentials redacted for public repo)
 sudo /opt/splunk/bin/splunk add monitor /var/log/auth.log \
   -sourcetype linux_secure -index main -auth 'admin:&lt;redacted&gt;'
 
@@ -177,11 +191,11 @@ index=main sourcetype=linux_secure "Accepted password"
 index=main sourcetype=linux_secure jeeva
 </code></pre>
 
-      <h3>Vulnerability Management</h3>
-      <ul>
-        <li>Scanned Linux/Windows hosts with Nessus; reviewed and exported results.</li>
-      </ul>
-      <pre class="soc"><code># start local service
+        <h3>Vulnerability Management</h3>
+        <ul>
+          <li>Scanned Linux/Windows hosts with Nessus; reviewed and exported results.</li>
+        </ul>
+<pre><code># start local service
 sudo systemctl start nessusd.service
 # Web UI: https://127.0.0.1:8834/
 # CLI (path may vary)
@@ -189,11 +203,11 @@ sudo /opt/nessus/sbin/nessuscli update --plugins
 sudo /opt/nessus/sbin/nessuscli scan launch &lt;scan-uuid&gt;
 </code></pre>
 
-      <h3>Digital Forensics</h3>
-      <ul>
-        <li>Loaded <code>.E01</code> images into Autopsy; analyzed partitions, files, and metadata.</li>
-      </ul>
-      <pre class="soc"><code># Autopsy workflow
+        <h3>Digital Forensics</h3>
+        <ul>
+          <li>Loaded <code>.E01</code> images into Autopsy; analyzed partitions, files, and metadata.</li>
+        </ul>
+<pre><code># Autopsy workflow
 File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
 
 # If nothing shows:
@@ -201,61 +215,58 @@ File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
 - Reindex/parsing enabled
 - Confirm partitions detected
 </code></pre>
+      </div>
     </section>
 
-    <!-- CHALLENGES -->
-    <section class="section card soc">
-      <h2>Challenges & Solutions</h2>
-      <ul>
-        <li><strong>Kali had no internet</strong> → Fixed with pfSense NAT + firewall rules and DNS/mirror checks.</li>
-        <li><strong>Hydra wordlist missing</strong> → Created <code>top10.txt</code> and used <code>rockyou.txt</code>.</li>
-        <li><strong>Splunk not showing logs</strong> → Manually added <code>auth.log</code>/<code>syslog</code> inputs and restarted.</li>
-        <li><strong>Autopsy empty evidence</strong> → Reindexed image; verified correct evidence type and partition parsing.</li>
-      </ul>
+    <!-- Challenges -->
+    <section class="soc-section">
+      <div class="soc-card">
+        <h2>Challenges &amp; Solutions</h2>
+        <ul>
+          <li><strong>Kali had no internet</strong> → Fixed with pfSense NAT + firewall rules and DNS/mirror checks.</li>
+          <li><strong>Hydra wordlist missing</strong> → Created <code>top10.txt</code> and used <code>rockyou.txt</code>.</li>
+          <li><strong>Splunk not showing logs</strong> → Manually added <code>auth.log</code>/<code>syslog</code> inputs and restarted.</li>
+          <li><strong>Autopsy empty evidence</strong> → Reindexed image; verified correct evidence type and partition parsing.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section card soc">
-      <h2>Skills Gained</h2>
-      <ul>
-        <li><strong>Incident Response Workflow</strong> → From attack simulation to detection and correlation.</li>
-        <li><strong>SIEM Administration</strong> → Splunk inputs, SPL searches, basic dashboards.</li>
-        <li><strong>Vulnerability Management</strong> → Nessus scanning, report review, risk awareness.</li>
-        <li><strong>Digital Forensics</strong> → Autopsy case handling and artifact review.</li>
-        <li><strong>Troubleshooting</strong> → Real network and configuration fixes (pfSense, Linux, services).</li>
-      </ul>
+    <!-- Skills -->
+    <section class="soc-section">
+      <div class="soc-card">
+        <h2>Skills Gained</h2>
+        <ul>
+          <li><strong>Incident Response Workflow</strong> → From attack simulation to detection and correlation.</li>
+          <li><strong>SIEM Administration</strong> → Splunk inputs, SPL searches, basic dashboards.</li>
+          <li><strong>Vulnerability Management</strong> → Nessus scanning, report review, risk awareness.</li>
+          <li><strong>Digital Forensics</strong> → Autopsy case handling and artifact review.</li>
+          <li><strong>Troubleshooting</strong> → Real network and configuration fixes (pfSense, Linux, services).</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- CONCLUSION -->
-    <section class="section card soc">
-      <h2>Conclusion</h2>
-      <p>
-        Building this SOC lab has been more than a technical exercise — it brought my passion for cybersecurity to life.
-        Every challenge I faced, from troubleshooting firewalls to analyzing forensic images, pushed me to think like a real
-        analyst and strengthened my belief that this is the career path I’m meant to pursue.
-      </p>
-      <p>
-        I’ve always been fascinated by how technology can be both powerful and vulnerable, and this project let me explore that
-        balance hands-on. From simulating attacks to detecting them, from scanning for weaknesses to building defenses,
-        I experienced the full cycle of what a SOC analyst does every day.
-      </p>
-      <p>
-        This lab is not just about tools like Splunk, Nessus, or Autopsy — it’s about developing the mindset to investigate,
-        defend, and continuously improve. My dream is to turn this passion into a professional career where I can protect
-        organizations, contribute to security teams, and keep learning along the way. Cybersecurity is more than a job for me —
-        it’s a calling.
-      </p>
+    <!-- Conclusion -->
+    <section class="soc-section">
+      <div class="soc-card">
+        <h2>Conclusion</h2>
+        <p>
+          Building this SOC lab has been more than a technical exercise — it brought my passion for cybersecurity to life.
+          Every challenge I faced, from troubleshooting firewalls to analyzing forensic images, pushed me to think like a real
+          analyst and strengthened my belief that this is the career path I’m meant to pursue.
+        </p>
+        <p>
+          This lab is not just about tools like Splunk, Nessus, or Autopsy — it’s about developing the mindset to investigate,
+          defend, and continuously improve. My dream is to turn this passion into a professional career where I can protect
+          organizations, contribute to security teams, and keep learning along the way. Cybersecurity is more than a job for me —
+          it’s a calling.
+        </p>
+      </div>
     </section>
   </main>
 
-  <!-- Same footer as homepage (optional) -->
+  <!-- same footer style is inherited from style.css -->
   <footer class="site-footer full-bleed">
-    <div class="footer-inner">
-      © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
-    </div>
+    <div class="footer-inner">© 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.</div>
   </footer>
-
-  <!-- Kill legacy onscroll handlers just like index -->
-  <script>window.onscroll = null;</script>
 </body>
 </html>
