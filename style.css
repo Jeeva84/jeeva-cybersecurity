@@ -5128,6 +5128,32 @@ ul { margin: 6px 0 0 20px; }    /* bring lists closer to headings */
 li { margin: 4px 0; }           /* tighter list items */
 
 
+/* --- Natural, non-cropping video --- */
+.video-wrap{
+  max-width: 980px;
+  margin: 16px auto 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  background: #0b0b0b;
+}
+
+.video-wrap video{
+  display: block;
+  width: 100%;
+  height: auto;             /* let the video decide its height */
+  aspect-ratio: 16 / 9;     /* keeps it tidy on odd browsers */
+  object-fit: contain;      /* never crops; letterboxes if needed */
+}
+
+/* SOC page spacing tweaks */
+.hero-section { padding: 20px 0 8px; }
+.hero-section p { margin: 8px 0 10px; }
+
+.section.card { margin-top: 18px; padding: 18px 20px; }
+.card p { margin: 0 0 10px; line-height: 1.6; }
+
+.soc-badges { margin: 8px 0 10px; }
 
 
 
