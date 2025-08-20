@@ -1383,12 +1383,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
+  background: #121212;   /* solid dark background */
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #121212;
+  color: #f5f5f5;
+  padding-top: 70px; /* Ensure padding on top to accommodate the navbar */
 }
+
 
 /* --- Navigation Bar --- */
 .nav-bar {
@@ -5100,6 +5102,15 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+body {
+  background: #121212 !important;  /* or any solid color you prefer */
+  color: #f5f5f5;                  /* text color for contrast */
+}
+
+body.soc-page {
+  background: #121212 !important;
+  color: #f5f5f5;
+}
 
 
 
