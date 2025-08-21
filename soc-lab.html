@@ -289,6 +289,40 @@ File &gt; New Case &gt; Add Data Source &gt; Disk Image (.E01)
   window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
 })();
 </script>
+<!-- ************ NUCLEAR MOBILE OVERRIDE (SOC PAGE ONLY) ************ -->
+<style id="nuclear-soc-mobile-fix">
+  @media (max-width: 900px){
+    /* Remove extra padding/margin on mobile */
+    body.soc-page, body.page-specific.soc-page {
+      padding-top: 0 !important; margin-top: 0 !important;
+    }
 
+    /* Force nav to behave normally */
+    body.soc-page nav.nav-bar,
+    body.page-specific.soc-page nav.nav-bar {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      height: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+    }
+
+    body.soc-page .nav-bar.nav-hidden,
+    body.soc-page .nav-bar.hidden-navbar {
+      transform: none !important;
+    }
+
+    /* Make sure background video stays behind everything */
+    body.soc-page .video-background{
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: -1 !important;
+    }
+  }
+</style>
+
+  
 </body>
 </html>
