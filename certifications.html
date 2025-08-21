@@ -6,49 +6,46 @@
   <title>Jeeva Kumaradas - Certifications</title>
 
   <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=36" />
+  <link rel="stylesheet" href="style.css?v=37" />
 
-  <!-- Page-safe overrides (fix nav overlap, keep your card look) -->
+  <!-- Page-safe overrides -->
   <style>
-    /* Fixed nav + safe padding so content never hides underneath */
+    /* Fixed nav + safe padding */
     :root{
-      --nav-h-mobile: 70px;   /* adjust if your mobile nav is taller */
-      --nav-h-desktop: 86px;  /* match your desktop nav height */
+      --nav-h-mobile: 70px;
+      --nav-h-desktop: 86px;
     }
     nav.nav-bar{
       position: fixed !important;
       top: 0 !important; left: 0; right: 0;
       z-index: 1000 !important;
     }
-    body.page-specific{
-      padding-top: var(--nav-h-mobile) !important;
+    body.page-specific{ padding-top: var(--nav-h-mobile) !important; }
+    @media (min-width:901px){
+      body.page-specific{ padding-top: var(--nav-h-desktop) !important; }
     }
-    @media (min-width: 901px){
-      body.page-specific{
-        padding-top: var(--nav-h-desktop) !important;
-      }
-    }
-    /* If any spacer exists from older versions, neutralize it */
     .nav-spacer{ display:none !important; height:0 !important; }
 
-    /* Keep background video behind everything */
+    /* Keep the video behind everything */
     .video-background{ z-index: 0 !important; }
 
-    /* Your existing content styling */
-    .main-content {
-      color:#fff;
-      background:rgba(0,0,0,.5);
-      padding:2rem;
-      border-radius:10px;
-      margin:2rem auto;
-      max-width:960px;
+    /* >>> The important part: visible, readable wrapper over video */
+    main.main-content{
+      position: relative; z-index: 2;     /* lift above video */
+      color:#fff !important;
+      background: rgba(0,0,0,.60) !important;
+      padding: 2rem !important;
+      border-radius: 12px;
+      max-width: 980px;
+      margin: 1.25rem auto 2.5rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
     }
-    .section-card h2, .section-card ul, .section-card li, .section-card p { color:#fff; }
 
-    /* A little spacing cleanup */
+    /* Tidy section styles */
+    .section-card h2, .section-card ul, .section-card li, .section-card p { color:#fff; }
     .certifications-section h2 { margin-top: 0; }
     .cert-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
-    .cert-card { margin: 1rem 0 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .cert-card { margin: 1rem 0 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid rgba(255,255,255,.15); }
     .cert-card:last-child { border-bottom: 0; }
     .cert-meta { display: grid; grid-template-columns: max-content 1fr; gap: .35rem .75rem; margin: .5rem 0 1rem; }
     .cert-meta dt { opacity: .85; }
@@ -60,7 +57,7 @@
     }
     .download-button:hover { background:#e64a19; }
 
-    /* Mobile nav grid (same pattern you used elsewhere) */
+    /* Mobile grid nav (so tabs don’t overflow) */
     @media (max-width:900px){
       nav .nav-links{
         display:grid !important;
@@ -111,15 +108,15 @@
     </ul>
   </nav>
 
-  <!-- Profile Picture -->
+  <!-- Profile Picture (optional, like index) -->
   <header>
     <div class="hero-image">
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
     </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="main-content">
+  <!-- Main Content (now clearly visible) -->
+  <main id="content" class="main-content">
     <div class="section-card">
       <section id="certifications" class="container certifications-section">
         <h2>Professional Certifications</h2>
@@ -166,7 +163,7 @@
         </ul>
       </section>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer full-bleed">
