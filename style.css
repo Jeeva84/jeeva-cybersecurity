@@ -5459,6 +5459,32 @@ body{
   :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
 }
 
+/* === Mobile: keep nav fixed and keep content clear of it === */
+@media (max-width: 900px){
+  nav.nav-bar{
+    position: fixed !important;
+    top: 0 !important; left: 0; right: 0;
+    z-index: 9999 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Real padding set by JS below using --mobile-nav-h */
+  body{
+    padding-top: var(--mobile-nav-h, 72px) !important; /* 72px fallback */
+  }
+
+  /* Avoid double gaps if you have a spacer element */
+  .nav-spacer{ display: none !important; height: 0 !important; }
+
+  /* Don’t push these down again */
+  main, #content, .main-content{ margin-top: 0 !important; }
+
+  /* When jumping to #anchors, don’t let the nav cover the heading */
+  :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
+}
+
 
 
 
