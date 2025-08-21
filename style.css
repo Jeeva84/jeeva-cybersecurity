@@ -5280,6 +5280,73 @@ body.soc-page .video-wrap{
   margin: 12px auto 18px !important;
 }
 
+/* ===== Global mobile nav/content fix (put at end of style.css) ===== */
+
+/* Desktop keeps sticky navbar */
+@media (min-width: 901px) {
+  nav.nav-bar { 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+  }
+  /* If you use a spacer, keep it visible on desktop */
+  .nav-spacer { height: 86px; }
+}
+
+/* Mobile: navbar lives in normal flow so it doesn't cover content */
+@media (max-width: 900px) {
+  /* Remove any top padding tricks from older pages */
+  html, body { padding-top: 0 !important; }
+
+  /* Make the nav non-sticky on mobile */
+  nav.nav-bar {
+    position: relative !important;
+    top: auto !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    background: #1f1f1f !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  }
+
+  /* Hide any desktop spacer on mobile */
+  .nav-spacer { display: none !important; height: 0 !important; }
+
+  /* Ensure ALL page layouts sit below the nav and are readable */
+  main, .wrap, .container, .content, .page, .hero, section {
+    margin-top: 8px !important;
+  }
+
+  /* When linking to #anchors, don’t let the navbar hide them */
+  h1, h2, h3, [id] { 
+    scroll-margin-top: 88px; 
+  }
+
+  /* Some older pages used horizontal nav scrolling—make it tidy on mobile */
+  nav .nav-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+  nav .nav-links a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px 14px !important;
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
 
 
 
