@@ -321,9 +321,48 @@
   }
 </style>
 
+  <style id="resume-nav-fullbleed">
+  @media (max-width: 900px){
+    /* no side padding anywhere on the page */
+    html, body { overflow-x: hidden !important; }
+    body.resume-page{
+      margin:0 !important;
+      padding:0 !important;
+      padding-left:0 !important;
+      padding-right:0 !important;
+      scroll-padding-top:0 !important;
+    }
+
+    /* make the nav truly edge-to-edge and centered */
+    body.resume-page nav.nav-bar{
+      position: relative !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;   /* hard-center */
+      width: 100vw !important;                  /* full viewport width */
+      max-width: 100vw !important;
+      margin: 0 !important;                     /* no side gaps */
+      border-radius: 0 !important;
+      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+      z-index: 2 !important;
+      /* optional inner padding so buttons don’t touch edges */
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    /* spacer not needed when nav is in normal flow */
+    body.resume-page .nav-spacer{ display:none !important; height:0 !important; }
+
+    /* background video stays behind everything */
+    body.resume-page .video-background{
+      position: fixed !important; inset: 0 !important; z-index: -1 !important;
+    }
+  }
+</style>
+
 
 </body>
 </html>
+
 
 
 
