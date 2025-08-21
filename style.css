@@ -5347,6 +5347,47 @@ body.soc-page .video-wrap{
   }
 }
 
+/* ===== FINAL, GLOBAL mobile/desktop nav fix ===== */
+
+/* Desktop: keep sticky nav; spacer takes nav's height (set by JS) */
+@media (min-width: 901px) {
+  nav.nav-bar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-spacer {
+    display: block !important;
+    height: 86px; /* JS will overwrite to exact height */
+  }
+}
+
+/* Mobile: nav in normal flow so content can never scroll under it */
+@media (max-width: 900px) {
+  /* Kill any page padding tricks */
+  html, body, main, .wrap, .container, .content, .page {
+    padding-top: 0 !important;
+  }
+
+  nav.nav-bar {
+    position: relative !important;  /* Non-sticky */
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1000 !important;
+  }
+
+  /* Spacer not needed on phones */
+  .nav-spacer {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  /* Avoid hidden anchors on phones */
+  :target { scroll-margin-top: 88px; }
+}
+
 
 
 
