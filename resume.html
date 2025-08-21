@@ -8,7 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-specific">
+<body class="page-specific resume-page">
+
 
   <div class="video-background">
   <video autoplay muted loop playsinline>
@@ -122,10 +123,51 @@
   window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
 })();
 </script>
+<!-- ************ NUCLEAR MOBILE OVERRIDE (RESUME PAGE ONLY) ************ -->
+<style id="nuclear-resume-mobile-fix">
+  @media (max-width: 900px){
+    /* Remove any global offsets on this page */
+    body.resume-page, body.page-specific.resume-page {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+      scroll-padding-top: 0 !important;
+    }
+
+    /* Nav: in normal flow on mobile so it won't cover content */
+    body.resume-page nav.nav-bar{
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      height: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+      z-index: 2 !important;
+    }
+    body.resume-page .nav-bar.nav-hidden,
+    body.resume-page .nav-bar.hidden-navbar{
+      transform: none !important;
+    }
+
+    /* Spacer not needed when nav is relative */
+    body.resume-page .nav-spacer{
+      display: none !important;
+      height: 0 !important;
+    }
+
+    /* Keep background video behind everything */
+    body.resume-page .video-background{
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: -1 !important;
+    }
+  }
+</style>
 
 
 </body>
 </html>
+
 
 
 
