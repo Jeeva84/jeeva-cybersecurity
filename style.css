@@ -5388,6 +5388,48 @@ body.soc-page .video-wrap{
   :target { scroll-margin-top: 88px; }
 }
 
+/* ===== FINAL, NO-JS NAV FIX (same on all pages) ===== */
+:root{
+  --nav-h-desktop: 86px;  /* adjust if your desktop nav is taller */
+  --nav-h-mobile: 64px;   /* adjust if your mobile nav wraps to two lines */
+}
+
+/* Desktop: keep sticky nav; spacer equals nav height */
+@media (min-width: 901px){
+  nav.nav-bar{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-spacer{
+    display: block !important;
+    height: var(--nav-h-desktop) !important;
+  }
+}
+
+/* Mobile: nav is NOT sticky; spacer still adds breathing room so nothing tucks under */
+@media (max-width: 900px){
+  /* Kill any old padding hacks that pushed content under the nav */
+  html, body, main, .wrap, .container, .content, .page{
+    padding-top: 0 !important;
+  }
+
+  nav.nav-bar{
+    position: relative !important;  /* not sticky on phones */
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* Keep a small spacer so content never bumps the nav */
+  .nav-spacer{
+    display: block !important;
+    height: var(--nav-h-mobile) !important;
+  }
+
+  /* Anchor jumps won’t hide under the nav on phones */
+  :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
+}
+
 
 
 
