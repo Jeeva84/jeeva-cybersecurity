@@ -279,8 +279,24 @@
       window.onscroll = null;
     })();
   </script>
+
+  <script>
+(function () {
+  function setMobileNavPadding() {
+    if (!window.matchMedia('(max-width: 900px)').matches) return;
+    var nav = document.querySelector('nav.nav-bar');
+    var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
+    document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
+  }
+  window.addEventListener('load', setMobileNavPadding, { passive: true });
+  window.addEventListener('resize', setMobileNavPadding, { passive: true });
+  window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
+})();
+</script>
+
 </body>
 </html>
+
 
 
 
