@@ -189,9 +189,37 @@
       }
     }
   </style>
+  <style id="resume-nav-fullbleed-hardfix">
+  /* Make the RESUME navbar break out of any max-width wrappers on ALL viewports */
+  body.resume-page > nav.nav-bar{
+    position: relative !important;
+    max-width: none !important;
+    width: 100vw !important;                       /* span the full viewport */
+    margin-left: calc(50% - 50vw) !important;      /* edge-to-edge */
+    margin-right: calc(50% - 50vw) !important;
+    left: 0 !important; right: 0 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure the nav’s inner list isn’t constraining width */
+  body.resume-page .nav-links{
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Spacer: keep for desktop, kill on mobile */
+  body.resume-page > .nav-spacer{ height: 86px; }
+  @media (max-width: 900px){
+    body.resume-page > .nav-spacer{ display: none !important; height: 0 !important; }
+  }
+</style>
+
 
 </body>
 </html>
+
 
 
 
