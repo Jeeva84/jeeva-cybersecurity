@@ -8,20 +8,18 @@
   <!-- Main stylesheet (cache-busted) -->
   <link rel="stylesheet" href="style.css?v=36" />
 
-  <!-- Inline overrides that WIN on every page, no JS required -->
+  <!-- Page-safe overrides (fix nav overlap, keep your card look) -->
   <style>
-    /* ===== Consistent fixed nav + safe content padding (mobile & desktop) ===== */
+    /* Fixed nav + safe padding so content never hides underneath */
     :root{
       --nav-h-mobile: 70px;   /* adjust if your mobile nav is taller */
-      --nav-h-desktop: 86px;  /* adjust to your real desktop nav height */
+      --nav-h-desktop: 86px;  /* match your desktop nav height */
     }
-    /* Keep the nav fixed everywhere so behavior is consistent */
     nav.nav-bar{
       position: fixed !important;
       top: 0 !important; left: 0; right: 0;
       z-index: 1000 !important;
     }
-    /* Body padded so content never hides under nav */
     body.page-specific{
       padding-top: var(--nav-h-mobile) !important;
     }
@@ -30,42 +28,66 @@
         padding-top: var(--nav-h-desktop) !important;
       }
     }
-    /* Neutralize any spacer divs to avoid double spacing */
+    /* If any spacer exists from older versions, neutralize it */
     .nav-spacer{ display:none !important; height:0 !important; }
 
     /* Keep background video behind everything */
     .video-background{ z-index: 0 !important; }
 
-    /* Page-specific card styling (kept from your version) */
-    .main-content{
-      color:#fff; background:rgba(0,0,0,.5);
-      padding:2rem; border-radius:10px; margin:2rem auto; max-width:960px;
+    /* Your existing content styling */
+    .main-content {
+      color:#fff;
+      background:rgba(0,0,0,.5);
+      padding:2rem;
+      border-radius:10px;
+      margin:2rem auto;
+      max-width:960px;
     }
     .section-card h2, .section-card ul, .section-card li, .section-card p { color:#fff; }
 
-    /* Tidy up the hero portrait alignment like index */
-    header .hero-image{
-      text-align:center; margin-top: 1rem;
+    /* A little spacing cleanup */
+    .certifications-section h2 { margin-top: 0; }
+    .cert-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
+    .cert-card { margin: 1rem 0 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .cert-card:last-child { border-bottom: 0; }
+    .cert-meta { display: grid; grid-template-columns: max-content 1fr; gap: .35rem .75rem; margin: .5rem 0 1rem; }
+    .cert-meta dt { opacity: .85; }
+    .cert-media { display: grid; gap: .75rem; }
+    .cert-image { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,.15); }
+    .download-button {
+      display:inline-block; background:#ff5722; color:#fff;
+      padding:.6rem .9rem; border-radius:10px; text-decoration:none; font-weight:600;
     }
-    header .hero-image img{
-      width: 260px; height: 260px; object-fit: cover; border-radius: 50%;
-      border: 2px solid #fff; box-shadow:0 0 15px rgba(0,0,0,.6);
-    }
+    .download-button:hover { background:#e64a19; }
 
-    /* Make lists look neat on dark bg */
-    .cert-list, .short-courses{ padding-left: 1.2rem; }
-    .cert-card{ margin: 1.2rem 0; }
-    .cert-meta{ display:grid; grid-template-columns:auto 1fr; gap:.25rem 1rem; margin:.5rem 0 1rem; }
-    .cert-image{ max-width: 100%; height: auto; display:block; margin:.5rem 0 1rem; }
-    .download-button{
-      display:inline-block; background:#ff5722; color:#fff; padding:.6rem .9rem;
-      border-radius:10px; text-decoration:none; font-weight:600;
+    /* Mobile nav grid (same pattern you used elsewhere) */
+    @media (max-width:900px){
+      nav .nav-links{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important;
+        margin:0 !important; padding:10px !important;
+        list-style:none !important; white-space:normal !important;
+      }
+      nav .nav-links a{
+        display:block !important; width:100% !important; text-align:center !important;
+        padding:12px 14px !important; color:#fff !important;
+        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
+        border-radius:10px !important; text-decoration:none !important;
+      }
+      header .hero-image{ text-align:center !important; }
+      header .hero-image img{
+        width:220px !important; height:220px !important; object-fit:cover !important;
+        border-radius:50% !important; border:2px solid #fff !important;
+        box-shadow:0 0 15px rgba(0,0,0,.6) !important;
+        margin-top:8px !important;
+      }
     }
-    .download-button:hover{ background:#e64a19; }
   </style>
 </head>
 
 <body class="page-specific">
+
   <!-- Background Video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
@@ -88,8 +110,6 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
-  <!-- Spacer is intentionally NOT needed now (CSS handles padding) -->
 
   <!-- Profile Picture -->
   <header>
@@ -137,12 +157,12 @@
           </li>
         </ul>
 
-        <h2>Relevant Short Courses &amp; Trainings</h2>
+        <h2>Relevant Short Courses & Trainings</h2>
         <ul class="short-courses">
           <li>Jr Penetration Tester, TryHackMe (01/2024)</li>
           <li>Introduction to Dark Web, Anonymity, and Cryptocurrency, EC-Council (02/2024)</li>
           <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
-          <li>The Ultimate GRC Course – Governance, Risk &amp; Compliance 2024, Udemy (08/2024)</li>
+          <li>The Ultimate GRC Course – Governance, Risk & Compliance 2024, Udemy (08/2024)</li>
         </ul>
       </section>
     </div>
@@ -156,3 +176,4 @@
   </footer>
 </body>
 </html>
+
