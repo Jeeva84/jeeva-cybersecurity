@@ -127,48 +127,52 @@
   <!-- Mobile overrides for this page -->
   <style id="resume-mobile-fix">
   @media (max-width: 900px){
-    /* No global offsets on this page */
+    /* Remove any offsets and horizontal padding on this page */
     body.resume-page{
       padding-top:0 !important;
-      margin-top:0 !important;
+      padding-left:0 !important;
+      padding-right:0 !important;
+      margin:0 !important;
       scroll-padding-top:0 !important;
     }
 
-    /* Nav in normal flow */
+    /* Put nav in the normal flow and make it FULL-BLEED */
     body.resume-page nav.nav-bar{
-      position:relative !important;
-      top:auto !important;
-      transform:none !important;
-      height:auto !important;
-      opacity:1 !important;
-      visibility:visible !important;
-      box-shadow:0 3px 10px rgba(0,0,0,.25) !important;
-      z-index:2 !important;
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      height: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 2 !important;
 
-      /* Force navbar full width */
-      width:100% !important;
-      left:0 !important;
-      right:0 !important;
-      margin:0 !important;
-      border-radius:0 !important;
+      /* Full-width fixes */
+      width: 100vw !important;          /* ignore parent width */
+      max-width: none !important;
+      margin: 0 calc(50% - 50vw) !important; /* full-bleed edge-to-edge */
+      left: 0 !important; right: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
     }
 
-    body.resume-page .nav-bar.hidden-navbar{ transform:none !important; }
-
-    /* Spacer not needed on mobile */
+    /* When nav is relative, spacer isn't needed */
     body.resume-page .nav-spacer{ display:none !important; height:0 !important; }
 
-    /* Background video behind everything */
-    body.resume-page .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; }
+    /* Keep video behind everything on phones */
+    body.resume-page .video-background{
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: -1 !important;
+    }
 
-    /* No special margin needed now that nav is above header */
+    /* No extra top gap for the portrait on mobile */
     body.resume-page .profile-pic{ margin-top:0 !important; }
   }
 </style>
 
-
 </body>
 </html>
+
 
 
 
