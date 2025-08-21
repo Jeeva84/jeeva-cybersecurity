@@ -6,65 +6,66 @@
   <title>Jeeva Kumaradas - Certifications</title>
 
   <!-- Main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=34" />
+  <link rel="stylesheet" href="style.css?v=36" />
 
-  <!-- Your existing content styling (kept) -->
+  <!-- Inline overrides that WIN on every page, no JS required -->
   <style>
-    .main-content {
+    /* ===== Consistent fixed nav + safe content padding (mobile & desktop) ===== */
+    :root{
+      --nav-h-mobile: 70px;   /* adjust if your mobile nav is taller */
+      --nav-h-desktop: 86px;  /* adjust to your real desktop nav height */
+    }
+    /* Keep the nav fixed everywhere so behavior is consistent */
+    nav.nav-bar{
+      position: fixed !important;
+      top: 0 !important; left: 0; right: 0;
+      z-index: 1000 !important;
+    }
+    /* Body padded so content never hides under nav */
+    body.page-specific{
+      padding-top: var(--nav-h-mobile) !important;
+    }
+    @media (min-width: 901px){
+      body.page-specific{
+        padding-top: var(--nav-h-desktop) !important;
+      }
+    }
+    /* Neutralize any spacer divs to avoid double spacing */
+    .nav-spacer{ display:none !important; height:0 !important; }
+
+    /* Keep background video behind everything */
+    .video-background{ z-index: 0 !important; }
+
+    /* Page-specific card styling (kept from your version) */
+    .main-content{
       color:#fff; background:rgba(0,0,0,.5);
       padding:2rem; border-radius:10px; margin:2rem auto; max-width:960px;
     }
     .section-card h2, .section-card ul, .section-card li, .section-card p { color:#fff; }
-  </style>
 
-  <!-- Mobile nav + overlap fix (applies even if older CSS exists) -->
-  <style>
-    /* Desktop: allow smooth hide if desired */
-    @media (min-width:901px){
-      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
+    /* Tidy up the hero portrait alignment like index */
+    header .hero-image{
+      text-align:center; margin-top: 1rem;
+    }
+    header .hero-image img{
+      width: 260px; height: 260px; object-fit: cover; border-radius: 50%;
+      border: 2px solid #fff; box-shadow:0 0 15px rgba(0,0,0,.6);
     }
 
-    /* Mobile: keep nav visible, never cover hero, show all tabs */
-    @media (max-width:900px){
-      html, body, main, #content { margin-top:0 !important; padding-top:0 !important; }
-      .video-background{ z-index:-1 !important; } /* keep video behind everything */
-
-      nav.nav-bar{
-        position:relative !important; top:auto !important; z-index:2 !important;
-        width:100% !important; background:#1f1f1f !important;
-        padding:10px 8px !important; margin:0 0 12px 0 !important;
-        transform:none !important; opacity:1 !important; visibility:visible !important;
-        height:auto !important; display:block !important; box-shadow:0 3px 10px rgba(0,0,0,.25);
-      }
-      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
-
-      nav .nav-links{
-        display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-        gap:10px !important; margin:0 !important; padding:0 !important;
-        list-style:none !important; white-space:normal !important; overflow:visible !important;
-      }
-      nav .nav-links li{ list-style:none !important; display:block !important; }
-      nav .nav-links a{
-        display:block !important; width:100% !important; text-align:center !important;
-        padding:12px 14px !important; color:#fff !important;
-        background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
-        border-radius:10px !important; text-decoration:none !important;
-      }
-
-      /* Make sure the portrait is never underneath the nav */
-      header .hero-image{ position:relative !important; z-index:1 !important; text-align:center !important; }
-      header .hero-image img{
-        width:220px !important; height:220px !important; object-fit:cover !important;
-        border-radius:50% !important; border:2px solid #fff !important;
-        box-shadow:0 0 15px rgba(0,0,0,.6) !important;
-        margin-top:8px !important;
-      }
+    /* Make lists look neat on dark bg */
+    .cert-list, .short-courses{ padding-left: 1.2rem; }
+    .cert-card{ margin: 1.2rem 0; }
+    .cert-meta{ display:grid; grid-template-columns:auto 1fr; gap:.25rem 1rem; margin:.5rem 0 1rem; }
+    .cert-image{ max-width: 100%; height: auto; display:block; margin:.5rem 0 1rem; }
+    .download-button{
+      display:inline-block; background:#ff5722; color:#fff; padding:.6rem .9rem;
+      border-radius:10px; text-decoration:none; font-weight:600;
     }
+    .download-button:hover{ background:#e64a19; }
   </style>
 </head>
 
 <body class="page-specific">
-
   <!-- Background Video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
@@ -73,21 +74,22 @@
     </video>
   </div>
 
-  <!-- Navigation FIRST (so it never overlays hero on load) -->
+  <!-- Navigation -->
   <nav class="nav-bar">
     <ul class="nav-links">
-      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="labs.html">Home Labs</a></li>
       <li><a href="passion.html">My Passion</a></li>
-      <li><a href="/soc-lab.html">SOC Lab</a></li>
+      <li><a href="soc-lab.html">SOC Lab</a></li>
       <li><a href="opportunities.html">Opportunities</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="certifications.html" aria-current="page">Certifications</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <div class="nav-spacer"></div>  <!-- add this -->
+
+  <!-- Spacer is intentionally NOT needed now (CSS handles padding) -->
 
   <!-- Profile Picture -->
   <header>
@@ -99,93 +101,58 @@
   <!-- Main Content -->
   <div class="main-content">
     <div class="section-card">
-     <section id="certifications" class="container certifications-section">
-  <h2>Professional Certifications</h2>
+      <section id="certifications" class="container certifications-section">
+        <h2>Professional Certifications</h2>
 
-  <ul class="cert-list">
-    <li class="cert-card">
-      <h3>CompTIA CySA+</h3>
-      <dl class="cert-meta">
-        <dt>Certified</dt><dd>April 11, 2025</dd>
-        <dt>Expires</dt><dd>April 11, 2028</dd>
-        <dt>Certification ID</dt><dd>COMP001022669239</dd>
-        <dt>Verification Code</dt><dd>1KH45GMQJR4QG9H</dd>
-      </dl>
-      <div class="cert-media">
-        <img src="images/Comptia_CySA_plus.png" alt="CompTIA CySA+ Certificate" class="cert-image" />
-        <a href="images/Comptia_CySA_plus.png" download="CompTIA_CySA_Plus_Certificate" class="download-button">
-          Download My CySA+ Certificate
-        </a>
-      </div>
-    </li>
+        <ul class="cert-list">
+          <li class="cert-card">
+            <h3>CompTIA CySA+</h3>
+            <dl class="cert-meta">
+              <dt>Certified</dt><dd>April 11, 2025</dd>
+              <dt>Expires</dt><dd>April 11, 2028</dd>
+              <dt>Certification ID</dt><dd>COMP001022669239</dd>
+              <dt>Verification Code</dt><dd>1KH45GMQJR4QG9H</dd>
+            </dl>
+            <div class="cert-media">
+              <img src="images/Comptia_CySA_plus.png" alt="CompTIA CySA+ Certificate" class="cert-image" />
+              <a href="images/Comptia_CySA_plus.png" download="CompTIA_CySA_Plus_Certificate" class="download-button">
+                Download My CySA+ Certificate
+              </a>
+            </div>
+          </li>
 
-    <li class="cert-card">
-      <h3>ISC2 Certified in Cybersecurity (CC)</h3>
-      <dl class="cert-meta">
-        <dt>Certified Since</dt><dd>2024</dd>
-        <dt>Cycle</dt><dd>June 1, 2024 – May 31, 2027</dd>
-        <dt>Certification Number</dt><dd>1985928</dd>
-      </dl>
-      <div class="cert-media">
-        <img src="images/ISC2_CC.png" alt="ISC2 CC Certificate" class="cert-image" />
-        <a href="images/ISC2_CC.png" download="ISC2_Cybersecurity_Certificate" class="download-button">
-          Download My ISC2 CC Certificate
-        </a>
-      </div>
-    </li>
-  </ul>
+          <li class="cert-card">
+            <h3>ISC2 Certified in Cybersecurity (CC)</h3>
+            <dl class="cert-meta">
+              <dt>Certified Since</dt><dd>2024</dd>
+              <dt>Cycle</dt><dd>June 1, 2024 – May 31, 2027</dd>
+              <dt>Certification Number</dt><dd>1985928</dd>
+            </dl>
+            <div class="cert-media">
+              <img src="images/ISC2_CC.png" alt="ISC2 CC Certificate" class="cert-image" />
+              <a href="images/ISC2_CC.png" download="ISC2_Cybersecurity_Certificate" class="download-button">
+                Download My ISC2 CC Certificate
+              </a>
+            </div>
+          </li>
+        </ul>
 
-  <h2>Relevant Short Courses & Trainings</h2>
-  <ul class="short-courses">
-    <li>Jr Penetration Tester, TryHackMe (01/2024)</li>
-    <li>Introduction to Dark Web, Anonymity, and Cryptocurrency, EC-Council (02/2024)</li>
-    <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
-    <li>The Ultimate GRC Course – Governance, Risk & Compliance 2024, Udemy (08/2024)</li>
-  </ul>
-</section>
-
+        <h2>Relevant Short Courses &amp; Trainings</h2>
+        <ul class="short-courses">
+          <li>Jr Penetration Tester, TryHackMe (01/2024)</li>
+          <li>Introduction to Dark Web, Anonymity, and Cryptocurrency, EC-Council (02/2024)</li>
+          <li>Palo Alto Networks Cloud Security Fundamentals (02/2024)</li>
+          <li>The Ultimate GRC Course – Governance, Risk &amp; Compliance 2024, Udemy (08/2024)</li>
+        </ul>
+      </section>
     </div>
   </div>
 
   <!-- Footer -->
- <footer class="site-footer full-bleed">
-  <div class="footer-inner">
-    © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
-  </div>
-</footer>
-
-
-  <!-- Behavior: hide nav on scroll ONLY on desktop -->
-  <script>
-    (function(){
-      const navbar = document.querySelector('.nav-bar');
-      if (!navbar) return;
-
-      // Only enable hide-on-scroll on desktop screens
-      if (window.matchMedia('(min-width: 901px)').matches) {
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', function(){
-          const current = window.pageYOffset || document.documentElement.scrollTop;
-          if (current > lastScrollTop && current > navbar.offsetHeight) {
-            navbar.classList.add('nav-hidden');   // slides up on desktop
-            navbar.classList.remove('transparent');
-          } else {
-            navbar.classList.remove('nav-hidden'); // show when scrolling up
-            navbar.classList.add('transparent');
-          }
-          lastScrollTop = current <= 0 ? 0 : current;
-        }, { passive:true });
-      }
-    })();
-  </script>
+  <footer class="site-footer full-bleed">
+    <div class="footer-inner">
+      © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
+    </div>
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
