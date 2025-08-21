@@ -5422,13 +5422,43 @@ body.soc-page .video-wrap{
 
   /* Keep a small spacer so content never bumps the nav */
   .nav-spacer{
-    display: block !important;
+    display: block !important;/* ===== UNIVERSAL, NO-JS, NO-SPACER NAV FIX ===== */
+:root{
+  --nav-h-mobile: 64px;   /* adjust if your mobile nav is taller */
+  --nav-h-desktop: 86px;  /* adjust to your real desktop nav height */
+}
+
+/* Make the navbar fixed and consistent on all pages/sizes */
+nav.nav-bar{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0; right: 0;
+  z-index: 1000 !important;
+}
+
+/* Content never hides under nav: pad the body by nav height */
+body{
+  padding-top: var(--nav-h-mobile) !important;
+}
+
+/* Desktop gets bigger padding for the taller nav */
+@media (min-width: 901px){
+  body{ padding-top: var(--nav-h-desktop) !important; }
+}
+
+/* If any pages still have spacer divs, neutralize them */
+.nav-spacer{ display: none !important; height: 0 !important; }
+
+/* Make sure background video stays behind the fixed nav */
+.video-background{ z-index: 0 !important; }
+
     height: var(--nav-h-mobile) !important;
   }
 
   /* Anchor jumps won’t hide under the nav on phones */
   :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
 }
+
 
 
 
