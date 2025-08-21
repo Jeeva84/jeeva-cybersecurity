@@ -175,8 +175,51 @@
 })();
 </script>
 
+  <style id="contact-mobile-fix">
+  @media (max-width: 900px){
+    /* Remove offsets */
+    body.contact-page{
+      padding-top:0 !important;
+      margin-top:0 !important;
+      scroll-padding-top:0 !important;
+    }
+
+    /* Force nav full width and normal flow */
+    body.contact-page nav.nav-bar{
+      position:relative !important;
+      top:auto !important;
+      transform:none !important;
+      height:auto !important;
+      opacity:1 !important;
+      visibility:visible !important;
+      box-shadow:0 3px 10px rgba(0,0,0,.25) !important;
+      z-index:2 !important;
+
+      /* Make it extend left & right fully */
+      width:100% !important;
+      left:0 !important;
+      right:0 !important;
+      margin:0 !important;
+      border-radius:0 !important;
+    }
+
+    body.contact-page .nav-bar.hidden-navbar{ transform:none !important; }
+
+    /* Spacer not needed */
+    body.contact-page .nav-spacer{ display:none !important; height:0 !important; }
+
+    /* Keep background video behind */
+    body.contact-page .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; }
+
+    /* Profile pic aligned correctly */
+    body.contact-page .profile-pic{ margin-top:0 !important; }
+  }
+</style>
+
+
 </body>
 </html>
+
 
 
 
