@@ -263,9 +263,47 @@
   }
 </style>
 
+<style id="resume-mobile-edge-fix">
+  @media (max-width: 900px){
+    /* kill any horizontal gutters from global styles */
+    html, body { overflow-x: hidden; }
+    body.resume-page{
+      padding: 0 !important;
+      margin: 0 !important;
+      scroll-padding-top: 0 !important;
+    }
+
+    /* make the nav full-bleed, independent of parent wrappers */
+    body.resume-page > nav.nav-bar{
+      position: relative !important;
+      width: 100vw !important;           /* take full viewport width */
+      max-width: 100vw !important;
+      left: 50% !important;               /* center the 100vw box */
+      transform: translateX(-50%) !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    /* ensure the inner list isn't narrowing it */
+    body.resume-page > nav.nav-bar .nav-links{
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+    }
+
+    /* spacer not needed on mobile when nav is relative */
+    body.resume-page > .nav-spacer{
+      display: none !important;
+      height: 0 !important;
+    }
+  }
+</style>
+
+
 
 </body>
 </html>
+
 
 
 
