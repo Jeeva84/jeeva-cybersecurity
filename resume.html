@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Resume</title>
-  <link rel="stylesheet" href="style.css?v=34">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css?v=35" />
 </head>
 
 <body class="page-specific resume-page">
 
-
-  <div class="video-background">
-  <video autoplay muted loop playsinline>
-    <source src="videos/nmap-lab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-
-<!-- Profile Picture -->
-<header>
-  <div class="container">
-    <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic">
+  <!-- Background video -->
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
-</header>
 
-<!-- Navigation Bar -->
-<nav class="nav-bar">
+  <!-- NAV FIRST -->
+  <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="resume.html">Resume</a></li>
@@ -40,138 +33,130 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <div class="nav-spacer"></div>   <!-- add this -->
 
-<!-- Resume Content -->
-<div class="section-card">  
-<section class="container" id="resume">
+  <!-- Spacer right after nav (desktop uses it; we hide on mobile) -->
+  <div class="nav-spacer"></div>
 
-  <h2>My Professional Journey</h2>
+  <!-- THEN the profile/hero -->
+  <header>
+    <div class="container">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
+    </div>
+  </header>
 
-  <p>I am a passionate cybersecurity professional with strong hands-on experience in threat detection, security operations, and incident response. With a foundation built on formal education, industry-recognized certifications, and real-world projects, I bring a practical, resilient, and results-driven approach to cybersecurity challenges.</p>
+  <!-- Resume Content -->
+  <div class="section-card">
+    <section class="container" id="resume">
+      <h2>My Professional Journey</h2>
 
-  <p>My journey has been shaped by perseverance and passion. After moving to Canada, I took on multiple jobs to support my family while simultaneously pursuing my long-standing dream of working in cybersecurity. Balancing work, studies, and family responsibilities taught me resilience, time management, and unwavering dedication — qualities that now define my professional character.</p>
+      <p>I am a passionate cybersecurity professional with strong hands-on experience in threat detection, security operations, and incident response. With a foundation built on formal education, industry-recognized certifications, and real-world projects, I bring a practical, resilient, and results-driven approach to cybersecurity challenges.</p>
 
-  <h3>Education</h3>
-  <p>Successfully completed the <strong>Network Security and Architecture Program</strong> at <strong>Fanshawe College</strong>.
-  Gained comprehensive knowledge in cybersecurity, network defense, incident handling, and secure architecture.</p>
-  <p><strong>Other Academic Background:</strong></p>
-<ul class="education-list">
-  <li>Complete Python Developer – Zero to Mastery Academy (06/2024 – 07/2024)</li>
-  <li>Bachelor’s Equivalent in Hotel Management – EMPEE Institute, India  
-    <br><em>(Credential Evaluation Available Upon Request)</em></li>
-  <li>Post Graduate Diploma in Computer Applications – IIC India (2002 – 2003)</li>
-</ul>
+      <p>My journey has been shaped by perseverance and passion. After moving to Canada, I took on multiple jobs to support my family while simultaneously pursuing my long-standing dream of working in cybersecurity. Balancing work, studies, and family responsibilities taught me resilience, time management, and unwavering dedication — qualities that now define my professional character.</p>
 
+      <h3>Education</h3>
+      <p>Successfully completed the <strong>Network Security and Architecture Program</strong> at <strong>Fanshawe College</strong>.
+      Gained comprehensive knowledge in cybersecurity, network defense, incident handling, and secure architecture.</p>
+      <p><strong>Other Academic Background:</strong></p>
+      <ul class="education-list">
+        <li>Complete Python Developer – Zero to Mastery Academy (06/2024 – 07/2024)</li>
+        <li>Bachelor’s Equivalent in Hotel Management – EMPEE Institute, India  
+          <br><em>(Credential Evaluation Available Upon Request)</em></li>
+        <li>Post Graduate Diploma in Computer Applications – IIC India (2002 – 2003)</li>
+      </ul>
 
-  
+      <h3>Core Skills</h3>
+      <ul>
+        <li>Security Operations and Threat Monitoring</li>
+        <li>Security Operations Tools – QRadar (SIEM), SentinelOne (XDR)</li>
+        <li>Vulnerability Management and Risk Mitigation</li>
+        <li>Incident Response Techniques</li>
+        <li>Network Security (VPNs, VLANs, Firewall Concepts)</li>
+      </ul>
 
-  <h3>Core Skills</h3>
-  <ul>
-    <li>Security Operations and Threat Monitoring</li>
-    <li>Security Operations Tools – QRadar (SIEM), SentinelOne (XDR)</li>
-    <li>Vulnerability Management and Risk Mitigation</li>
-    <li>Incident Response Techniques</li>
-    <li>Network Security (VPNs, VLANs, Firewall Concepts)</li>
-  </ul>
-
-  <h3>Resume Download</h3>
-  <p>For a detailed overview of my certifications, technical skills, and project experience, please download my full resume:</p>
-  <a href="images/Jeeva_Kumaradas_Cybersecurity_Resume_2025.pdf" class="hero-button" download>Download Resume</a>
-
-</section>
-</div>
-
-<!-- Footer -->
-<footer class="site-footer full-bleed">
-  <div class="footer-inner">
-    © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
+      <h3>Resume Download</h3>
+      <p>For a detailed overview of my certifications, technical skills, and project experience, please download my full resume:</p>
+      <a href="images/Jeeva_Kumaradas_Cybersecurity_Resume_2025.pdf" class="hero-button" download>Download Resume</a>
+    </section>
   </div>
-</footer>
-<script>
-  let lastScrollTop = 0; // Stores the last scroll position
-  const navbar = document.querySelector('.nav-bar'); // Navbar element
 
-  // Listen to the scroll event
-  window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
+  <!-- Footer -->
+  <footer class="site-footer full-bleed">
+    <div class="footer-inner">
+      © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
+    </div>
+  </footer>
 
-    if (currentScroll > lastScrollTop && currentScroll > navbar.offsetHeight) {
-      // If scrolling down, hide navbar
-      navbar.classList.add('hidden-navbar');
-      navbar.classList.remove('transparent'); // Ensure navbar is opaque when hidden
-    } else {
-      // If scrolling up, show navbar
-      navbar.classList.remove('hidden-navbar');
-      navbar.classList.add('transparent'); // Make navbar transparent when scrolling up
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update last scroll position
-  });
-</script>
-
+  <!-- Desktop-only: hide nav on scroll -->
   <script>
-(function () {
-  function setMobileNavPadding() {
-    if (!window.matchMedia('(max-width: 900px)').matches) return;
-    var nav = document.querySelector('nav.nav-bar');
-    var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
-    document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
-  }
-  window.addEventListener('load', setMobileNavPadding, { passive: true });
-  window.addEventListener('resize', setMobileNavPadding, { passive: true });
-  window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
-})();
-</script>
-<!-- ************ NUCLEAR MOBILE OVERRIDE (RESUME PAGE ONLY) ************ -->
-<style id="nuclear-resume-mobile-fix">
-  @media (max-width: 900px){
-    /* Remove any global offsets on this page */
-    body.resume-page, body.page-specific.resume-page {
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-      scroll-padding-top: 0 !important;
-    }
+    (function(){
+      const navbar = document.querySelector('.nav-bar');
+      if (!navbar) return;
 
-    /* Nav: in normal flow on mobile so it won't cover content */
-    body.resume-page nav.nav-bar{
-      position: relative !important;
-      top: auto !important;
-      transform: none !important;
-      height: auto !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
-      z-index: 2 !important;
-    }
-    body.resume-page .nav-bar.nav-hidden,
-    body.resume-page .nav-bar.hidden-navbar{
-      transform: none !important;
-    }
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function(){
+          const current = window.pageYOffset || document.documentElement.scrollTop;
+          if (current > lastScrollTop && current > navbar.offsetHeight) {
+            navbar.classList.add('hidden-navbar');
+            navbar.classList.remove('transparent');
+          } else {
+            navbar.classList.remove('hidden-navbar');
+            navbar.classList.add('transparent');
+          }
+          lastScrollTop = current <= 0 ? 0 : current;
+        }, { passive:true });
+      }
+    })();
+  </script>
 
-    /* Spacer not needed when nav is relative */
-    body.resume-page .nav-spacer{
-      display: none !important;
-      height: 0 !important;
-    }
+  <!-- Mobile: measure nav height for any CSS that uses --mobile-nav-h -->
+  <script>
+    (function () {
+      function setMobileNavPadding() {
+        if (!window.matchMedia('(max-width: 900px)').matches) return;
+        var nav = document.querySelector('nav.nav-bar');
+        var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
+        document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
+      }
+      window.addEventListener('load', setMobileNavPadding, { passive: true });
+      window.addEventListener('resize', setMobileNavPadding, { passive: true });
+      window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
+    })();
+  </script>
 
-    /* Keep background video behind everything */
-    body.resume-page .video-background{
-      position: fixed !important;
-      inset: 0 !important;
-      z-index: -1 !important;
-    }
+  <!-- Mobile overrides for this page -->
+  <style id="resume-mobile-fix">
+    @media (max-width: 900px){
+      /* No global offsets on this page */
+      body.resume-page{
+        padding-top:0 !important;
+        margin-top:0 !important;
+        scroll-padding-top:0 !important;
+      }
 
-    /* Fix profile picture overlap on mobile */
-    body.resume-page .profile-pic {
-      margin-top: 70px !important; /* same as nav height */
-      display: block;
-      position: relative;
-      z-index: 1;
-    }
-  }
-</style>
+      /* Nav in normal flow */
+      body.resume-page nav.nav-bar{
+        position:relative !important;
+        top:auto !important;
+        transform:none !important;
+        height:auto !important;
+        opacity:1 !important;
+        visibility:visible !important;
+        box-shadow:0 3px 10px rgba(0,0,0,.25) !important;
+        z-index:2 !important;
+      }
+      body.resume-page .nav-bar.hidden-navbar{ transform:none !important; }
 
+      /* Spacer not needed on mobile */
+      body.resume-page .nav-spacer{ display:none !important; height:0 !important; }
+
+      /* Background video behind everything */
+      body.resume-page .video-background{ position:fixed !important; inset:0 !important; z-index:-1 !important; }
+
+      /* No special margin needed now that nav is above header */
+      body.resume-page .profile-pic{ margin-top:0 !important; }
+    }
+  </style>
 
 </body>
 </html>
