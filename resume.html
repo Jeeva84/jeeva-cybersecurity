@@ -299,10 +299,32 @@
   }
 </style>
 
+<style id="resume-right-edge-fix">
+  @media (max-width: 900px){
+    /* keep the bar full-bleed */
+    body.resume-page nav.nav-bar{
+      width: 100vw !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+    }
+    /* remove the inner gutter that causes the right gap */
+    body.resume-page nav.nav-bar .nav-links{
+      padding: 0 !important;      /* <-- this was creating the right space */
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+    }
+    /* just in case any wrapper adds a gutter */
+    body.resume-page{ padding-right: 0 !important; }
+  }
+</style>
 
 
 </body>
 </html>
+
 
 
 
