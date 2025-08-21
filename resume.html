@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Resume</title>
 
-  <!-- Main stylesheet (bump the version when you change style.css) -->
-  <link rel="stylesheet" href="style.css?v=36" />
+  <!-- Main stylesheet (bump version to bust caches) -->
+  <link rel="stylesheet" href="style.css?v=37" />
 </head>
 
 <body class="page-specific resume-page">
@@ -19,7 +19,7 @@
     </video>
   </div>
 
-  <!-- NAV FIRST (same across site) -->
+  <!-- NAV FIRST (same as other pages) -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -33,16 +33,17 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+  <!-- Spacer is used on desktop (hidden on mobile) -->
   <div class="nav-spacer"></div>
 
-  <!-- HEADER (portrait) -->
+  <!-- Portrait -->
   <header>
     <div class="container">
       <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
     </div>
   </header>
 
-  <!-- CONTENT -->
+  <!-- Content -->
   <div class="section-card">
     <section class="container" id="resume">
       <h2>My Professional Journey</h2>
@@ -77,291 +78,91 @@
     </section>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="site-footer full-bleed">
     <div class="footer-inner">
       © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
     </div>
   </footer>
 
-  <!-- Desktop-only: hide nav on scroll -->
-  <script>
-    (function(){
-      const navbar = document.querySelector('.nav-bar');
-      if (!navbar) return;
-
-      if (window.matchMedia('(min-width: 901px)').matches) {
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', function(){
-          const current = window.pageYOffset || document.documentElement.scrollTop;
-          if (current > lastScrollTop && current > navbar.offsetHeight) {
-            navbar.classList.add('hidden-navbar');
-            navbar.classList.remove('transparent');
-          } else {
-            navbar.classList.remove('hidden-navbar');
-            navbar.classList.add('transparent');
-          }
-          lastScrollTop = current <= 0 ? 0 : current;
-        }, { passive:true });
-      }
-    })();
-  </script>
-
-  <!-- Mobile: measure nav height (if any CSS uses --mobile-nav-h) -->
-  <script>
-    (function () {
-      function setMobileNavPadding() {
-        if (!window.matchMedia('(max-width: 900px)').matches) return;
-        var nav = document.querySelector('nav.nav-bar');
-        var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
-        document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
-      }
-      window.addEventListener('load', setMobileNavPadding, { passive: true });
-      window.addEventListener('resize', setMobileNavPadding, { passive: true });
-      window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
-    })();
-  </script>
-
-  <!-- Page-specific overrides (kept tight & non-leaky) -->
-  <style id="resume-mobile-fix">
-    /* ===== Desktop safety: full-width nav, no mobile rules leak ===== */
+  <!-- ===== Page-specific: ONE clean override block (no 100vw transforms) ===== -->
+  <style id="resume-mobile-clean">
+    /* Desktop: fixed full-width nav, spacer keeps content below it */
     @media (min-width: 901px){
-      body.resume-page .nav-bar{
-        width: 100% !important;
-        left: 0 !important; right: 0 !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
+      body.resume-page > nav.nav-bar{
+        position: fixed !important;
+        top: 0 !important; left: 0 !important; right: 0 !important;
+        width: 100% !important; max-width: none !important;
+        margin: 0 !important; border-radius: 0 !important;
+        background: #1f1f1f !important; z-index: 9999 !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+      }
+      body.resume-page > .nav-spacer{
+        display: block !important;
+        height: 86px !important; /* match your desktop nav height */
       }
       body.resume-page .nav-links{
         display: flex !important;
-        flex-wrap: wrap;
-        gap: .75rem;
-        justify-content: space-between;
+        flex-wrap: wrap !important;
+        gap: .75rem !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        margin: 0 !important;
       }
     }
 
-    /* ===== Mobile: nav in flow & full-bleed; content never hides ===== */
+    /* Mobile: nav in normal flow, truly edge-to-edge with width:100% */
     @media (max-width: 900px){
+      html, body { overflow-x: hidden !important; }
+
       body.resume-page{
-        padding-top: 0 !important;
         margin: 0 !important;
+        padding: 0 !important;
         scroll-padding-top: 0 !important;
       }
 
-      body.resume-page nav.nav-bar{
+      body.resume-page > nav.nav-bar{
         position: relative !important;
-        top: auto !important;
-        transform: none !important;
-        height: auto !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        z-index: 2 !important;
+        top: auto !important; left: 0 !important; right: 0 !important;
 
-        /* Full-bleed edge-to-edge on phones */
-        width: 100vw !important;
-        max-width: none !important;
-        margin: 0 calc(50% - 50vw) !important;
-        left: 0 !important; right: 0 !important;
-        border-radius: 0 !important;
+        /* Key: use 100% (not 100vw) and no translateX tricks */
+        width: 100% !important; max-width: none !important;
+
+        margin: 0 !important; border-radius: 0 !important;
+        background: #1f1f1f !important; z-index: 2 !important;
         box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
-        background: #1f1f1f !important;
+        padding: 10px 0 !important; /* vertical padding only */
       }
 
-      body.resume-page .nav-spacer{ display: none !important; height: 0 !important; }
+      /* Spacer not needed when nav is relative */
+      body.resume-page > .nav-spacer{
+        display: none !important; height: 0 !important;
+      }
 
-      /* Keep background video behind everything */
+      /* Keep video behind everything */
       body.resume-page .video-background{
         position: fixed !important; inset: 0 !important; z-index: -1 !important;
       }
 
-      /* No extra gap above portrait */
+      /* Portrait should sit right under the nav */
       body.resume-page .profile-pic{ margin-top: 0 !important; }
 
-      /* Mobile button grid */
+      /* Buttons in a nice two-column grid with a tiny inner gutter */
       body.resume-page .nav-links{
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
-        margin: 0 !important; padding: 0 !important;
         list-style: none !important;
-        white-space: normal !important;
-        overflow: visible !important;
+        width: 100% !important; max-width: none !important;
+        margin: 0 !important; padding: 0 12px !important;
+        white-space: normal !important; overflow: visible !important;
       }
     }
   </style>
-  <style id="resume-nav-fullbleed-hardfix">
-  /* Make the RESUME navbar break out of any max-width wrappers on ALL viewports */
-  body.resume-page > nav.nav-bar{
-    position: relative !important;
-    max-width: none !important;
-    width: 100vw !important;                       /* span the full viewport */
-    margin-left: calc(50% - 50vw) !important;      /* edge-to-edge */
-    margin-right: calc(50% - 50vw) !important;
-    left: 0 !important; right: 0 !important;
-    border-radius: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Ensure the nav’s inner list isn’t constraining width */
-  body.resume-page .nav-links{
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-
-  /* Spacer: keep for desktop, kill on mobile */
-  body.resume-page > .nav-spacer{ height: 86px; }
-  @media (max-width: 900px){
-    body.resume-page > .nav-spacer{ display: none !important; height: 0 !important; }
-  }
-</style>
-
-  <style id="resume-nav-hardfix">
-  /* DESKTOP: force full-bleed fixed nav */
-  @media (min-width: 901px){
-    body.resume-page > nav.nav-bar{
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-      z-index: 9999 !important;
-      background: #1f1f1f !important;
-    }
-    /* spacer keeps content out from under fixed nav */
-    body.resume-page > .nav-spacer{
-      display: block !important;
-      height: 86px !important; /* match your desktop nav height */
-    }
-  }
-
-  /* MOBILE: keep nav in normal flow and still full width */
-  @media (max-width: 900px){
-    body.resume-page > nav.nav-bar{
-      position: relative !important;
-      top: auto !important;
-      left: 0 !important; right: 0 !important;
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-    body.resume-page > .nav-spacer{
-      display: none !important;
-      height: 0 !important;
-    }
-  }
-
-  /* Make sure the inner list isn’t constraining the width */
-  body.resume-page .nav-links{
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-</style>
-
-<style id="resume-mobile-edge-fix">
-  @media (max-width: 900px){
-    /* kill any horizontal gutters from global styles */
-    html, body { overflow-x: hidden; }
-    body.resume-page{
-      padding: 0 !important;
-      margin: 0 !important;
-      scroll-padding-top: 0 !important;
-    }
-
-    /* make the nav full-bleed, independent of parent wrappers */
-    body.resume-page > nav.nav-bar{
-      position: relative !important;
-      width: 100vw !important;           /* take full viewport width */
-      max-width: 100vw !important;
-      left: 50% !important;               /* center the 100vw box */
-      transform: translateX(-50%) !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-
-    /* ensure the inner list isn't narrowing it */
-    body.resume-page > nav.nav-bar .nav-links{
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 !important;
-    }
-
-    /* spacer not needed on mobile when nav is relative */
-    body.resume-page > .nav-spacer{
-      display: none !important;
-      height: 0 !important;
-    }
-  }
-</style>
-
-<style id="resume-right-edge-fix">
-  @media (max-width: 900px){
-    /* keep the bar full-bleed */
-    body.resume-page nav.nav-bar{
-      width: 100vw !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-    /* remove the inner gutter that causes the right gap */
-    body.resume-page nav.nav-bar .nav-links{
-      padding: 0 !important;      /* <-- this was creating the right space */
-      margin: 0 !important;
-      width: 100% !important;
-      max-width: none !important;
-    }
-    /* just in case any wrapper adds a gutter */
-    body.resume-page{ padding-right: 0 !important; }
-  }
-</style>
-
-  <style id="resume-nav-fullbleed">
-  @media (max-width: 900px){
-    /* no side padding anywhere on the page */
-    html, body { overflow-x: hidden !important; }
-    body.resume-page{
-      margin:0 !important;
-      padding:0 !important;
-      padding-left:0 !important;
-      padding-right:0 !important;
-      scroll-padding-top:0 !important;
-    }
-
-    /* make the nav truly edge-to-edge and centered */
-    body.resume-page nav.nav-bar{
-      position: relative !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;   /* hard-center */
-      width: 100vw !important;                  /* full viewport width */
-      max-width: 100vw !important;
-      margin: 0 !important;                     /* no side gaps */
-      border-radius: 0 !important;
-      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
-      z-index: 2 !important;
-      /* optional inner padding so buttons don’t touch edges */
-      padding-left: 12px !important;
-      padding-right: 12px !important;
-    }
-
-    /* spacer not needed when nav is in normal flow */
-    body.resume-page .nav-spacer{ display:none !important; height:0 !important; }
-
-    /* background video stays behind everything */
-    body.resume-page .video-background{
-      position: fixed !important; inset: 0 !important; z-index: -1 !important;
-    }
-  }
-</style>
-
-
 </body>
 </html>
+
+
 
 
 
