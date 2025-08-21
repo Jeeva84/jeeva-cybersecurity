@@ -70,13 +70,6 @@
     </video>
   </div>
 
-  <!-- Profile Picture -->
-  <header>
-    <div class="container" style="text-align:center;">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
-    </div>
-  </header>
-
   <!-- Navigation -->
   <nav class="nav-bar">
     <ul class="nav-links">
@@ -91,7 +84,15 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <div class="nav-spacer"></div>   <!-- add this -->
+  <div class="nav-spacer"></div>
+
+  <!-- Profile Picture (moved BELOW the nav) -->
+  <header>
+    <div class="container" style="text-align:center;">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
+    </div>
+  </header>
+
   <!-- Testimonials -->
   <div class="section-card">
     <section class="container" id="testimonials">
@@ -128,10 +129,10 @@
 
   <!-- Footer -->
   <footer class="site-footer full-bleed">
-  <div class="footer-inner">
-    © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
-  </div>
-</footer>
+    <div class="footer-inner">
+      © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
+    </div>
+  </footer>
 
   <!-- Behavior: hide nav on scroll ONLY on desktop -->
   <script>
@@ -154,59 +155,62 @@
     })();
   </script>
 
+  <!-- Mobile: compute nav height once so anchors/padding can respect it -->
   <script>
-(function () {
-  function setMobileNavPadding() {
-    if (!window.matchMedia('(max-width: 900px)').matches) return;
-    var nav = document.querySelector('nav.nav-bar');
-    var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
-    document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
-  }
-  window.addEventListener('load', setMobileNavPadding, { passive: true });
-  window.addEventListener('resize', setMobileNavPadding, { passive: true });
-  window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
-})();
-</script>
+    (function () {
+      function setMobileNavPadding() {
+        if (!window.matchMedia('(max-width: 900px)').matches) return;
+        var nav = document.querySelector('nav.nav-bar');
+        var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
+        document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
+      }
+      window.addEventListener('load', setMobileNavPadding, { passive: true });
+      window.addEventListener('resize', setMobileNavPadding, { passive: true });
+      window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
+    })();
+  </script>
 
+  <!-- Mobile overlap fix -->
   <style id="mobile-overlap-fix">
-  @media (max-width: 900px){
-    /* Put nav in normal flow on phones so it can't cover content */
-    body.page-specific nav.nav-bar{
-      position: relative !important;
-      top: auto !important;
-      transform: none !important;
-      height: auto !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      z-index: 2 !important;
-      box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+    @media (max-width: 900px){
+      /* Put nav in normal flow on phones so it can't cover content */
+      body.page-specific nav.nav-bar{
+        position: relative !important;
+        top: auto !important;
+        transform: none !important;
+        height: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 2 !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+      }
+      /* Spacer not needed when nav is relative */
+      body.page-specific .nav-spacer{
+        display: none !important;
+        height: 0 !important;
+      }
+      /* Remove any inherited top offsets */
+      body.page-specific{
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+      }
+      /* Keep background video behind everything */
+      body.page-specific .video-background{
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: -1 !important;
+      }
     }
-    /* Spacer not needed when nav is relative */
-    body.page-specific .nav-spacer{
-      display: none !important;
-      height: 0 !important;
-    }
-    /* Remove any inherited top offsets */
-    body.page-specific{
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-      scroll-padding-top: 0 !important;
-    }
-    /* Keep background video behind everything */
-    body.page-specific .video-background{
-      position: fixed !important;
-      inset: 0 !important;
-      z-index: -1 !important;
-    }
-  }
 
-  /* Optional: ensure in-page anchors don’t hide under nav on desktop */
-  :target{ scroll-margin-top: 86px; }
-</style>
-
+    /* Optional: ensure in-page anchors don’t hide under nav on desktop */
+    :target{ scroll-margin-top: 86px; }
+  </style>
 
 </body>
 </html>
+
+
 
 
 
