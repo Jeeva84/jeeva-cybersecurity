@@ -5485,49 +5485,7 @@ body{
   :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
 }
 
-/* ---- Global nav grid (works the same on every page) ---- */
-.nav-bar { background:#1f1f1f; }
 
-.nav-links{
-  /* GRID makes items evenly spaced */
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns on phones */
-  gap: 18px;
-  padding: 16px;
-  margin: 0 auto;
-  max-width: 1100px;   /* keep same width feel as home */
-  box-sizing: border-box;
-}
-
-.nav-links li{ list-style:none; margin:0; padding:0; }
-
-.nav-links a{
-  display:block;
-  text-align:center;
-  padding:16px 18px;
-  border-radius:14px;
-  background:#2a2a2a;
-  color:#fff;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow:0 2px 8px rgba(0,0,0,.35);
-  border:1px solid rgba(255,255,255,.08);
-}
-
-/* Larger screens: 4 columns like your home page */
-@media (min-width: 768px){
-  .nav-links{ grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
-}
-
-/* Kill any page-specific widths/margins applied on Resume/Contact */
-.resume-page .nav-links li,
-.contact-page .nav-links li,
-.resume-page .nav-links a,
-.contact-page .nav-links a{
-  width:auto !important;
-  max-width:none !important;
-  margin:0 !important;
-}
 
 
 
