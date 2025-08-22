@@ -5533,6 +5533,33 @@ body{
 .resume-page .nav-bar,
 .contact-page .nav-bar{ padding-left:0 !important; padding-right:0 !important; }
 
+/* MOBILE: make Resume/Contact nav use the full width, no side gutters */
+@media (max-width: 900px){
+  /* Remove any padding on the bar itself */
+  .resume-page nav.nav-bar,
+  .contact-page nav.nav-bar{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Make the UL span the full width with tiny (8px) gutters */
+  .resume-page nav.nav-bar > .nav-links,
+  .contact-page nav.nav-bar > .nav-links{
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 8px !important;     /* reduce these if you want even tighter edges */
+    box-sizing: border-box !important;
+
+    /* keep your two-column look */
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+}
+
 
 
 
