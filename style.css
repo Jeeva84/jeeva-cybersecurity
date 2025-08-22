@@ -5473,6 +5473,48 @@ body{
   :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
 }
 
+/* ===== MOBILE: force the nav to use the full width on ALL pages ===== */
+@media (max-width: 900px){
+
+  /* 1) Bar itself: no side padding/margin */
+  nav.nav-bar{
+    width:100% !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  /* 2) UL container: full width, tiny (4px) edge gutters only */
+  nav.nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap:10px !important;
+
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 4px !important;     /* set to 0 for absolutely no gutter */
+    box-sizing:border-box !important;
+  }
+
+  /* 3) Children: no surprise margins/paddings */
+  nav.nav-bar .nav-links li,
+  nav.nav-bar .nav-links a{
+    margin:0 !important;
+  }
+
+  /* 4) Kill padding on common wrappers that might contain the nav */
+  header,
+  .container,
+  .content,
+  .page-specific,
+  body{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
 
 
 
