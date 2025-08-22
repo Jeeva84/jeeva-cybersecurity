@@ -6361,6 +6361,12 @@ body.resume-page .split-hero p:first-of-type { clear: both !important; }
   body.resume-page .split-hero p { clear: both !important; }
 }
 
+/* Force first paragraph in Professional Summary to start below the image */
+body.resume-page .split-hero p:first-of-type {
+  clear: both !important;
+  display: block;
+}
+
 
 
 
