@@ -6373,6 +6373,43 @@ body.resume-page .split-hero p:first-of-type {
   }
 }
 
+/* ---------- Resume page: keep text below the photo on mobile ---------- */
+body.resume-page .split-hero::after{
+  /* clearfix so floats inside don't overlap the next lines */
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 900px){
+  /* If the headshot is floated/positioned, turn it into a centered block on mobile */
+  body.resume-page .split-hero img[src*="jeeva-profile"],
+  body.resume-page .split-hero .profile-photo,
+  body.resume-page .split-hero .profile-badge,
+  body.resume-page .split-hero .profile-pic {
+    float: none !important;
+    position: static !important;
+    display: block !important;
+    margin: 12px auto 16px !important;  /* center the image */
+    clear: both !important;
+    max-width: 72vw;                     /* keep it comfortably sized */
+    height: auto;
+  }
+
+  /* Ensure all paragraphs start below the photo */
+  body.resume-page .split-hero p{
+    clear: both !important;
+    margin-top: 8px;                     /* small breathing room */
+    text-align: justify;                 /* optional: fully justify lines */
+  }
+}
+
+/* Desktop/tablet: if the first line still tries to wrap, force it below */
+body.resume-page .split-hero p:first-of-type{
+  clear: both !important;
+  display: block;
+}
+
 
 
 
