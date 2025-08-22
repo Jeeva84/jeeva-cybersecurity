@@ -5646,6 +5646,49 @@ body.contact-page nav.nav-bar .nav-links a {
   box-shadow: none !important;
 }
 
+/* ===== 1) DESKTOP: make the nav bar truly full-bleed on Resume + Contact ===== */
+@media (min-width: 901px){
+  body.resume-page > nav.nav-bar,
+  body.contact-page > nav.nav-bar{
+    /* span the real viewport width, ignoring any page containers */
+    width: 100svw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50svw) !important;
+    margin-right: calc(50% - 50svw) !important;
+    border-radius: 0 !important;       /* remove rounded edges on the bar itself */
+  }
+}
+
+/* Fallback for browsers without svw */
+@supports not (width: 100svw){
+  @media (min-width: 901px){
+    body.resume-page > nav.nav-bar,
+    body.contact-page > nav.nav-bar{
+      width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+    }
+  }
+}
+
+/* ===== 2) MOBILE (Resume): keep content from sliding under nav ===== */
+@media (max-width: 900px){
+  /* ensure mobile nav scrolls with the page (not fixed/sticky) */
+  body.resume-page nav.nav-bar{
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 3 !important;
+  }
+
+  /* give the first section a tiny buffer below the bar */
+  body.resume-page .split-hero,
+  body.resume-page main,
+  body.resume-page .content{
+    margin-top: 8px !important;
+  }
+}
+
 
 
 
