@@ -6236,6 +6236,48 @@ section .btn-download:hover {
   }
 }
 
+/* === Resume mobile fixes: title/paragraph spacing + centered photo === */
+@media (max-width: 900px){
+  /* The summary section container */
+  body.resume-page .split-hero{
+    position: relative;
+  }
+
+  /* Make sure the profile image is centered and not floating */
+  body.resume-page .split-hero .profile-pic,
+  body.resume-page .split-hero img.profile-pic{
+    display: block !important;
+    float: none !important;
+    position: static !important;
+    margin: 10px auto 16px !important;   /* center and add breathing room */
+    max-width: 72vw;                      /* responsive size on small screens */
+    height: auto;
+  }
+
+  /* Give the first paragraph a clean start below the image */
+  body.resume-page .split-hero p:first-of-type{
+    clear: both !important;
+    margin-top: 8px !important;
+  }
+
+  /* Optional: keep body copy neat and consistent */
+  body.resume-page .split-hero h1{
+    margin-bottom: 8px !important;
+  }
+  body.resume-page .split-hero p{
+    text-align: justify;                 /* same polished look as desktop */
+    line-height: 1.6;
+  }
+}
+
+/* If any older float sneaks in on larger screens, neutralize it on mobile */
+@media (max-width: 500px){
+  body.resume-page .split-hero .profile-pic,
+  body.resume-page .split-hero img.profile-pic{
+    max-width: 80vw;
+  }
+}
+
 
 
 
