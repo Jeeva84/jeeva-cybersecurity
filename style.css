@@ -6326,6 +6326,41 @@ section .btn-download:hover {
 }
 
 
+/* ===== Resume page polish ===== */
+
+/* Shorter grey bar (both desktop & mobile) */
+body.resume-page nav.nav-bar { padding: 8px 0 !important; }
+body.resume-page .nav-links a { padding: 8px 10px !important; }
+
+/* If your photo is floated right in the summary, the first line could wrap oddly.
+   This forces the first paragraph to start *below* the float. */
+body.resume-page .split-hero p:first-of-type { clear: both !important; }
+
+/* Mobile: stack neatly – title, photo (centered), then paragraphs */
+@media (max-width: 900px){
+  /* Whatever element wraps your headshot in the summary.
+     If you used <figure class="resume-photo">…</figure> keep this;
+     if you used a different class, change the selector below. */
+  body.resume-page .resume-photo,
+  body.resume-page figure.resume-photo {
+    float: none !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 10px auto 14px !important;
+  }
+
+  body.resume-page .resume-photo img,
+  body.resume-page figure.resume-photo img {
+    display: inline-block !important;
+    width: 68vw !important;       /* nicely sized on phones */
+    max-width: 360px !important;   /* don’t get too big */
+    height: auto !important;
+  }
+
+  /* Make sure all paragraphs start cleanly under the image */
+  body.resume-page .split-hero p { clear: both !important; }
+}
+
 
 
 
