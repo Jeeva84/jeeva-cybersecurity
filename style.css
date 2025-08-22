@@ -5636,6 +5636,16 @@ body{
     width:100% !important;
   }
 }
+/* remove any unwanted borders/outlines from nav */
+body.contact-page nav.nav-bar,
+body.contact-page nav.nav-bar .nav-links,
+body.contact-page nav.nav-bar .nav-links li,
+body.contact-page nav.nav-bar .nav-links a {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 
 
 
