@@ -5533,6 +5533,70 @@ body{
 .resume-page .nav-bar,
 .contact-page .nav-bar{ padding-left:0 !important; padding-right:0 !important; }
 
+/* === Universal nav layout (same on every page) === */
+
+/* Bar */
+.nav-bar{
+  background:#1f1f1f;
+  box-shadow:0 3px 10px rgba(0,0,0,.25);
+  padding:0;                 /* no surprise side padding */
+  margin:0;
+}
+
+/* Container + spacing */
+.nav-bar > .nav-links{
+  /* desktop/tablet */
+  display:flex;
+  flex-wrap:nowrap;          /* keep one row on desktop */
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+
+  /* match Home’s width & gutters */
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;             /* center container */
+  padding:0 24px;            /* left/right gutters */
+  box-sizing:border-box;
+
+  /* nuke legacy constraints that were squeezing Resume/Contact */
+  max-inline-size:none !important;
+}
+
+/* items */
+.nav-bar .nav-links li{ list-style:none; margin:0; padding:0; }
+.nav-bar .nav-links a{
+  display:block;
+  white-space:nowrap;        /* stop line breaks in labels */
+  padding:10px 14px;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  color:#fff;
+  text-decoration:none;
+}
+
+/* --- MOBILE (<=900px): 2-column grid, full width with small gutters --- */
+@media (max-width:900px){
+  .nav-bar{
+    padding:10px 0;          /* no side padding on the bar */
+  }
+  .nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:10px;
+    max-width:none !important;  /* allow full-bleed width */
+    width:100% !important;
+    padding:0 8px;              /* tiny edge gutters */
+    margin:0 auto;
+  }
+}
+
+/* EXTRA: if any page wrapper adds side padding, ignore it */
+@media (max-width:900px){
+  body, .page-specific{ padding-left:0 !important; padding-right:0 !important; }
+}
+
 
 
 
