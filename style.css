@@ -5915,6 +5915,76 @@ body.contact-page nav.nav-bar {
   body.contact-page main { padding-top: 8px !important; }
 }
 
+/* ===== Resume polish (footer + text) ===== */
+
+/* Make the footer full-bleed but keep the text centered nicely */
+body.resume-page .site-footer{
+  background:#1f1f1f !important;
+  color:#eaeaea !important;
+  position:static !important;   /* ensure it sits after content */
+  margin-top:24px !important;
+
+  /* full-bleed across the real viewport */
+  width:100svw !important;
+  margin-left:calc(50% - 50svw) !important;
+  margin-right:calc(50% - 50svw) !important;
+  padding:16px 0 !important;
+}
+@supports not (width:100svw){
+  body.resume-page .site-footer{
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+  }
+}
+
+/* Footer inner container: center and cap width for nice layout */
+body.resume-page .site-footer .footer-inner{
+  max-width:1200px !important;
+  margin:0 auto !important;
+  padding:0 16px !important;
+  text-align:center !important;
+  line-height:1.5 !important;
+}
+
+/* Resume text should not “hard-break” words */
+body.resume-page p,
+body.resume-page li{
+  line-height:1.6 !important;
+  text-align:left !important;
+  letter-spacing:normal !important;
+  word-spacing:normal !important;
+
+  /* stop aggressive splitting of words */
+  word-break:normal !important;          /* don’t break anywhere */
+  overflow-wrap:normal !important;       /* only wrap at spaces */
+  hyphens:none !important;               /* no auto hyphenation */
+}
+
+/* Keep main content neatly capped on both desktop & mobile */
+body.resume-page main,
+body.resume-page section,
+body.resume-page .main-content{
+  width:100% !important;
+  max-width:1200px !important;
+  margin:0 auto !important;
+  padding:0 16px !important;
+  box-sizing:border-box !important;
+}
+
+/* Extra breathing room below the sticky bar on desktop */
+@media (min-width:901px){
+  body.resume-page main{ padding-top:24px !important; }
+}
+
+/* Mobile: ensure the footer isn’t squeezed by safe areas / notches */
+@media (max-width:900px){
+  body.resume-page .site-footer .footer-inner{
+    padding-left:max(16px, env(safe-area-inset-left)) !important;
+    padding-right:max(16px, env(safe-area-inset-right)) !important;
+  }
+}
+
 
 
 
