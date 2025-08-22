@@ -6050,6 +6050,30 @@ body.resume-page .site-footer .footer-inner {
   max-width: 1200px; margin: 0 auto; padding: 14px 20px;
 }
 
+/* Resume Page Adjustments */
+
+/* Justify text for clean alignment */
+.resume-main p,
+.resume-main li {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Fix button color (match other pages orange) */
+.resume-download .download-btn {
+  background: #ff9900;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 12px 22px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+}
+
+.resume-download .download-btn:hover {
+  background: #e68a00; /* darker orange on hover */
+}
+
 
 
 
