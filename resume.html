@@ -3,90 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeeva Kumaradas - Resume</title>
+  <title>Jeeva Kumaradas – Resume</title>
 
-  <!-- main stylesheet (cache-busted) -->
-  <link rel="stylesheet" href="style.css?v=108" />
+  <!-- bump this version everywhere -->
+  <link rel="stylesheet" href="style.css?v=112" />
 
-  <!-- Resume-specific overrides to guarantee correct nav layout -->
-  <style>
-    /* ===== DESKTOP (>=901px): make nav truly full-bleed so items don't clip ===== */
-    @media (min-width:901px){
+  <!-- Page-specific hotfixes to guarantee visibility & layout -->
+  <style id="resume-hotfix">
+    /* Keep the video behind everything */
+    .video-background { position: fixed !important; inset: 0 !important; z-index: -1 !important; }
+
+    /* Readable text on dark background */
+    body.resume-page,
+    body.resume-page p,
+    body.resume-page li,
+    body.resume-page a { color: #eaeaea !important; }
+    body.resume-page h1,
+    body.resume-page h2,
+    body.resume-page h3 { color: #ffd54f !important; }
+
+    /* Give content a subtle panel so it always shows up */
+    body.resume-page main > section {
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 16px auto;
+      width: 90%;
+      max-width: 1100px;
+      box-sizing: border-box;
+    }
+
+    /* Make sure the footer stays below content */
+    .site-footer { position: static !important; margin-top: 24px; }
+
+    /* ---------- NAV: Mobile (<=900px) ---------- */
+    @media (max-width: 900px){
+      body.resume-page nav.nav-bar{
+        position: relative !important;
+        top: auto !important; left: 0 !important; right: 0 !important;
+        transform: none !important; z-index: 3 !important;
+        padding: 10px 0 !important;
+        background: #1f1f1f !important;
+      }
+      body.resume-page nav.nav-bar > .nav-links{
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important; max-width: none !important;
+        margin: 0 !important; padding: 0 10px !important;
+        list-style: none !important; box-sizing: border-box !important;
+        justify-items: stretch !important; align-items: stretch !important;
+      }
+      body.resume-page .nav-links li,
+      body.resume-page .nav-links a{ margin: 0 !important; width: 100% !important; }
+      /* keep content clear of nav */
+      body.resume-page main{ margin-top: 8px !important; }
+    }
+
+    /* ---------- NAV: Desktop (>=901px) ---------- */
+    @media (min-width: 901px){
+      /* Force the bar to span the viewport (no max-width cap) */
       body.resume-page > nav.nav-bar{
         width: 100svw !important;
         max-width: none !important;
         margin-left: calc(50% - 50svw) !important;
         margin-right: calc(50% - 50svw) !important;
         border-radius: 0 !important;
-        overflow: visible !important;       /* never clip a wrapped row */
+        background: #1f1f1f !important;
       }
-      @supports not (width:100svw){
+    }
+    @supports not (width: 100svw){
+      @media (min-width: 901px){
         body.resume-page > nav.nav-bar{
           width: 100vw !important;
           margin-left: calc(50% - 50vw) !important;
           margin-right: calc(50% - 50vw) !important;
         }
       }
-      /* keep one row, but make spacing a touch tighter so it fits comfortably */
-      body.resume-page .nav-bar > .nav-links{
-        display:flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        gap: 16px !important;
-        padding: 10px 20px !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-      }
-      body.resume-page .nav-links a{
-        white-space: nowrap !important;
-        padding: 8px 12px !important;
-        font-size: 0.95rem !important; /* tiny tweak; remove if you prefer original size */
-      }
-    }
-
-    /* ===== MOBILE (<=900px): match Contact — nav scrolls with page, 2 columns ===== */
-    @media (max-width:900px){
-      body.resume-page nav.nav-bar{
-        position: relative !important;
-        top: auto !important;
-        transform: none !important;
-        z-index: 3 !important;
-        padding: 10px 0 !important;
-      }
-      body.resume-page nav.nav-bar > .nav-links{
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-        gap: 10px !important;
-
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 8px !important;
-        box-sizing: border-box !important;
-
-        justify-content: stretch !important;
-        justify-items: stretch !important;
-        align-items: stretch !important;
-      }
-      body.resume-page .nav-links li,
-      body.resume-page .nav-links a{
-        margin: 0 !important;
-        width: 100% !important;
-      }
-
-      /* tiny buffer so hero never tucks under the bar */
-      body.resume-page .split-hero,
-      body.resume-page main,
-      body.resume-page .content{
-        margin-top: 8px !important;
-      }
     }
   </style>
 </head>
 
 <body class="page-specific resume-page">
+
   <!-- Background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
@@ -94,14 +94,14 @@
     </video>
   </div>
 
-  <!-- Navigation (identical across pages) -->
+  <!-- NAV (same links/order as other pages) -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html" aria-current="page">Resume</a></li>
       <li><a href="labs.html">Home Labs</a></li>
       <li><a href="passion.html">My Passion</a></li>
-      <li><a href="soc-lab.html">SOC Lab</a></li>
+      <li><a href="soc-lab.html">SOC Lab</a></li> <!-- NOTE: no leading slash -->
       <li><a href="opportunities.html">Opportunities</a></li>
       <li><a href="certifications.html">Certifications</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
@@ -109,10 +109,43 @@
     </ul>
   </nav>
 
-  <!-- === Your resume content starts here === -->
+  <!-- CONTENT (visible, padded, and on a panel) -->
   <main id="content" role="main">
-    <!-- Hero / resume summary etc. -->
-    <!-- ... keep your existing resume page content ... -->
+    <section class="split-hero">
+      <h1>My Professional Journey</h1>
+      <p>
+        Hands-on cybersecurity analyst focused on threat detection, SOC operations,
+        and practical lab work. I combine persistence, clear documentation, and
+        strong teamwork to deliver signal, not noise.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+      <ul>
+        <li>SIEM (QRadar, Splunk): rules, detections, dashboards, triage</li>
+        <li>Vulnerability Management (Nessus): scanning, prioritization, remediation</li>
+        <li>IR process (NIST 800-61): triage → contain → eradicate → lessons learned</li>
+        <li>Networking: segmentation, VPNs, secure protocols</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected Experience</h2>
+      <p>
+        Built a full SOC home lab including QRadar, Splunk, pfSense, Windows Server,
+        Kali and Nessus. Tuned detections, analyzed logs, and documented repeatable
+        playbooks for triage and escalation.
+      </p>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>CompTIA CySA+</li>
+        <li>ISC2 CC</li>
+      </ul>
+    </section>
   </main>
 
   <footer class="site-footer full-bleed">
@@ -122,7 +155,6 @@
   </footer>
 </body>
 </html>
-
 
 
 
