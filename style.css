@@ -6205,6 +6205,37 @@ section .btn-download:hover {
 .resume-page .btn-download:hover{ transform: translateY(-1px); filter: brightness(1.03); }
 .resume-page .btn-download:active{ transform: translateY(0); filter: brightness(.98); }
 
+/* === SOC Lab code box fixes === */
+.soc-lab pre,
+.soc-lab code {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  background: rgba(0,0,0,0.75);
+  color: #f8f8f2;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.5;
+
+  padding: 14px 16px;      /* adds breathing room inside the box */
+  margin: 14px 0;          /* spacing from surrounding text */
+  border-radius: 10px;
+  overflow-x: auto;        /* enables side-scroll if a line is too long */
+  white-space: pre-wrap;   /* allows wrapping instead of forcing horizontal scroll */
+  word-break: break-word;  /* ensures long strings don’t overflow */
+}
+
+/* On small mobile screens, make text slightly smaller for comfort */
+@media (max-width: 500px){
+  .soc-lab pre,
+  .soc-lab code {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}
+
 
 
 
