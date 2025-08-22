@@ -5547,6 +5547,10 @@ body{
   }
 }
 
+@media (max-width:900px){
+  nav.nav-bar, nav.nav-bar > .nav-links, header, body { outline:2px solid red !important; }
+}
+
 
 
 
