@@ -5568,6 +5568,75 @@ body{
     width: 100% !important;
   }
 }
+/* ===== NAV: desktop single-row everywhere ===== */
+@media (min-width: 901px){
+  .nav-bar > .nav-links{
+    display:flex !important;
+    flex-wrap:nowrap !important;          /* keep one row */
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;                              /* a bit tighter than 20px */
+    max-width:1280px;                      /* give the row a touch more room */
+    padding:10px 20px;                     /* slightly slimmer gutters */
+    box-sizing:border-box;
+  }
+  .nav-bar .nav-links a{
+    white-space:nowrap;
+    padding:8px 12px;                      /* slightly narrower pills */
+    font-size:0.95rem;                     /* tiny font tweak; comment out if unwanted */
+  }
+  .nav-bar .nav-links li{ margin:0; }
+}
+
+/* ===== CONTACT PAGE: mobile force full-width, 2 even columns ===== */
+@media (max-width: 900px){
+  /* make sure the body has class="contact-page" on contact.html */
+  body.contact-page header,
+  body.contact-page main,
+  body.contact-page .container,
+  body.contact-page .content{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  /* break the nav out of any grid/flex alignment */
+  body.contact-page nav.nav-bar{
+    display:block !important;
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    grid-column:1 / -1 !important;        /* if parent is grid: span all columns */
+    justify-self:stretch !important;       /* if parent is grid: stretch */
+    align-self:start !important;
+    transform:none !important; left:0 !important; right:0 !important;
+  }
+
+  /* the UL itself becomes a full-width 2-col grid */
+  body.contact-page nav.nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:10px !important;
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 8px !important;              /* tiny side gutter; set 0 for none */
+    box-sizing:border-box !important;
+    justify-content:stretch !important;
+    justify-items:stretch !important;
+    align-items:stretch !important;
+  }
+
+  body.contact-page .nav-links li,
+  body.contact-page .nav-links a{
+    margin:0 !important;
+    width:100% !important;
+  }
+}
+
 
 
 
