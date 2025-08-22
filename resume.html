@@ -7,6 +7,90 @@
 
   <!-- bump this version everywhere -->
   <link rel="stylesheet" href="style.css?v=112" />
+<style id="resume-override">
+  /* --- Make sure the background video is visible --- */
+  body.resume-page { background: transparent !important; }
+  body.resume-page .video-background{
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: -1 !important;  /* behind everything */
+  }
+  body.resume-page .video-background video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* --- Desktop: full-bleed bar; inner list centered to 1200px --- */
+  @media (min-width: 901px){
+    body.resume-page > nav.nav-bar{
+      position: sticky; top: 0; z-index: 1000;
+      background:#1f1f1f !important; border-radius: 0 !important;
+      width: 100svw !important;
+      margin-left: calc(50% - 50svw) !important;
+      margin-right: calc(50% - 50svw) !important;
+    }
+    body.resume-page .nav-links{
+      display: flex !important; flex-wrap: wrap !important;
+      justify-content: space-between !important; align-items: center !important;
+      max-width: 1200px !important; margin: 0 auto !important;
+      padding: 14px 24px !important; gap: 28px !important; list-style: none !important;
+    }
+
+    /* Re-cap the content so it doesn’t span edge-to-edge */
+    body.resume-page main,
+    body.resume-page section,
+    body.resume-page .main-content{
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Breathing room below the sticky bar */
+    body.resume-page main{ padding-top: 24px !important; }
+  }
+
+  /* Fallback for browsers without svw */
+  @supports not (width: 100svw){
+    @media (min-width: 901px){
+      body.resume-page > nav.nav-bar{
+        width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+      }
+    }
+  }
+
+  /* --- Mobile: 2-column grid that fills the width --- */
+  @media (max-width: 900px){
+    body.resume-page > nav.nav-bar{
+      position: relative !important;
+      padding: 10px 0 !important; border-radius: 0 !important;
+    }
+    body.resume-page .nav-links{
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+      gap: 10px !important; list-style: none !important;
+      width: 100% !important; max-width: none !important;
+      margin: 0 !important; padding: 0 10px !important;
+      box-sizing: border-box !important; white-space: normal !important;
+    }
+    body.resume-page .nav-links li,
+    body.resume-page .nav-links a{ margin: 0 !important; width: 100% !important; }
+
+    /* Keep content neatly capped on mobile too */
+    body.resume-page main,
+    body.resume-page section,
+    body.resume-page .main-content{
+      width: 100% !important; max-width: 1200px !important;
+      margin: 0 auto !important; padding: 0 16px !important; box-sizing: border-box !important;
+    }
+  }
+</style>
+
+  
   <style id="resume-override">
   /* Give the resume page full width and remove any body caps */
   body.resume-page{
@@ -238,6 +322,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
