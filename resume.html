@@ -5,150 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas – Resume</title>
 
-  <!-- bump the version so browsers fetch the latest CSS -->
-  <link rel="stylesheet" href="style.css?v=114" />
+  <!-- bump version to clear cache -->
+  <link rel="stylesheet" href="style.css?v=118" />
 
-  <!-- Page-specific overrides kept in one place -->
   <style>
-    /* ---- Background video stays behind all content ---- */
+    /* ---- Background video ---- */
     body.resume-page { background: transparent !important; }
-    body.resume-page .video-background{
-      position: fixed !important;
-      inset: 0 !important;
-      z-index: -1 !important;
+    .video-background{ position:fixed; inset:0; z-index:-1; }
+    .video-background video{ width:100%; height:100%; object-fit:cover; }
+
+    /* ---- Nav ---- */
+    nav.nav-bar{
+      position:sticky; top:0; z-index:1000;
+      background:#1f1f1f; border-radius:0;
+      width:100%; box-shadow:0 3px 8px rgba(0,0,0,.35);
     }
-    body.resume-page .video-background video{
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
+    nav.nav-bar ul{
+      display:flex; flex-wrap:wrap; justify-content:space-between;
+      list-style:none; padding:14px 22px; margin:0 auto; max-width:1200px;
+      gap:20px;
+    }
+    nav.nav-bar a{ color:#fff; text-decoration:none; }
+
+    /* ---- Resume panels ---- */
+    main{ padding:18px 0; }
+    section.panel{
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      width:92%; max-width:1100px;
+      margin:18px auto; padding:22px;
+      box-sizing:border-box;
+    }
+    h1,h2,h3{ color:#ffd54f; margin-bottom:10px; }
+    p{ line-height:1.6; margin-bottom:12px; max-width:80ch; text-align:left; }
+
+    /* ---- About section with photo ---- */
+    .resume-hero{
+      display:grid;
+      grid-template-columns: 1fr 220px;
+      gap:20px;
+      align-items:start;
+    }
+    .resume-photo img{
+      max-width:200px;
+      border-radius:50%;
+      border:3px solid #444;
+      box-shadow:0 4px 12px rgba(0,0,0,.6);
+      object-fit:cover;
+    }
+    @media (max-width:768px){
+      .resume-hero{ grid-template-columns: 1fr; }
+      .resume-photo{ display:none; }
     }
 
-    /* ---- Desktop: full-bleed sticky nav; inner list capped ---- */
-    @media (min-width: 901px){
-      body.resume-page > nav.nav-bar{
-        position: sticky; top: 0; z-index: 1000;
-        background:#1f1f1f !important; border-radius: 0 !important;
-
-        width: 100svw !important;
-        margin-left: calc(50% - 50svw) !important;
-        margin-right: calc(50% - 50svw) !important;
-      }
-      body.resume-page .nav-links{
-        display:flex !important; flex-wrap:wrap !important;
-        justify-content:space-between !important; align-items:center !important;
-        gap:28px !important; list-style:none !important;
-
-        max-width:1200px !important; margin:0 auto !important;
-        padding:14px 24px !important; box-sizing:border-box !important;
-      }
-
-      /* cap main content for readability */
-      body.resume-page main{ padding-top:24px !important; }
-      body.resume-page main > section{
-        width:100%; max-width:1100px; margin:18px auto;
-        padding:20px 22px; box-sizing:border-box;
-        background:rgba(0,0,0,.55);
-        border:1px solid rgba(255,255,255,.08);
-        border-radius:14px;
-      }
-    }
-    @supports not (width:100svw){
-      @media (min-width:901px){
-        body.resume-page > nav.nav-bar{
-          width: 100vw !important;
-          margin-left: calc(50% - 50vw) !important;
-          margin-right: calc(50% - 50vw) !important;
-        }
-      }
-    }
-
-    /* ---- Mobile: two-column nav grid, content panels ---- */
-    @media (max-width:900px){
-      body.resume-page > nav.nav-bar{
-        position:relative !important;
-        background:#1f1f1f !important; border-radius:0 !important;
-        padding:10px 0 !important;
-      }
-      body.resume-page .nav-links{
-        display:grid !important;
-        grid-template-columns:repeat(2, minmax(0,1fr)) !important;
-        gap:10px !important; list-style:none !important;
-
-        width:100% !important; max-width:none !important;
-        margin:0 !important; padding:0 10px !important; box-sizing:border-box !important;
-      }
-      body.resume-page .nav-links li,
-      body.resume-page .nav-links a{ margin:0 !important; width:100% !important; }
-
-      body.resume-page main > section{
-        width:92%; max-width:1100px; margin:14px auto;
-        padding:18px; box-sizing:border-box;
-        background:rgba(0,0,0,.55);
-        border:1px solid rgba(255,255,255,.08);
-        border-radius:14px;
-      }
-    }
-
-    /* ---- Typography polish for readability ---- */
-    body.resume-page,
-    body.resume-page p,
-    body.resume-page li,
-    body.resume-page a{ color:#eaeaea !important; }
-    body.resume-page h1, body.resume-page h2, body.resume-page h3{
-      color:#ffd54f !important; margin:0 0 10px 0;
-    }
-    body.resume-page ul{ margin:12px 0 0 18px; }
-    body.resume-page .kv{ margin:4px 0 14px 0; }
-
-    /* Footer in normal flow */
-    .site-footer { position: static !important; margin-top: 24px; }
-
-    /* === Resume Hero with Photo === */
-    .resume-hero.columns {
-      display: grid;
-      grid-template-columns: 200px 1fr 220px; /* left label, text, right photo */
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 30px;
-    }
-    .resume-label {
-      font-weight: bold;
-      font-size: 1.3rem;
-      color: #ffd700;
-    }
-    .resume-main p {
-      margin-bottom: 12px;
-      line-height: 1.6;
-      text-align: left;
-    }
-    .resume-photo img {
-      max-width: 200px;
-      border-radius: 50%;
-      border: 3px solid #444;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      object-fit: cover;
-    }
-    @media (max-width: 768px) {
-      .resume-hero.columns {
-        grid-template-columns: 200px 1fr;
-      }
-      .resume-photo {
-        display: none;
-      }
-    }
+    /* Lists */
+    ul{ margin:8px 0 0 20px; }
+    li{ line-height:1.55; margin:6px 0; }
   </style>
 </head>
 
-<body class="page-specific resume-page">
-
-  <!-- Background video -->
+<body class="resume-page">
+  <!-- Video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
       <source src="videos/nmap-lab.mp4" type="video/mp4" />
     </video>
   </div>
 
-  <!-- NAV (same order as other pages) -->
+  <!-- Nav -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -163,149 +88,49 @@
     </ul>
   </nav>
 
-  <!-- CONTENT -->
-  <main id="content" role="main">
-
+  <main>
     <!-- Hero with photo -->
-    <section class="resume-hero columns">
-      <div class="resume-label">About Me</div>
-      <div class="resume-main">
+    <section class="panel resume-hero">
+      <div>
+        <h2>About Me</h2>
         <p>
-          Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
-          threat detection, and incident response. Experienced building and operating a
-          home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
-          real-world attacks, tune detections, and document playbooks.
+          Hands-on Cybersecurity Analyst with strong SOC, SIEM, and IR experience.
+          Built and operated a home SOC with QRadar, Splunk, pfSense, and Nessus.
+        </p>
+        <p>
+          Skilled in MITRE ATT&CK, NIST 800-61, cloud security (AWS), and endpoint
+          defense. Passionate about reducing false positives, building detection rules,
+          and documenting playbooks.
         </p>
       </div>
       <div class="resume-photo">
-        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas Profile Photo">
+        <img src="images/profile.png" alt="Profile photo of Jeeva Kumaradas">
       </div>
     </section>
 
-    <!-- Summary -->
-    <section class="split-hero">
-      <h1>Professional Summary</h1>
-      <p class="kv">
-        Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
-        threat detection, and incident response. Experienced building and operating a
-        home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
-        real-world attacks, tune detections, and document playbooks. Comfortable with
-        the NIST 800-61 lifecycle and MITRE ATT&amp;CK. Known for persistence, clean
-        documentation, and calm, practical teamwork.
-      </p>
-      <p class="kv">
-        Areas of interest: cloud security (AWS), endpoint hardening, SIEM content
-        engineering, and measurable reduction of false positives.
-      </p>
-    </section>
-
-    <!-- Core Skills -->
-    <section>
+    <!-- The rest of resume panels (skills, projects, exp, etc.) -->
+    <section class="panel">
       <h2>Core Skills</h2>
       <ul>
-        <li><strong>Security Operations &amp; SIEM:</strong> QRadar &amp; Splunk (log onboarding, correlation rules, dashboards, alert triage)</li>
-        <li><strong>Incident Response:</strong> NIST 800-61, MITRE ATT&amp;CK, phishing &amp; ransomware simulations, containment &amp; recovery</li>
-        <li><strong>Vulnerability Management:</strong> Nessus scans, prioritization, remediation tracking, patch validation</li>
-        <li><strong>Network &amp; Endpoint:</strong> pfSense firewalling, segmentation, VPNs, secure protocols, Windows/Linux basics</li>
-        <li><strong>Cloud Security:</strong> AWS IAM, GuardDuty, CloudWatch (foundations); least-privilege and logging strategies</li>
-        <li><strong>Process &amp; Collaboration:</strong> ServiceNow (tickets/changes), GitHub for labs, concise technical documentation</li>
+        <li><strong>SIEM &amp; SOC:</strong> QRadar, Splunk – log onboarding, correlation, dashboards</li>
+        <li><strong>Incident Response:</strong> NIST 800-61, phishing &amp; ransomware containment</li>
+        <li><strong>Vulnerability Management:</strong> Nessus scans, prioritization, patch validation</li>
+        <li><strong>Cloud Security:</strong> AWS IAM, GuardDuty, CloudWatch</li>
+        <li><strong>Networking &amp; Endpoint:</strong> pfSense, segmentation, secure Windows/Linux</li>
       </ul>
     </section>
 
-    <!-- Tools -->
-    <section>
-      <h2>Tools &amp; Platforms</h2>
-      <p class="kv">
-        IBM QRadar, Splunk, Nessus, pfSense, Windows Server, Kali Linux, Ubuntu,
-        Wireshark, OpenVAS, PowerShell/Bash basics, MITRE ATT&amp;CK Navigator,
-        ServiceNow, GitHub, AWS (IAM, CloudWatch, GuardDuty).
-      </p>
-    </section>
+    <!-- add your other sections here (Tools, Projects, Experience, Education, Certs, Achievements, etc.) -->
 
-    <!-- Projects / Labs -->
-    <section>
-      <h2>Selected Projects &amp; Labs</h2>
-      <ul>
-        <li><strong>Ransomware Detection in QRadar:</strong> Simulated abnormal file encryption behavior, authored correlation rules,
-          tuned thresholds, and created an IR checklist to reduce time-to-contain.</li>
-        <li><strong>Phishing Investigation in Splunk:</strong> Parsed headers, validated SPF/DKIM/DMARC, pivoted to WHOIS/abuse contacts,
-          and produced an analyst worksheet to standardize triage notes.</li>
-        <li><strong>Cloud Guard Rails:</strong> Built AWS least-privilege policies for IAM users, enabled GuardDuty findings, shipped
-          logs to a central store, and reviewed detections in Splunk.</li>
-      </ul>
-    </section>
-
-    <!-- Experience -->
-    <section>
-      <h2>Experience</h2>
-
-      <h3>Cybersecurity Internship – Durham District School Board (DDSB)</h3>
-      <p class="kv"><em>Security Operations Intern</em></p>
-      <ul>
-        <li>Shadowed SOC analysts for daily monitoring in QRadar; assisted with basic investigations and false-positive reviews.</li>
-        <li>Built Splunk dashboards for weekly summary reporting and ticket context.</li>
-        <li>Supported awareness initiatives and contributed to incident response documentation.</li>
-      </ul>
-
-      <h3>Operations Manager – Hospitality (Transferable Skills)</h3>
-      <p class="kv"><em>People &amp; Process Leadership</em></p>
-      <ul>
-        <li>Enforced standards, vendor compliance, and incident escalation under pressure—experience that maps well to GRC.</li>
-        <li>Implemented process improvements and wrote SOPs; improved audit readiness and response time.</li>
-      </ul>
-    </section>
-
-    <!-- Education -->
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Cybersecurity coursework &amp; independent labs</strong> – SIEM, IR, Vulnerability Management, Networking</li>
-        <li><strong>Continuous Learning:</strong> Cloud security (AWS), detection engineering, scripting basics (PowerShell/Bash)</li>
-      </ul>
-    </section>
-
-    <!-- Certifications -->
-    <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li><strong>CompTIA CySA+</strong> – Cybersecurity Analyst (threat detection, SIEM, vulnerability management)</li>
-        <li><strong>ISC2 CC</strong> – Certified in Cybersecurity (security principles, risk, network &amp; incident response)</li>
-        <li><strong>AWS Security Specialty</strong> – <em>in progress</em></li>
-      </ul>
-    </section>
-
-    <!-- Achievements -->
-    <section>
-      <h2>Achievements</h2>
-      <ul>
-        <li>Reduced lab false positives by tuning QRadar correlation rules and asset contexts.</li>
-        <li>Authored repeatable SOC playbooks for phishing, brute-force, and ransomware scenarios.</li>
-        <li>Documented 10+ public labs and write-ups to demonstrate structured, real-world practice.</li>
-      </ul>
-    </section>
-
-    <!-- Call to action -->
-    <section>
-      <h2>Download</h2>
-      <p class="kv">
-        Prefer a PDF? <a href="files/Jeeva_Kumaradas_Resume.pdf" download>Download my resume</a>.
-      </p>
-    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer full-bleed">
+  <footer class="site-footer">
     <div class="footer-inner">
       © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
     </div>
   </footer>
 </body>
 </html>
-
-
-
-
-
 
 
 
