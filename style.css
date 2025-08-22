@@ -5689,6 +5689,47 @@ body.contact-page nav.nav-bar .nav-links a {
   }
 }
 
+<link rel="stylesheet" href="style.css?v=107">
+
+<style>
+/* RESUME — desktop: make nav truly full-bleed edge-to-edge */
+@media (min-width: 901px){
+  body.resume-page > nav.nav-bar{
+    width: 100svw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50svw) !important;
+    margin-right: calc(50% - 50svw) !important;
+    border-radius: 0 !important;
+  }
+}
+@supports not (width: 100svw){
+  @media (min-width: 901px){
+    body.resume-page > nav.nav-bar{
+      width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+    }
+  }
+}
+
+/* RESUME — mobile: nav should scroll with page (not fixed), and content starts below it */
+@media (max-width: 900px){
+  body.resume-page nav.nav-bar{
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 3 !important;
+    padding: 10px 0 !important;   /* same padding as other pages */
+  }
+  /* tiny buffer under the bar so hero never tucks under it */
+  body.resume-page .split-hero,
+  body.resume-page main,
+  body.resume-page .content{
+    margin-top: 8px !important;
+  }
+}
+</style>
+
 
 
 
