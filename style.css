@@ -6367,6 +6367,12 @@ body.resume-page .split-hero p:first-of-type {
   display: block;
 }
 
+@media (max-width: 900px){
+  body.resume-page .split-hero p {
+    clear: both !important;
+  }
+}
+
 
 
 
