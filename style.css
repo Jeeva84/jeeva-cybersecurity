@@ -5485,6 +5485,27 @@ body{
   :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
 }
 
+/* Fix Resume & Contact nav container to match Home */
+.resume-page .nav-bar .nav-links,
+.contact-page .nav-bar .nav-links{
+  display:flex !important;
+  justify-content:space-between !important; /* spread items edge-to-edge */
+  align-items:center;
+  width:100% !important;
+  max-width:1200px !important;              /* set to your Home container width */
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:32px !important;             /* same side gutters as Home */
+  padding-right:32px !important;
+  box-sizing:border-box;
+}
+
+/* In case a page wrapper is squeezing the nav on Resume/Contact */
+.resume-page .nav-bar,
+.contact-page .nav-bar{
+  width:100% !important;
+}
+
 
 
 
