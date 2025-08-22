@@ -6074,6 +6074,38 @@ body.resume-page .site-footer .footer-inner {
   background: #e68a00; /* darker orange on hover */
 }
 
+/* Resume Download Button – match orange buttons */
+.resume-download .download-btn,
+section .btn-download {
+  background: linear-gradient(90deg, #ff4500, #ff6347); /* same orange gradient */
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.resume-download .download-btn:hover,
+section .btn-download:hover {
+  background: linear-gradient(90deg, #ff6347, #ff4500);
+  transform: translateY(-2px);
+}
+
+/* Resume page section boxes */
+.resume-page section,
+.resume-page .resume-download {
+  background: rgba(0, 0, 0, 0.5); /* keeps semi-transparent dark background */
+  padding: 20px; /* reduce padding if too large */
+  margin-bottom: 20px;
+  border-radius: 12px;
+  min-height: auto; /* remove fixed or forced height */
+  height: auto;     /* ensure it auto-sizes to content */
+  display: inline-block; /* shrink-wrap around content */
+  width: 100%; /* still full width if you want */
+}
 
 
 
