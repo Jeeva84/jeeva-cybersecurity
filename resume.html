@@ -7,6 +7,89 @@
 
   <!-- bump this version everywhere -->
   <link rel="stylesheet" href="style.css?v=112" />
+  <style id="resume-override">
+  /* Give the resume page full width and remove any body caps */
+  body.resume-page{
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Desktop: full-bleed bar; inner list centered to 1200px */
+  @media (min-width:901px){
+    body.resume-page > nav.nav-bar{
+      position: sticky; top: 0; z-index: 1000;
+      background:#1f1f1f !important;
+      border-radius: 0 !important;
+
+      /* full-bleed across the real viewport */
+      width: 100svw !important;
+      margin-left: calc(50% - 50svw) !important;
+      margin-right: calc(50% - 50svw) !important;
+    }
+    body.resume-page .nav-links{
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+
+      max-width: 1200px !important;   /* tidy inner width */
+      margin: 0 auto !important;
+      padding: 14px 24px !important;
+      list-style: none !important;
+      gap: 28px !important;
+    }
+  }
+  @supports not (width:100svw){
+    @media (min-width:901px){
+      body.resume-page > nav.nav-bar{
+        width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+      }
+    }
+  }
+
+  /* Mobile: 2-column grid that fills the width */
+  @media (max-width:900px){
+    body.resume-page > nav.nav-bar{
+      position: relative !important;
+      width: 100% !important;
+      padding: 10px 0 !important;
+      border-radius: 0 !important;
+    }
+    body.resume-page .nav-links{
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+      gap: 10px !important;
+      list-style: none !important;
+
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 10px !important;   /* small gutters */
+      box-sizing: border-box !important;
+      white-space: normal !important;
+    }
+    body.resume-page .nav-links li,
+    body.resume-page .nav-links a{
+      margin: 0 !important;
+      width: 100% !important;
+    }
+  }
+
+  /* Kill any container caps INSIDE the resume page that might squeeze content/video */
+  body.resume-page section,
+  body.resume-page main,
+  body.resume-page .main-content{
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+</style>
+
 
   <!-- Page-specific hotfixes to guarantee visibility & layout -->
   <style id="resume-hotfix">
@@ -155,6 +238,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
