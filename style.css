@@ -5799,6 +5799,122 @@ body.contact-page .contact-container {
 }
 
 
+/* ==== FINAL FIX: resume & contact nav + layout ==== */
+
+/* Background video should be visible on these pages */
+body.resume-page,
+body.contact-page { background: transparent !important; }
+
+body.resume-page .video-background,
+body.contact-page .video-background {
+  position: fixed !important; inset: 0 !important; z-index: -1 !important;
+}
+body.resume-page .video-background video,
+body.contact-page .video-background video {
+  width: 100% !important; height: 100% !important; object-fit: cover !important;
+}
+
+/* Remove any global width caps that squeeze these pages */
+body.resume-page,
+body.contact-page {
+  max-width: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure the nav itself isn’t capped by a max-width somewhere */
+body.resume-page nav.nav-bar,
+body.contact-page nav.nav-bar {
+  max-width: none !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25);
+}
+
+/* ---------- Desktop (>=901px): full-bleed bar, centered inner links ---------- */
+@media (min-width: 901px){
+  body.resume-page nav.nav-bar,
+  body.contact-page nav.nav-bar{
+    position: sticky; top: 0; z-index: 1000;
+    border-radius: 0 !important; background: #1f1f1f !important;
+
+    /* full-bleed across the real viewport */
+    width: 100svw !important;
+    margin-left: calc(50% - 50svw) !important;
+    margin-right: calc(50% - 50svw) !important;
+  }
+
+  body.resume-page .nav-links,
+  body.contact-page .nav-links{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 28px !important;
+    list-style: none !important;
+
+    /* tidy inner width */
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 14px 24px !important;
+  }
+
+  /* page content width */
+  body.resume-page main, body.resume-page section,
+  body.contact-page main, body.contact-page section{
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Fallback for browsers without svw */
+@supports not (width: 100svw){
+  @media (min-width: 901px){
+    body.resume-page nav.nav-bar,
+    body.contact-page nav.nav-bar{
+      width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+    }
+  }
+}
+
+/* ---------- Mobile (<=900px): 2-column grid, true edge-to-edge ---------- */
+@media (max-width: 900px){
+  body.resume-page nav.nav-bar,
+  body.contact-page nav.nav-bar{
+    position: relative !important;
+    width: 100% !important; max-width: none !important;
+    margin: 0 !important; padding: 10px 0 !important;
+    border-radius: 0 !important; background: #1f1f1f !important;
+  }
+
+  body.resume-page .nav-links,
+  body.contact-page .nav-links{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 10px !important;
+    list-style: none !important;
+
+    width: 100% !important; max-width: none !important;
+    margin: 0 !important; padding: 0 10px !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    justify-items: stretch !important; align-items: stretch !important;
+  }
+
+  body.resume-page .nav-links li,  body.resume-page .nav-links a,
+  body.contact-page .nav-links li, body.contact-page .nav-links a{
+    margin: 0 !important; width: 100% !important;
+  }
+
+  /* space below the nav */
+  body.resume-page main,
+  body.contact-page main { padding-top: 8px !important; }
+}
+
 
 
 
