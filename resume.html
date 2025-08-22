@@ -6,74 +6,78 @@
   <title>Jeeva Kumaradas – Resume</title>
 
   <!-- bump version to clear cache -->
-  <link rel="stylesheet" href="style.css?v=118" />
+  <link rel="stylesheet" href="style.css?v=119" />
 
   <style>
     /* ---- Background video ---- */
     body.resume-page { background: transparent !important; }
-    .video-background{ position:fixed; inset:0; z-index:-1; }
-    .video-background video{ width:100%; height:100%; object-fit:cover; }
+    .video-background { position: fixed; inset: 0; z-index: -1; }
+    .video-background video { width: 100%; height: 100%; object-fit: cover; }
 
     /* ---- Nav ---- */
     nav.nav-bar{
-      position:sticky; top:0; z-index:1000;
-      background:#1f1f1f; border-radius:0;
-      width:100%; box-shadow:0 3px 8px rgba(0,0,0,.35);
+      position: sticky; top: 0; z-index: 1000;
+      background: #1f1f1f; border-radius: 0; width: 100%;
+      box-shadow: 0 3px 8px rgba(0,0,0,.35);
     }
     nav.nav-bar ul{
-      display:flex; flex-wrap:wrap; justify-content:space-between;
-      list-style:none; padding:14px 22px; margin:0 auto; max-width:1200px;
-      gap:20px;
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      list-style: none; padding: 14px 22px; margin: 0 auto; max-width: 1200px; gap: 20px;
     }
     nav.nav-bar a{ color:#fff; text-decoration:none; }
 
-    /* ---- Resume panels ---- */
-    main{ padding:18px 0; }
+    /* ---- Panels ---- */
+    main{ padding: 18px 0; }
     section.panel{
       background: rgba(0,0,0,.55);
       border: 1px solid rgba(255,255,255,.1);
       border-radius: 14px;
-      width:92%; max-width:1100px;
-      margin:18px auto; padding:22px;
-      box-sizing:border-box;
+      width: 92%; max-width: 1100px;
+      margin: 18px auto; padding: 22px;
+      box-sizing: border-box;
     }
-    h1,h2,h3{ color:#ffd54f; margin-bottom:10px; }
-    p{ line-height:1.6; margin-bottom:12px; max-width:80ch; text-align:left; }
 
-    /* ---- About section with photo ---- */
+    h1,h2,h3{ color:#ffd54f; margin: 0 0 10px 0; }
+    p{ line-height: 1.6; margin: 0 0 12px 0; max-width: 80ch; text-align: left; }
+    ul{ margin: 8px 0 0 20px; }
+    li{ line-height: 1.55; margin: 6px 0; }
+
+    /* ---- Hero with profile photo ---- */
     .resume-hero{
-      display:grid;
-      grid-template-columns: 1fr 220px;
-      gap:20px;
-      align-items:start;
+      display: grid;
+      grid-template-columns: 1fr 220px; /* text | photo */
+      gap: 20px; align-items: start;
+    }
+    .resume-photo{
+      display: flex; justify-content: center;
     }
     .resume-photo img{
-      max-width:200px;
-      border-radius:50%;
-      border:3px solid #444;
-      box-shadow:0 4px 12px rgba(0,0,0,.6);
-      object-fit:cover;
+      max-width: 200px; width: 100%;
+      border-radius: 50%;
+      border: 3px solid #444;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      object-fit: cover;
     }
-    @media (max-width:768px){
+    @media (max-width: 768px){
       .resume-hero{ grid-template-columns: 1fr; }
-      .resume-photo{ display:none; }
+      .resume-photo{ display: none; } /* clean mobile flow */
     }
 
-    /* Lists */
-    ul{ margin:8px 0 0 20px; }
-    li{ line-height:1.55; margin:6px 0; }
+    /* footer normal flow */
+    .site-footer { position: static !important; margin-top: 24px; }
   </style>
 </head>
 
 <body class="resume-page">
-  <!-- Video -->
+
+  <!-- Background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
       <source src="videos/nmap-lab.mp4" type="video/mp4" />
     </video>
   </div>
 
-  <!-- Nav -->
+  <!-- NAV -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -88,42 +92,126 @@
     </ul>
   </nav>
 
-  <main>
-    <!-- Hero with photo -->
+  <!-- CONTENT -->
+  <main id="content" role="main">
+
+    <!-- About / Professional Summary with Profile Photo -->
     <section class="panel resume-hero">
       <div>
-        <h2>About Me</h2>
+        <h2>Professional Summary</h2>
         <p>
-          Hands-on Cybersecurity Analyst with strong SOC, SIEM, and IR experience.
-          Built and operated a home SOC with QRadar, Splunk, pfSense, and Nessus.
+          Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
+          threat detection, and incident response. Experienced building and operating a
+          home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
+          real-world attacks, tune detections, and document playbooks. Comfortable with
+          the NIST 800-61 lifecycle and MITRE ATT&amp;CK. Known for persistence, clean
+          documentation, and calm, practical teamwork.
         </p>
         <p>
-          Skilled in MITRE ATT&CK, NIST 800-61, cloud security (AWS), and endpoint
-          defense. Passionate about reducing false positives, building detection rules,
-          and documenting playbooks.
+          Areas of interest: cloud security (AWS), endpoint hardening, SIEM content
+          engineering, and measurable reduction of false positives.
         </p>
       </div>
       <div class="resume-photo">
-        <img src="images/profile.png" alt="Profile photo of Jeeva Kumaradas">
+        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas profile photo">
       </div>
     </section>
 
-    <!-- The rest of resume panels (skills, projects, exp, etc.) -->
+    <!-- Core Skills -->
     <section class="panel">
       <h2>Core Skills</h2>
       <ul>
-        <li><strong>SIEM &amp; SOC:</strong> QRadar, Splunk – log onboarding, correlation, dashboards</li>
-        <li><strong>Incident Response:</strong> NIST 800-61, phishing &amp; ransomware containment</li>
-        <li><strong>Vulnerability Management:</strong> Nessus scans, prioritization, patch validation</li>
-        <li><strong>Cloud Security:</strong> AWS IAM, GuardDuty, CloudWatch</li>
-        <li><strong>Networking &amp; Endpoint:</strong> pfSense, segmentation, secure Windows/Linux</li>
+        <li><strong>Security Operations &amp; SIEM:</strong> QRadar &amp; Splunk (log onboarding, correlation rules, dashboards, alert triage)</li>
+        <li><strong>Incident Response:</strong> NIST 800-61, MITRE ATT&amp;CK, phishing &amp; ransomware simulations, containment &amp; recovery</li>
+        <li><strong>Vulnerability Management:</strong> Nessus scans, prioritization, remediation tracking, patch validation</li>
+        <li><strong>Network &amp; Endpoint:</strong> pfSense firewalling, segmentation, VPNs, secure protocols, Windows/Linux basics</li>
+        <li><strong>Cloud Security:</strong> AWS IAM, GuardDuty, CloudWatch (foundations); least-privilege and logging strategies</li>
+        <li><strong>Process &amp; Collaboration:</strong> ServiceNow (tickets/changes), GitHub for labs, concise technical documentation</li>
       </ul>
     </section>
 
-    <!-- add your other sections here (Tools, Projects, Experience, Education, Certs, Achievements, etc.) -->
+    <!-- Tools & Platforms -->
+    <section class="panel">
+      <h2>Tools &amp; Platforms</h2>
+      <p>
+        IBM QRadar, Splunk, Nessus, pfSense, Windows Server, Kali Linux, Ubuntu,
+        Wireshark, OpenVAS, PowerShell/Bash basics, MITRE ATT&amp;CK Navigator,
+        ServiceNow, GitHub, AWS (IAM, CloudWatch, GuardDuty).
+      </p>
+    </section>
 
+    <!-- Selected Projects & Labs -->
+    <section class="panel">
+      <h2>Selected Projects &amp; Labs</h2>
+      <ul>
+        <li><strong>Ransomware Detection in QRadar:</strong> Simulated abnormal file encryption behavior, authored correlation rules,
+          tuned thresholds, and created an IR checklist to reduce time-to-contain.</li>
+        <li><strong>Phishing Investigation in Splunk:</strong> Parsed headers, validated SPF/DKIM/DMARC, pivoted to WHOIS/abuse contacts,
+          and produced an analyst worksheet to standardize triage notes.</li>
+        <li><strong>Cloud Guard Rails:</strong> Built AWS least-privilege policies for IAM users, enabled GuardDuty findings, shipped
+          logs to a central store, and reviewed detections in Splunk.</li>
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="panel">
+      <h2>Experience</h2>
+
+      <h3>Cybersecurity Internship – Durham District School Board (DDSB)</h3>
+      <p><em>Security Operations Intern</em></p>
+      <ul>
+        <li>Shadowed SOC analysts for daily monitoring in QRadar; assisted with basic investigations and false-positive reviews.</li>
+        <li>Built Splunk dashboards for weekly summary reporting and ticket context.</li>
+        <li>Supported awareness initiatives and contributed to incident response documentation.</li>
+      </ul>
+
+      <h3>Operations Manager – Hospitality (Transferable Skills)</h3>
+      <p><em>People &amp; Process Leadership</em></p>
+      <ul>
+        <li>Enforced standards, vendor compliance, and incident escalation under pressure—experience that maps well to GRC.</li>
+        <li>Implemented process improvements and wrote SOPs; improved audit readiness and response time.</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section class="panel">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Cybersecurity coursework &amp; independent labs</strong> – SIEM, IR, Vulnerability Management, Networking</li>
+        <li><strong>Continuous Learning:</strong> Cloud security (AWS), detection engineering, scripting basics (PowerShell/Bash)</li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section class="panel">
+      <h2>Certifications</h2>
+      <ul>
+        <li><strong>CompTIA CySA+</strong> – Cybersecurity Analyst (threat detection, SIEM, vulnerability management)</li>
+        <li><strong>ISC2 CC</strong> – Certified in Cybersecurity (security principles, risk, network &amp; incident response)</li>
+        <li><strong>AWS Security Specialty</strong> – <em>in progress</em></li>
+      </ul>
+    </section>
+
+    <!-- Achievements -->
+    <section class="panel">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Reduced lab false positives by tuning QRadar correlation rules and asset contexts.</li>
+        <li>Authored repeatable SOC playbooks for phishing, brute-force, and ransomware scenarios.</li>
+        <li>Documented 10+ public labs and write-ups to demonstrate structured, real-world practice.</li>
+      </ul>
+    </section>
+
+    <!-- Download -->
+    <section class="panel">
+      <h2>Download</h2>
+      <p>
+        Prefer a PDF? <a href="files/Jeeva_Kumaradas_Resume.pdf" download>Download my resume</a>.
+      </p>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
@@ -131,6 +219,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
