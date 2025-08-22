@@ -5488,6 +5488,19 @@ body{
 }
 
 
+@media (max-width: 900px) {
+
+  /* Target the nav links on both resume and contact pages */
+  body.resume-page .nav-links,
+  body.contact-page .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
 
 
 
