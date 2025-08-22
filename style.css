@@ -6277,6 +6277,54 @@ section .btn-download:hover {
     max-width: 80vw;
   }
 }
+/* ===== SOC page – make command boxes mobile-friendly ===== */
+@media (max-width: 900px){
+  /* Cover common code containers on your site */
+  body.soc-page pre,
+  body.soc-page code,
+  body.soc-page .code-box,
+  body.soc-page .cmd-box,
+  body.soc-page .code-card,
+  body.soc-page .code-block {
+    /* Let long lines wrap instead of getting clipped */
+    white-space: pre-wrap !important;   /* preserves spacing, allows wrap */
+    word-break: break-word !important;  /* breaks long tokens if needed */
+
+    /* Ensure the box can actually use the screen width */
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+
+    /* Breathing room so wrapped text doesn't hug the edge */
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+
+    /* Make reading more comfortable on small screens */
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+
+    /* If a very long token still doesn't wrap, allow horizontal scroll */
+    overflow-x: auto !important;
+  }
+
+  /* Tidy the visual card look (if you use a card container) */
+  body.soc-page .code-box,
+  body.soc-page .cmd-box,
+  body.soc-page .code-card,
+  body.soc-page pre {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 14px !important;
+  }
+
+  /* Use a crisp mono font if not already set */
+  body.soc-page pre,
+  body.soc-page code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                 "Liberation Mono", "Courier New", monospace !important;
+  }
+}
+
 
 
 
