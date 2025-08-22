@@ -3411,19 +3411,7 @@ html { scroll-behavior: smooth; }
 }
 /* ===== FAILSAFE MOBILE NAV (always visible) ===== */
 @media (max-width: 900px) {
-  /* Keep bar fixed on top and on top of everything */
-  body.page-specific > nav.nav-bar{
-    position: fixed !important;
-    top: 0 !important; left: 0 !important; right: 0 !important;
-    z-index: 99999 !important;
-    background: #1f1f1f !important;
-    padding: 10px 10px !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35) !important;
-    transform: none !important;            /* never slide away */
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
+ 
   /* Show ALL tabs in a tidy 2-column grid (no swiping needed) */
   body.page-specific > nav.nav-bar .nav-links{
     display: grid !important;
@@ -5505,6 +5493,45 @@ body{
 .contact-page .nav-bar{
   width:100% !important;
 }
+
+/* Desktop/tablet: match Home container + side gutters */
+@media (min-width: 901px){
+  .nav-bar .nav-links{
+    max-width: 1200px;       /* use your Home value */
+    margin: 0 auto;          /* center container */
+    padding: 0 32px;         /* left/right gutters */
+    box-sizing: border-box;
+    justify-content: space-between; /* even spread */
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile: same idea with slightly smaller gutters */
+@media (max-width: 900px){
+  nav.nav-bar{
+    position: relative !important;
+    width: 100% !important;
+    background: #1f1f1f !important;
+    padding: 10px 0 !important;     /* no extra side padding here */
+    margin: 0 0 10px 0 !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  }
+
+  .nav-bar .nav-links{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;                /* mobile gutters */
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* even spread edge-to-edge */
+    gap: 10px;
+  }
+}
+
+/* In case Resume/Contact wrappers were adding side padding */
+.resume-page .nav-bar,
+.contact-page .nav-bar{ padding-left:0 !important; padding-right:0 !important; }
 
 
 
