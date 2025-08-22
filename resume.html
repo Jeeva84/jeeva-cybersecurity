@@ -103,26 +103,37 @@
     /* Footer in normal flow */
     .site-footer { position: static !important; margin-top: 24px; }
 
-    /* ---- Profile photo styling ---- */
-    .summary-flex {
+    /* === Resume Hero with Photo === */
+    .resume-hero.columns {
       display: grid;
-      grid-template-columns: 1fr 220px;
-      gap: 24px;
+      grid-template-columns: 200px 1fr 220px; /* left label, text, right photo */
+      gap: 20px;
       align-items: center;
+      margin-bottom: 30px;
     }
-    .summary-flex img {
+    .resume-label {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #ffd700;
+    }
+    .resume-main p {
+      margin-bottom: 12px;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .resume-photo img {
       max-width: 200px;
       border-radius: 50%;
       border: 3px solid #444;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
       object-fit: cover;
     }
-    @media (max-width: 768px){
-      .summary-flex {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .resume-hero.columns {
+        grid-template-columns: 200px 1fr;
       }
-      .summary-flex img {
-        margin: 0 auto;
+      .resume-photo {
+        display: none;
       }
     }
   </style>
@@ -155,28 +166,37 @@
   <!-- CONTENT -->
   <main id="content" role="main">
 
-    <!-- Summary with Profile Photo -->
+    <!-- Hero with photo -->
+    <section class="resume-hero columns">
+      <div class="resume-label">About Me</div>
+      <div class="resume-main">
+        <p>
+          Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
+          threat detection, and incident response. Experienced building and operating a
+          home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
+          real-world attacks, tune detections, and document playbooks.
+        </p>
+      </div>
+      <div class="resume-photo">
+        <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas Profile Photo">
+      </div>
+    </section>
+
+    <!-- Summary -->
     <section class="split-hero">
       <h1>Professional Summary</h1>
-      <div class="summary-flex">
-        <div>
-          <p class="kv">
-            Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
-            threat detection, and incident response. Experienced building and operating a
-            home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
-            real-world attacks, tune detections, and document playbooks. Comfortable with
-            the NIST 800-61 lifecycle and MITRE ATT&amp;CK. Known for persistence, clean
-            documentation, and calm, practical teamwork.
-          </p>
-          <p class="kv">
-            Areas of interest: cloud security (AWS), endpoint hardening, SIEM content
-            engineering, and measurable reduction of false positives.
-          </p>
-        </div>
-        <div>
-          <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas Profile Photo">
-        </div>
-      </div>
+      <p class="kv">
+        Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
+        threat detection, and incident response. Experienced building and operating a
+        home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
+        real-world attacks, tune detections, and document playbooks. Comfortable with
+        the NIST 800-61 lifecycle and MITRE ATT&amp;CK. Known for persistence, clean
+        documentation, and calm, practical teamwork.
+      </p>
+      <p class="kv">
+        Areas of interest: cloud security (AWS), endpoint hardening, SIEM content
+        engineering, and measurable reduction of false positives.
+      </p>
     </section>
 
     <!-- Core Skills -->
@@ -281,6 +301,8 @@
   </footer>
 </body>
 </html>
+
+
 
 
 
