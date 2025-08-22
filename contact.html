@@ -1,63 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeeva Kumaradas - Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeeva Kumaradas - Contact</title>
 
-    <link rel="stylesheet" href="style.css?v=102" />
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="style.css?v=106" />
+
+  <!-- quick override styles for mobile nav -->
+  <style>
+    /* CONTACT (mobile) — force the nav to full width, 2 columns */
+    @media (max-width:900px){
+      /* the bar */
+      body.contact-page nav.nav-bar{
+        position:relative !important;
+        width:100% !important;
+        max-width:none !important;
+        margin:0 !important;
+        padding:0 !important;
+        left:0 !important; 
+        right:0 !important; 
+        transform:none !important;
+      }
+      /* the UL */
+      body.contact-page nav.nav-bar > .nav-links{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+        gap:10px !important;
+
+        width:100% !important;
+        max-width:none !important;
+        margin:0 !important;
+        padding:0 8px !important;
+        box-sizing:border-box !important;
+
+        float:none !important;
+        text-align:left !important;
+        justify-content:stretch !important;
+        justify-items:stretch !important;
+        align-items:stretch !important;
+      }
+      body.contact-page .nav-links li,
+      body.contact-page .nav-links a{
+        margin:0 !important;
+        width:100% !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-specific contact-page">
-    <div class="video-background" aria-hidden="true">
-    <video autoplay muted loop playsinline>
-      <source src="videos/nmap-lab.mp4" type="video/mp4" />
-    </video>
-  </div>
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="videos/nmap-lab.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-    <nav class="nav-bar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="labs.html">Home Labs</a></li>
-      <li><a href="passion.html">My Passion</a></li>
-      <li><a href="/soc-lab.html">SOC Lab</a></li>
-      <li><a href="opportunities.html">Opportunities</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="contact.html" aria-current="page">Contact</a></li>
-    </ul>
-  </nav>
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="labs.html">Home Labs</a></li>
+      <li><a href="passion.html">My Passion</a></li>
+      <li><a href="/soc-lab.html">SOC Lab</a></li>
+      <li><a href="opportunities.html">Opportunities</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="contact-container">
-    <div class="contact-image">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
-    </div>
+  <div class="contact-container">
+    <div class="contact-image">
+      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" />
+    </div>
 
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
-        <input type="text"   name="_honey" style="display:none" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/jeeva_richardon@yahoo.com" method="POST">
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://jeeva84.github.io/jeeva-cybersecurity/thank-you.html" />
 
-        <input type="text"   name="name"  placeholder="Full Name" required />
-        <input type="email"  name="email" placeholder="E-mail"    required />
-        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-        <button type="submit" class="send-button">Send Message</button>
-      </form>
-    </div>
-  </div>
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="E-mail" required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit" class="send-button">Send Message</button>
+      </form>
+    </div>
+  </div>
 
-  <div class="footer-spacer" aria-hidden="true"></div>
+  <div class="footer-spacer" aria-hidden="true"></div>
 
- <footer class="site-footer full-bleed">
-  <div class="footer-inner">
-    © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
-  </div>
-</footer>
+  <footer class="site-footer full-bleed">
+    <div class="footer-inner">
+      © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
+    </div>
+  </footer>
 </body>
 </html>
+
 
 
 
