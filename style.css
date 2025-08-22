@@ -5985,6 +5985,71 @@ body.resume-page .main-content{
   }
 }
 
+/* === RESUME PAGE – TYPOGRAPHY + SPACING FIX === */
+body.resume-page {
+  /* make sure globals don't stretch text */
+  text-align: left !important;
+  text-justify: auto !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Keep text readable, not airy */
+body.resume-page p,
+body.resume-page li {
+  line-height: 1.55 !important;      /* was too tall */
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;     /* tighten block spacing */
+}
+
+/* Keep headings close to the content they label */
+body.resume-page h1,
+body.resume-page h2,
+body.resume-page h3 {
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  line-height: 1.2 !important;
+}
+
+/* Lists: consistent left gutter & compact spacing */
+body.resume-page ul,
+body.resume-page ol {
+  margin: 0 0 12px 1.25rem !important;
+  padding: 0 !important;
+}
+body.resume-page li + li { margin-top: 6px !important; }  /* small gap between bullets */
+
+/* Paragraphs in side-by-side columns (like your “Professional Summary”) shouldn’t justify */
+body.resume-page .split-hero p,
+body.resume-page .columns p {
+  text-align: left !important;
+  text-wrap: pretty;
+}
+
+/* The panel sections: keep a single, tight rhythm */
+body.resume-page main > section {
+  padding: 18px 18px 16px !important; /* slightly tighter bottom pad */
+  margin: 16px auto !important;
+}
+
+/* Prevent weird wide-word wrapping */
+body.resume-page * {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+/* NAV + content guard: ensure content can’t slide under the sticky bar */
+@media (min-width: 901px){
+  body.resume-page > nav.nav-bar { position: sticky; top: 0; }
+  body.resume-page main { padding-top: 24px !important; }
+}
+
+/* Footer: consistent padding and width on mobile and desktop */
+body.resume-page .site-footer { position: static !important; }
+body.resume-page .site-footer .footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 14px 20px;
+}
+
 
 
 
