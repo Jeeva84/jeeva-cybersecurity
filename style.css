@@ -1,10 +1,11 @@
-/* --- Automatic Container Fix for Whole Website --- */
-section, main, .resume-page, .main-content {
+/* Containers inside the page – do NOT constrain <body> */
+section, main, .main-content {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
 
 /* --- General Page Container --- */
 .container {
@@ -5759,88 +5760,6 @@ body.contact-page .contact-container {
 .video-background { position: fixed !important; inset: 0 !important; z-index: -1 !important; }
 
 /* ===== FINAL, UNIVERSAL MOBILE NAVIGATION BAR FIX (<=900px) ===== */
-@media (max-width: 900px) {
-  /*
-   * This block ensures the navigation bar is consistently full-width
-   * and uses a two-column grid for its links on all mobile pages.
-   * It uses !important to override any lingering conflicting styles.
-   */
-
-  /* Ensure the navigation bar itself spans the full viewport */
-  nav.nav-bar {
-    position: fixed !important; /* Keep it fixed at the top */
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important; /* Force full width */
-    max-width: none !important; /* Remove any max-width constraints */
-    margin: 0 !important; /* Remove any centering margins */
-    padding: 10px 0 !important; /* Adjust vertical padding; no horizontal padding here */
-    background: #1f1f1f !important; /* Ensure background color */
-    z-index: 2000 !important; /* Keep it on top of other content */
-    box-shadow: 0 6px 14px rgba(0, 0, 0, .35); /* Apply shadow for depth */
-    transform: none !important; /* Neutralize any previous transforms */
-    opacity: 1 !important; /* Ensure visibility */
-    visibility: visible !important; /* Ensure visibility */
-  }
-
-  /* Style the navigation links container (UL) for a two-column grid */
-  .nav-bar .nav-links {
-    display: grid !important; /* Use CSS Grid for layout */
-    grid-template-columns: repeat(2, 1fr) !important; /* Two equally-sized columns */
-    gap: 10px !important; /* Space between grid items (buttons) */
-    list-style: none !important; /* Remove list bullet points */
-    width: 100% !important; /* Make the grid container full width of its parent (nav.nav-bar) */
-    max-width: none !important; /* Remove any max-width constraints */
-    margin: 0 !important; /* Remove any margins */
-    padding: 0 10px !important; /* Add a small horizontal padding for a clean gutter */
-    box-sizing: border-box !important; /* Include padding in element's total width */
-    white-space: normal !important; /* Allow text to wrap naturally */
-    overflow: visible !important; /* Ensure no hidden content */
-    justify-content: stretch !important; /* Stretch items to fill space */
-    justify-items: stretch !important; /* Stretch content within items */
-    align-items: stretch !important; /* Stretch items vertically */
-  }
-
-  /* Style the individual navigation links (A tags) to fill their grid cells */
-  .nav-bar .nav-links li {
-    list-style: none !important; /* Ensure no list bullets on li */
-  }
-
-  .nav-bar .nav-links li a {
-    display: block !important; /* Make each link a block to fill its grid cell */
-    width: 100% !important; /* Ensure the link fills the full width of its parent li */
-    text-align: center !important; /* Center the text within each button */
-    padding: 12px 14px !important; /* Internal padding for the buttons */
-    background: rgba(255, 255, 255, .08) !important; /* Button background */
-    border: 1px solid rgba(255, 255, 255, .18) !important; /* Button border */
-    border-radius: 10px !important; /* Rounded corners for buttons */
-    color: #fff !important; /* Button text color */
-    text-decoration: none !important; /* Remove underline from links */
-  }
-
-  /* Ensure content below the fixed nav bar is not obscured */
-  body {
-    padding-top: var(--nav-h-mobile, 64px) !important; /* Fallback to 64px if --nav-h-mobile not defined */
-  }
-
-  /* Spacer is not needed when nav is fixed and controlled by this CSS */
-  .nav-spacer {
-    display: none !important;
-    height: 0 !important;
-  }
-
-  /* Prevent in-page anchors from hiding under the fixed nav */
-  :target {
-    scroll-margin-top: calc(var(--nav-h-mobile, 64px) + 8px) !important;
-  }
-}
-
-/* Define mobile nav height variable for use above */
-:root {
-  --nav-h-mobile: 64px; /* You can adjust this if your mobile nav buttons make the bar taller */
-}
-
 
 
 
