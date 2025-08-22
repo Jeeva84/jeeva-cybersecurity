@@ -5551,6 +5551,44 @@ body{
   nav.nav-bar, nav.nav-bar > .nav-links, header, body { outline:2px solid red !important; }
 }
 
+/* ===== MOBILE CONTAINER RESET (kills the global 90% width) ===== */
+@media (max-width: 900px){
+  /* Blow away width/max-width/padding that creates the big inset frame */
+  body, header, main, section,
+  .page-specific, .main-content, .container, .content {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Nav: edge-to-edge + tidy two-column buttons */
+  nav.nav-bar{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  nav.nav-bar > .nav-links{
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 6px !important;          /* tiny gutter; set to 0 for none */
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 10px !important;
+  }
+  nav.nav-bar .nav-links li,
+  nav.nav-bar .nav-links a{ margin: 0 !important; }
+  
+  /* Content sections: add a readable gutter (not the nav) */
+  .split-hero, .about-me, .contact-section, .resume-wrap, .soc-wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
 
 
 
