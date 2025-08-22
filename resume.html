@@ -5,91 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas - Resume</title>
 
-  <!-- Main stylesheet (bump version to bust caches) -->
-  <link rel="stylesheet" href="style.css?v=54" />
+  <!-- main stylesheet (cache-busted) -->
+  <link rel="stylesheet" href="style.css?v=108" />
+
+  <!-- Resume-specific overrides to guarantee correct nav layout -->
+  <style>
+    /* ===== DESKTOP (>=901px): make nav truly full-bleed so items don't clip ===== */
+    @media (min-width:901px){
+      body.resume-page > nav.nav-bar{
+        width: 100svw !important;
+        max-width: none !important;
+        margin-left: calc(50% - 50svw) !important;
+        margin-right: calc(50% - 50svw) !important;
+        border-radius: 0 !important;
+        overflow: visible !important;       /* never clip a wrapped row */
+      }
+      @supports not (width:100svw){
+        body.resume-page > nav.nav-bar{
+          width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+        }
+      }
+      /* keep one row, but make spacing a touch tighter so it fits comfortably */
+      body.resume-page .nav-bar > .nav-links{
+        display:flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 16px !important;
+        padding: 10px 20px !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+      }
+      body.resume-page .nav-links a{
+        white-space: nowrap !important;
+        padding: 8px 12px !important;
+        font-size: 0.95rem !important; /* tiny tweak; remove if you prefer original size */
+      }
+    }
+
+    /* ===== MOBILE (<=900px): match Contact — nav scrolls with page, 2 columns ===== */
+    @media (max-width:900px){
+      body.resume-page nav.nav-bar{
+        position: relative !important;
+        top: auto !important;
+        transform: none !important;
+        z-index: 3 !important;
+        padding: 10px 0 !important;
+      }
+      body.resume-page nav.nav-bar > .nav-links{
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+        gap: 10px !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 8px !important;
+        box-sizing: border-box !important;
+
+        justify-content: stretch !important;
+        justify-items: stretch !important;
+        align-items: stretch !important;
+      }
+      body.resume-page .nav-links li,
+      body.resume-page .nav-links a{
+        margin: 0 !important;
+        width: 100% !important;
+      }
+
+      /* tiny buffer so hero never tucks under the bar */
+      body.resume-page .split-hero,
+      body.resume-page main,
+      body.resume-page .content{
+        margin-top: 8px !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-specific resume-page">
-
   <!-- Background video -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline>
       <source src="videos/nmap-lab.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
     </video>
   </div>
 
-  <!-- NAV FIRST (same as other pages) -->
+  <!-- Navigation (identical across pages) -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html" aria-current="page">Resume</a></li>
       <li><a href="labs.html">Home Labs</a></li>
       <li><a href="passion.html">My Passion</a></li>
-      <li><a href="/soc-lab.html">SOC Lab</a></li>
+      <li><a href="soc-lab.html">SOC Lab</a></li>
       <li><a href="opportunities.html">Opportunities</a></li>
       <li><a href="certifications.html">Certifications</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <!-- Spacer is used on desktop (hidden on mobile) -->
-  <div class="nav-spacer"></div>
 
-  <!-- Portrait -->
-  <header>
-    <div class="container">
-      <img src="images/jeeva-profile.png" alt="Jeeva Kumaradas" class="profile-pic" />
-    </div>
-  </header>
+  <!-- === Your resume content starts here === -->
+  <main id="content" role="main">
+    <!-- Hero / resume summary etc. -->
+    <!-- ... keep your existing resume page content ... -->
+  </main>
 
-  <!-- Content -->
-  <div class="section-card">
-    <section class="container" id="resume">
-      <h2>My Professional Journey</h2>
-
-      <p>I am a passionate cybersecurity professional with strong hands-on experience in threat detection, security operations, and incident response. With a foundation built on formal education, industry-recognized certifications, and real-world projects, I bring a practical, resilient, and results-driven approach to cybersecurity challenges.</p>
-
-      <p>My journey has been shaped by perseverance and passion. After moving to Canada, I took on multiple jobs to support my family while simultaneously pursuing my long-standing dream of working in cybersecurity. Balancing work, studies, and family responsibilities taught me resilience, time management, and unwavering dedication — qualities that now define my professional character.</p>
-
-      <h3>Education</h3>
-      <p>Successfully completed the <strong>Network Security and Architecture Program</strong> at <strong>Fanshawe College</strong>.
-      Gained comprehensive knowledge in cybersecurity, network defense, incident handling, and secure architecture.</p>
-      <p><strong>Other Academic Background:</strong></p>
-      <ul class="education-list">
-        <li>Complete Python Developer – Zero to Mastery Academy (06/2024 – 07/2024)</li>
-        <li>Bachelor’s Equivalent in Hotel Management – EMPEE Institute, India  
-          <br><em>(Credential Evaluation Available Upon Request)</em></li>
-        <li>Post Graduate Diploma in Computer Applications – IIC India (2002 – 2003)</li>
-      </ul>
-
-      <h3>Core Skills</h3>
-      <ul>
-        <li>Security Operations and Threat Monitoring</li>
-        <li>Security Operations Tools – QRadar (SIEM), SentinelOne (XDR)</li>
-        <li>Vulnerability Management and Risk Mitigation</li>
-        <li>Incident Response Techniques</li>
-        <li>Network Security (VPNs, VLANs, Firewall Concepts)</li>
-      </ul>
-
-      <h3>Resume Download</h3>
-      <p>For a detailed overview of my certifications, technical skills, and project experience, please download my full resume:</p>
-      <a href="images/Jeeva_Kumaradas_Cybersecurity_Resume_2025.pdf" class="hero-button" download>Download Resume</a>
-    </section>
-  </div>
-
-  <!-- Footer -->
   <footer class="site-footer full-bleed">
     <div class="footer-inner">
       © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
     </div>
   </footer>
-
-
-
 </body>
 </html>
-
 
 
 
