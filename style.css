@@ -1,5 +1,5 @@
 /* --- Automatic Container Fix for Whole Website --- */
-section, header, main, .resume-page, .main-content {
+section, main, .resume-page, .main-content {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -5472,6 +5472,7 @@ body{
   /* When jumping to #anchors, don’t let the nav cover the heading */
   :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
 }
+
 
 
 
