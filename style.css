@@ -5533,54 +5533,6 @@ body{
 .resume-page .nav-bar,
 .contact-page .nav-bar{ padding-left:0 !important; padding-right:0 !important; }
 
-/* MOBILE: make Resume/Contact nav use the full width, no side gutters */
-@media (max-width: 900px){
-  /* Remove any padding on the bar itself */
-  .resume-page nav.nav-bar,
-  .contact-page nav.nav-bar{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Make the UL span the full width with tiny (8px) gutters */
-  .resume-page nav.nav-bar > .nav-links,
-  .contact-page nav.nav-bar > .nav-links{
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 8px !important;     /* reduce these if you want even tighter edges */
-    box-sizing: border-box !important;
-
-    /* keep your two-column look */
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px !important;
-  }
-}
-
-/* DESKTOP/TABLET: keep nav on ONE row and fit all items */
-@media (min-width: 901px){
-  .nav-bar .nav-links{
-    display:flex;
-    flex-wrap:nowrap !important;      /* stop wrapping */
-    justify-content:space-between;
-    align-items:center;
-    gap: 20px;                         /* was larger; shrink a bit */
-    max-width: 1280px;                 /* give a touch more room than 1200 */
-    margin: 0 auto;
-    padding: 0 24px;                   /* slightly slimmer gutters */
-    box-sizing: border-box;
-  }
-
-  .nav-bar .nav-links a{
-    white-space:nowrap;                /* keep labels on one line */
-    padding: 8px 12px;                 /* a little narrower buttons */
-    /* optional: tiny font tweak if you still need room */
-    /* font-size: 0.95rem; */
-  }
-}
 
 
 
