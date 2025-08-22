@@ -5761,6 +5761,43 @@ body.contact-page .contact-container {
 
 /* ===== FINAL, UNIVERSAL MOBILE NAVIGATION BAR FIX (<=900px) ===== */
 
+/* Desktop full-bleed nav */
+@media (min-width: 901px){
+  body.resume-page > nav.nav-bar{
+    width: 100svw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50svw) !important;
+    margin-right: calc(50% - 50svw) !important;
+    border-radius: 0 !important;
+    background: #1f1f1f !important;
+  }
+}
+@supports not (width: 100svw){
+  @media (min-width: 901px){
+    body.resume-page > nav.nav-bar{
+      width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+    }
+  }
+}
+
+/* Mobile grid that fills the width */
+@media (max-width: 900px){
+  body.resume-page nav.nav-bar{ position:relative !important; padding:10px 0 !important; }
+  body.resume-page nav.nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap:10px !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:0 10px !important;
+    box-sizing:border-box !important;
+  }
+  body.resume-page .nav-links li,
+  body.resume-page .nav-links a{ margin:0 !important; width:100% !important; }
+}
+
 
 
 
