@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeeva Kumaradas – Resume</title>
 
-  <!-- Your global stylesheet (bump the version to purge cache) -->
-  <link rel="stylesheet" href="style.css?v=113" />
+  <!-- bump the version so browsers fetch the latest CSS -->
+  <link rel="stylesheet" href="style.css?v=114" />
 
-  <!-- Resume-page overrides (single consolidated block) -->
+  <!-- Page-specific overrides kept in one place -->
   <style>
-    /* --- Make sure the background video is visible --- */
+    /* ---- Background video stays behind all content ---- */
     body.resume-page { background: transparent !important; }
     body.resume-page .video-background{
       position: fixed !important;
       inset: 0 !important;
-      z-index: -1 !important; /* behind everything */
+      z-index: -1 !important;
     }
     body.resume-page .video-background video{
       width: 100% !important;
@@ -23,52 +23,37 @@
       object-fit: cover !important;
     }
 
-    /* --- Desktop: full-bleed nav bar; inner list centered to 1200px --- */
+    /* ---- Desktop: full-bleed sticky nav; inner list capped ---- */
     @media (min-width: 901px){
       body.resume-page > nav.nav-bar{
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background:#1f1f1f !important;
-        border-radius: 0 !important;
+        position: sticky; top: 0; z-index: 1000;
+        background:#1f1f1f !important; border-radius: 0 !important;
 
-        /* Span the real viewport width */
         width: 100svw !important;
         margin-left: calc(50% - 50svw) !important;
         margin-right: calc(50% - 50svw) !important;
       }
       body.resume-page .nav-links{
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        gap: 28px !important;
-        list-style: none !important;
+        display:flex !important; flex-wrap:wrap !important;
+        justify-content:space-between !important; align-items:center !important;
+        gap:28px !important; list-style:none !important;
 
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-        padding: 14px 24px !important;
-        box-sizing: border-box !important;
+        max-width:1200px !important; margin:0 auto !important;
+        padding:14px 24px !important; box-sizing:border-box !important;
       }
 
-      /* Re-cap the content so it doesn’t span edge-to-edge */
-      body.resume-page main,
-      body.resume-page section,
-      body.resume-page .main-content{
-        width: 100% !important;
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-        padding: 0 24px !important;
-        box-sizing: border-box !important;
+      /* cap main content for readability */
+      body.resume-page main{ padding-top:24px !important; }
+      body.resume-page main > section{
+        width:100%; max-width:1100px; margin:18px auto;
+        padding:20px 22px; box-sizing:border-box;
+        background:rgba(0,0,0,.55);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:14px;
       }
-
-      /* Breathing room below the sticky bar */
-      body.resume-page main{ padding-top: 24px !important; }
     }
-
-    /* Fallback for browsers without svw */
-    @supports not (width: 100svw){
-      @media (min-width: 901px){
+    @supports not (width:100svw){
+      @media (min-width:901px){
         body.resume-page > nav.nav-bar{
           width: 100vw !important;
           margin-left: calc(50% - 50vw) !important;
@@ -77,66 +62,45 @@
       }
     }
 
-    /* --- Mobile: 2-column grid that fills the width --- */
-    @media (max-width: 900px){
+    /* ---- Mobile: two-column nav grid, content panels ---- */
+    @media (max-width:900px){
       body.resume-page > nav.nav-bar{
-        position: relative !important;
-        background:#1f1f1f !important;
-        padding: 10px 0 !important;
-        border-radius: 0 !important;
+        position:relative !important;
+        background:#1f1f1f !important; border-radius:0 !important;
+        padding:10px 0 !important;
       }
       body.resume-page .nav-links{
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-        gap: 10px !important;
-        list-style: none !important;
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+        gap:10px !important; list-style:none !important;
 
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 10px !important;   /* small gutters */
-        box-sizing: border-box !important;
-        white-space: normal !important;
+        width:100% !important; max-width:none !important;
+        margin:0 !important; padding:0 10px !important; box-sizing:border-box !important;
       }
       body.resume-page .nav-links li,
-      body.resume-page .nav-links a{
-        margin: 0 !important;
-        width: 100% !important;
-      }
+      body.resume-page .nav-links a{ margin:0 !important; width:100% !important; }
 
-      /* Keep content neatly capped on mobile too */
-      body.resume-page main,
-      body.resume-page section,
-      body.resume-page .main-content{
-        width: 100% !important;
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-        padding: 0 16px !important;
-        box-sizing: border-box !important;
+      body.resume-page main > section{
+        width:92%; max-width:1100px; margin:14px auto;
+        padding:18px; box-sizing:border-box;
+        background:rgba(0,0,0,.55);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:14px;
       }
     }
 
-    /* --- Readability and subtle content panels --- */
+    /* ---- Typography polish for readability ---- */
     body.resume-page,
     body.resume-page p,
     body.resume-page li,
-    body.resume-page a { color: #eaeaea !important; }
-    body.resume-page h1,
-    body.resume-page h2,
-    body.resume-page h3 { color: #ffd54f !important; }
-
-    body.resume-page main > section {
-      background: rgba(0,0,0,.55);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 14px;
-      padding: 18px;
-      margin: 16px auto;
-      width: 90%;
-      max-width: 1100px;
-      box-sizing: border-box;
+    body.resume-page a{ color:#eaeaea !important; }
+    body.resume-page h1, body.resume-page h2, body.resume-page h3{
+      color:#ffd54f !important; margin:0 0 10px 0;
     }
+    body.resume-page ul{ margin:12px 0 0 18px; }
+    body.resume-page .kv{ margin:4px 0 14px 0; }
 
-    /* Footer normal flow */
+    /* Footer in normal flow */
     .site-footer { position: static !important; margin-top: 24px; }
   </style>
 </head>
@@ -150,14 +114,14 @@
     </video>
   </div>
 
-  <!-- NAV -->
+  <!-- NAV (same order as other pages) -->
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="resume.html" aria-current="page">Resume</a></li>
       <li><a href="labs.html">Home Labs</a></li>
       <li><a href="passion.html">My Passion</a></li>
-      <li><a href="soc-lab.html">SOC Lab</a></li> <!-- no leading slash -->
+      <li><a href="soc-lab.html">SOC Lab</a></li>
       <li><a href="opportunities.html">Opportunities</a></li>
       <li><a href="certifications.html">Certifications</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
@@ -167,43 +131,119 @@
 
   <!-- CONTENT -->
   <main id="content" role="main">
+
+    <!-- Summary -->
     <section class="split-hero">
-      <h1>My Professional Journey</h1>
-      <p>
-        Hands-on cybersecurity analyst focused on threat detection, SOC operations,
-        and practical lab work. I combine persistence, clear documentation, and
-        strong teamwork to deliver signal, not noise.
+      <h1>Professional Summary</h1>
+      <p class="kv">
+        Hands-on Cybersecurity Analyst with a strong foundation in SOC operations,
+        threat detection, and incident response. Experienced building and operating a
+        home SOC using enterprise tools (QRadar, Splunk, pfSense, Nessus) to simulate
+        real-world attacks, tune detections, and document playbooks. Comfortable with
+        the NIST 800-61 lifecycle and MITRE ATT&amp;CK. Known for persistence, clean
+        documentation, and calm, practical teamwork.
+      </p>
+      <p class="kv">
+        Areas of interest: cloud security (AWS), endpoint hardening, SIEM content
+        engineering, and measurable reduction of false positives.
       </p>
     </section>
 
+    <!-- Core Skills -->
     <section>
       <h2>Core Skills</h2>
       <ul>
-        <li>SIEM (QRadar, Splunk): rules, detections, dashboards, triage</li>
-        <li>Vulnerability Management (Nessus): scanning, prioritization, remediation</li>
-        <li>IR process (NIST 800-61): triage → contain → eradicate → lessons learned</li>
-        <li>Networking: segmentation, VPNs, secure protocols</li>
+        <li><strong>Security Operations &amp; SIEM:</strong> QRadar &amp; Splunk (log onboarding, correlation rules, dashboards, alert triage)</li>
+        <li><strong>Incident Response:</strong> NIST 800-61, MITRE ATT&amp;CK, phishing &amp; ransomware simulations, containment &amp; recovery</li>
+        <li><strong>Vulnerability Management:</strong> Nessus scans, prioritization, remediation tracking, patch validation</li>
+        <li><strong>Network &amp; Endpoint:</strong> pfSense firewalling, segmentation, VPNs, secure protocols, Windows/Linux basics</li>
+        <li><strong>Cloud Security:</strong> AWS IAM, GuardDuty, CloudWatch (foundations); least-privilege and logging strategies</li>
+        <li><strong>Process &amp; Collaboration:</strong> ServiceNow (tickets/changes), GitHub for labs, concise technical documentation</li>
       </ul>
     </section>
 
+    <!-- Tools -->
     <section>
-      <h2>Selected Experience</h2>
-      <p>
-        Built a full SOC home lab including QRadar, Splunk, pfSense, Windows Server,
-        Kali and Nessus. Tuned detections, analyzed logs, and documented repeatable
-        playbooks for triage and escalation.
+      <h2>Tools &amp; Platforms</h2>
+      <p class="kv">
+        IBM QRadar, Splunk, Nessus, pfSense, Windows Server, Kali Linux, Ubuntu,
+        Wireshark, OpenVAS, PowerShell/Bash basics, MITRE ATT&amp;CK Navigator,
+        ServiceNow, GitHub, AWS (IAM, CloudWatch, GuardDuty).
       </p>
     </section>
 
+    <!-- Projects / Labs -->
+    <section>
+      <h2>Selected Projects &amp; Labs</h2>
+      <ul>
+        <li><strong>Ransomware Detection in QRadar:</strong> Simulated abnormal file encryption behavior, authored correlation rules,
+          tuned thresholds, and created an IR checklist to reduce time-to-contain.</li>
+        <li><strong>Phishing Investigation in Splunk:</strong> Parsed headers, validated SPF/DKIM/DMARC, pivoted to WHOIS/abuse contacts,
+          and produced an analyst worksheet to standardize triage notes.</li>
+        <li><strong>Cloud Guard Rails:</strong> Built AWS least-privilege policies for IAM users, enabled GuardDuty findings, shipped
+          logs to a central store, and reviewed detections in Splunk.</li>
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+
+      <h3>Cybersecurity Internship – Durham District School Board (DDSB)</h3>
+      <p class="kv"><em>Security Operations Intern</em></p>
+      <ul>
+        <li>Shadowed SOC analysts for daily monitoring in QRadar; assisted with basic investigations and false-positive reviews.</li>
+        <li>Built Splunk dashboards for weekly summary reporting and ticket context.</li>
+        <li>Supported awareness initiatives and contributed to incident response documentation.</li>
+      </ul>
+
+      <h3>Operations Manager – Hospitality (Transferable Skills)</h3>
+      <p class="kv"><em>People &amp; Process Leadership</em></p>
+      <ul>
+        <li>Enforced standards, vendor compliance, and incident escalation under pressure—experience that maps well to GRC.</li>
+        <li>Implemented process improvements and wrote SOPs; improved audit readiness and response time.</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Cybersecurity coursework &amp; independent labs</strong> – SIEM, IR, Vulnerability Management, Networking</li>
+        <li><strong>Continuous Learning:</strong> Cloud security (AWS), detection engineering, scripting basics (PowerShell/Bash)</li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
     <section>
       <h2>Certifications</h2>
       <ul>
-        <li>CompTIA CySA+</li>
-        <li>ISC2 CC</li>
+        <li><strong>CompTIA CySA+</strong> – Cybersecurity Analyst (threat detection, SIEM, vulnerability management)</li>
+        <li><strong>ISC2 CC</strong> – Certified in Cybersecurity (security principles, risk, network &amp; incident response)</li>
+        <li><strong>AWS Security Specialty</strong> – <em>in progress</em></li>
       </ul>
+    </section>
+
+    <!-- Achievements -->
+    <section>
+      <h2>Achievements</h2>
+      <ul>
+        <li>Reduced lab false positives by tuning QRadar correlation rules and asset contexts.</li>
+        <li>Authored repeatable SOC playbooks for phishing, brute-force, and ransomware scenarios.</li>
+        <li>Documented 10+ public labs and write-ups to demonstrate structured, real-world practice.</li>
+      </ul>
+    </section>
+
+    <!-- Call to action -->
+    <section>
+      <h2>Download</h2>
+      <p class="kv">
+        Prefer a PDF? <a href="files/Jeeva_Kumaradas_Resume.pdf" download>Download my resume</a>.
+      </p>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer full-bleed">
     <div class="footer-inner">
       © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
@@ -211,11 +251,6 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
 
 
 
