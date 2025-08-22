@@ -5730,6 +5730,34 @@ body.contact-page nav.nav-bar .nav-links a {
 }
 </style>
 
+/* ===== Make text readable on dark video pages ===== */
+body.resume-page,
+body.resume-page p,
+body.resume-page li,
+body.resume-page a { color: #eaeaea !important; }
+
+body.resume-page h1,
+body.resume-page h2,
+body.resume-page h3 { color: #ffd54f !important; }  /* optional: your yellow headings */
+
+/* Contact page text, too */
+body.contact-page,
+body.contact-page p,
+body.contact-page li,
+body.contact-page a { color: #eaeaea !important; }
+
+/* Optional: put content on a subtle panel so it always pops on video */
+body.resume-page main > section,
+body.contact-page .contact-container {
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+/* Keep the video behind everything, just in case */
+.video-background { position: fixed !important; inset: 0 !important; z-index: -1 !important; }
+
 
 
 
