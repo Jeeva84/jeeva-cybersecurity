@@ -5560,6 +5560,28 @@ body{
   }
 }
 
+/* DESKTOP/TABLET: keep nav on ONE row and fit all items */
+@media (min-width: 901px){
+  .nav-bar .nav-links{
+    display:flex;
+    flex-wrap:nowrap !important;      /* stop wrapping */
+    justify-content:space-between;
+    align-items:center;
+    gap: 20px;                         /* was larger; shrink a bit */
+    max-width: 1280px;                 /* give a touch more room than 1200 */
+    margin: 0 auto;
+    padding: 0 24px;                   /* slightly slimmer gutters */
+    box-sizing: border-box;
+  }
+
+  .nav-bar .nav-links a{
+    white-space:nowrap;                /* keep labels on one line */
+    padding: 8px 12px;                 /* a little narrower buttons */
+    /* optional: tiny font tweak if you still need room */
+    /* font-size: 0.95rem; */
+  }
+}
+
 
 
 
