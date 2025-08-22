@@ -5473,6 +5473,54 @@ body{
   :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
 }
 
+/* ===== CONTACT PAGE – MOBILE FIX: make nav truly full width ===== */
+@media (max-width: 900px){
+  /* 1) Kill any container padding that is boxing the nav */
+  body.contact-page,
+  body.contact-page header,
+  body.contact-page main,
+  body.contact-page .container,
+  body.contact-page .content{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  /* 2) Bar itself: edge-to-edge */
+  body.contact-page nav.nav-bar{
+    width:100% !important;
+    padding:0 !important;
+    margin:0 !important;
+  }
+
+  /* 3) UL: full width, two columns, no right-alignment */
+  body.contact-page nav.nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:10px !important;
+
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 8px !important;     /* tiny side gutter; set 0 for none */
+    box-sizing:border-box !important;
+
+    justify-content:stretch !important;
+    justify-items:stretch !important;
+    align-items:stretch !important;
+  }
+
+  /* 4) Children: prevent auto right-align via margins */
+  body.contact-page .nav-links li,
+  body.contact-page .nav-links a{
+    margin:0 !important;
+    width:100% !important;        /* make each button span its grid cell */
+  }
+}
+
 
 
 
