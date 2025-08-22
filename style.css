@@ -14,7 +14,6 @@ section, main, .resume-page, .main-content {
   padding: 0 20px; /* little left and right spacing */
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -27,8 +26,6 @@ body {
   padding-top: 70px; /* Ensure padding on top to accommodate the navbar */
 }
 
-
-
 /* --- Navigation Bar --- */
 .nav-bar {
   background-color: #1f1f1f; /* Solid dark background always */
@@ -39,7 +36,6 @@ body {
   z-index: 999; /* always on top */
   text-align: center; /* center items */
 }
-
 
 .nav-links {
   display: flex;
@@ -64,7 +60,6 @@ body {
   background-color: #ffca28;
   color: #121212;
 }
-
 
 /* Split Hero Section */
 .split-hero {
@@ -79,512 +74,9 @@ body {
   background: transparent;
 }
 
-
 .hero-text {
   flex: 1;
   color: #ffe066;
-  padding-right: 50px;
-}
-
-.hero-text h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero-text h2 {
-  font-size: 24px;
-  color: #ff5722;
-  margin-bottom: 20px;
-}
-
-.hero-text p {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 30px;
-  line-height: 1.7;
-}
-
-.hero-button {
-  background: #ff5722;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.hero-button:hover {
-  background: #e64a19;
-}
-
-/* Profile Image */
-.hero-image {
-  flex: 1;
-  text-align: center;
-}
-
-.hero-image img {
-  width: 400px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-/* Highlight color */
-.highlight {
-  color: #ff5722;
-}
-
-/* About Me Section */
-.about-me {
-  background: #1a1a1a;
-  color: #f5f5f5;
-  padding: 80px 40px;
-  max-width: 1000px;
-  margin: 50px auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.about-me h2 {
-  text-align: center;
-  font-size: 36px;
-  color: #ffca28;
-  margin-bottom: 40px;
-}
-
-.about-me p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.about-list {
-  list-style: inside disc;
-  font-size: 18px;
-  line-height: 1.7;
-  margin: 20px 0 40px 20px;
-}
-
-.about-list li {
-  margin-bottom: 10px;
-}
-
-/* Footer */
-.footer-wrapper {
-  text-align: center;
-  background: #0d0d0d;
-  color: #f5f5f5;
-  padding: 20px;
-  font-size: 16px;
-}
-.resume-pic {
-  width: 300px;   /* Bigger like Home Labs */
-  height: auto;
-  object-fit: cover;
-  border-radius: 0; /* No curves (square/rectangle) */
-  margin-bottom: 20px;
-}
-/* --- Proper Spacing for My Passion Section --- */
-#passion p {
-  margin-bottom: 25px;
-  line-height: 1.8;
-  font-size: 18px;
-}
-
-/* --- Proper Spacing for Opportunities Section --- */
-#opportunities p {
-  margin-bottom: 25px;
-  line-height: 1.8;
-  font-size: 18px;
-}
-
-/* --- Proper Spacing for Certifications Section --- */
-#certifications li, #certifications p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  font-size: 18px;
-}
-
-/* --- Proper Spacing for Testimonials Section --- */
-#testimonials p {
-  margin-bottom: 25px;
-  line-height: 1.8;
-  font-size: 18px;
-}
-/* --- Spacing for My Passion Page Paragraphs --- */
-#passion p {
-  margin-bottom: 25px;
-  line-height: 1.8;
-  font-size: 18px;
-}
-.profile-pic {
-  width: 250px;     /* Same size as Passion page */
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%; /* Circle (smooth edges) */
-  margin: 30px auto 10px;
-  display: block;
-}
-.profile-pic {
-  width: 250px;        /* Profile Picture Width */
-  height: 250px;       /* Profile Picture Height */
-  object-fit: cover;   /* Make sure it doesn’t stretch */
-  border-radius: 50%;  /* Makes it a perfect circle */
-  margin: 30px auto 10px; /* Center the image and give margin */
-  display: block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: soft shadow */
-}
-.testimonial-author span {
-  color: #ff5722; /* Yellow-Gold Highlight */
-  font-weight: bold;
-  font-size: 18px;
-}
-.contact-page {
-  padding: 60px 30px;
-}
-
-.contact-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-image img {
-  width: 350px;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.contact-form {
-  flex: 1;
-  max-width: 500px;
-}
-
-.contact-form h2 {
-  font-size: 32px;
-  color: #ffca28;
-  margin-bottom: 20px;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form input,
-.contact-form textarea {
-  background-color: #1f1f1f;
-  color: #fff;
-  border: 1px solid #333;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.contact-form button {
-  background-color: #ffca28;
-  color: #121212;
-  padding: 15px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-  background-color: #ffc107;
-}
-/* --- Contact Page Styling --- */
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  gap: 50px;
-}
-
-.contact-image img {
-  max-width: 400px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.contact-form {
-  background: #1f1f1f;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  max-width: 450px;
-  width: 100%;
-}
-
-.contact-form h2 {
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  background: #2a2a2a;
-  border: 1px solid #444;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #aaaaaa;
-}
-
-.send-button {
-  width: 100%;
-  background-color: #ff7043;
-  color: white;
-  padding: 14px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.send-button:hover {
-  background-color: #ff5722;
-}
-.profile-top {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.profile-pic {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 25px;
-}
-
-.nav-links li a {
-  color: #f5f5f5;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px; /* Uniform size */
-  padding: 8px 12px;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #ffca28;
-  text-shadow: 0 0 5px #ffca28;
-}
-.resume-section {
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* more space between sections */
-  margin-top: 40px;
-  padding: 0 20px; /* side padding */
-}
-
-.resume-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 40px; /* more inside padding */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  line-height: 1.8; /* more space between lines */
-}
-
-.resume-card h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.resume-card p, 
-.resume-card ul {
-  font-size: 18px;
-  color: #444;
-}
-/* --- Light Modern Background for Sub Pages --- */
-/* --- Only Bullet Points Orange for Sub Pages --- */
-.container ul li::marker, .main-content ul li::marker, section ul li::marker {
-  color: #ff5722; /* Orange bullet points */
-}
-
-h1, h2, h3 {
-  color: #121212; /* Set headings black */
-}
-.section-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 40px;
-  margin: 40px auto;
-  max-width: 1000px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.section-card h2 {
-  color: #121212;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-
-.section-card p, .section-card ul {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.8;
-}
-
-.section-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 40px;
-  margin: 40px auto;
-  max-width: 1000px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.section-card h2 {
-  color: #121212;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-
-.section-card p, 
-.section-card ul, 
-.section-card li {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.8;
-}
-.cert-image {
-  width: 80%;
-  max-width: 600px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-.download-button {
-  display: inline-block;
-  background-color: #ff5722;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-
-.download-button:hover {
-  background-color: #e64a19;
-}
-
-
-/* --- Automatic Container Fix for Whole Website --- */
-section, header, main, .resume-page, .main-content {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* --- General Page Container --- */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto; /* center horizontally */
-  padding: 0 20px; /* little left and right spacing */
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #121212;
-}
-
-
-
-/* --- Navigation Bar --- */
-.nav-bar {
-  background-color: #1f1f1f; /* Solid dark background always */
-  width: 100%;
-  padding: 15px 0; /* more padding for better spacing */
-  position: sticky;
-  top: 0;
-  z-index: 999; /* always on top */
-  text-align: center; /* center items */
-}
-
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 25px;
-}
-
-.nav-links li a {
-  color: #f5f5f5;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: color 0.3s, background 0.3s;
-}
-
-.nav-links li a:hover {
-  background-color: #ffca28;
-  color: #121212;
-}
-
-
-.hero-text {
-  flex: 1;
-  color: #121212;
   padding-right: 50px;
 }
 
@@ -1058,3383 +550,6 @@ nav .nav-links li a:hover {
   color: #ffffff; /* Ensures text remains white on hover */
 }
 
-/* Mobile-specific: Adjustments for smaller screens */
-@media (max-width: 768px) {
-  nav .nav-links {
-    flex-direction: column; /* Stack the links vertically */
-    align-items: center; /* Center the items */
-    width: 100%; /* Ensure it covers the full width */
-  }
-
-  nav .nav-links li {
-    width: 100%; /* Make each link take up the full width */
-    text-align: center; /* Center-align text for each link */
-  }
-
-  nav .nav-links li a {
-    width: 100%; /* Make the anchor tag fill the width */
-    padding: 15px 0; /* Add some padding for better touch area */
-  }
-}
-/* Navigation Bar for Mobile */
-@media (max-width: 768px) {
-  /* Ensure full width for navigation bar */
-  nav.nav-bar {
-    padding: 10px 0; /* Adjust padding for smaller screens */
-    text-align: center;
-  }
-
-  /* Navigation links (stacked vertically) */
-  nav .nav-links {
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center-align links */
-    gap: 15px; /* Add some space between links */
-    width: 100%; /* Make sure nav container takes full width */
-    padding: 0; /* Reset any default padding */
-    margin: 0; /* Reset any default margin */
-  }
-
-  /* Each list item should take full width */
-  nav .nav-links li {
-    width: 100%; /* Each link should take full width */
-    text-align: center; /* Center the link text */
-  }
-
-  /* Adjust link styling for mobile */
-  nav .nav-links li a {
-    padding: 15px 0; /* Increase padding for touch devices */
-    font-size: 18px; /* Adjust font size for mobile */
-    width: 100%; /* Make each link span the full width */
-    text-align: center; /* Ensure text is centered inside each button */
-    border-radius: 6px; /* Rounded corners */
-  }
-
-  /* On hover, give an orange background */
-  nav .nav-links li a:hover {
-    background-color: #ff5722; /* Orange hover effect */
-    color: #ffffff; /* White text on hover */
-  }
-}
-/* Adjust content padding for sticky navbar */
-/* Adjusts for navbar offset on all pages */
-body {
-  margin: 0;
-  padding-top: 60px; /* Adds padding to the top of the body to compensate for the sticky navbar */
-}
-
-/* Main Content Section Adjustments */
-.main-content, .thank-you-container {
-  padding-top: 20px; /* Ensures content doesn’t get hidden by the fixed navbar */
-}
-
-/* For Mobile View (adjust for smaller screen sizes) */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Add more padding for mobile, accounting for navbar height */
-  }
-
-  .main-content, .thank-you-container {
-    padding-top: 20px; /* Ensures content is not hidden below navbar on mobile */
-  }
-}
-
-
-/* Adjust the navbar style for sticky positioning */
-nav.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Make sure it stays on top */
-}
-
-/* Ensures the navbar stays at the top */
-nav .nav-links {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 25px;
-}
-
-/* Other styles below */
-/* Ensures the navbar doesn't overlap content globally */
-body {
-  margin: 0;
-  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
-}
-
-/* Main Content Section Adjustments */
-.main-content, .thank-you-container, .section-card {
-  padding-top: 20px; /* Ensure content doesn't get hidden by navbar */
-}
-
-/* Adjustments for Mobile View (for smaller screen sizes) */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
-  }
-
-  .main-content, .thank-you-container, .section-card {
-    padding-top: 20px; /* Ensure content is below the navbar */
-  }
-}
-
-/* For Sticky Navbar across all pages */
-nav.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Keep it always on top */
-}
-
-/* Navigation links styling */
-nav .nav-links {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 25px;
-}
-/* Ensures the navbar doesn't overlap content globally */
-body {
-  margin: 0;
-  padding-top: 60px; /* Adjust padding to compensate for sticky navbar */
-}
-
-/* Main Content Section Adjustments */
-.main-content, .thank-you-container, .section-card {
-  padding-top: 20px; /* Ensure the content is not hidden behind navbar */
-}
-
-/* Adjustments for mobile (for smaller screen sizes) */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
-  }
-
-  .main-content, .thank-you-container, .section-card {
-    padding-top: 20px; /* Ensure content is below the navbar */
-  }
-}
-
-/* Navbar position adjustments */
-nav.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Ensure navbar stays on top */
-}
-
-/* Navigation links styling */
-nav .nav-links {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 25px;
-}
-
-/* Special styling for other pages (if needed) */
-body.page-specific {
-  padding-top: 70px; /* Custom adjustment for specific pages */
-}
-/* Other existing CSS rules */
-
-/* Page-specific styling for all pages with the class "page-specific" */
-.page-specific {
-  padding-top: 60px;  /* Adjust for navbar offset */
-}
-
-/* For mobile view: make the navbar stay above content */
-@media (max-width: 768px) {
-  .page-specific {
-    padding-top: 70px; /* Adjust for mobile navbar */
-  }
-}
-
-/* Other existing CSS rules */
-
-/* Page-specific styling for all pages with the class "page-specific" */
-.page-specific {
-  padding-top: 70px;  /* Adjust for navbar offset */
-}
-
-/* Ensure navbar stays on top of content */
-nav.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Ensures navbar stays on top */
-  width: 100%;
-  background-color: #1f1f1f; /* Black background */
-  padding: 15px 0;
-}
-
-/* Main content section padding */
-.main-content, .thank-you-container {
-  padding-top: 20px;  /* Ensure content doesn’t get hidden behind navbar */
-}
-
-/* For Mobile View */
-@media (max-width: 768px) {
-  .page-specific {
-    padding-top: 80px;  /* Adjust for mobile view */
-  }
-
-  .main-content, .thank-you-container {
-    padding-top: 20px;
-  }
-}
-
-/* Ensures the navbar does not overlap content */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-}
-/* Page-specific styling for all pages with the class "page-specific" */
-.page-specific {
-  padding-top: 70px !important;  /* Ensure padding above the navbar */
-}
-
-/* Ensure navbar stays on top of content */
-nav.nav-bar {
-  position: sticky !important;
-  top: 0;
-  z-index: 999 !important; /* Ensures navbar stays on top */
-  width: 100%;
-  background-color: #1f1f1f; /* Black background */
-  padding: 15px 0 !important;
-}
-
-/* Main content section padding */
-.main-content, .thank-you-container {
-  padding-top: 20px !important;  /* Ensure content doesn’t get hidden behind navbar */
-}
-
-/* For Mobile View */
-@media (max-width: 768px) {
-  .page-specific {
-    padding-top: 80px !important;  /* Adjust for mobile view */
-  }
-
-  .main-content, .thank-you-container {
-    padding-top: 20px !important;
-  }
-}
-/* --- For Mobile View --- */
-
-/* Ensure padding at the top of the body to accommodate sticky navbar */
-body {
-  margin: 0;
-  padding-top: 60px; /* Adjust for the sticky navbar */
-}
-
-/* Ensures content doesn't get hidden behind navbar */
-.main-content, .thank-you-container, .section-card {
-  padding-top: 20px;
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-  /* Increase padding on mobile */
-  body {
-    padding-top: 70px; /* Adjust to navbar height */
-  }
-
-  .main-content, .thank-you-container, .section-card {
-    padding-top: 20px; /* Ensure no overlap */
-  }
-
-  /* Navbar settings for mobile */
-  nav.nav-bar {
-    padding: 10px 0; /* Adjust navbar padding */
-  }
-
-  nav .nav-links {
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center items */
-    width: 100%; /* Full width for navbar */
-  }
-
-  nav .nav-links li {
-    width: 100%; /* Full width for each link */
-    text-align: center;
-  }
-
-  nav .nav-links li a {
-    width: 100%; /* Make links span the full width */
-    padding: 15px 0; /* Increase the touch area */
-    font-size: 18px; /* Adjust font size */
-    border-radius: 6px; /* Rounded corners */
-  }
-
-  nav .nav-links li a:hover {
-    background-color: #ff5722; /* Ensure hover effect */
-    color: #ffffff; /* White text on hover */
-  }
-
-  /* Optional: You can reduce the size of the hero image on mobile */
-  .hero-image img {
-    width: 80%; /* Reduce image width on smaller screens */
-  }
-}
-/* --- For Desktop --- */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #121212;   /* solid dark background */
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #f5f5f5;
-  padding-top: 70px; /* Ensure padding on top to accommodate the navbar */
-}
-
-
-/* --- Navigation Bar --- */
-.nav-bar {
-  background-color: #1f1f1f; /* Solid dark background always */
-  width: 100%;
-  padding: 15px 0; /* more padding for better spacing */
-  position: sticky;
-  top: 0;
-  z-index: 999; /* always on top */
-  text-align: center; /* center items */
-}
-
-/* Mobile View Adjustments */
-@media (max-width: 768px) {
-  /* Remove sticky navbar for mobile */
-  .nav-bar {
-    position: relative; /* Allow navbar to scroll with content */
-    padding: 10px 0; /* Adjust navbar padding */
-  }
-
-  /* Adjust body padding for mobile */
-  body {
-    padding-top: 0; /* Remove extra padding on top */
-  }
-
-  /* Ensure content doesn’t get hidden by the navbar */
-  .main-content, .thank-you-container, .section-card {
-    padding-top: 20px; /* Ensure content is visible */
-  }
-
-  /* Navigation links stacking vertically */
-  nav .nav-links {
-    flex-direction: column; /* Stack the links vertically */
-    align-items: center; /* Center the items */
-    width: 100%; /* Ensure full width for navbar */
-  }
-
-  nav .nav-links li {
-    width: 100%; /* Full width for each link */
-    text-align: center; /* Center-align the links */
-  }
-
-  nav .nav-links li a {
-    width: 100%; /* Make each link fill the width */
-    padding: 15px 0; /* Increase padding for touch areas */
-    font-size: 18px; /* Adjust font size */
-    border-radius: 6px; /* Rounded corners */
-  }
-
-  nav .nav-links li a:hover {
-    background-color: #ff5722; /* Orange background on hover */
-    color: #ffffff; /* White text on hover */
-  }
-
-  /* Make sure hero image and content looks fine on mobile */
-  .hero-image img {
-    width: 80%; /* Reduce image width on mobile */
-  }
-}
-/* Hide navbar when scrolling down on mobile */
-@media (max-width: 768px) {
-  .nav-bar.hidden-navbar {
-    transform: translateY(-100%); /* Moves the navbar up, effectively hiding it */
-    transition: transform 0.3s ease;
-  }
-}
-/* Mobile-specific Navbar Styling */
-@media (max-width: 768px) {
-  nav.nav-bar {
-    padding: 10px 0; /* Adjust padding for mobile screens */
-    overflow-x: auto; /* Allow horizontal scrolling if the items overflow */
-    white-space: nowrap; /* Prevent the items from wrapping to a new line */
-  }
-
-  .nav-links {
-    display: flex; /* Keep links in a horizontal row */
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 15px; /* Space between the tabs */
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-links li a {
-    padding: 15px 20px; /* Add padding for better touch targets */
-    font-size: 16px; /* Slightly smaller font size on mobile */
-  }
-}
-/* Ensures the navbar doesn't overlap content globally */
-body {
-  margin: 0;
-  padding-top: 60px; /* Add padding to the top of the body to compensate for the sticky navbar */
-}
-
-/* Main Content Section Adjustments */
-.main-content, .thank-you-container, .section-card {
-  padding-top: 20px; /* Ensure content doesn't get hidden by the navbar */
-}
-
-/* Adjustments for Mobile View (for smaller screen sizes) */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Increased padding for mobile, accounting for navbar height */
-  }
-
-  .main-content, .thank-you-container, .section-card {
-    padding-top: 20px; /* Ensure content is below the navbar */
-  }
-}
-
-/* For Sticky Navbar across all pages */
-nav.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Keep it always on top */
-}
-
-/* Navigation links styling */
-nav .nav-links {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 25px;
-}
-/* Remove default padding for body */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #121212;
-  padding-top: 0; /* Remove the padding from here */
-}
-
-/* Ensure navbar sticky on desktop */
-nav.nav-bar {
-  background-color: #1f1f1f;
-  width: 100%;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  text-align: center;
-  box-sizing: border-box; 
-}
-
-/* Remove extra padding from .main-content */
-.main-content, .thank-you-container, .section-card {
-  padding-top: 0; /* Ensure no padding overlaps */
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Add padding for mobile navbar */
-  }
-
-  /* Stack the navbar vertically */
-  nav .nav-links {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 15px;
-  }
-
-  nav .nav-links li a {
-    width: 100%; 
-    padding: 15px 0;
-    font-size: 18px;
-    text-align: center;
-    border-radius: 6px;
-  }
-
-  /* Hide navbar on scroll down */
-  nav.nav-bar.hidden-navbar {
-    transform: translateY(-100%); /* Hide navbar when scrolling */
-    transition: transform 0.3s ease;
-  }
-
-  /* Allow main content sections to scroll and be visible on mobile */
-  .main-content, .thank-you-container, .section-card {
-    padding-top: 20px; /* Ensure the content is visible below navbar */
-  }
-}
-
-
-/* --- General Styling --- */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #ffffff, #fbe9e7, #f5f5f5);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #121212;
-  padding-top: 70px; /* Ensures space for navbar */
-}
-
-/* --- Navigation Bar --- */
-.nav-bar {
-  background-color: #1f1f1f; /* Solid dark background */
-  width: 100%;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Ensure navbar stays on top */
-  text-align: center;
-  transition: background-color 0.3s ease; /* Smooth transition for transparency */
-}
-
-/* Transparent navbar on scroll down (for mobile only) */
-.nav-bar.transparent {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
-}
-
-/* Navigation links */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 25px;
-}
-
-.nav-links li a {
-  color: #f5f5f5;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: color 0.3s, background 0.3s;
-}
-
-.nav-links li a:hover {
-  background-color: #ffca28;
-  color: #121212;
-}
-
-/* --- Mobile View (adjustments for smaller screens) --- */
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px; /* Adjust padding for mobile */
-  }
-
-  /* Navbar for Mobile - Hide on Scroll */
-  .nav-bar {
-    position: relative; /* Allow navbar to scroll with content */
-    padding: 10px 0;
-  }
-
-  /* Hide navbar on scroll */
-  .nav-bar.hidden-navbar {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  /* Stack navbar links vertically on mobile */
-  nav .nav-links {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  nav .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav .nav-links li a {
-    width: 100%;
-    padding: 15px 0;
-    font-size: 18px;
-    border-radius: 6px;
-  }
-
-  /* Reduce image size on mobile */
-  .hero-image img {
-    width: 80%; /* Make the image smaller */
-  }
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-.main-content {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 960px;
-}
-
-.section-card h2,
-.section-card ul,
-.section-card li,
-.section-card p {
-  color: #fff;
-}
-
-.nav-bar a {
-  color: #fff;
-  font-weight: 600;
-}
-
-.hero-image img {
-  width: 130px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffe066;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffe066;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-  /* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffe066;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffe066;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card,
-.about-me {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card,
-.about-me {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 1rem;
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Remove excessive spacing above sections */
-.about-me {
-  margin-top: 1rem !important;
-}
-
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card,
-.about-me {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 0.5rem; /* Reduced top margin */
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Remove excessive spacing above sections */
-.about-me {
-  margin-top: 0.5rem !important; /* Further reduced for tighter spacing */
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Heading highlight color for consistency */
-h2, h3, h4 {
-  color: #ffe066 !important;
-  font-weight: 700;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card,
-.about-me {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 0.5rem; /* Reduced top margin */
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Remove excessive spacing above sections */
-.about-me {
-  margin-top: 0.5rem !important; /* Further reduced for tighter spacing */
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Heading highlight color for consistency */
-h1, h2, h3, h4, h5, h6 {
-  color: #ffe066 !important;
-  font-weight: 700;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card,
-.about-me {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 0.5rem; /* Reduced top margin */
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Remove excessive spacing above sections */
-.about-me {
-  margin-top: 0.5rem !important; /* Further reduced for tighter spacing */
-}
-/* Consolidated and cleaned CSS for video background and hero section */
-
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  opacity: 0.4; /* Adjust to your liking */
-}
-
-.video-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Optional overlay darkness */
-  z-index: 1;
-}
-
-.hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h1,
-.hero-text h2,
-.hero-text p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-}
-
-.hero-text p {
-  color: #ffe066 !important;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85) !important;
-}
-
-/* Global font color and visibility for all content */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul,
-li,
-a {
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-}
-
-/* Heading highlight color for consistency */
-h1, h2, h3, h4, h5, h6 {
-  color: #ffe066 !important;
-  font-weight: 700;
-}
-
-/* Optional: background for content sections for better readability */
-.section-card,
-.about-me {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* Ensure profile picture appears large and consistent */
-.profile-pic,
-.hero-image img {
-  width: 340px;
-  height: 340px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Remove excessive spacing above sections only for homepage */
-body.page-home .about-me {
-  margin-top: 0.2rem !important;
-  padding-top: 0.5rem !important;
-}
-}
-.nav-bar {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  z-index: 999;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-.education-list li {
-  margin-bottom: 0.5rem;
-  color: #ffe066;
-  font-weight: 500;
-}
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
-}
-
-.skills-list li {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.skills-list i {
-  color: #ffe066;
-  margin-right: 10px;
-}
-
-/* ====== Layout upgrades: hero density, about grid, QR banner, etc. ====== */
-:root {
-  --brand: #ff6a3d;
-  --text: #ffffff;
-  --muted: rgba(255,255,255,.75);
-  --panel: rgba(0,0,0,.35);
-  --panel-border: rgba(255,255,255,.12);
-}
-
-/* Global text color (keeps your theme) */
-html, body { color: var(--text); }
-a { color: var(--text); text-decoration: none; }
-.highlight { color: var(--brand); }
-
-/* Video background sits behind everything */
-.video-background {
-  position: fixed; inset: 0; z-index: -2; overflow: hidden;
-  background: #0b0e12;
-}
-.video-background video {
-  width: 100%; height: 100%; object-fit: cover; filter: saturate(0.9);
-}
-.video-background::after {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: radial-gradient(ellipse at 50% 10%, rgba(0,0,0,.35), rgba(0,0,0,.70));
-  pointer-events: none;
-}
-
-/* QR “thanks for scanning” banner (shown via JS when ?qr=1) */
-.qr-banner[hidden] { display: none !important; }
-.qr-banner {
-  position: sticky; top: 0; z-index: 9999;
-  display: flex; gap: .5rem; align-items: center;
-  padding: .65rem .9rem;
-  background: rgba(255,255,255,0.92);
-  color: #111;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.05);
-}
-.qr-banner strong { color: #0e0e0e; }
-
-/* Hide/show navbar on scroll (class toggled by JS in index.html) */
-.hidden-navbar { transform: translateY(-100%); transition: transform .25s ease; }
-
-/* Compact hero (2 columns, less vertical space) */
-.split-hero.compact-hero {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  align-items: center;
-  gap: 2rem;
-  min-height: 70vh;                 /* tighter than full-screen */
-  padding: 6rem clamp(1rem, 4vw, 3rem) 2rem;
-}
-.split-hero .hero-text h1 { margin: 0 0 .4rem; line-height: 1.05; font-size: clamp(1.8rem, 4.8vw, 3rem); }
-.split-hero .tagline { margin: 0 0 .6rem; font-weight: 600; color: var(--muted); }
-.split-hero h2.role { margin: 0 0 .6rem; font-size: clamp(1rem, 2.2vw, 1.25rem); opacity: .95; }
-
-.hero-highlights {
-  margin: .25rem 0 .9rem; padding-left: 1rem;
-  display: grid; gap: .35rem; color: var(--muted);
-}
-.hero-cta { display: flex; flex-wrap: wrap; gap: .6rem; }
-
-.hero-button, .secondary-button {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: .65rem 1rem; border-radius: .6rem; font-weight: 700; letter-spacing: .2px;
-  text-decoration: none; transition: transform .1s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-  border: 0;
-}
-.hero-button { background: var(--brand); color: #fff; box-shadow: 0 10px 24px rgba(255,106,61,.25); }
-.secondary-button { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); }
-.hero-button:hover, .secondary-button:hover { transform: translateY(-1px); }
-
-.hero-image { display: flex; justify-content: center; }
-.hero-image img {
-  width: clamp(180px, 28vw, 260px);
-  aspect-ratio: 1/1; object-fit: cover; border-radius: 50%;
-  box-shadow: 0 12px 42px rgba(0,0,0,.35);
-}
-
-/* Dense About section (two columns: story + facts) */
-.about-me.dense { padding: 2.5rem clamp(1rem, 4vw, 3rem) 3rem; }
-.about-me .about-grid {
-  display: grid; gap: 2rem;
-  grid-template-columns: 1.2fr .8fr; align-items: start;
-}
-.about-me h2 { margin: 0 0 .6rem; font-size: clamp(1.3rem, 3vw, 1.8rem); }
-.about-story p { margin: 0 0 .85rem; color: var(--muted); }
-
-.callout {
-  margin-top: 1rem; padding: .9rem 1rem;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: .75rem;
-}
-
-.card {
-  padding: 1rem; border-radius: .9rem;
-  background: var(--panel); border: 1px solid var(--panel-border);
-  box-shadow: 0 10px 28px rgba(0,0,0,.15);
-}
-
-.skills-list { list-style: none; padding-left: 0; display: grid; gap: .5rem; color: var(--muted); }
-.skills-list li i { width: 1.1rem; margin-right: .35rem; opacity: .9; }
-
-.quick-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
-.chip {
-  padding: .45rem .7rem; border-radius: 999px; background: rgba(255,255,255,.1); color: #fff;
-  border: 1px solid rgba(255,255,255,.25); text-decoration: none; font-size: .95rem;
-}
-
-/* CTA bar below about */
-.cta-bar {
-  margin-top: 1.5rem; padding: .9rem 1rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  background: linear-gradient(90deg, rgba(255,106,61,.15), rgba(255,255,255,.05));
-  border: 1px solid rgba(255,255,255,.15); border-radius: .9rem;
-}
-
-/* Footer spacing tightened a bit */
-footer .footer-wrapper { padding: 1.2rem; text-align: center; color: var(--muted); }
-
-/* Responsive */
-@media (max-width: 980px) {
-  .split-hero.compact-hero {
-    grid-template-columns: 1fr; min-height: auto; padding-top: 5rem;
-  }
-  .hero-image { order: -1; margin-bottom: .8rem; }
-  .about-me .about-grid { grid-template-columns: 1fr; }
-  .cta-bar { flex-direction: column; align-items: stretch; }
-}
-/* ===== HOMEPAGE COMPACT PATCH (safe overrides) ===== */
-
-/* Keep only one top padding value everywhere */
-body { padding-top: 70px !important; }
-
-/* Make the hero shorter & tighter */
-.split-hero.compact-hero{
-  min-height: 58vh !important;         /* was 70–80vh */
-  padding: 4.5rem clamp(1rem,4vw,3rem) .5rem !important;
-  gap: 1.2rem !important;
-}
-
-/* Smaller portrait so text block sits higher */
-.hero-image img{
-  width: clamp(180px, 24vw, 220px) !important;
-}
-
-/* Pull the About section up and widen it a bit */
-.about-me.dense{
-  max-width: 1100px !important;
-  margin: 12px auto 24px !important;    /* kill the big top gap */
-  padding: 18px 18px 20px !important;   /* denser padding */
-}
-
-/* Tighter About grid and text spacing */
-.about-me .about-grid{ gap: 1.2rem !important; }
-.about-story p{ margin: 0 0 .7rem !important; }
-
-/* Denser skills list */
-.skills-list{ gap: .4rem !important; }
-.skills-list li i{ margin-right: .35rem !important; }
-
-/* Compact CTA under About */
-.cta-bar{
-  margin-top: .8rem !important;
-  padding: .7rem .9rem !important;
-}
-
-/* Remove any extra top padding other sections might add */
-.main-content, .thank-you-container, .section-card{
-  padding-top: 0 !important;
-}
-
-/* Optional: slightly darker overlay so text pops without needing tall spacing */
-.video-background::after{
-  background: radial-gradient(ellipse at 50% 12%, rgba(0,0,0,.35), rgba(0,0,0,.68)) !important;
-}
-
-/* Mobile tweaks */
-@media (max-width: 980px){
-  .split-hero.compact-hero{
-    min-height: 52vh !important;
-    padding-top: 4rem !important;
-  }
-  .about-me.dense{ padding: 16px !important; }
-}
-/* ===== FIXES: buttons + portrait shape (safe overrides) ===== */
-
-/* 1) Make "See my story" + "View labs" orange like Download Resume */
-.hero-cta .secondary-button {
-  background: #ff5722 !important;
-  color: #fff !important;
-  border: 0 !important;
-  box-shadow: 0 10px 24px rgba(255, 87, 34, .25);
-  font-weight: 700;
-}
-
-/* 2) Make the quick-links (See Labs & Projects / Certifications / Contact) orange */
-.about-facts .quick-links .chip {
-  background: #ff5722 !important;
-  color: #fff !important;
-  border: 0 !important;
-  box-shadow: 0 8px 20px rgba(255, 87, 34, .20);
-  font-weight: 700;
-}
-
-/* 3) Make "Quick Resume" in the CTA bar orange too */
-.cta-bar .secondary-button {
-  background: #ff5722 !important;
-  color: #fff !important;
-  border: 0 !important;
-  box-shadow: 0 10px 24px rgba(255, 87, 34, .25);
-  font-weight: 700;
-}
-
-/* 4) Fix portrait cropping/oval issue (force perfect circle, equal sides) */
-.hero-image img {
-  width: clamp(200px, 26vw, 280px) !important;
-  aspect-ratio: 1 / 1 !important;     /* keeps it square */
-  height: auto !important;            /* controlled by aspect-ratio */
-  object-fit: cover !important;
-  border-radius: 50% !important;      /* circle */
-  border: 3px solid #fff;             /* nice edge (optional) */
-  box-shadow: 0 12px 42px rgba(0,0,0,.35);
-}
-
-/* If any previous rules try to stretch images inside cards/sidebars */
-.about-facts img, .about-me img { height: auto !important; }
-/* ========= NEO•TECH UPGRADE PACK (safe overrides) ========= */
-:root{
-  --brand-orange: #ff5722;          /* change once if you want a different orange */
-  --brand-orange-dark: #e64a19;
-  --accent-cyan: #00f5ff;
-  --accent-violet: #7c4dff;
-  --glass: rgba(255,255,255,.06);
-  --glass-border: rgba(255,255,255,.18);
-  --glow: rgba(0,245,255,.35);
-  --text-strong: #ffffff;
-  --text-soft: #e6f7ff;
-}
-
-/* Put the video under our effects */
-.video-background{ z-index: -2 !important; }
-
-/* Cyber grid overlay over the video (no HTML needed) */
-body.page-specific::before{
-  content:"";
-  position: fixed; inset: 0; pointer-events: none; z-index: -1;
-  background:
-    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 40px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 40px);
-  mix-blend-mode: overlay; opacity: .35;
-}
-
-/* Headline: animated spectrum text (subtle) */
-.split-hero .hero-text h1{
-  background: linear-gradient(90deg,#fff 0%, #fff 50%, var(--accent-cyan) 65%, var(--accent-violet) 85%, #fff 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 2px 10px rgba(0,245,255,.12));
-  animation: hueShift 14s linear infinite;
-}
-@keyframes hueShift{ to{ filter: hue-rotate(360deg) drop-shadow(0 2px 10px rgba(0,245,255,.12)); } }
-.split-hero .tagline{ color: var(--text-soft) !important; text-shadow: 0 0 24px var(--glow); }
-
-/* Fancy divider under hero */
-.split-hero{ position: relative; }
-.split-hero::after{
-  content:""; position:absolute; left:5%; right:5%; bottom:-8px; height:2px;
-  background: linear-gradient(90deg,transparent,var(--accent-cyan),var(--accent-violet),transparent);
-  opacity:.6; filter: blur(.3px);
-}
-
-/* Portrait: animated conic ring */
-.hero-image{ position: relative; overflow: visible; }
-.hero-image::after{
-  content:""; position:absolute; top:50%; left:50%;
-  width: calc(100% + 26px); height: calc(100% + 26px);
-  transform: translate(-50%,-50%); border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--accent-cyan), var(--accent-violet), var(--brand-orange), var(--accent-cyan));
-  filter: blur(1px); opacity:.55; z-index: 1; animation: spinRing 12s linear infinite;
-}
-.hero-image img{
-  position: relative; z-index: 2;
-  width: clamp(200px, 26vw, 280px) !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 3px solid #fff;
-  box-shadow: 0 12px 42px rgba(0,0,0,.35);
-}
-@keyframes spinRing{ to{ transform: translate(-50%,-50%) rotate(360deg); } }
-
-/* Glassmorphism for cards & bars */
-.about-me, .card, .cta-bar{
-  background: var(--glass) !important;
-  backdrop-filter: blur(10px) saturate(1.1);
-  -webkit-backdrop-filter: blur(10px) saturate(1.1);
-  border: 1px solid var(--glass-border) !important;
-  box-shadow: 0 10px 40px rgba(0,0,0,.35);
-}
-
-/* Unify ALL buttons to the same neon-orange look */
-.hero-cta a,
-.hero-button,
-.about-facts .quick-links .chip,
-.cta-bar a,
-.download-button,
-.send-button {
-  background: linear-gradient(180deg, var(--brand-orange) 0%, #ff6a3d 100%) !important;
-  color: #fff !important;
-  border: 0 !important;
-  border-radius: 12px !important;
-  padding: 12px 18px !important;
-  font-weight: 700 !important;
-  box-shadow: 0 12px 24px rgba(255,106,61,.35), 0 0 0 1px rgba(255,255,255,.08) inset !important;
-  transition: transform .1s ease, box-shadow .2s ease, background .2s ease !important;
-}
-.hero-cta a:hover,
-.hero-button:hover,
-.about-facts .quick-links .chip:hover,
-.cta-bar a:hover,
-.download-button:hover,
-.send-button:hover {
-  transform: translateY(-2px);
-  background: var(--brand-orange-dark) !important;
-  box-shadow: 0 16px 34px rgba(255,106,61,.45), 0 0 0 1px rgba(255,255,255,.12) inset !important;
-}
-
-/* Icon bullets glow */
-.skills-list li i{
-  color: var(--accent-cyan) !important;
-  text-shadow: 0 0 8px var(--glow);
-}
-
-/* QR banner: high-tech style */
-.qr-banner{
-  background: rgba(0,0,0,.55) !important;
-  color: var(--text-soft) !important;
-  border: 1px solid var(--glass-border) !important;
-  backdrop-filter: blur(8px);
-}
-.qr-banner strong{ color: var(--text-strong) !important; }
-.qr-banner::after{
-  content:""; flex:1; height:2px; margin-left:12px;
-  background: linear-gradient(90deg, var(--accent-cyan), transparent);
-  opacity:.65;
-}
-
-/* Scrollbar polish (Chromium/WebKit) */
-::-webkit-scrollbar{ width: 10px; }
-::-webkit-scrollbar-thumb{
-  background: linear-gradient(var(--accent-cyan), var(--accent-violet));
-  border-radius: 10px;
-}
-
-/* Slightly denser hero & about spacing */
-.split-hero.compact-hero{ min-height: 62vh !important; }
-.about-me.dense{ margin-top: 12px !important; }
-
-/* Kill the animated ring behind the portrait */
-.hero-image::after { content: none !important; }
-
-/* ===== Brand Button Unifier (paste at end) ===== */
-:root{
-  /* Pick your brand orange once here */
-  --brand-orange: #ff5722;        /* change this hex if you prefer another orange */
-  --brand-orange-dark: #e64a19;
-  --brand-text: #ffffff;
-}
-
-/* Make ALL hero buttons identical (Download, See my story, View labs) */
-.hero-cta a,
-.hero-button {
-  background: var(--brand-orange) !important;
-  color: var(--brand-text) !important;
-  border: 0 !important;
-  border-radius: 12px !important;
-  padding: 12px 20px !important;
-  font-weight: 700 !important;
-  box-shadow: 0 12px 24px rgba(255,87,34,.25) !important;
-  transition: transform .1s ease, background .2s ease !important;
-}
-.hero-cta a:hover,
-.hero-button:hover {
-  background: var(--brand-orange-dark) !important;
-  transform: translateY(-1px);
-}
-
-/* Quick-links chips in the About sidebar (See Labs & Projects / Certifications / Contact) */
-.about-facts .quick-links .chip {
-  background: var(--brand-orange) !important;
-  color: var(--brand-text) !important;
-  border: 0 !important;
-  box-shadow: 0 8px 20px rgba(255,87,34,.20) !important;
-  border-radius: 999px !important;      /* keep pill shape */
-  padding: .55rem .9rem !important;
-  font-weight: 700 !important;
-}
-.about-facts .quick-links .chip:hover {
-  background: var(--brand-orange-dark) !important;
-}
-
-/* CTA bar buttons (Contact Me / Quick Resume) */
-.cta-bar a {
-  background: var(--brand-orange) !important;
-  color: var(--brand-text) !important;
-  border: 0 !important;
-  border-radius: 12px !important;
-  padding: 12px 18px !important;
-  font-weight: 700 !important;
-  box-shadow: 0 12px 24px rgba(255,87,34,.25) !important;
-}
-.cta-bar a:hover { background: var(--brand-orange-dark) !important; }
-
-/* Other legacy buttons that may appear elsewhere */
-.download-button,
-.send-button {
-  background: var(--brand-orange) !important;
-  color: var(--brand-text) !important;
-  border: 0 !important;
-  border-radius: 12px !important;
-  box-shadow: 0 12px 24px rgba(255,87,34,.25) !important;
-}
-.download-button:hover,
-.send-button:hover { background: var(--brand-orange-dark) !important; }
-
-/* ===== MOBILE NAV FIX: compact + hide on scroll ===== */
-@media (max-width: 768px) {
-  .nav-bar{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    padding: 10px 8px !important;
-    background-color: #1f1f1f !important;
-    z-index: 1000 !important;
-    transform: translateY(0);
-    transition: transform .25s ease !important;
-  }
-  .nav-bar.hidden-navbar{ transform: translateY(-100%) !important; }
-
-  /* Keep nav in a single row with horizontal scroll instead of stacking */
-  .nav-links{
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
-    gap: 12px !important;
-  }
-  .nav-links li{ flex: 0 0 auto !important; }
-
-  /* Make sure page content starts below the fixed nav */
-  body{ padding-top: 56px !important; }
-}
-
-/* OPTIONAL: if a QR banner can appear above the nav, offset the nav + body */
-@media (max-width: 768px) {
-  body.qr-visible .nav-bar{ top: 44px !important; }
-  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
-}
-/* ===== MOBILE NAV: compact + hide immediately on scroll ===== */
-@media (max-width: 768px) {
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    padding: 10px 8px !important;
-    background: #1f1f1f !important;
-    z-index: 1000 !important;
-    transform: translateY(0);
-    transition: transform .22s ease-in-out !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-  /* Hidden state toggled by JS */
-  nav.nav-bar.nav-hidden{ transform: translateY(-110%) !important; }
-
-  /* Keep links in ONE row with swipe-scroll (no vertical stack) */
-  nav .nav-links{
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
-    gap: 12px !important;
-  }
-  nav .nav-links li{ flex: 0 0 auto !important; }
-
-  /* Make sure content starts below the fixed nav */
-  body{ padding-top: 56px !important; }
-}
-
-/* If the QR banner is visible, offset the nav and body so nothing overlaps */
-@media (max-width: 768px) {
-  body.qr-visible nav.nav-bar{ top: 44px !important; }
-  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
-}
-
-/* === Even paragraph justification (site-wide) === */
-p {
-  text-align: justify !important;
-  text-justify: inter-word;
-  text-align-last: left;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  line-height: 1.75;
-  margin: 0 0 .9rem;
-}
-
-/* Don’t justify headings, lists, or nav items */
-h1, h2, h3, h4, h5, h6,
-ul, ol,
-.nav-links a,
-.hero-cta,
-.quick-links { text-align: left !important; }
-/* ===== Smooth mobile UX pack ===== */
-html { scroll-behavior: smooth; }
-
-/* Fade + collapse QR banner when JS adds .is-hidden */
-.qr-banner{
-  transition: max-height .28s ease, opacity .22s ease, padding .2s ease, border-width .2s ease;
-  max-height: 44px;           /* visible height */
-  overflow: hidden;
-}
-.qr-banner.is-hidden{
-  max-height: 0;
-  opacity: 0;
-  padding: 0 0;
-  border-width: 0;
-}
-
-/* Mobile nav: fixed, one-row, smooth hide, no jitter */
-@media (max-width: 768px) {
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    padding: 10px 8px !important;
-    background: #1f1f1f !important;
-    z-index: 1000 !important;
-
-    transform: translateY(0);
-    transition: transform .24s cubic-bezier(.22,1,.36,1) !important;
-    will-change: transform;
-    -webkit-transform: translateZ(0); /* GPU hint for smoother animation */
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-  nav.nav-bar.nav-hidden { transform: translateY(-110%) !important; }
-  nav.nav-bar.hidden-navbar { transform: translateY(-110%) !important; } /* compatibility */
-
-  /* Keep tabs in a single horizontal row with swipe-scroll */
-  nav .nav-links{
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
-    gap: 12px !important;
-
-    /* subtle edge hint to show there’s more to scroll */
-    mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
-  }
-  nav .nav-links::-webkit-scrollbar { display: none; }
-  nav .nav-links li { flex: 0 0 auto !important; }
-  nav .nav-links li a { padding: 12px 14px; }
-
-  /* Ensure page sits below fixed nav (and below QR banner when visible) */
-  body { padding-top: 56px !important; transition: padding-top .25s ease; }
-  body.qr-visible nav.nav-bar{ top: 44px !important; transition: top .25s ease; }
-  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
-
-  /* Better tap feedback for buttons */
-  .hero-cta a, .chip, .cta-bar a{
-    transition: transform .08s ease, background .2s ease, box-shadow .2s ease;
-  }
-  .hero-cta a:active, .chip:active, .cta-bar a:active{ transform: translateY(1px) scale(.98); }
-
-  /* Anchor targets don't hide under the fixed nav */
-  [id]{ scroll-margin-top: 64px; }
-}
-
-/* ===== Mobile dropdown nav (＋ / －) ===== */
-@media (max-width: 768px) {
-  /* Keep header fixed & compact */
-  nav.nav-bar{
-    position: fixed !important; top: 0; left: 0; right: 0;
-    z-index: 1000 !important; background: #1f1f1f !important;
-    padding: 10px 10px !important; box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-
-  /* Toggle button */
-  .nav-toggle{
-    display: flex; align-items: center; gap: 10px;
-    width: 100%; background: transparent; color: #fff;
-    border: 1px solid rgba(255,255,255,.25); border-radius: 8px;
-    padding: 10px 12px; font-weight: 700; font-size: 16px;
-  }
-  .nav-toggle:focus{ outline: 2px solid #ff5722; outline-offset: 2px; }
-  .nav-toggle .toggle-icon{ font-size: 18px; line-height: 1; }
-
-  /* Collapsible menu (vertical list) */
-  nav .nav-links{
-    display: block !important;
-    overflow: hidden; max-height: 0;
-    transition: max-height .28s ease;
-    margin: 8px 0 0; padding: 0;
-    background: #1a1a1a; border: 1px solid rgba(255,255,255,.15); border-radius: 10px;
-  }
-  nav .nav-links.open{ max-height: 70vh; } /* big enough to show all */
-  nav .nav-links li{ list-style: none; border-bottom: 1px solid rgba(255,255,255,.08); }
-  nav .nav-links li:last-child{ border-bottom: 0; }
-  nav .nav-links li a{
-    display: block; padding: 12px 14px; color: #f5f5f5;
-    text-decoration: none; font-weight: 700; font-size: 16px;
-  }
-  nav .nav-links li a:hover{ background: #ff5722; color: #fff; }
-
-  /* Page content offset (header height) */
-  body{ padding-top: 64px !important; }
-
-  /* Dim background when menu open (no extra HTML needed) */
-  body.nav-open::before{
-    content:""; position: fixed; inset: 0; z-index: 999;
-    background: rgba(0,0,0,.45);
-  }
-
-  /* Anchor targets won't hide under fixed header */
-  [id]{ scroll-margin-top: 72px; }
-}
-
-/* Optional: smooth scroll & snappier transitions */
-html { scroll-behavior: smooth; }
-
-/* ===== Revert to smooth one-line mobile nav (no + menu) ===== */
-
-/* Hide any old toggle button if it exists */
-.nav-toggle { display: none !important; }
-
-/* Remove any old page-dimming overlay from past dropdown */
-body.nav-open::before { content: none !important; display: none !important; pointer-events: none !important; }
-
-/* Smooth scrolling and anchor offset */
-html { scroll-behavior: smooth; }
-[id] { scroll-margin-top: 72px; }
-
-/* Desktop keeps normal layout; Mobile gets fixed, compact, swipeable tabs */
-@media (max-width: 768px) {
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    z-index: 1000 !important;
-    background: #1f1f1f !important;
-    padding: 10px 8px !important;
-    transform: translateY(0);
-    transition: transform .24s cubic-bezier(.22,1,.36,1) !important;
-    will-change: transform;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-  /* Hidden state the JS will toggle */
-  nav.nav-bar.nav-hidden,
-  nav.nav-bar.hidden-navbar { transform: translateY(-110%) !important; }
-
-  /* Make tabs one horizontal row with swipe scroll */
-  nav .nav-links{
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
-    gap: 12px !important;
-    margin: 0; padding: 0;
-  }
-  nav .nav-links li{ list-style: none; flex: 0 0 auto !important; }
-  nav .nav-links li a{ display: inline-block; padding: 12px 14px; }
-
-  /* Ensure page content sits below the fixed bar (and below QR banner if visible) */
-  body{ padding-top: 56px !important; transition: padding-top .25s ease; }
-  body.qr-visible nav.nav-bar{ top: 44px !important; transition: top .25s ease; }
-  body.qr-visible{ padding-top: calc(56px + 44px) !important; }
-}
-
-/* QR banner fade/collapse when JS adds .is-hidden */
-.qr-banner{
-  transition: max-height .28s ease, opacity .22s ease, padding .2s ease, border-width .2s ease;
-  max-height: 44px; overflow: hidden;
-}
-.qr-banner.is-hidden{ max-height:0; opacity:0; padding:0 0; border-width:0; }
-
-/* ===== MOBILE NAV: clear 2-column grid, no auto-hide ===== */
-@media (max-width: 768px) {
-  /* keep header fixed and compact */
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    z-index: 1000 !important;
-    background: #1f1f1f !important;
-    padding: 10px 8px !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-    transform: none !important;            /* disable slide-out on mobile */
-  }
-
-  /* turn the list into a 2-column grid (all tabs visible) */
-  nav .nav-links{
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    white-space: normal !important;        /* allow wrapping */
-    mask-image: none !important;           /* in case a mask was set earlier */
-  }
-  nav .nav-links li{
-    list-style: none;
-    width: auto !important;
-    flex: none !important;                 /* cancel old flex settings */
-  }
-  nav .nav-links li a{
-    display: block;
-    width: auto !important;                /* cancel old 100% width rules */
-    padding: 12px 14px;
-    text-align: center;
-    font-weight: 700;
-    border-radius: 8px;
-  }
-
-  /* Make room for the taller (2-row) header */
-  body{
-    padding-top: 120px !important;         /* adjust if your header is taller/shorter */
-    transition: none !important;
-  }
-
-  /* If the QR banner shows, add its height above the nav */
-  body.qr-visible nav.nav-bar{ top: 44px !important; }
-  body.qr-visible{
-    padding-top: calc(120px + 44px) !important;
-  }
-
-  /* Disable any mobile hide classes from old code */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{
-    transform: none !important;
-  }
-}
-
-/* ===== MOBILE NAV: fail-safe always visible, one-line, swipeable ===== */
-@media (max-width: 900px) {
-  /* Keep the bar fixed and on top */
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0 !important; left: 0 !important; right: 0 !important;
-    background: #1f1f1f !important;
-    z-index: 2000 !important;
-    padding: 10px 8px !important;
-    transform: none !important;                 /* never slide away on mobile */
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-
-  /* One horizontal row with swipe-scroll (no wrapping, no hiding) */
-  nav .nav-links{
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
-    gap: 12px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  nav .nav-links::-webkit-scrollbar{ display: none; }
-  nav .nav-links li{ list-style: none !important; flex: 0 0 auto !important; }
-  nav .nav-links a{
-    display: inline-block !important;
-    padding: 10px 14px !important;
-    color: #fff !important;
-    border: 1px solid rgba(255,255,255,.15) !important;
-    border-radius: 999px !important;
-    white-space: nowrap !important;
-    background: transparent !important;
-  }
-
-  /* Cancel any old hide classes that might still be getting toggled */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{
-    transform: none !important;
-  }
-
-  /* Ensure page content is pushed below the fixed bar (and QR banner if shown) */
-  body.page-specific{ padding-top: 64px !important; }
-  body.qr-visible nav.nav-bar{ top: 44px !important; }
-  body.qr-visible.page-specific{ padding-top: calc(64px + 44px) !important; }
-}
-/* ===== FAILSAFE MOBILE NAV (always visible) ===== */
-@media (max-width: 900px) {
- 
-  /* Show ALL tabs in a tidy 2-column grid (no swiping needed) */
-  body.page-specific > nav.nav-bar .nav-links{
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    white-space: normal !important;
-  }
-  body.page-specific > nav.nav-bar .nav-links li{
-    list-style: none !important;
-    flex: none !important;
-    width: auto !important;
-  }
-  body.page-specific > nav.nav-bar .nav-links li a{
-    display: block !important;
-    width: 100% !important;
-    padding: 12px 14px !important;
-    text-align: center !important;
-    color: #fff !important;
-    background: rgba(255,255,255,.06) !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
-    border-radius: 10px !important;
-  }
-
-  /* Make room for the taller (2-row) header */
-  body.page-specific{
-    padding-top: 120px !important;  /* increase if the nav still overlaps */
-  }
-
-  /* If QR banner shows, offset below it too */
-  body.qr-visible page-specific {}
-  body.qr-visible > nav.nav-bar{ top: 44px !important; }
-  body.qr-visible.page-specific{ padding-top: calc(120px + 44px) !important; }
-
-  /* Neutralize any old hide classes */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{ transform: none !important; }
-}
-
-/* ===== Mobile rescue: visible QR banner + visible nav (no auto-hide) ===== */
-@media (max-width: 900px) {
-  /* QR banner: fixed on top, full height, fades & slides away on first scroll */
-  .qr-banner{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    z-index: 2000 !important;
-    display: flex; gap: .5rem; align-items: center;
-    padding: 10px 12px !important;
-    background: rgba(255,255,255,.97) !important;
-    color: #111 !important;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    line-height: 1.35; font-size: 15px;
-    max-height: none !important;     /* remove old 44px clamp */
-    overflow: visible !important;
-  }
-  .qr-banner[hidden]{ display: none !important; }
-  .qr-banner.is-hidden{
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform .25s ease, opacity .25s ease;
-  }
-
-  /* Nav bar: fixed under the banner, always visible on mobile */
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0 !important; left: 0 !important; right: 0 !important;
-    z-index: 1500 !important;               /* under the banner */
-    background: #1f1f1f !important;
-    padding: 10px 8px !important;
-    transform: none !important;             /* cancel any slide-out */
-    visibility: visible !important; opacity: 1 !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-  /* Neutralize any old hide classes */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{ transform: none !important; }
-
-  /* One horizontal row you can swipe (nothing hidden) */
-  nav .nav-links{
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
-    gap: 12px !important;
-    margin: 0 !important; padding: 0 !important;
-  }
-  nav .nav-links::-webkit-scrollbar{ display: none; }
-  nav .nav-links li{ list-style: none !important; flex: 0 0 auto !important; }
-  nav .nav-links a{
-    display: inline-block !important;
-    padding: 10px 14px !important;
-    color: #fff !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
-    background: rgba(255,255,255,.06) !important;
-    border-radius: 999px !important;
-    white-space: nowrap !important;
-  }
-
-  /* Push page content below the fixed pieces */
-  body.page-specific{ padding-top: 112px !important; }  /* nav height */
-  body.qr-visible nav.nav-bar{ top: var(--qrh, 56px) !important; }
-  body.qr-visible.page-specific{
-    padding-top: calc(var(--qrh, 56px) + 112px) !important;
-  }
-}
-
-/* === MOBILE FIX: full-height QR banner, visible nav, dynamic top offset === */
-:root{
-  --bannerH: 0px;   /* JS sets these */
-  --navH: 0px;
-  --top-offset: 64px;
-}
-
-@media (max-width: 900px){
-  /* QR banner fixed at top, allow wrapping */
-  .qr-banner{
-    position: fixed !important;
-    top: 0; left: 0; right: 0;
-    z-index: 2000 !important;
-    display: flex; align-items: center; gap: .5rem;
-    padding: 10px 12px !important;
-    background: rgba(255,255,255,.97) !important;
-    color: #111 !important;
-    border-bottom: 1px solid rgba(0,0,0,.12);
-    line-height: 1.35;
-    font-size: 15px;
-    max-height: none !important;          /* remove any clamping */
-    white-space: normal !important;
-    overflow: visible !important;
-  }
-  .qr-banner[hidden]{ display:none !important; }
-  .qr-banner.is-hidden{
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform .25s ease, opacity .25s ease;
-  }
-
-  /* Nav sits directly below the banner; no slide-away on phones */
-  nav.nav-bar{
-    position: fixed !important;
-    top: var(--bannerH) !important;
-    left: 0; right: 0;
-    z-index: 1500 !important;
-    background: #1f1f1f !important;
-    padding: 10px 8px !important;
-    transform: none !important;
-    visibility: visible !important; opacity: 1 !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{ transform:none !important; } /* neutralize old code */
-
-  /* One-line, swipeable tabs (so nothing is hidden) */
-  nav .nav-links{
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    overflow-x:auto !important;
-    -webkit-overflow-scrolling:touch;
-    white-space:nowrap !important;
-    gap:12px !important;
-    margin:0 !important; padding:0 !important;
-  }
-  nav .nav-links::-webkit-scrollbar{ display:none; }
-  nav .nav-links li{ list-style:none !important; flex:0 0 auto !important; }
-  nav .nav-links a{
-    display:inline-block !important;
-    padding:10px 14px !important;
-    color:#fff !important;
-    background:rgba(255,255,255,.06) !important;
-    border:1px solid rgba(255,255,255,.18) !important;
-    border-radius:999px !important;
-  }
-
-  /* Page content is pushed below banner + nav using variables set by JS */
-  body.page-specific{ padding-top: var(--top-offset) !important; }
-}
-
-/* Optional: smooth anchor scrolling */
-html{ scroll-behavior:smooth; }
-
-/* ===== Mobile: guarantee content starts below banner + nav ===== */
-:root{
-  --bannerH: 0px;     /* set by JS */
-  --navH: 0px;        /* set by JS */
-  --top-offset: 120px;/* fallback if JS hasn't run yet */
-}
-
-@media (max-width: 900px){
-  /* Keep QR banner and nav fixed (you can keep your existing styles) */
-
-  /* Remove any old padding tricks that fight us */
-  body.page-specific{ padding-top: 0 !important; }
-
-  /* Insert a spacer before the page content equal to banner+nav height */
-  main#content::before{
-    content: "";
-    display: block;
-    height: var(--top-offset, 120px) !important;
-  }
-
-  /* If you still see clipping, give the very first hero a small extra nudge */
-  .split-hero{ margin-top: 0 !important; }
-}
-
-/* ===== MOBILE RESET: no overlap, all tabs visible, no QR banner ===== */
-@media (max-width: 900px) {
-  /* 0) kill old offsets / fixed tricks */
-  body, body.page-specific { padding-top: 0 !important; }
-  main#content::before { content: none !important; display: none !important; }
-
-  /* 1) TEMP: hide QR banner on phones so it can't clip content */
-  #qr-banner { display: none !important; }
-
-  /* 2) nav sits in document flow; can't cover hero */
-  nav.nav-bar {
-    position: sticky !important; top: 0 !important;
-    z-index: 1000 !important;
-    background: #1f1f1f !important;
-    padding: 10px 8px !important;
-    transform: none !important; visibility: visible !important; opacity: 1 !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
-  }
-  /* neutralize any old hide classes */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden { transform: none !important; }
-
-  /* 3) make every tab visible (2-column grid) */
-  nav .nav-links {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-    margin: 0 !important; padding: 0 !important;
-    overflow: visible !important; white-space: normal !important;
-  }
-  nav .nav-links li { list-style: none !important; }
-  nav .nav-links a {
-    display: block !important; text-align: center !important;
-    padding: 12px 14px !important;
-    color: #fff !important;
-    background: rgba(255,255,255,.06) !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
-    border-radius: 10px !important;
-  }
-
-  /* 4) ensure hero starts below the sticky nav with a tiny nudge */
-  .split-hero { margin-top: 8px !important; }
-}
-
-/* ===== Force mobile nav to be visible on all pages (<=900px) ===== */
-@media (max-width:900px){
-  /* Remove old offsets that caused overlap */
-  body { padding-top:0 !important; }
-
-  /* Keep nav in normal flow and visible */
-  nav.nav-bar{
-    position: relative !important; top:auto !important; z-index:1000 !important;
-    width:100% !important;
-    background:#1f1f1f !important;
-    padding:10px 8px !important; margin:0 0 10px 0 !important;
-    transform:none !important; opacity:1 !important; visibility:visible !important;
-    height:auto !important; display:block !important;
-    box-shadow:0 3px 10px rgba(0,0,0,.25);
-  }
-  /* Neutralize any "hide on scroll" classes */
-  nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{
-    transform:none !important; display:block !important; height:auto !important;
-    opacity:1 !important; visibility:visible !important;
-  }
-
-  /* Show ALL tabs in a tidy 2-column grid */
-  nav .nav-links{
-    display:grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap:10px !important;
-    margin:0 !important; padding:0 !important;
-    max-height:none !important; height:auto !important;
-    overflow:visible !important; white-space:normal !important;
-    list-style:none !important; visibility:visible !important; opacity:1 !important;
-  }
-  nav .nav-links li{ list-style:none !important; display:block !important; }
-  nav .nav-links a{
-    display:block !important; width:100% !important; text-align:center !important;
-    padding:12px 14px !important;
-    color:#fff !important;
-    background:rgba(255,255,255,.08) !important;
-    border:1px solid rgba(255,255,255,.18) !important;
-    border-radius:10px !important;
-    text-decoration:none !important;
-  }
-
-  /* Prevent hero from hiding under the nav */
-  .split-hero{ margin-top:0 !important; padding-top:8px !important; }
-}
-
-/* ===== Extra mobile spacing fix (ensure nav never overlaps hero) ===== */
-@media (max-width:900px){
-  /* Make sure the nav is not sticky/fixed anywhere */
-  nav.nav-bar{
-    position: static !important;
-    z-index: auto !important;
-    margin: 0 0 16px 0 !important;  /* space under the nav */
-  }
-
-  /* No extra offsets above the content */
-  body, main, #content { margin-top: 0 !important; padding-top: 0 !important; }
-
-  /* Give the hero a little breathing room from the nav */
-  .split-hero{ margin-top: 16px !important; padding-top: 16px !important; }
-}
-
-/* ===== UNIVERSAL MOBILE NAV FIX (<=900px) ===== */
-@media (max-width:900px){
-  /* remove old offsets that pushed content under the nav */
-  html, body { padding-top:0 !important; margin-top:0 !important; }
-
-  /* keep nav in normal flow and visible */
-  nav.nav-bar{
-    position: relative !important; top:auto !important; z-index:1000 !important;
-    width:100% !important; background:#1f1f1f !important;
-    padding:10px 8px !important; margin:0 0 12px 0 !important;
-    transform:none !important; opacity:1 !important; visibility:visible !important;
-    height:auto !important; display:block !important;
-    box-shadow:0 3px 10px rgba(0,0,0,.25);
-  }
-  /* neutralize any "hide on scroll" classes from old JS */
-  nav.nav-bar.hidden-navbar,
-  nav.nav-bar.nav-hidden{
-    transform:none !important; display:block !important; height:auto !important;
-    opacity:1 !important; visibility:visible !important;
-  }
-
-  /* show ALL tabs in a tidy grid */
-  nav .nav-links{
-    display:grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap:10px !important;
-    margin:0 !important; padding:0 !important;
-    list-style:none !important; white-space:normal !important; overflow:visible !important;
-    visibility:visible !important; opacity:1 !important;
-  }
-  nav .nav-links li{ list-style:none !important; display:block !important; }
-  nav .nav-links a{
-    display:block !important; width:100% !important; text-align:center !important;
-    padding:12px 14px !important; color:#fff !important;
-    background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.18) !important;
-    border-radius:10px !important; text-decoration:none !important;
-  }
-
-  /* make sure hero never hides under anything */
-  .split-hero, main > section:first-of-type{
-    margin-top:0 !important; padding-top:8px !important;
-  }
-
-  /* portrait size on small screens */
-  .hero-image img, header .profile-pic{
-    width:220px !important; height:220px !important; object-fit:cover !important;
-    border-radius:50% !important; border:2px solid #fff !important;
-    box-shadow:0 0 15px rgba(0,0,0,.6) !important;
-  }
-}
-
-/* ===== DESKTOP: give .nav-hidden a smooth hide effect (optional) ===== */
-@media (min-width:901px){
-  nav.nav-bar.nav-hidden{
-    transform: translateY(-110%);
-    transition: transform .24s ease;
-  }
-}
-
-/* Keep video firmly behind content everywhere */
-.video-background{ z-index:-1 !important; }
-
-/* ===== Mobile: keep nav visible and stop portrait from being cropped ===== */
-@media (max-width:900px){
-  /* NAV: in normal flow, visible, two-column grid */
-  .nav-bar{
-    position: relative !important;
-    top: auto !important;
-    z-index: 2 !important;
-    margin: 0 0 12px 0 !important;
-    background: #1f1f1f !important;
-    padding: 10px 8px !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    height: auto !important;
-    display: block !important;
-    box-shadow: 0 3px 10px rgba(0,0,0,.25);
-  }
-  .nav-bar.hidden-navbar,
-  .nav-bar.nav-hidden { transform: none !important; }
-
-  .nav-links{
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-    white-space: normal !important;
-    overflow: visible !important;
-  }
-  .nav-links li { list-style: none !important; }
-  .nav-links a{
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    padding: 12px 14px !important;
-    color: #fff !important;
-    background: rgba(255,255,255,.08) !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
-    border-radius: 10px !important;
-    text-decoration: none !important;
-  }
-
-  /* PORTRAIT: remove old absolute/negative offsets that crop the image */
-  header,
-  header .container,
-  .contact-image,
-  .hero-image{
-    position: static !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  /* Apply to all portrait variants used across pages */
-  .profile-pic,
-  .contact-image img,
-  .hero-image img{
-    position: static !important;
-    top: auto !important; left: auto !important;
-    transform: none !important;
-    clip-path: none !important;
-    margin: 12px auto 0 !important;
-    width: min(90vw, 340px) !important;
-    height: auto !important;
-    border-radius: 20px !important;     /* keep it nicely rounded */
-    border: 2px solid #fff !important;   /* optional nice frame */
-    box-shadow: 0 8px 20px rgba(0,0,0,.4) !important;
-  }
-}
-
-/* ===== CONTACT PAGE MOBILE FIX ===== */
-@media (max-width:900px){
-  /* Keep nav in normal flow (not on top of content) */
-  .nav-bar{
-    position:relative !important;
-    top:auto !important;
-    z-index:2 !important;
-    transform:none !important;
-  }
-  .nav-bar.hidden-navbar,
-  .nav-bar.nav-hidden{ transform:none !important; }
-
-  /* Kill any negative margins/absolute positions on the portrait */
-  .profile-pic,
-  .contact-image img,
-  header .profile-pic,
-  header .hero-image img{
-    position:static !important;
-    margin-top: 16px !important;   /* push the image fully below the nav */
-    transform:none !important;
-  }
-
-  /* Ensure the section itself doesn't pull upward */
-  header, .contact-image, .contact-container{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-}
-/* CONTACT PAGE — stop the form card from overlapping the photo on mobile */
-@media (max-width: 900px){
-  body.contact-page .contact-container{
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    margin: 12px auto !important;
-    padding: 0 12px !important;
-  }
-
-  body.contact-page .contact-image{
-    order: 0;
-    margin: 8px 0 0 0 !important;
-    position: relative !important;
-    z-index: 1 !important;               /* keep image above */
-  }
-
-  body.contact-page .contact-image img{
-    position: static !important;
-    transform: none !important;
-    max-width: 320px !important;
-    width: 85% !important;
-    height: auto !important;
-    border-radius: 20px !important;
-    border: 2px solid #fff !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
-  }
-
-  body.contact-page .contact-form{
-    order: 1;
-    margin-top: 0 !important;            /* neutralize any negative margins */
-    padding-top: 16px !important;
-    position: relative !important;
-    z-index: 0 !important;
-  }
-
-  /* If any global “card” style is pulling upward, neutralize it here */
-  body.contact-page .section-card,
-  body.contact-page .card{
-    margin-top: 0 !important;
-    transform: none !important;
-  }
-}
-/* ===== GLOBAL MOBILE FIXES (<=900px) ===== */
-@media (max-width:900px){
-  /* Background video behind everything */
-  .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
-  .video-background video{ width:100%; height:100%; object-fit:cover; }
-
-  /* Nav never overlaps content; show all tabs */
-  nav.nav-bar{
-    position:relative !important; top:auto !important; z-index:2 !important;
-    background:#1f1f1f; margin:0 0 12px; box-shadow:0 3px 10px rgba(0,0,0,.25);
-    transform:none !important; opacity:1 !important; visibility:visible !important;
-  }
-  nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
-  nav .nav-links{
-    display:grid !important; grid-template-columns:repeat(2,1fr) !important;
-    gap:10px !important; list-style:none !important;
-    margin:0 !important; padding:10px 8px !important;
-  }
-  nav .nav-links a{
-    display:block !important; text-align:center !important;
-    padding:12px 14px !important; color:#fff !important;
-    background:rgba(255,255,255,.08) !important;
-    border:1px solid rgba(255,255,255,.18) !important;
-    border-radius:10px !important; text-decoration:none !important;
-  }
-
-  /* Keep first section clear of the nav */
-  .split-hero, main > section:first-of-type{ margin-top:0; padding-top:8px; }
-
-  /* Contact page: keep everything in frame */
-  .contact-container{ display:flex; flex-direction:column; gap:12px; margin:8px 12px 24px; padding:0; }
-  .contact-image{ display:block; text-align:center; margin:6px 0 10px; }
-  .contact-image img{
-    width:min(360px,78vw); height:auto;
-    border-radius:18px; border:2px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,.35);
-  }
-  .contact-form{
-    padding:16px; background:rgba(0,0,0,.55);
-    border:1px solid rgba(255,255,255,.1); border-radius:16px; color:#fff;
-  }
-  .contact-form input{ height:44px; }
-  .contact-form textarea{ min-height:120px; resize:vertical; }
-  .footer-spacer{ height:100px; }
-}
-
-/* ===== DESKTOP POLISH (>=901px) ===== */
-@media (min-width:901px){
-  nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
-  .contact-image img{ width:clamp(360px,28vw,460px); }
-  .contact-form textarea{ min-height:160px; }
-}
-/* put this in your main CSS */
-* { box-sizing: border-box; }
-html, body { margin: 0; }
-body { overflow-x: hidden; } /* prevent sideways scroll from full-bleed sections */
-
-/* Full-bleed utility: makes a section stretch edge-to-edge even inside a centered container */
-.full-bleed {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-/* make a section stretch edge-to-edge even inside a centered wrapper */
-.full-bleed {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-/* ensure the bars actually fill with color */
-.nav-bar,
-footer {
-  background: #1f1f1f;   /* your grey/black bar color */
-  margin: 0;             /* remove side gaps */
-  padding-left: 0;
-  padding-right: 0;
-}
-
-html, body { margin: 0; overflow-x: hidden; } /* prevents sideways scroll */
-
-/* === Constrain content inside === */
-.contact-container,
-.footer-wrapper {
-  max-width: 1100px;     
-  margin: 0 auto;
-  padding: 0 20px;       
-}
-
-/* Reset browser default spacing */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* prevents sideways scroll from full-bleed */
-}
-
-/* Full-bleed utility */
-.full-bleed {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-/* Nav + Footer background bars */
-.nav-bar,
-footer {
-  background: #1f1f1f;  /* same as your other pages */
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-/* Certifications: fix weird wrapping on mobile */
-.certifications-section { text-align: left; }
-
-.certifications-section p,
-.certifications-section li {
-  text-align: left;
-  line-height: 1.5;
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: anywhere;    /* allow long codes to wrap */
-  hyphens: auto;              /* nicer hyphenation where supported */
-}
-
-/* If your details use <br> to force new lines, hide them on small screens */
-@media (max-width: 640px) {
-  .certifications-section br { display: none; }
-}
-
-.cert-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 24px;
-}
-
-.cert-card {
-  background: rgba(0,0,0,0.35); /* subtle background */
-  border-radius: 12px;
-  padding: 20px;
-}
-
-.cert-card h3 {
-  margin-top: 0;
-  font-size: 1.3rem;
-  color: #f0c33c; /* highlight title */
-}
-
-.cert-meta {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 6px 12px;
-  margin: 12px 0 16px;
-}
-
-.cert-meta dt {
-  font-weight: 600;
-  color: #fff;
-}
-
-.cert-meta dd {
-  margin: 0;
-  color: #ddd;
-  overflow-wrap: anywhere; /* lets long codes wrap nicely */
-}
-
-.cert-media {
-  text-align: center;
-}
-
-.cert-image {
-  max-width: 260px;
-  width: 100%;
-  margin: 10px auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.3);
-  display: block;
-}
-
-.download-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #ff5722;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background .2s;
-}
-
-.download-button:hover {
-  background: #e64a19;
-}
-
-/* mobile: stack meta vertically */
-@media (max-width: 600px) {
-  .cert-meta {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* --- Certifications hard reset (scoped) --- */
-#certifications, 
-#certifications * {
-  white-space: normal !important;
-  word-break: normal !important;
-  overflow-wrap: anywhere !important;
-  letter-spacing: normal !important;
-}
-
-/* Ensure list items are NOT flex/grid from global rules */
-#certifications .cert-list > li {
-  display: block !important;
-}
-
-/* Layout for the detail list */
-#certifications .cert-meta {
-  display: grid !important;
-  grid-template-columns: max-content 1fr;
-  gap: 6px 12px;
-}
-
-/* Make each term/value a clean block line */
-#certifications .cert-meta dt,
-#certifications .cert-meta dd {
-  display: block !important;
-  margin: 0;
-}
-
-/* On small screens, stack the pairs vertically */
-@media (max-width: 600px) {
-  #certifications .cert-meta { 
-    grid-template-columns: 1fr; 
-  }
-}
-
-/* Tidy up bullets and spacing */
-#certifications .cert-list { 
-  list-style: none; 
-  margin: 0; 
-  padding: 0; 
-  display: grid; 
-  gap: 24px; 
-}
-
-#certifications .cert-card { 
-  background: rgba(0,0,0,.35); 
-  border-radius: 12px; 
-  padding: 20px; 
-}
-
-#certifications .cert-card h3 { 
-  margin: 0 0 8px; 
-}
-
-/* If any <br> slipped in, kill them on mobile */
-@media (max-width: 640px) {
-  #certifications br { display: none !important; }
-}
-
-/* Keep cert labels/values tidy on phones */
-@media (max-width: 600px) {
-  #certifications .cert-meta {
-    grid-template-columns: 1fr !important; /* stack label over value */
-  }
-  #certifications .cert-meta dt,
-  #certifications .cert-meta dd {
-    display: block !important;
-    margin: 0;
-    line-height: 1.4;
-  }
-  /* critical: prevent words splitting onto separate lines */
-  #certifications .cert-meta dd {
-    white-space: nowrap !important;
-    word-break: keep-all !important;
-    overflow-wrap: normal !important;
-  }
-}
-
-/* remove bullets/margins that may be styled globally */
-#certifications ul { 
-  list-style: none !important; 
-  padding-left: 0 !important; 
-  margin-left: 0 !important; 
-}
-#certifications li { display: block !important; }
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  color: #fff;
-  font-size: 0.9rem;
-  text-align: center;   /* centers the text */
-}
-/* ==== CERTIFICATIONS: mobile fix & hard reset ==== */
-#certifications { text-align: left !important; }
-
-#certifications h2,
-#certifications h3,
-#certifications p,
-#certifications li,
-#certifications dt,
-#certifications dd {
-  white-space: normal !important;      /* no forced breaks */
-  word-break: normal !important;        /* undo break-all/anywhere */
-  overflow-wrap: break-word !important; /* wrap only when needed */
-  letter-spacing: normal !important;
-  text-align: left !important;
-}
-
-/* remove bullets / weird list spacing */
-#certifications ul { 
-  list-style: none !important; 
-  padding-left: 0 !important; 
-  margin-left: 0 !important; 
-}
-#certifications li { display: block !important; }
-
-/* detail grid (dt/dd) */
-#certifications .cert-meta {
-  display: grid !important;
-  grid-template-columns: max-content 1fr;
-  gap: 6px 12px;
-  margin: 12px 0 16px;
-}
-#certifications .cert-meta dt { font-weight: 600; margin: 0; }
-#certifications .cert-meta dd { margin: 0; }
-
-/* phone layout: stack labels over values */
-@media (max-width: 600px) {
-  #certifications h2 { font-size: 1.8rem; line-height: 1.2; } /* stop the title from breaking oddly */
-  #certifications .cert-meta { grid-template-columns: 1fr !important; }
-}
-
-/* optional: center the certificate image and button */
-#certifications .cert-media { text-align: center; }
-#certifications .cert-image { max-width: 260px; width: 100%; display: block; margin: 10px auto; }
-
-.site-footer .footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  color: #fff;
-  font-size: 0.9rem;
-  text-align: center !important; /* force center */
-}
-
-/* ---- FIX mobile word splitting in Certifications ---- */
-@media (max-width: 640px) {
-  /* hard reset for this section */
-  #certifications, #certifications * {
-    word-break: keep-all !important;     /* never break inside words */
-    overflow-wrap: normal !important;     /* wrap only at spaces */
-    white-space: normal !important;
-    hyphens: none !important;
-    letter-spacing: normal !important;
-    text-align: left !important;
-  }
-
-  /* title sizing so it fits without breaking weirdly */
-  #certifications h2 {
-    font-size: clamp(22px, 6vw, 34px);
-    line-height: 1.2;
-    margin: 0 0 12px;
-  }
-
-  /* if you’re using the dl/dt/dd layout */
-  #certifications .cert-meta {
-    display: grid !important;
-    grid-template-columns: 1fr !important;  /* label above value */
-    gap: 6px 12px;
-  }
-}
-
-#certifications img.cert-image {
-  display: block;           /* makes it behave like a block element */
-  margin: 0 auto;           /* auto left & right = center horizontally */
-  max-width: 100%;          /* prevent overflow on small screens */
-  height: auto;             /* keep proportions */
-}
-
-#certifications .download-button {
-  display: inline-block;
-  margin: 10px auto;
-  text-align: center;
-}
-
-/* Center certificate image on all screens */
-#certifications .cert-media {
-  display: flex !important;          /* ignore parent text-align */
-  justify-content: center !important;
-  align-items: center;
-  text-align: center;
-}
-
-/* Make sure no global float or width rule pushes it right */
-#certifications img.cert-image {
-  float: none !important;
-  width: min(100%, 520px);           /* scale down on mobile, cap on desktop */
-  height: auto;
-  display: block;
-  margin: 12px 0;                    /* vertical spacing */
-}
-
-/* Center the download button under the image */
-#certifications .download-button {
-  display: inline-block;
-  margin: 10px auto 0;
-  text-align: center;
-}
-/* Wrap image + button in a centered column */
-#certifications .cert-media {
-  display: flex !important;
-  flex-direction: column;   /* stack image and button vertically */
-  align-items: center;      /* center both image and button */
-  justify-content: center;
-  text-align: center;
-}
-
-/* Certificate image */
-#certifications img.cert-image {
-  float: none !important;
-  width: min(100%, 520px);
-  height: auto;
-  display: block;
-  margin: 12px auto;
-}
-
-/* Download button */
-#certifications .download-button {
-  display: inline-block;
-  margin-top: 12px;
-  text-align: center;
-}
-
-nav.nav-bar ul {
-  display: flex;
-  justify-content: space-between;  /* spreads items */
-  align-items: center;
-  margin: 0 auto;
-  padding: 0 40px;                 /* little spacing on sides */
-  list-style: none;
-  max-width: 100%;                 /* let it use full width */
-}
-
-/* === Mobile layout: use full width with small gutters === */
-@media (max-width: 640px) {
-  /* any common wrappers you use */
-  .container,
-  .section,
-  .section-inner,
-  .content-wrap,
-  .hero,
-  .intro,
-  .panel,
-  .contact-container {
-    width: 100%;
-    max-width: none;           /* remove desktop max-widths */
-    margin: 0 auto;
-    padding-left: 16px;        /* small, even side gutters */
-    padding-right: 16px;
-  }
-
-  /* kill multi-column layouts on mobile */
-  .two-col, .hero-grid, .grid, .row {
-    display: block !important;           /* or grid -> 1 column */
-  }
-  .two-col > *, .hero-grid > *, .grid > *, .row > * {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 0 16px 0;
-  }
-
-  /* text blocks shouldn’t be clamped to a narrow width */
-  .text-col, .hero-text, .left-col, .right-col {
-    max-width: none !important;
-    margin: 0 !important;
-  }
-
-  /* lists look cramped without padding on small screens */
-  ul { padding-left: 1.1rem; }
-
-  /* big headings: avoid weird wrapping */
-  h1, .hero h1 { font-size: clamp(24px, 8vw, 36px); line-height: 1.2; }
-  h2 { font-size: clamp(20px, 6.5vw, 30px); line-height: 1.25; }
-
-  /* CTA buttons: centered and not edge-to-edge unless you want it */
-  .btn, .download-button {
-    display: block;
-    width: auto;
-    max-width: 520px;
-    margin: 12px auto;
-    text-align: center;
-  }
-}
 /* --- Global rhythm --- */
 :root{
   --container: 1120px;
@@ -5268,73 +1383,6 @@ body.soc-page .video-wrap{
   margin: 12px auto 18px !important;
 }
 
-/* ===== Global mobile nav/content fix (put at end of style.css) ===== */
-
-/* Desktop keeps sticky navbar */
-@media (min-width: 901px) {
-  nav.nav-bar { 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;
-  }
-  /* If you use a spacer, keep it visible on desktop */
-  .nav-spacer { height: 86px; }
-}
-
-/* Mobile: navbar lives in normal flow so it doesn't cover content */
-@media (max-width: 900px) {
-  /* Remove any top padding tricks from older pages */
-  html, body { padding-top: 0 !important; }
-
-  /* Make the nav non-sticky on mobile */
-  nav.nav-bar {
-    position: relative !important;
-    top: auto !important;
-    z-index: 1000 !important;
-    width: 100% !important;
-    background: #1f1f1f !important;
-    transform: none !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    box-shadow: 0 3px 10px rgba(0,0,0,.25);
-  }
-
-  /* Hide any desktop spacer on mobile */
-  .nav-spacer { display: none !important; height: 0 !important; }
-
-  /* Ensure ALL page layouts sit below the nav and are readable */
-  main, .wrap, .container, .content, .page, .hero, section {
-    margin-top: 8px !important;
-  }
-
-  /* When linking to #anchors, don’t let the navbar hide them */
-  h1, h2, h3, [id] { 
-    scroll-margin-top: 88px; 
-  }
-
-  /* Some older pages used horizontal nav scrolling—make it tidy on mobile */
-  nav .nav-links {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    margin: 0 !important;
-    padding: 10px !important;
-    white-space: normal !important;
-    overflow: visible !important;
-  }
-  nav .nav-links a {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    padding: 12px 14px !important;
-    background: rgba(255,255,255,.08) !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
-    border-radius: 10px !important;
-    color: #fff !important;
-    text-decoration: none !important;
-  }
-}
-
 /* ===== FINAL, GLOBAL mobile/desktop nav fix ===== */
 
 /* Desktop: keep sticky nav; spacer takes nav's height (set by JS) */
@@ -5344,6 +1392,7 @@ body.soc-page .video-wrap{
     top: 0 !important;
     z-index: 1000 !important;
   }
+  /* If you use a spacer, keep it visible on desktop */
   .nav-spacer {
     display: block !important;
     height: 86px; /* JS will overwrite to exact height */
@@ -5410,36 +1459,7 @@ body.soc-page .video-wrap{
 
   /* Keep a small spacer so content never bumps the nav */
   .nav-spacer{
-    display: block !important;/* ===== UNIVERSAL, NO-JS, NO-SPACER NAV FIX ===== */
-:root{
-  --nav-h-mobile: 64px;   /* adjust if your mobile nav is taller */
-  --nav-h-desktop: 86px;  /* adjust to your real desktop nav height */
-}
-
-/* Make the navbar fixed and consistent on all pages/sizes */
-nav.nav-bar{
-  position: fixed !important;
-  top: 0 !important;
-  left: 0; right: 0;
-  z-index: 1000 !important;
-}
-
-/* Content never hides under nav: pad the body by nav height */
-body{
-  padding-top: var(--nav-h-mobile) !important;
-}
-
-/* Desktop gets bigger padding for the taller nav */
-@media (min-width: 901px){
-  body{ padding-top: var(--nav-h-desktop) !important; }
-}
-
-/* If any pages still have spacer divs, neutralize them */
-.nav-spacer{ display: none !important; height: 0 !important; }
-
-/* Make sure background video stays behind the fixed nav */
-.video-background{ z-index: 0 !important; }
-
+    display: block !important;
     height: var(--nav-h-mobile) !important;
   }
 
@@ -5447,33 +1467,7 @@ body{
   :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
 }
 
-/* === Mobile: keep nav fixed and keep content clear of it === */
-@media (max-width: 900px){
-  nav.nav-bar{
-    position: fixed !important;
-    top: 0 !important; left: 0; right: 0;
-    z-index: 9999 !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* Real padding set by JS below using --mobile-nav-h */
-  body{
-    padding-top: var(--mobile-nav-h, 72px) !important; /* 72px fallback */
-  }
-
-  /* Avoid double gaps if you have a spacer element */
-  .nav-spacer{ display: none !important; height: 0 !important; }
-
-  /* Don’t push these down again */
-  main, #content, .main-content{ margin-top: 0 !important; }
-
-  /* When jumping to #anchors, don’t let the nav cover the heading */
-  :target{ scroll-margin-top: calc(var(--mobile-nav-h, 72px) + 8px); }
-}
-
-/* ===== CONTACT PAGE – MOBILE FIX: make nav truly full width ===== */
+/* ===== CONTACT PAGE — MOBILE FIX: make nav truly full width ===== */
 @media (max-width: 900px){
   /* 1) Kill any container padding that is boxing the nav */
   body.contact-page,
@@ -5521,11 +1515,2468 @@ body{
   }
 }
 
+/* ===== CONTACT PAGE MOBILE FIX ===== */
 @media (max-width:900px){
-  body.contact-page nav.nav-bar,
-  body.contact-page nav.nav-bar > .nav-links,
+  /* Keep nav in normal flow (not on top of content) */
+  .nav-bar{
+    position:relative !important;
+    top:auto !important;
+    z-index:2 !important;
+    transform:none !important;
+  }
+  .nav-bar.hidden-navbar,
+  .nav-bar.nav-hidden{ transform:none !important; }
+
+  /* Kill any negative margins/absolute positions on the portrait */
+  .profile-pic,
+  .contact-image img,
+  header .profile-pic,
+  header .hero-image img{
+    position:static !important;
+    margin-top: 16px !important;   /* push the image fully below the nav */
+    transform:none !important;
+  }
+
+  /* Ensure the section itself doesn't pull upward */
+  header, .contact-image, .contact-container{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+}
+/* CONTACT PAGE — stop the form card from overlapping the photo on mobile */
+@media (max-width: 900px){
+  body.contact-page .contact-container{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin: 12px auto !important;
+    padding: 0 12px !important;
+  }
+
+  body.contact-page .contact-image{
+    order: 0;
+    margin: 8px 0 0 0 !important;
+    position: relative !important;
+    z-index: 1 !important;               /* keep image above */
+  }
+
+  body.contact-page .contact-image img{
+    position: static !important;
+    transform: none !important;
+    max-width: 320px !important;
+    width: 85% !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    border: 2px solid #fff !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
+  }
+
+  body.contact-page .contact-form{
+    order: 1;
+    margin-top: 0 !important;            /* neutralize any negative margins */
+    padding-top: 16px !important;
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  /* If any global “card” style is pulling upward, neutralize it here */
+  body.contact-page .section-card,
+  body.contact-page .card{
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+}
+/* ===== GLOBAL MOBILE FIXES (<=900px) ===== */
+@media (max-width:900px){
+  /* Background video behind everything */
+  .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+  .video-background video{ width:100%; height:100%; object-fit:cover; }
+
+  /* Nav never overlaps content; show all tabs */
+  nav.nav-bar{
+    position:relative !important; top:auto !important; z-index:2 !important;
+    background:#1f1f1f; margin:0 0 12px; box-shadow:0 3px 10px rgba(0,0,0,.25);
+    transform:none !important; opacity:1 !important; visibility:visible !important;
+  }
+  nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+  nav .nav-links{
+    display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important; list-style:none !important;
+    margin:0 !important; padding:10px 8px !important;
+  }
+  nav .nav-links a{
+    display:block !important; text-align:center !important;
+    padding:12px 14px !important; color:#fff !important;
+    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:10px !important; text-decoration:none !important;
+  }
+
+  /* Keep first section clear of the nav */
+  .split-hero, main > section:first-of-type{ margin-top:0; padding-top:8px; }
+
+  /* Contact page: keep everything in frame */
+  .contact-container{ display:flex; flex-direction:column; gap:12px; margin:8px 12px 24px; padding:0; }
+  .contact-image{ display:block; text-align:center; margin:6px 0 10px; }
+  .contact-image img{
+    width:min(360px,78vw); height:auto;
+    border-radius:18px; border:2px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,.35);
+  }
+  .contact-form{
+    padding:16px; background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.1); border-radius:16px; color:#fff;
+  }
+  .contact-form input{ height:44px; }
+  .contact-form textarea{ min-height:120px; resize:vertical; }
+  .footer-spacer{ height:100px; }
+}
+
+/* ===== DESKTOP POLISH (>=901px) ===== */
+@media (min-width:901px){
+  nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
+  .contact-image img{ width:clamp(360px,28vw,460px); }
+  .contact-form textarea{ min-height:160px; }
+}
+/* put this in your main CSS */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { overflow-x: hidden; } /* prevent sideways scroll from full-bleed sections */
+
+/* Full-bleed utility: makes a section stretch edge-to-edge even inside a centered container */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ensure the bars actually fill with color */
+.nav-bar,
+footer {
+  background: #1f1f1f;   /* your grey/black bar color */
+  margin: 0;             /* remove side gaps */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* === Constrain content inside === */
+.contact-container,
+.footer-wrapper {
+  max-width: 1100px;     
+  margin: 0 auto;
+  padding: 0 20px;       
+}
+
+/* Reset browser default spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents sideways scroll from full-bleed */
+}
+
+/* Full-bleed utility */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Nav + Footer background bars */
+.nav-bar,
+footer {
+  background: #1f1f1f;  /* same as your other pages */
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Certifications: fix weird wrapping on mobile */
+.certifications-section { text-align: left; }
+
+.certifications-section p,
+.certifications-section li {
+  text-align: left;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;    /* allow long codes to wrap */
+  hyphens: auto;              /* nicer hyphenation where supported */
+}
+
+/* If your details use <br> to force new lines, hide them on small screens */
+@media (max-width: 640px) {
+  .certifications-section br { display: none; }
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.cert-card {
+  background: rgba(0,0,0,0.35); /* subtle background */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cert-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #f0c33c; /* highlight title */
+}
+
+.cert-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+
+.cert-meta dt {
+  font-weight: 600;
+  color: #fff;
+}
+
+.cert-meta dd {
+  margin: 0;
+  color: #ddd;
+  overflow-wrap: anywhere; /* lets long codes wrap nicely */
+}
+
+.cert-media {
+  text-align: center;
+}
+
+.cert-image {
+  max-width: 260px;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  display: block;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.download-button:hover {
+  background: #e64a19;
+}
+
+/* mobile: stack meta vertically */
+@media (max-width: 600px) {
+  .cert-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Certifications hard reset (scoped) --- */
+#certifications, 
+#certifications * {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  letter-spacing: normal !important;
+}
+
+/* Ensure list items are NOT flex/grid from global rules */
+#certifications .cert-list > li {
+  display: block !important;
+}
+
+/* Layout for the detail list */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+}
+
+/* Make each term/value a clean block line */
+#certifications .cert-meta dt,
+#certifications .cert-meta dd {
+  display: block !important;
+  margin: 0;
+}
+
+/* On small screens, stack the pairs vertically */
+@media (max-width: 600px) {
+  #certifications .cert-meta { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* Tidy up bullets and spacing */
+#certifications .cert-list { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: grid; 
+  gap: 24px; 
+}
+
+#certifications .cert-card { 
+  background: rgba(0,0,0,.35); 
+  border-radius: 12px; 
+  padding: 20px; 
+}
+
+#certifications .cert-card h3 { 
+  margin: 0 0 8px; 
+}
+
+/* If any <br> slipped in, kill them on mobile */
+@media (max-width: 640px) {
+  #certifications br { display: none !important; }
+}
+
+/* Keep cert labels/values tidy on phones */
+@media (max-width: 600px) {
+  #certifications .cert-meta {
+    grid-template-columns: 1fr !important; /* stack label over value */
+  }
+  #certifications .cert-meta dt,
+  #certifications .cert-meta dd {
+    display: block !important;
+    margin: 0;
+    line-height: 1.4;
+  }
+  /* critical: prevent words splitting onto separate lines */
+  #certifications .cert-meta dd {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+}
+
+/* remove bullets/margins that may be styled globally */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;   /* centers the text */
+}
+/* ==== CERTIFICATIONS: mobile fix & hard reset ==== */
+#certifications { text-align: left !important; }
+
+#certifications h2,
+#certifications h3,
+#certifications p,
+#certifications li,
+#certifications dt,
+#certifications dd {
+  white-space: normal !important;      /* no forced breaks */
+  word-break: normal !important;        /* undo break-all/anywhere */
+  overflow-wrap: break-word !important; /* wrap only when needed */
+  letter-spacing: normal !important;
+  text-align: left !important;
+}
+
+/* remove bullets / weird list spacing */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+/* detail grid (dt/dd) */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+#certifications .cert-meta dt { font-weight: 600; margin: 0; }
+#certifications .cert-meta dd { margin: 0; }
+
+/* phone layout: stack labels over values */
+@media (max-width: 600px) {
+  #certifications h2 { font-size: 1.8rem; line-height: 1.2; } /* stop the title from breaking oddly */
+  #certifications .cert-meta { grid-template-columns: 1fr !important; }
+}
+
+/* optional: center the certificate image and button */
+#certifications .cert-media { text-align: center; }
+#certifications .cert-image { max-width: 260px; width: 100%; display: block; margin: 10px auto; }
+
+.site-footer .footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center !important; /* force center */
+}
+
+/* ---- FIX mobile word splitting in Certifications ---- */
+@media (max-width: 640px) {
+  /* hard reset for this section */
+  #certifications, #certifications * {
+    word-break: keep-all !important;     /* never break inside words */
+    overflow-wrap: normal !important;     /* wrap only at spaces */
+    white-space: normal !important;
+    hyphens: none !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+  }
+
+  /* title sizing so it fits without breaking weirdly */
+  #certifications h2 {
+    font-size: clamp(22px, 6vw, 34px);
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  /* if you’re using the dl/dt/dd layout */
+  #certifications .cert-meta {
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* label above value */
+    gap: 6px 12px;
+  }
+}
+
+#certifications img.cert-image {
+  display: block;           /* makes it behave like a block element */
+  margin: 0 auto;           /* auto left & right = center horizontally */
+  max-width: 100%;          /* prevent overflow on small screens */
+  height: auto;             /* keep proportions */
+}
+
+#certifications .download-button {
+  display: inline-block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Center certificate image on all screens */
+#certifications .cert-media {
+  display: flex !important;          /* ignore parent text-align */
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make sure no global float or width rule pushes it right */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);           /* scale down on mobile, cap on desktop */
+  height: auto;
+  display: block;
+  margin: 12px 0;                    /* vertical spacing */
+}
+
+/* Center the download button under the image */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+/* Wrap image + button in a centered column */
+#certifications .cert-media {
+  display: flex !important;
+  flex-direction: column;   /* stack image and button vertically */
+  align-items: center;      /* center both image and button */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Certificate image */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);
+  height: auto;
+  display: block;
+  margin: 12px auto;
+}
+
+/* Download button */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+
+nav.nav-bar ul {
+  display: flex;
+  justify-content: space-between;  /* spreads items */
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px;                 /* little spacing on sides */
+  list-style: none;
+  max-width: 100%;                 /* let it use full width */
+}
+
+/* === Mobile layout: use full width with small gutters === */
+@media (max-width: 640px) {
+  /* any common wrappers you use */
+  .container,
+  .section,
+  .section-inner,
+  .content-wrap,
+  .hero,
+  .intro,
+  .panel,
+  .contact-container {
+    width: 100%;
+    max-width: none;           /* remove desktop max-widths */
+    margin: 0 auto;
+    padding-left: 16px;        /* small, even side gutters */
+    padding-right: 16px;
+  }
+
+  /* kill multi-column layouts on mobile */
+  .two-col, .hero-grid, .grid, .row {
+    display: block !important;           /* or grid -> 1 column */
+  }
+  .two-col > *, .hero-grid > *, .grid > *, .row > * {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 16px 0;
+  }
+
+  /* text blocks shouldn’t be clamped to a narrow width */
+  .text-col, .hero-text, .left-col, .right-col {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* lists look cramped without padding on small screens */
+  ul { padding-left: 1.1rem; }
+
+  /* big headings: avoid weird wrapping */
+  h1, .hero h1 { font-size: clamp(24px, 8vw, 36px); line-height: 1.2; }
+  h2 { font-size: clamp(20px, 6.5vw, 30px); line-height: 1.25; }
+
+  /* CTA buttons: centered and not edge-to-edge unless you want it */
+  .btn, .download-button {
+    display: block;
+    width: auto;
+    max-width: 520px;
+    margin: 12px auto;
+    text-align: center;
+  }
+}
+
+/* Hero section shared across all tabs */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background: linear-gradient(to bottom, #0b0e13, #11151c); /* matches your other pages */
+  color: #fff;
+  min-height: 280px;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-section img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background: #121212 !important;  /* or any solid color you prefer */
+  color: #f5f5f5;                  /* text color for contrast */
+}
+
+body.soc-page {
+  background: #121212 !important;
+  color: #f5f5f5;
+}
+
+/* --- SOC page spacing tune-up --- */
+.wrap p { 
+  line-height: 1.55;         /* was ~1.7 */
+  margin: 8px 0 10px;        /* less top/bottom space */
+}
+
+h2 { margin: 0 0 8px; }       /* smaller gap below section titles */
+h3 { margin: 10px 0 6px; }    /* smaller gap for sub-heads */
+
+.section { margin-top: 18px; }  /* sections closer together */
+.card { padding: 18px; }        /* slightly tighter cards */
+
+ul { margin: 6px 0 0 20px; }    /* bring lists closer to headings */
+li { margin: 4px 0; }           /* tighter list items */
+
+
+/* --- Natural, non-cropping video --- */
+.video-wrap{
+  max-width: 980px;
+  margin: 16px auto 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  background: #0b0b0b;
+}
+
+.video-wrap video{
+  display: block;
+  width: 100%;
+  height: auto;             /* let the video decide its height */
+  aspect-ratio: 16 / 9;     /* keeps it tidy on odd browsers */
+  object-fit: contain;      /* never crops; letterboxes if needed */
+}
+
+/* SOC page spacing tweaks */
+.hero-section { padding: 20px 0 8px; }
+.hero-section p { margin: 8px 0 10px; }
+
+.section.card { margin-top: 18px; padding: 18px 20px; }
+.card p { margin: 0 0 10px; line-height: 1.6; }
+
+.soc-badges { margin: 8px 0 10px; }
+
+/* 1) Background video behind everything */
+.video-background{
+  position: fixed;
+  inset: 0;
+  z-index: -1;              /* keep it behind nav/content */
+  overflow: hidden;
+}
+.video-background video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fill screen without borders */
+}
+
+/* 2) Make only SOC page transparent so the video is visible */
+body.soc-page{
+  background: transparent !important;  /* overrides gradient from body */
+  color: #f5f5f5;
+}
+
+/* 3) Ensure nav/content sit above the video */
+.nav-bar{ position: sticky; top: 0; z-index: 1000; }
+.nav-spacer{ height: 86px; }          /* you already have this in the page */
+
+/* 4) Natural, non-cropping video player */
+.video-wrap{
+  max-width: 980px;
+  margin: 16px auto 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  background: #0b0b0b;
+}
+.video-wrap video{
+  display: block;
+  width: 100%;
+  height: auto;             /* keep natural height */
+  aspect-ratio: 16 / 9;     /* keeps it tidy */
+  object-fit: contain;      /* do not crop */
+}
+
+/* 5) Tighter text spacing on this page */
+.soc-card p{ margin: 8px 0 10px; line-height: 1.58; }
+.soc-card h2{ margin: 0 0 8px; }
+.soc-section{ margin: 22px 0; }
+
+/* --- SOC page adjustments --- */
+
+/* reduce the nav spacer just a bit */
+body.soc-page .nav-spacer {
+  height: 70px; /* was 86px */
+}
+
+/* tighten hero text spacing */
+body.soc-page .split-hero.compact-hero h1 {
+  margin-bottom: 8px; /* was probably ~20px */
+}
+
+body.soc-page .split-hero.compact-hero p.tagline {
+  margin-top: 0;
+  margin-bottom: 10px; /* reduce gap under paragraph */
+  line-height: 1.4;    /* a bit denser text */
+}
+
+/* tighter spacing between paragraphs site-wide */
+body.soc-page p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; /* default is usually 1em */
+}
+
+/* =========================
+   SOC page spacing tighten
+   ========================= */
+body.soc-page .nav-spacer{
+  height: 56px !important;           /* was ~86px */
+}
+
+/* Pull the hero block up & make it denser */
+body.soc-page .split-hero.compact-hero{
+  padding-top: 8px !important;
+  padding-bottom: 12px !important;
+  row-gap: 8px !important;
+  min-height: auto !important;       /* don't force extra height */
+}
+
+body.soc-page .split-hero.compact-hero .hero-text h1{
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+  line-height: 1.15 !important;
+}
+
+body.soc-page .split-hero.compact-hero .hero-text .tagline{
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+  max-width: 70ch;                   /* keep nice line length */
+}
+
+/* General paragraph spacing inside SOC page */
+body.soc-page p{
+  margin: 0.35em 0 !important;       /* default is ~1em */
+  line-height: 1.55 !important;
+}
+
+/* Cards / sections spacing tighter */
+body.soc-page .soc-section{
+  margin: 18px 0 !important;         /* was ~28px */
+}
+body.soc-page .soc-card{
+  padding: 16px !important;          /* was ~20px */
+}
+body.soc-page .soc-card h2{
+  margin: 0 0 8px 0 !important;
+}
+
+/* Chips row margin smaller */
+body.soc-page .soc-badges{
+  margin: 8px 0 14px !important;
+}
+
+/* Video wrapper: keep full width, a bit closer to chips */
+body.soc-page .video-wrap{
+  max-width: 980px;
+  margin: 12px auto 18px !important;
+}
+
+/* ===== FINAL, GLOBAL mobile/desktop nav fix ===== */
+
+/* Desktop: keep sticky nav; spacer takes nav's height (set by JS) */
+@media (min-width: 901px) {
+  nav.nav-bar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  /* If you use a spacer, keep it visible on desktop */
+  .nav-spacer {
+    display: block !important;
+    height: 86px; /* JS will overwrite to exact height */
+  }
+}
+
+/* Mobile: nav in normal flow so content can never scroll under it */
+@media (max-width: 900px) {
+  /* Kill any page padding tricks */
+  html, body, main, .wrap, .container, .content, .page {
+    padding-top: 0 !important;
+  }
+
+  nav.nav-bar {
+    position: relative !important;  /* Non-sticky */
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1000 !important;
+  }
+
+  /* Spacer not needed on phones */
+  .nav-spacer {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  /* Avoid hidden anchors on phones */
+  :target { scroll-margin-top: 88px; }
+}
+
+/* ===== FINAL, NO-JS NAV FIX (same on all pages) ===== */
+:root{
+  --nav-h-desktop: 86px;  /* adjust if your desktop nav is taller */
+  --nav-h-mobile: 64px;   /* adjust if your mobile nav wraps to two lines */
+}
+
+/* Desktop: keep sticky nav; spacer equals nav height */
+@media (min-width: 901px){
+  nav.nav-bar{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-spacer{
+    display: block !important;
+    height: var(--nav-h-desktop) !important;
+  }
+}
+
+/* Mobile: nav is NOT sticky; spacer still adds breathing room so nothing tucks under */
+@media (max-width: 900px){
+  /* Kill any old padding hacks that pushed content under the nav */
+  html, body, main, .wrap, .container, .content, .page{
+    padding-top: 0 !important;
+  }
+
+  nav.nav-bar{
+    position: relative !important;  /* not sticky on phones */
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* Keep a small spacer so content never bumps the nav */
+  .nav-spacer{
+    display: block !important;
+    height: var(--nav-h-mobile) !important;
+  }
+
+  /* Anchor jumps won’t hide under the nav on phones */
+  :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
+}
+
+/* ===== CONTACT PAGE — MOBILE FIX: make nav truly full width ===== */
+@media (max-width: 900px){
+  /* 1) Kill any container padding that is boxing the nav */
+  body.contact-page,
   body.contact-page header,
-  body.contact-page main { outline:2px solid red !important; }
+  body.contact-page main,
+  body.contact-page .container,
+  body.contact-page .content{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  /* 2) Bar itself: edge-to-edge */
+  body.contact-page nav.nav-bar{
+    width:100% !important;
+    padding:0 !important;
+    margin:0 !important;
+  }
+
+  /* 3) UL: full width, two columns, no right-alignment */
+  body.contact-page nav.nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:10px !important;
+
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 8px !important;     /* tiny side gutter; set 0 for none */
+    box-sizing:border-box !important;
+
+    justify-content:stretch !important;
+    justify-items:stretch !important;
+    align-items:stretch !important;
+  }
+
+  /* 4) Children: prevent auto right-align via margins */
+  body.contact-page .nav-links li,
+  body.contact-page .nav-links a{
+    margin:0 !important;
+    width:100% !important;        /* make each button span its grid cell */
+  }
+}
+
+/* ===== CONTACT PAGE MOBILE FIX ===== */
+@media (max-width:900px){
+  /* Keep nav in normal flow (not on top of content) */
+  .nav-bar{
+    position:relative !important;
+    top:auto !important;
+    z-index:2 !important;
+    transform:none !important;
+  }
+  .nav-bar.hidden-navbar,
+  .nav-bar.nav-hidden{ transform:none !important; }
+
+  /* Kill any negative margins/absolute positions on the portrait */
+  .profile-pic,
+  .contact-image img,
+  header .profile-pic,
+  header .hero-image img{
+    position:static !important;
+    margin-top: 16px !important;   /* push the image fully below the nav */
+    transform:none !important;
+  }
+
+  /* Ensure the section itself doesn't pull upward */
+  header, .contact-image, .contact-container{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+}
+/* CONTACT PAGE — stop the form card from overlapping the photo on mobile */
+@media (max-width: 900px){
+  body.contact-page .contact-container{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin: 12px auto !important;
+    padding: 0 12px !important;
+  }
+
+  body.contact-page .contact-image{
+    order: 0;
+    margin: 8px 0 0 0 !important;
+    position: relative !important;
+    z-index: 1 !important;               /* keep image above */
+  }
+
+  body.contact-page .contact-image img{
+    position: static !important;
+    transform: none !important;
+    max-width: 320px !important;
+    width: 85% !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    border: 2px solid #fff !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
+  }
+
+  body.contact-page .contact-form{
+    order: 1;
+    margin-top: 0 !important;            /* neutralize any negative margins */
+    padding-top: 16px !important;
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  /* If any global “card” style is pulling upward, neutralize it here */
+  body.contact-page .section-card,
+  body.contact-page .card{
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+}
+/* ===== GLOBAL MOBILE FIXES (<=900px) ===== */
+@media (max-width:900px){
+  /* Background video behind everything */
+  .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+  .video-background video{ width:100%; height:100%; object-fit:cover; }
+
+  /* Nav never overlaps content; show all tabs */
+  nav.nav-bar{
+    position:relative !important; top:auto !important; z-index:2 !important;
+    background:#1f1f1f; margin:0 0 12px; box-shadow:0 3px 10px rgba(0,0,0,.25);
+    transform:none !important; opacity:1 !important; visibility:visible !important;
+  }
+  nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+  nav .nav-links{
+    display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important; list-style:none !important;
+    margin:0 !important; padding:10px 8px !important;
+  }
+  nav .nav-links a{
+    display:block !important; text-align:center !important;
+    padding:12px 14px !important; color:#fff !important;
+    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:10px !important; text-decoration:none !important;
+  }
+
+  /* Keep first section clear of the nav */
+  .split-hero, main > section:first-of-type{ margin-top:0; padding-top:8px; }
+
+  /* Contact page: keep everything in frame */
+  .contact-container{ display:flex; flex-direction:column; gap:12px; margin:8px 12px 24px; padding:0; }
+  .contact-image{ display:block; text-align:center; margin:6px 0 10px; }
+  .contact-image img{
+    width:min(360px,78vw); height:auto;
+    border-radius:18px; border:2px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,.35);
+  }
+  .contact-form{
+    padding:16px; background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.1); border-radius:16px; color:#fff;
+  }
+  .contact-form input{ height:44px; }
+  .contact-form textarea{ min-height:120px; resize:vertical; }
+  .footer-spacer{ height:100px; }
+}
+
+/* ===== DESKTOP POLISH (>=901px) ===== */
+@media (min-width:901px){
+  nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
+  .contact-image img{ width:clamp(360px,28vw,460px); }
+  .contact-form textarea{ min-height:160px; }
+}
+/* put this in your main CSS */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { overflow-x: hidden; } /* prevent sideways scroll from full-bleed sections */
+
+/* Full-bleed utility: makes a section stretch edge-to-edge even inside a centered container */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ensure the bars actually fill with color */
+.nav-bar,
+footer {
+  background: #1f1f1f;   /* your grey/black bar color */
+  margin: 0;             /* remove side gaps */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* === Constrain content inside === */
+.contact-container,
+.footer-wrapper {
+  max-width: 1100px;     
+  margin: 0 auto;
+  padding: 0 20px;       
+}
+
+/* Reset browser default spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents sideways scroll from full-bleed */
+}
+
+/* Full-bleed utility */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Nav + Footer background bars */
+.nav-bar,
+footer {
+  background: #1f1f1f;  /* same as your other pages */
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Certifications: fix weird wrapping on mobile */
+.certifications-section { text-align: left; }
+
+.certifications-section p,
+.certifications-section li {
+  text-align: left;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;    /* allow long codes to wrap */
+  hyphens: auto;              /* nicer hyphenation where supported */
+}
+
+/* If your details use <br> to force new lines, hide them on small screens */
+@media (max-width: 640px) {
+  .certifications-section br { display: none; }
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.cert-card {
+  background: rgba(0,0,0,0.35); /* subtle background */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cert-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #f0c33c; /* highlight title */
+}
+
+.cert-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+
+.cert-meta dt {
+  font-weight: 600;
+  color: #fff;
+}
+
+.cert-meta dd {
+  margin: 0;
+  color: #ddd;
+  overflow-wrap: anywhere; /* lets long codes wrap nicely */
+}
+
+.cert-media {
+  text-align: center;
+}
+
+.cert-image {
+  max-width: 260px;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  display: block;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.download-button:hover {
+  background: #e64a19;
+}
+
+/* mobile: stack meta vertically */
+@media (max-width: 600px) {
+  .cert-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Certifications hard reset (scoped) --- */
+#certifications, 
+#certifications * {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  letter-spacing: normal !important;
+}
+
+/* Ensure list items are NOT flex/grid from global rules */
+#certifications .cert-list > li {
+  display: block !important;
+}
+
+/* Layout for the detail list */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+}
+
+/* Make each term/value a clean block line */
+#certifications .cert-meta dt,
+#certifications .cert-meta dd {
+  display: block !important;
+  margin: 0;
+}
+
+/* On small screens, stack the pairs vertically */
+@media (max-width: 600px) {
+  #certifications .cert-meta { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* Tidy up bullets and spacing */
+#certifications .cert-list { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: grid; 
+  gap: 24px; 
+}
+
+#certifications .cert-card { 
+  background: rgba(0,0,0,.35); 
+  border-radius: 12px; 
+  padding: 20px; 
+}
+
+#certifications .cert-card h3 { 
+  margin: 0 0 8px; 
+}
+
+/* If any <br> slipped in, kill them on mobile */
+@media (max-width: 640px) {
+  #certifications br { display: none !important; }
+}
+
+/* Keep cert labels/values tidy on phones */
+@media (max-width: 600px) {
+  #certifications .cert-meta {
+    grid-template-columns: 1fr !important; /* stack label over value */
+  }
+  #certifications .cert-meta dt,
+  #certifications .cert-meta dd {
+    display: block !important;
+    margin: 0;
+    line-height: 1.4;
+  }
+  /* critical: prevent words splitting onto separate lines */
+  #certifications .cert-meta dd {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+}
+
+/* remove bullets/margins that may be styled globally */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;   /* centers the text */
+}
+/* ==== CERTIFICATIONS: mobile fix & hard reset ==== */
+#certifications { text-align: left !important; }
+
+#certifications h2,
+#certifications h3,
+#certifications p,
+#certifications li,
+#certifications dt,
+#certifications dd {
+  white-space: normal !important;      /* no forced breaks */
+  word-break: normal !important;        /* undo break-all/anywhere */
+  overflow-wrap: break-word !important; /* wrap only when needed */
+  letter-spacing: normal !important;
+  text-align: left !important;
+}
+
+/* remove bullets / weird list spacing */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+/* detail grid (dt/dd) */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+#certifications .cert-meta dt { font-weight: 600; margin: 0; }
+#certifications .cert-meta dd { margin: 0; }
+
+/* phone layout: stack labels over values */
+@media (max-width: 600px) {
+  #certifications h2 { font-size: 1.8rem; line-height: 1.2; } /* stop the title from breaking oddly */
+  #certifications .cert-meta { grid-template-columns: 1fr !important; }
+}
+
+/* optional: center the certificate image and button */
+#certifications .cert-media { text-align: center; }
+#certifications .cert-image { max-width: 260px; width: 100%; display: block; margin: 10px auto; }
+
+.site-footer .footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center !important; /* force center */
+}
+
+/* ---- FIX mobile word splitting in Certifications ---- */
+@media (max-width: 640px) {
+  /* hard reset for this section */
+  #certifications, #certifications * {
+    word-break: keep-all !important;     /* never break inside words */
+    overflow-wrap: normal !important;     /* wrap only at spaces */
+    white-space: normal !important;
+    hyphens: none !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+  }
+
+  /* title sizing so it fits without breaking weirdly */
+  #certifications h2 {
+    font-size: clamp(22px, 6vw, 34px);
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  /* if you’re using the dl/dt/dd layout */
+  #certifications .cert-meta {
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* label above value */
+    gap: 6px 12px;
+  }
+}
+
+#certifications img.cert-image {
+  display: block;           /* makes it behave like a block element */
+  margin: 0 auto;           /* auto left & right = center horizontally */
+  max-width: 100%;          /* prevent overflow on small screens */
+  height: auto;             /* keep proportions */
+}
+
+#certifications .download-button {
+  display: inline-block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Center certificate image on all screens */
+#certifications .cert-media {
+  display: flex !important;          /* ignore parent text-align */
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make sure no global float or width rule pushes it right */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);           /* scale down on mobile, cap on desktop */
+  height: auto;
+  display: block;
+  margin: 12px 0;                    /* vertical spacing */
+}
+
+/* Center the download button under the image */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+/* Wrap image + button in a centered column */
+#certifications .cert-media {
+  display: flex !important;
+  flex-direction: column;   /* stack image and button vertically */
+  align-items: center;      /* center both image and button */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Certificate image */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);
+  height: auto;
+  display: block;
+  margin: 12px auto;
+}
+
+/* Download button */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+
+nav.nav-bar ul {
+  display: flex;
+  justify-content: space-between;  /* spreads items */
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px;                 /* little spacing on sides */
+  list-style: none;
+  max-width: 100%;                 /* let it use full width */
+}
+
+/* === Mobile layout: use full width with small gutters === */
+@media (max-width: 640px) {
+  /* any common wrappers you use */
+  .container,
+  .section,
+  .section-inner,
+  .content-wrap,
+  .hero,
+  .intro,
+  .panel,
+  .contact-container {
+    width: 100%;
+    max-width: none;           /* remove desktop max-widths */
+    margin: 0 auto;
+    padding-left: 16px;        /* small, even side gutters */
+    padding-right: 16px;
+  }
+
+  /* kill multi-column layouts on mobile */
+  .two-col, .hero-grid, .grid, .row {
+    display: block !important;           /* or grid -> 1 column */
+  }
+  .two-col > *, .hero-grid > *, .grid > *, .row > * {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 16px 0;
+  }
+
+  /* text blocks shouldn’t be clamped to a narrow width */
+  .text-col, .hero-text, .left-col, .right-col {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* lists look cramped without padding on small screens */
+  ul { padding-left: 1.1rem; }
+
+  /* big headings: avoid weird wrapping */
+  h1, .hero h1 { font-size: clamp(24px, 8vw, 36px); line-height: 1.2; }
+  h2 { font-size: clamp(20px, 6.5vw, 30px); line-height: 1.25; }
+
+  /* CTA buttons: centered and not edge-to-edge unless you want it */
+  .btn, .download-button {
+    display: block;
+    width: auto;
+    max-width: 520px;
+    margin: 12px auto;
+    text-align: center;
+  }
+}
+
+/* Hero section shared across all tabs */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background: linear-gradient(to bottom, #0b0e13, #11151c); /* matches your other pages */
+  color: #fff;
+  min-height: 280px;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-section img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background: #121212 !important;  /* or any solid color you prefer */
+  color: #f5f5f5;                  /* text color for contrast */
+}
+
+body.soc-page {
+  background: #121212 !important;
+  color: #f5f5f5;
+}
+
+/* --- SOC page spacing tune-up --- */
+.wrap p { 
+  line-height: 1.55;         /* was ~1.7 */
+  margin: 8px 0 10px;        /* less top/bottom space */
+}
+
+h2 { margin: 0 0 8px; }       /* smaller gap below section titles */
+h3 { margin: 10px 0 6px; }    /* smaller gap for sub-heads */
+
+.section { margin-top: 18px; }  /* sections closer together */
+.card { padding: 18px; }        /* slightly tighter cards */
+
+ul { margin: 6px 0 0 20px; }    /* bring lists closer to headings */
+li { margin: 4px 0; }           /* tighter list items */
+
+
+/* --- Natural, non-cropping video --- */
+.video-wrap{
+  max-width: 980px;
+  margin: 16px auto 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  background: #0b0b0b;
+}
+
+.video-wrap video{
+  display: block;
+  width: 100%;
+  height: auto;             /* let the video decide its height */
+  aspect-ratio: 16 / 9;     /* keeps it tidy on odd browsers */
+  object-fit: contain;      /* never crops; letterboxes if needed */
+}
+
+/* SOC page spacing tweaks */
+.hero-section { padding: 20px 0 8px; }
+.hero-section p { margin: 8px 0 10px; }
+
+.section.card { margin-top: 18px; padding: 18px 20px; }
+.card p { margin: 0 0 10px; line-height: 1.6; }
+
+.soc-badges { margin: 8px 0 10px; }
+
+/* 1) Background video behind everything */
+.video-background{
+  position: fixed;
+  inset: 0;
+  z-index: -1;              /* keep it behind nav/content */
+  overflow: hidden;
+}
+.video-background video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fill screen without borders */
+}
+
+/* 2) Make only SOC page transparent so the video is visible */
+body.soc-page{
+  background: transparent !important;  /* overrides gradient from body */
+  color: #f5f5f5;
+}
+
+/* 3) Ensure nav/content sit above the video */
+.nav-bar{ position: sticky; top: 0; z-index: 1000; }
+.nav-spacer{ height: 86px; }          /* you already have this in the page */
+
+/* 4) Natural, non-cropping video player */
+.video-wrap{
+  max-width: 980px;
+  margin: 16px auto 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  background: #0b0b0b;
+}
+.video-wrap video{
+  display: block;
+  width: 100%;
+  height: auto;             /* keep natural height */
+  aspect-ratio: 16 / 9;     /* keeps it tidy */
+  object-fit: contain;      /* do not crop */
+}
+
+/* 5) Tighter text spacing on this page */
+.soc-card p{ margin: 8px 0 10px; line-height: 1.58; }
+.soc-card h2{ margin: 0 0 8px; }
+.soc-section{ margin: 22px 0; }
+
+/* --- SOC page adjustments --- */
+
+/* reduce the nav spacer just a bit */
+body.soc-page .nav-spacer {
+  height: 70px; /* was 86px */
+}
+
+/* tighten hero text spacing */
+body.soc-page .split-hero.compact-hero h1 {
+  margin-bottom: 8px; /* was probably ~20px */
+}
+
+body.soc-page .split-hero.compact-hero p.tagline {
+  margin-top: 0;
+  margin-bottom: 10px; /* reduce gap under paragraph */
+  line-height: 1.4;    /* a bit denser text */
+}
+
+/* tighter spacing between paragraphs site-wide */
+body.soc-page p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; /* default is usually 1em */
+}
+
+/* =========================
+   SOC page spacing tighten
+   ========================= */
+body.soc-page .nav-spacer{
+  height: 56px !important;           /* was ~86px */
+}
+
+/* Pull the hero block up & make it denser */
+body.soc-page .split-hero.compact-hero{
+  padding-top: 8px !important;
+  padding-bottom: 12px !important;
+  row-gap: 8px !important;
+  min-height: auto !important;       /* don't force extra height */
+}
+
+body.soc-page .split-hero.compact-hero .hero-text h1{
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+  line-height: 1.15 !important;
+}
+
+body.soc-page .split-hero.compact-hero .hero-text .tagline{
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+  max-width: 70ch;                   /* keep nice line length */
+}
+
+/* General paragraph spacing inside SOC page */
+body.soc-page p{
+  margin: 0.35em 0 !important;       /* default is ~1em */
+  line-height: 1.55 !important;
+}
+
+/* Cards / sections spacing tighter */
+body.soc-page .soc-section{
+  margin: 18px 0 !important;         /* was ~28px */
+}
+body.soc-page .soc-card{
+  padding: 16px !important;          /* was ~20px */
+}
+body.soc-page .soc-card h2{
+  margin: 0 0 8px 0 !important;
+}
+
+/* Chips row margin smaller */
+body.soc-page .soc-badges{
+  margin: 8px 0 14px !important;
+}
+
+/* Video wrapper: keep full width, a bit closer to chips */
+body.soc-page .video-wrap{
+  max-width: 980px;
+  margin: 12px auto 18px !important;
+}
+
+/* ===== FINAL, GLOBAL mobile/desktop nav fix ===== */
+
+/* Desktop: keep sticky nav; spacer takes nav's height (set by JS) */
+@media (min-width: 901px) {
+  nav.nav-bar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  /* If you use a spacer, keep it visible on desktop */
+  .nav-spacer {
+    display: block !important;
+    height: 86px; /* JS will overwrite to exact height */
+  }
+}
+
+/* Mobile: nav in normal flow so content can never scroll under it */
+@media (max-width: 900px) {
+  /* Kill any page padding tricks */
+  html, body, main, .wrap, .container, .content, .page {
+    padding-top: 0 !important;
+  }
+
+  nav.nav-bar {
+    position: relative !important;  /* Non-sticky */
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1000 !important;
+  }
+
+  /* Spacer not needed on phones */
+  .nav-spacer {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  /* Avoid hidden anchors on phones */
+  :target { scroll-margin-top: 88px; }
+}
+
+/* ===== FINAL, NO-JS NAV FIX (same on all pages) ===== */
+:root{
+  --nav-h-desktop: 86px;  /* adjust if your desktop nav is taller */
+  --nav-h-mobile: 64px;   /* adjust if your mobile nav wraps to two lines */
+}
+
+/* Desktop: keep sticky nav; spacer equals nav height */
+@media (min-width: 901px){
+  nav.nav-bar{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-spacer{
+    display: block !important;
+    height: var(--nav-h-desktop) !important;
+  }
+}
+
+/* Mobile: nav is NOT sticky; spacer still adds breathing room so nothing tucks under */
+@media (max-width: 900px){
+  /* Kill any old padding hacks that pushed content under the nav */
+  html, body, main, .wrap, .container, .content, .page{
+    padding-top: 0 !important;
+  }
+
+  nav.nav-bar{
+    position: relative !important;  /* not sticky on phones */
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* Keep a small spacer so content never bumps the nav */
+  .nav-spacer{
+    display: block !important;
+    height: var(--nav-h-mobile) !important;
+  }
+
+  /* Anchor jumps won’t hide under the nav on phones */
+  :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
+}
+
+/* ===== CONTACT PAGE — MOBILE FIX: make nav truly full width ===== */
+@media (max-width: 900px){
+  /* 1) Kill any container padding that is boxing the nav */
+  body.contact-page,
+  body.contact-page header,
+  body.contact-page main,
+  body.contact-page .container,
+  body.contact-page .content{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  /* 2) Bar itself: edge-to-edge */
+  body.contact-page nav.nav-bar{
+    width:100% !important;
+    padding:0 !important;
+    margin:0 !important;
+  }
+
+  /* 3) UL: full width, two columns, no right-alignment */
+  body.contact-page nav.nav-bar > .nav-links{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:10px !important;
+
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 8px !important;     /* tiny side gutter; set 0 for none */
+    box-sizing:border-box !important;
+
+    justify-content:stretch !important;
+    justify-items:stretch !important;
+    align-items:stretch !important;
+  }
+
+  /* 4) Children: prevent auto right-align via margins */
+  body.contact-page .nav-links li,
+  body.contact-page .nav-links a{
+    margin:0 !important;
+    width:100% !important;        /* make each button span its grid cell */
+  }
+}
+
+/* ===== CONTACT PAGE MOBILE FIX ===== */
+@media (max-width:900px){
+  /* Keep nav in normal flow (not on top of content) */
+  .nav-bar{
+    position:relative !important;
+    top:auto !important;
+    z-index:2 !important;
+    transform:none !important;
+  }
+  .nav-bar.hidden-navbar,
+  .nav-bar.nav-hidden{ transform:none !important; }
+
+  /* Kill any negative margins/absolute positions on the portrait */
+  .profile-pic,
+  .contact-image img,
+  header .profile-pic,
+  header .hero-image img{
+    position:static !important;
+    margin-top: 16px !important;   /* push the image fully below the nav */
+    transform:none !important;
+  }
+
+  /* Ensure the section itself doesn't pull upward */
+  header, .contact-image, .contact-container{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+}
+/* CONTACT PAGE — stop the form card from overlapping the photo on mobile */
+@media (max-width: 900px){
+  body.contact-page .contact-container{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin: 12px auto !important;
+    padding: 0 12px !important;
+  }
+
+  body.contact-page .contact-image{
+    order: 0;
+    margin: 8px 0 0 0 !important;
+    position: relative !important;
+    z-index: 1 !important;               /* keep image above */
+  }
+
+  body.contact-page .contact-image img{
+    position: static !important;
+    transform: none !important;
+    max-width: 320px !important;
+    width: 85% !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    border: 2px solid #fff !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
+  }
+
+  body.contact-page .contact-form{
+    order: 1;
+    margin-top: 0 !important;            /* neutralize any negative margins */
+    padding-top: 16px !important;
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  /* If any global “card” style is pulling upward, neutralize it here */
+  body.contact-page .section-card,
+  body.contact-page .card{
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+}
+/* ===== GLOBAL MOBILE FIXES (<=900px) ===== */
+@media (max-width:900px){
+  /* Background video behind everything */
+  .video-background{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+  .video-background video{ width:100%; height:100%; object-fit:cover; }
+
+  /* Nav never overlaps content; show all tabs */
+  nav.nav-bar{
+    position:relative !important; top:auto !important; z-index:2 !important;
+    background:#1f1f1f; margin:0 0 12px; box-shadow:0 3px 10px rgba(0,0,0,.25);
+    transform:none !important; opacity:1 !important; visibility:visible !important;
+  }
+  nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{ transform:none !important; }
+  nav .nav-links{
+    display:grid !important; grid-template-columns:repeat(2,1fr) !important;
+    gap:10px !important; list-style:none !important;
+    margin:0 !important; padding:10px 8px !important;
+  }
+  nav .nav-links a{
+    display:block !important; text-align:center !important;
+    padding:12px 14px !important; color:#fff !important;
+    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    border-radius:10px !important; text-decoration:none !important;
+  }
+
+  /* Keep first section clear of the nav */
+  .split-hero, main > section:first-of-type{ margin-top:0; padding-top:8px; }
+
+  /* Contact page: keep everything in frame */
+  .contact-container{ display:flex; flex-direction:column; gap:12px; margin:8px 12px 24px; padding:0; }
+  .contact-image{ display:block; text-align:center; margin:6px 0 10px; }
+  .contact-image img{
+    width:min(360px,78vw); height:auto;
+    border-radius:18px; border:2px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,.35);
+  }
+  .contact-form{
+    padding:16px; background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.1); border-radius:16px; color:#fff;
+  }
+  .contact-form input{ height:44px; }
+  .contact-form textarea{ min-height:120px; resize:vertical; }
+  .footer-spacer{ height:100px; }
+}
+
+/* ===== DESKTOP POLISH (>=901px) ===== */
+@media (min-width:901px){
+  nav.nav-bar.nav-hidden{ transform:translateY(-110%); transition:transform .24s ease; }
+  .contact-image img{ width:clamp(360px,28vw,460px); }
+  .contact-form textarea{ min-height:160px; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { overflow-x: hidden; } /* prevent sideways scroll from full-bleed sections */
+
+/* Full-bleed utility: makes a section stretch edge-to-edge even inside a centered container */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ensure the bars actually fill with color */
+.nav-bar,
+footer {
+  background: #1f1f1f;   /* your grey/black bar color */
+  margin: 0;             /* remove side gaps */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* === Constrain content inside === */
+.contact-container,
+.footer-wrapper {
+  max-width: 1100px;     
+  margin: 0 auto;
+  padding: 0 20px;       
+}
+
+/* Reset browser default spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents sideways scroll from full-bleed */
+}
+
+/* Full-bleed utility */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Nav + Footer background bars */
+.nav-bar,
+footer {
+  background: #1f1f1f;  /* same as your other pages */
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Certifications: fix weird wrapping on mobile */
+.certifications-section { text-align: left; }
+
+.certifications-section p,
+.certifications-section li {
+  text-align: left;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;    /* allow long codes to wrap */
+  hyphens: auto;              /* nicer hyphenation where supported */
+}
+
+/* If your details use <br> to force new lines, hide them on small screens */
+@media (max-width: 640px) {
+  .certifications-section br { display: none; }
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.cert-card {
+  background: rgba(0,0,0,0.35); /* subtle background */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cert-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #f0c33c; /* highlight title */
+}
+
+.cert-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+
+.cert-meta dt {
+  font-weight: 600;
+  color: #fff;
+}
+
+.cert-meta dd {
+  margin: 0;
+  color: #ddd;
+  overflow-wrap: anywhere; /* lets long codes wrap nicely */
+}
+
+.cert-media {
+  text-align: center;
+}
+
+.cert-image {
+  max-width: 260px;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  display: block;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.download-button:hover {
+  background: #e64a19;
+}
+
+/* mobile: stack meta vertically */
+@media (max-width: 600px) {
+  .cert-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Certifications hard reset (scoped) --- */
+#certifications, 
+#certifications * {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  letter-spacing: normal !important;
+}
+
+/* Ensure list items are NOT flex/grid from global rules */
+#certifications .cert-list > li {
+  display: block !important;
+}
+
+/* Layout for the detail list */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+}
+
+/* Make each term/value a clean block line */
+#certifications .cert-meta dt,
+#certifications .cert-meta dd {
+  display: block !important;
+  margin: 0;
+}
+
+/* On small screens, stack the pairs vertically */
+@media (max-width: 600px) {
+  #certifications .cert-meta { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* Tidy up bullets and spacing */
+#certifications .cert-list { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: grid; 
+  gap: 24px; 
+}
+
+#certifications .cert-card { 
+  background: rgba(0,0,0,.35); 
+  border-radius: 12px; 
+  padding: 20px; 
+}
+
+#certifications .cert-card h3 { 
+  margin: 0 0 8px; 
+}
+
+/* If any <br> slipped in, kill them on mobile */
+@media (max-width: 640px) {
+  #certifications br { display: none !important; }
+}
+
+/* Keep cert labels/values tidy on phones */
+@media (max-width: 600px) {
+  #certifications .cert-meta {
+    grid-template-columns: 1fr !important; /* stack label over value */
+  }
+  #certifications .cert-meta dt,
+  #certifications .cert-meta dd {
+    display: block !important;
+    margin: 0;
+    line-height: 1.4;
+  }
+  /* critical: prevent words splitting onto separate lines */
+  #certifications .cert-meta dd {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+}
+
+/* remove bullets/margins that may be styled globally */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;   /* centers the text */
+}
+/* ==== CERTIFICATIONS: mobile fix & hard reset ==== */
+#certifications { text-align: left !important; }
+
+#certifications h2,
+#certifications h3,
+#certifications p,
+#certifications li,
+#certifications dt,
+#certifications dd {
+  white-space: normal !important;      /* no forced breaks */
+  word-break: normal !important;        /* undo break-all/anywhere */
+  overflow-wrap: break-word !important; /* wrap only when needed */
+  letter-spacing: normal !important;
+  text-align: left !important;
+}
+
+/* remove bullets / weird list spacing */
+#certifications ul { 
+  list-style: none !important; 
+  padding-left: 0 !important; 
+  margin-left: 0 !important; 
+}
+#certifications li { display: block !important; }
+
+/* detail grid (dt/dd) */
+#certifications .cert-meta {
+  display: grid !important;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 16px;
+}
+#certifications .cert-meta dt { font-weight: 600; margin: 0; }
+#certifications .cert-meta dd { margin: 0; }
+
+/* phone layout: stack labels over values */
+@media (max-width: 600px) {
+  #certifications h2 { font-size: 1.8rem; line-height: 1.2; } /* stop the title from breaking oddly */
+  #certifications .cert-meta { grid-template-columns: 1fr !important; }
+}
+
+/* optional: center the certificate image and button */
+#certifications .cert-media { text-align: center; }
+#certifications .cert-image { max-width: 260px; width: 100%; display: block; margin: 10px auto; }
+
+.site-footer .footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center !important; /* force center */
+}
+
+/* ---- FIX mobile word splitting in Certifications ---- */
+@media (max-width: 640px) {
+  /* hard reset for this section */
+  #certifications, #certifications * {
+    word-break: keep-all !important;     /* never break inside words */
+    overflow-wrap: normal !important;     /* wrap only at spaces */
+    white-space: normal !important;
+    hyphens: none !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+  }
+
+  /* title sizing so it fits without breaking weirdly */
+  #certifications h2 {
+    font-size: clamp(22px, 6vw, 34px);
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  /* if you’re using the dl/dt/dd layout */
+  #certifications .cert-meta {
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* label above value */
+    gap: 6px 12px;
+  }
+}
+
+#certifications img.cert-image {
+  display: block;           /* makes it behave like a block element */
+  margin: 0 auto;           /* auto left & right = center horizontally */
+  max-width: 100%;          /* prevent overflow on small screens */
+  height: auto;             /* keep proportions */
+}
+
+#certifications .download-button {
+  display: inline-block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Center certificate image on all screens */
+#certifications .cert-media {
+  display: flex !important;          /* ignore parent text-align */
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make sure no global float or width rule pushes it right */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);           /* scale down on mobile, cap on desktop */
+  height: auto;
+  display: block;
+  margin: 12px 0;                    /* vertical spacing */
+}
+
+/* Center the download button under the image */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+/* Wrap image + button in a centered column */
+#certifications .cert-media {
+  display: flex !important;
+  flex-direction: column;   /* stack image and button vertically */
+  align-items: center;      /* center both image and button */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Certificate image */
+#certifications img.cert-image {
+  float: none !important;
+  width: min(100%, 520px);
+  height: auto;
+  display: block;
+  margin: 12px auto;
+}
+
+/* Download button */
+#certifications .download-button {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+}
+
+nav.nav-bar ul {
+  display: flex;
+  justify-content: space-between;  /* spreads items */
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px;                 /* little spacing on sides */
+  list-style: none;
+  max-width: 100%;                 /* let it use full width */
+}
+
+/* === Mobile layout: use full width with small gutters === */
+@media (max-width: 640px) {
+  /* any common wrappers you use */
+  .container,
+  .section,
+  .section-inner,
+  .content-wrap,
+  .hero,
+  .intro,
+  .panel,
+  .contact-container {
+    width: 100%;
+    max-width: none;           /* remove desktop max-widths */
+    margin: 0 auto;
+    padding-left: 16px;        /* small, even side gutters */
+    padding-right: 16px;
+  }
+
+  /* kill multi-column layouts on mobile */
+  .two-col, .hero-grid, .grid, .row {
+    display: block !important;           /* or grid -> 1 column */
+  }
+  .two-col > *, .hero-grid > *, .grid > *, .row > * {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 0 16px 0;
+  }
+
+  /* text blocks shouldn’t be clamped to a narrow width */
+  .text-col, .hero-text, .left-col, .right-col {
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* lists look cramped without padding on small screens */
+  ul { padding-left: 1.1rem; }
+
+  /* big headings: avoid weird wrapping */
+  h1, .hero h1 { font-size: clamp(24px, 8vw, 36px); line-height: 1.2; }
+  h2 { font-size: clamp(20px, 6.5vw, 30px); line-height: 1.25; }
+
+  /* CTA buttons: centered and not edge-to-edge unless you want it */
+  .btn, .download-button {
+    display: block;
+    width: auto;
+    max-width: 520px;
+    margin: 12px auto;
+    text-align: center;
+  }
+}
+
+/* === Even paragraph justification (site-wide) === */
+p {
+  text-align: justify !important;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  line-height: 1.75;
+  margin: 0 0 .9rem;
+}
+
+/* Don’t justify headings, lists, or nav items */
+h1, h2, h3, h4, h5, h6,
+ul, ol,
+.nav-links a,
+.hero-cta,
+.quick-links { text-align: left !important; }
+
+/* ===== UNIVERSAL, NO-JS, NO-SPACER NAV FIX ===== */
+:root{
+  --nav-h-mobile: 64px;   /* adjust if your mobile nav is taller */
+  --nav-h-desktop: 86px;  /* adjust to your real desktop nav height */
+}
+
+/* Make the navbar fixed and consistent on all pages/sizes */
+nav.nav-bar{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0; right: 0;
+  z-index: 1000 !important;
+}
+
+/* Content never hides under nav: pad the body by nav height */
+body{
+  padding-top: var(--nav-h-mobile) !important;
+}
+
+/* Desktop gets bigger padding for the taller nav */
+@media (min-width: 901px){
+  body{ padding-top: var(--nav-h-desktop) !important; }
+}
+
+/* If any pages still have spacer divs, neutralize them */
+.nav-spacer{ display: none !important; height: 0 !important; }
+
+/* Make sure background video stays behind the fixed nav */
+.video-background{ z-index: 0 !important; }
+
+/* Mobile nav links: two-column grid */
+@media (max-width: 900px) {
+  nav .nav-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 10px 8px !important; /* Adjusted padding for sides */
+    list-style: none !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  nav .nav-links li {
+    list-style: none !important;
+  }
+
+  nav .nav-links li a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px 14px !important;
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  /* Anchor jumps won’t hide under the nav on phones */
+  :target{ scroll-margin-top: calc(var(--nav-h-mobile) + 8px); }
 }
 
 
