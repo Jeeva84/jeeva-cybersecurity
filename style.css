@@ -6106,6 +6106,105 @@ section .btn-download:hover {
   display: inline-block; /* shrink-wrap around content */
   width: 100%; /* still full width if you want */
 }
+/* ===== Resume – Summary layout & spacing fixes ===== */
+
+/* Desktop: text left, photo on the right with even spacing */
+@media (min-width: 901px){
+  .resume-page .split-hero{
+    display: grid !important;
+    grid-template-columns: 1fr 260px;        /* text | photo */
+    grid-template-areas: "text photo";
+    align-items: center;
+    gap: 24px;
+    padding: 20px 24px !important;
+  }
+  .resume-page .split-hero h1{
+    grid-area: text;
+    margin: 0 0 10px 0 !important;
+    line-height: 1.15;
+  }
+  .resume-page .split-hero p{
+    grid-area: text;
+    margin: 6px 0 10px 0 !important;         /* add a little air above the first line */
+    text-align: justify;                      /* tidy edge */
+  }
+  /* target whichever element wraps the photo */
+  .resume-page .split-hero .profile-photo,
+  .resume-page .split-hero .resume-photo,
+  .resume-page .split-hero .profile-badge{
+    grid-area: photo;
+    justify-self: end;                        /* keep photo snug to the right edge */
+  }
+  .resume-page .split-hero .profile-photo img,
+  .resume-page .split-hero .resume-photo img,
+  .resume-page .split-hero .profile-badge img{
+    width: 240px; height: 240px;              /* a touch larger */
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+/* Mobile: stack Title → Photo → Text, and center the photo */
+@media (max-width: 900px){
+  .resume-page .split-hero{
+    display: grid !important;
+    grid-template-areas:
+      "title"
+      "photo"
+      "text";
+    justify-items: center;
+    align-items: start;
+    row-gap: 12px;
+    padding: 16px 14px !important;
+  }
+  .resume-page .split-hero h1{
+    grid-area: title;
+    margin: 0 !important;                    /* prevents the "Hands-on" line from kissing the top */
+    line-height: 1.15;
+    text-align: left;
+    width: 100%;
+  }
+  .resume-page .split-hero .profile-photo,
+  .resume-page .split-hero .resume-photo,
+  .resume-page .split-hero .profile-badge{
+    grid-area: photo;
+    display: flex; justify-content: center; width: 100%;
+    margin: 6px 0 8px 0;
+  }
+  .resume-page .split-hero .profile-photo img,
+  .resume-page .split-hero .resume-photo img,
+  .resume-page .split-hero .profile-badge img{
+    width: 220px; height: 220px;             /* centered & consistent */
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .resume-page .split-hero p{
+    grid-area: text;
+    width: 100%;
+    margin: 6px 0 10px 0 !important;         /* fixes the “starts at the very top” look */
+    text-align: justify;
+  }
+}
+
+/* Make the section panels a bit tighter so the grey area isn’t oversized */
+.resume-page main > section{
+  padding: 18px 20px !important;
+  margin: 14px auto !important;
+}
+
+/* Match the orange button style from the homepage */
+.resume-page .btn-download{
+  display:inline-block;
+  padding: 14px 22px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #FF8A00, #FF6A00);
+  color:#111; font-weight: 700; text-decoration:none;
+  box-shadow: 0 8px 22px rgba(255,106,0,.25), inset 0 1px 0 rgba(255,255,255,.25);
+  transition: transform .06s ease, filter .06s ease;
+}
+.resume-page .btn-download:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+.resume-page .btn-download:active{ transform: translateY(0); filter: brightness(.98); }
+
 
 
 
