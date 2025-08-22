@@ -6409,6 +6409,29 @@ body.resume-page .split-hero p:first-of-type{
   clear: both !important;
   display: block;
 }
+/* ========== Resume: fix "Hands-on" wrapping on mobile ========== */
+
+/* If the photo is floated on desktop, that's fine. On mobile, don't float. */
+@media (max-width: 900px){
+  body.resume-page .split-hero .profile-photo{
+    float: none !important;           /* don't let text wrap beside it */
+    display: block !important;
+    margin: 12px auto 10px !important;/* centre the photo */
+    text-align: center !important;
+  }
+
+  /* Make absolutely sure the first paragraph starts BELOW the image */
+  body.resume-page .split-hero p:first-of-type{
+    clear: both !important;           /* prevents that single “Hands-on” line */
+    margin-top: 10px !important;
+  }
+}
+
+/* Optional (helps on some browsers if an old float sticks) */
+body.resume-page .split-hero p{
+  clear: none;                        /* default on larger screens */
+}
+
 
 
 
