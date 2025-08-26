@@ -6466,6 +6466,13 @@ body.resume-page .split-hero p{
     clear: both !important;
   }
 }
+/* Mobile: add a small gap above the nav on every page */
+@media (max-width: 900px){
+  body > nav.nav-bar{
+    margin-top: 8px !important;
+  }
+}
+
 
 
 
