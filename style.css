@@ -6454,6 +6454,19 @@ body.resume-page .split-hero p{
   .resume-page .handson-pill{ display:none !important; }
 }
 
+/* Mobile fix: center portrait and start text below it */
+@media (max-width: 640px){
+  .profile-inline{
+    float: none !important;
+    display: block !important;
+    margin: 8px auto 12px auto !important; /* centered */
+  }
+  /* Make the first summary paragraph clear any floats just in case */
+  .resume-page section:first-of-type p:first-of-type{
+    clear: both !important;
+  }
+}
+
 
 
 
