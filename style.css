@@ -6468,6 +6468,23 @@ body.resume-page .split-hero p{
 }
 
 
+/* Contact page: add a small gap above the nav on mobile */
+@media (max-width: 900px){
+  /* Guaranteed spacer (prevents margin-collapsing) */
+  body.contact-page::before,
+  body.page-specific.contact-page::before{
+    content: "";
+    display: block;
+    height: 8px; /* adjust to taste */
+  }
+
+  /* If you also want the nav itself to have top margin (optional) */
+  body.contact-page > nav.nav-bar,
+  body.page-specific.contact-page > nav.nav-bar{
+    margin-top: 0 !important; /* keep 0 since spacer handles it */
+  }
+}
+
 
 
 
