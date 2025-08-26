@@ -6450,6 +6450,10 @@ body.resume-page .split-hero p{
     margin: 6px 0 0 0;
   }
 }
+@media (max-width: 640px){
+  .resume-page .handson-pill{ display:none !important; }
+}
+
 
 
 
