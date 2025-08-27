@@ -6485,6 +6485,33 @@ body.resume-page .split-hero p{
   }
 }
 
+/* Desktop: avoid breaking words with hyphens */
+@media (min-width: 901px){
+  .page-specific p,
+  .page-specific li{
+    hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;  /* don't force mid-word breaks */
+  }
+}
+
+/* Desktop: widen the left story column and tighten side padding slightly */
+@media (min-width: 1100px){
+  /* If your wrapper is already a grid or flex, this still works */
+  .home-page .two-col,
+  .page-specific .two-col{
+    display: grid;
+    grid-template-columns: 60% 40%;   /* was likely 50/50 */
+    column-gap: 24px;
+  }
+
+  /* Left card extra breathing room */
+  .home-page .two-col > :first-child,
+  .page-specific .two-col > :first-child{
+    padding-left: 20px;
+    padding-right: 20px;              /* slightly slimmer padding = wider text line */
+  }
+}
 
 
 
