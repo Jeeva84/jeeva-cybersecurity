@@ -294,8 +294,20 @@
 })();
 </script>
 
+  <script>
+  (function stripSoftHyphens(root){
+    const SHY = /\u00AD/g; // soft hyphen
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let n;
+    while ((n = walker.nextNode())) {
+      if (SHY.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(SHY, "");
+    }
+  })(document.body);
+</script>
+
 </body>
 </html>
+
 
 
 
