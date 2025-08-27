@@ -6613,6 +6613,42 @@ body.resume-page .split-hero p{
     overflow-wrap: normal !important;
   }
 }
+/* ===== Mobile readability for HOME & HOME LABS ===== */
+@media (max-width: 900px){
+
+  /* 1) Widen the content panels and reduce side padding */
+  body.home-page main > :where(section,div,article,aside),
+  body.labs-page main > :where(section,div,article,aside){
+    width: 98% !important;                 /* was ~92% */
+    margin: 14px auto !important;
+    padding-left: 12px !important;         /* was 16px */
+    padding-right: 12px !important;
+  }
+
+  /* 2) Make paragraphs/lists easier to read (no justification or hyphens) */
+  body.home-page p, body.home-page li,
+  body.labs-page p, body.labs-page li{
+    text-align: left !important;
+    -webkit-hyphens: none !important;
+    hyphens: none !important;
+    word-break: keep-all !important;
+    overflow-wrap: anywhere !important;
+
+    font-size: 16px !important;            /* tune: 15.5–16.5 if needed */
+    line-height: 1.7 !important;
+    letter-spacing: .01em !important;
+    word-spacing: .02em !important;
+  }
+
+  /* 3) Bullet list spacing/indent for cleaner wraps */
+  body.home-page ul, body.labs-page ul{
+    padding-left: 1.1rem !important;
+  }
+  body.home-page li, body.labs-page li{
+    margin-bottom: 8px !important;
+  }
+}
+
 
 
 
