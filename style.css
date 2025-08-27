@@ -6649,6 +6649,30 @@ body.resume-page .split-hero p{
   }
 }
 
+/* ==== MOBILE: even, justified paragraphs on HOME & HOME LABS ==== */
+@media (max-width: 900px){
+  /* Paragraphs + list items */
+  body.home-page p, body.home-page li,
+  body.labs-page p, body.labs-page li{
+    text-align: justify !important;
+    text-justify: inter-word !important;   /* more natural for English */
+    -webkit-hyphens: auto !important;      /* allow hyphenation to avoid big gaps */
+    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;   /* only break very long tokens */
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    line-height: 1.65 !important;
+    font-size: 16px !important;             /* tweak 15.5–16.5 if needed */
+  }
+
+  /* Headings: nicer line breaks */
+  body.home-page h1, body.home-page h2, body.home-page h3,
+  body.labs-page h1, body.labs-page h2, body.labs-page h3{
+    text-wrap: balance;                      /* modern browsers smooth the wrap */
+  }
+}
+
 
 
 
