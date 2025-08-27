@@ -6513,6 +6513,49 @@ body.resume-page .split-hero p{
   }
 }
 
+/* Match Resume's section panels on Home & Home Labs */
+@media (min-width:901px){
+  body.home-page main,
+  body.labs-page main{ padding-top:20px !important; }
+
+  body.home-page main > section,
+  body.labs-page main > section{
+    width:100%;
+    max-width:1100px;
+    margin:16px auto;
+    padding:18px 20px;
+    box-sizing:border-box;
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+  }
+}
+@media (max-width:900px){
+  body.home-page main > section,
+  body.labs-page main > section{
+    width:92%;
+    margin:14px auto;
+    padding:16px;
+    box-sizing:border-box;
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+  }
+}
+
+/* Mobile text: stop choppy hyphenation/wraps */
+@media (max-width:900px){
+  body.home-page p, body.home-page li,
+  body.labs-page p, body.labs-page li{
+    text-align:left !important;            /* avoids big gaps */
+    -webkit-hyphens:none !important;
+    hyphens:none !important;
+    word-break:keep-all !important;        /* no mid-word splits */
+    overflow-wrap:anywhere !important;     /* break long tokens if needed */
+    line-height:1.6;
+  }
+}
+
 
 
 
