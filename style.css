@@ -6673,6 +6673,23 @@ body.resume-page .split-hero p{
   }
 }
 
+/* Kill auto-hyphenation site-wide (override anything earlier) */
+html, body, p, li {
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important; /* only break very long tokens */
+}
+
+/* If you still want justified copy on Home & Home Labs (mobile) */
+@media (max-width: 900px){
+  body.home-page p, body.home-page li,
+  body.labs-page p, body.labs-page li{
+    text-align: justify !important;
+    text-justify: inter-word !important;
+  }
+}
+
 
 
 
