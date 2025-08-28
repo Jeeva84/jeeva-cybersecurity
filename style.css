@@ -7053,6 +7053,14 @@ body.contact-page nav .nav-links {
   padding-bottom: 4px !important;
 }
 
+/* ===== Shared spacer below nav (used on Contact too) ===== */
+.nav-spacer { height: 10px; }
+
+/* ===== Contact page: ensure nav item spacing matches other pages ===== */
+body.contact-page nav .nav-links {
+  gap: 10px;
+}
+
 
 
 
