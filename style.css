@@ -6878,6 +6878,31 @@ body.home-page .card .cta-buttons {
     flex-wrap: wrap;
   }
 }
+/* Home CTA buttons: stack with a clear gap */
+body.home-page a.button,
+body.home-page .button,
+body.home-page .btn {
+  display: block;                 /* each button on its own line */
+  width: 100%;
+  margin: 0;                      /* reset any weird margins */
+}
+
+/* Add space ONLY between consecutive buttons */
+body.home-page a.button + a.button,
+body.home-page .button + .button,
+body.home-page .btn + .btn {
+  margin-top: 16px !important;    /* visible separation */
+}
+
+/* If they live in a wrapper, add gap there too (covers most themes) */
+body.home-page .cta,
+body.home-page .actions,
+body.home-page .cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 
 
 
