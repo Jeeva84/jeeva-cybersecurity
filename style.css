@@ -6903,6 +6903,43 @@ body.home-page .cta-buttons {
   gap: 16px;
 }
 
+/* === HOME: fix overlapping CTA buttons === */
+
+/* 1) Make each button a normal block and cancel any absolute/float/transform */
+body.home-page .card a.button,
+body.home-page .card .button,
+body.home-page .card .btn {
+  display: block !important;
+  position: static !important;   /* cancels absolute/relative offsets */
+  float: none !important;         /* cancels floats */
+  clear: both !important;         /* ensures next starts below */
+  transform: none !important;     /* cancels translate effects */
+  margin: 0 !important;           /* we’ll add spacing below */
+  width: 100% !important;         /* full width for clean stack */
+}
+
+/* 2) Add a hard gap between consecutive buttons */
+body.home-page .card a.button + a.button,
+body.home-page .card .button + .button,
+body.home-page .card .btn + .btn {
+  margin-top: 18px !important;    /* visible separation */
+}
+
+/* 3) If they sit in a wrapper, enforce column layout with gap */
+body.home-page .card .cta,
+body.home-page .card .actions,
+body.home-page .card .cta-buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+}
+
+/* 4) Safety: ensure the card reserves space (prevents overlap under shadows) */
+body.home-page .card {
+  overflow: visible;              /* or hidden; both prevent odd overlaps */
+  padding-bottom: 12px;
+}
+
 
 
 
