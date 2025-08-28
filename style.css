@@ -6940,6 +6940,36 @@ body.home-page .card {
   padding-bottom: 12px;
 }
 
+/* --- Fix overlap: stack the two CTA buttons with a gap --- */
+.about-me .cta-bar > div {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;          /* space between buttons */
+}
+
+/* Normalize the anchors so nothing floats/overlaps */
+.about-me .cta-bar a.hero-button,
+.about-me .cta-bar a.secondary-button {
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+  margin: 0 !important;          /* rely on gap above */
+  width: 100%;                   /* full-width buttons on mobile */
+}
+
+/* Optional: side-by-side on wider screens */
+@media (min-width: 640px) {
+  .about-me .cta-bar > div {
+    flex-direction: row !important;
+    gap: 12px !important;
+  }
+  .about-me .cta-bar a.hero-button,
+  .about-me .cta-bar a.secondary-button {
+    width: auto;                 /* natural width on desktop */
+  }
+}
+
 
 
 
