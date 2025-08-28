@@ -7023,6 +7023,23 @@ body.home-page .card {
     align-self: center;
   }
 }
+/* CONTACT page: give the navbar some top breathing room on mobile */
+@media (max-width: 900px) {
+  body.contact-page nav.nav-bar {
+    position: relative !important;
+    margin-top: 10px !important;                         /* space below browser chrome */
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6px) !important; /* handles notches */
+  }
+
+  /* Nudge the page content down a touch as well, in case the page lacks the spacer */
+  body.contact-page main,
+  body.contact-page .content,
+  body.contact-page .contact-container,
+  body.contact-page .page-header {
+    margin-top: 8px !important;
+  }
+}
+
 
 
 
