@@ -6794,6 +6794,55 @@ body.home-page .copy {
   grid-column: 1 / -1 !important;
 }
 
+/* HOME: justify only paragraph/list text inside the main content */
+body.home-page main p,
+body.home-page main li {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;   /* last line not stretched */
+  line-height: 1.7;
+  hyphens: auto;           /* softer spacing on long words */
+  white-space: normal;
+}
+
+/* Keep headings and buttons left/center — not justified */
+body.home-page main h1,
+body.home-page main h2,
+body.home-page main h3,
+body.home-page main h4,
+body.home-page main h5,
+body.home-page main h6,
+body.home-page main .btn,
+body.home-page main .button,
+body.home-page main a.button {
+  text-align: left;
+}
+
+/* Button layout + spacing on Home */
+body.home-page .cta-buttons,
+body.home-page .cta,
+body.home-page .actions {
+  display: flex;
+  flex-direction: column;   /* stack vertically on mobile */
+  gap: 14px;                /* space between buttons */
+}
+
+/* Make sure individual buttons don’t collapse margins */
+body.home-page .btn,
+body.home-page .button,
+body.home-page a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;                /* rely on gap above */
+}
+
+/* If your buttons are siblings without a wrapper, use this as a fallback */
+body.home-page .btn + .btn,
+body.home-page .button + .button,
+body.home-page a.button + a.button {
+  margin-top: 14px;
+}
 
 
 
