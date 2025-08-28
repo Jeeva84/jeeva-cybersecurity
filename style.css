@@ -6969,57 +6969,7 @@ body.home-page .card {
     width: auto;                 /* natural width on desktop */
   }
 }
-/* === CTA BAR LAYOUT FIX === */
-/* Center the whole bar content */
-.about-me .cta-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;       /* center paragraph + buttons */
-  gap: 16px;
-}
 
-/* Target the inner <div> that holds the two buttons */
-.about-me .cta-bar > div {
-  display: flex;
-  width: 100%;
-  max-width: 520px;          /* keeps buttons nicely contained */
-  justify-content: center;   /* center them horizontally */
-  align-items: center;
-  gap: 14px;
-  margin-inline: auto;       /* hard center in the card */
-}
-
-/* Normalize buttons */
-.about-me .cta-bar a.hero-button,
-.about-me .cta-bar a.secondary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-}
-
-/* Mobile: stack + full width + centered */
-@media (max-width: 640px) {
-  .about-me .cta-bar > div {
-    flex-direction: column;
-    gap: 14px;
-  }
-  .about-me .cta-bar a.hero-button,
-  .about-me .cta-bar a.secondary-button {
-    width: 100%;
-  }
-}
-
-/* Desktop/tablet: side-by-side and centered */
-@media (min-width: 641px) {
-  .about-me .cta-bar > div {
-    flex-direction: row;
-  }
-  .about-me .cta-bar a.hero-button,
-  .about-me .cta-bar a.secondary-button {
-    width: auto;
-  }
-}
 
 
 
