@@ -6793,6 +6793,13 @@ body.home-page .prose,
 body.home-page .copy {
   grid-column: 1 / -1 !important;
 }
+/* Force justification on ALL text inside home page */
+body.home-page,
+body.home-page * {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
 
 
 
