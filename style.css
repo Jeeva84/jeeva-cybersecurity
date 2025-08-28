@@ -6970,6 +6970,60 @@ body.home-page .card {
   }
 }
 
+/* === HOME: CTA buttons (exact structure you have) === */
+/* Keep the cta-bar box itself unchanged except centering its contents */
+.about-me .cta-bar {
+  text-align: center;
+}
+
+/* Inner div that holds the two buttons: centered layout with safe gap */
+.about-me .cta-bar > div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap;                 /* prevents crowding on desktop */
+  margin-inline: auto;             /* hard-center inside the card */
+}
+
+/* Normalize the two anchors so nothing overlaps or stretches weirdly */
+.about-me .cta-bar a.hero-button,
+.about-me .cta-bar a.secondary-button {
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  white-space: nowrap;
+  padding: 12px 18px;
+  border-radius: 16px;
+}
+
+/* Desktop / tablet: side-by-side, reasonable size */
+@media (min-width: 641px) {
+  .about-me .cta-bar a.hero-button,
+  .about-me .cta-bar a.secondary-button {
+    min-width: 180px;
+    max-width: 220px;              /* not too big */
+    width: auto;
+  }
+}
+
+/* Mobile: stack, centered, not too wide */
+@media (max-width: 640px) {
+  .about-me .cta-bar > div {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+  .about-me .cta-bar a.hero-button,
+  .about-me .cta-bar a.secondary-button {
+    width: min(420px, 92%);        /* comfortable width, centered */
+    align-self: center;
+  }
+}
+
 
 
 
