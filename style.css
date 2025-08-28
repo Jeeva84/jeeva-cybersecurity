@@ -6707,6 +6707,26 @@ html, body, p, li{
   }
 }
 
+/* Expand and justify text in home tab */
+body.home-page p,
+body.home-page li {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  line-height: 1.7 !important;
+  font-size: 17px !important;
+
+  /* Make text span the full width of its container */
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.home-page .content {
+  max-width: 100% !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 
 
