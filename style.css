@@ -7039,6 +7039,20 @@ body.home-page .card {
     margin-top: 8px !important;
   }
 }
+/* --- CONTACT PAGE FIXES --- */
+
+/* Add breathing room above nav bar only on contact.html */
+body.contact-page nav.nav-bar {
+  margin-top: 12px !important;  /* creates the top gap */
+}
+
+/* Make spacing between nav items consistent with other pages */
+body.contact-page nav .nav-links {
+  gap: 12px !important;          /* adjust to match other tabs */
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
 
 
 
