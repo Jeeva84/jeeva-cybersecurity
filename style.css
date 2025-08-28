@@ -6728,6 +6728,72 @@ body.home-page li {
   padding-right: 20px;
 }
 
+/* =======================
+   HOME TAB: widen + justify + stop hyphens
+   ======================= */
+
+/* 1) Kill hyphenation & odd word breaking everywhere on the home page */
+body.home-page *,
+body.home-page p,
+body.home-page li {
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* 2) Make paragraphs readable and fully justified */
+body.home-page p,
+body.home-page li {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  line-height: 1.7 !important;
+  font-size: 17px !important;
+}
+
+/* 3) Remove narrow column limits that are boxing the text */
+body.home-page .prose,
+body.home-page .content,
+body.home-page .copy,
+body.home-page [class*="prose"],
+body.home-page [class*="content"],
+body.home-page [class*="copy"],
+body.home-page [style*="max-width"] {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* 4) If something is using multi-column layout, turn it off */
+body.home-page * {
+  column-count: initial !important;
+  column-width: auto !important;
+}
+
+/* 5) On mobile, let the text container span full width with comfy padding */
+@media (max-width: 900px) {
+  body.home-page main,
+  body.home-page .content,
+  body.home-page .prose,
+  body.home-page .copy,
+  body.home-page .text,
+  body.home-page .section {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* 6) If the page uses CSS grid with a skinny column, force text to span all columns */
+body.home-page .text,
+body.home-page .content,
+body.home-page .prose,
+body.home-page .copy {
+  grid-column: 1 / -1 !important;
+}
+
 
 
 
