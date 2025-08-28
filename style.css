@@ -6843,6 +6843,71 @@ body.home-page .button + .button,
 body.home-page a.button + a.button {
   margin-top: 14px;
 }
+/* --- HOME: button spacing & layout --- */
+body.home-page .card .btn,
+body.home-page .card .button,
+body.home-page .card a.button {
+  display: inline-flex;           /* or block; either is fine */
+  align-items: center;
+  justify-content: center;
+  margin: 0;                      /* reset any margins */
+}
+
+/* If they are stacked as siblings, add space between them */
+body.home-page .card .btn + .btn,
+body.home-page .card .button + .button,
+body.home-page .card a.button + a.button {
+  margin-top: 14px !important;    /* creates the visible gap */
+}
+
+/* If your buttons sit inside a wrapper, this gives you gap automatically */
+body.home-page .card .actions,
+body.home-page .card .cta,
+body.home-page .card .cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Optional: side-by-side on larger screens */
+@media (min-width: 640px) {
+  body.home-page .card .actions,
+  body.home-page .card .cta,
+  body.home-page .card .cta-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+/* --- HOME: justify paragraphs/lists only --- */
+body.home-page .card p,
+body.home-page .card li,
+body.home-page .section p,
+body.home-page .section li,
+body.home-page .content p,
+body.home-page .content li,
+body.home-page p,
+body.home-page li {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  text-align-last: left;       /* keep final line natural */
+  line-height: 1.7;
+  hyphens: auto;               /* smooths spacing on long words */
+  white-space: normal;
+}
+
+/* Keep headings and buttons NOT justified */
+body.home-page h1,
+body.home-page h2,
+body.home-page h3,
+body.home-page h4,
+body.home-page h5,
+body.home-page h6,
+body.home-page .btn,
+body.home-page .button,
+body.home-page a.button {
+  text-align: left !important;
+}
+
 
 
 
