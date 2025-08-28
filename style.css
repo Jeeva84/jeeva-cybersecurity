@@ -6793,61 +6793,6 @@ body.home-page .prose,
 body.home-page .copy {
   grid-column: 1 / -1 !important;
 }
-/* Force justification on ALL text inside home page */
-body.home-page,
-body.home-page * {
-  text-align: justify !important;
-  text-justify: inter-word !important;
-}
-
-
-/* HEADINGS/TITLES: never justify */
-body.home-page h1,
-body.home-page h2,
-body.home-page h3,
-body.home-page h4,
-body.home-page h5,
-body.home-page h6,
-body.home-page .card-title,
-body.home-page .section-title,
-body.home-page .note-title {
-  text-align: left !important;
-  text-wrap: balance;
-  letter-spacing: normal !important;
-  word-spacing: normal !important;
-  display: block !important;
-}
-
-/* PARAGRAPHS + LISTS: justify nicely */
-body.home-page p,
-body.home-page li {
-  text-align: justify !important;
-  text-justify: inter-word !important;
-  text-align-last: left;           /* last line not stretched */
-  line-height: 1.7 !important;
-  white-space: normal !important;
-}
-
-/* Optional (helps reduce awkward gaps in modern browsers) */
-@supports (text-wrap: pretty) {
-  body.home-page p,
-  body.home-page li { text-wrap: pretty; }
-}
-
-/* If something still forces left-align on paragraphs, beat it */
-body.home-page .prose :where(p, li),
-body.home-page .content :where(p, li) {
-  text-align: justify !important;
-  text-align-last: left !important;
-}
-
-/* Prevent justify on buttons/labels/badges */
-body.home-page button,
-body.home-page a,
-body.home-page .badge,
-body.home-page .chip { text-align: left !important; }
-
-
 
 
 
