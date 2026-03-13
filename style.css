@@ -7102,13 +7102,40 @@ iframe {
   margin: auto;
 }
 
+.navbar::after {
+  display: none !important;
+}
 
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
 
+nav ul li {
+  white-space: nowrap;
+}
 
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: nowrap;
+}
 
-
-
+.navbar ul li {
+  white-space: nowrap;
+}
 
 
 
