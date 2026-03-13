@@ -7185,3 +7185,30 @@ hr {
   justify-content:space-between;
   align-items:center;
 }
+/* ===== NAVBAR FIX (force single row + remove line) ===== */
+
+nav.nav-bar{
+  width:100% !important;
+  max-width:1400px !important;
+  margin:0 auto !important;
+  border-bottom:none !important;
+  box-shadow:none !important;
+}
+
+nav.nav-bar .nav-links{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:8px !important;
+  width:100% !important;
+}
+
+nav.nav-bar .nav-links li{
+  white-space:nowrap !important;
+}
+
+nav.nav-bar .nav-links li a{
+  padding:6px 8px !important;
+  font-size:16px !important;
+}
