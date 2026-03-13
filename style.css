@@ -7061,8 +7061,46 @@ body.contact-page nav .nav-links {
   gap: 10px;
 }
 
+/* Azure SOC page layout improvements */
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: auto;
+}
 
+.about-story {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.about-story h3 {
+  margin-top: 30px;
+}
+
+.about-story ul {
+  margin-top: 10px;
+}
+
+.about-story li {
+  margin-bottom: 6px;
+}
+
+.about-facts {
+  padding: 25px;
+  line-height: 1.5;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+.about-me {
+  max-width: 1400px;
+  margin: auto;
+}
 
 
 
