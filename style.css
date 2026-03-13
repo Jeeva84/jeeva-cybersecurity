@@ -7246,3 +7246,22 @@ nav.nav-bar .nav-links li a{
 .azure-soc-page .content-container{
   max-width:900px;
 }
+/* Show bullets in lab lists */
+
+.about-story ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.about-story li {
+  margin-bottom: 6px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 40px;
+}
+.about-facts {
+  padding: 25px;
+  line-height: 1.6;
+}
