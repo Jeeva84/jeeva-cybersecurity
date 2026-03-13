@@ -7354,3 +7354,41 @@ nav.nav-bar .nav-links li a{
   margin-top:12px;
   padding:12px;
 }
+/* ===== Lab Section Styling ===== */
+
+.about-story h3{
+  margin-top:40px;
+  padding-bottom:10px;
+  border-bottom:2px solid rgba(255,255,255,0.08);
+  font-size:22px;
+}
+
+.about-story h4{
+  margin-top:18px;
+  color:#ffd24c;
+}
+
+.about-story pre{
+  background:#0f0f0f;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  overflow-x:auto;
+  font-size:14px;
+}
+
+.about-story ul{
+  list-style:disc;
+  padding-left:22px;
+}
+
+.about-story li{
+  margin-bottom:6px;
+}
+
+/* Improve video spacing */
+
+.about-story iframe{
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+}
