@@ -4691,11 +4691,10 @@ main#content section.split-hero.compact-hero{
 /* About section grid layout */
 .about-grid{
   display:grid;
-  grid-template-columns: 2fr 1fr;  /* story bigger, sidebar smaller */
+  grid-template-columns: minmax(0, 3fr) minmax(320px, 420px);
   gap:40px;
-  max-width:1400px;
-  margin:60px auto;
-  padding:0 40px;
+  max-width:1300px;
+  margin:auto;
   align-items:start;
 }
 
@@ -7407,4 +7406,71 @@ nav.nav-bar .nav-links li a{
   font-weight:500;
   font-size:18px;
   margin-bottom:25px;
+}
+/* ===== FIX SIDEBAR CARD LAYOUT ===== */
+
+.about-grid{
+  display:grid !important;
+  grid-template-columns: minmax(0, 2.2fr) minmax(320px, 380px);
+  gap:40px;
+  max-width:1300px;
+  margin:auto;
+  align-items:start;
+}
+
+.about-facts{
+  width:100% !important;
+  max-width:380px;
+  padding:30px !important;
+  line-height:1.7;
+  font-size:16px;
+
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(8px);
+
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.45);
+}
+
+/* clean tech stack list */
+
+.about-facts ul{
+  list-style:none;
+  padding:0;
+  margin-top:15px;
+}
+
+.about-facts li{
+  margin-bottom:12px;
+  padding-left:18px;
+  position:relative;
+  line-height:1.4;
+}
+
+.about-facts li::before{
+  content:"▸";
+  position:absolute;
+  left:0;
+  color:#ff5722;
+}
+.about-facts ul{
+  list-style:none;
+  padding:0;
+  margin-top:15px;
+}
+
+.about-facts li{
+  margin-bottom:10px;
+  padding-left:18px;
+  position:relative;
+  line-height:1.4;
+}
+
+.about-facts li::before{
+  content:"▸";
+  position:absolute;
+  left:0;
+  color:#ff5722;
 }
