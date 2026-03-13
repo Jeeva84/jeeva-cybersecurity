@@ -62,7 +62,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
-  padding: 10px 15px;
+  padding: 8px 8px;
   border-radius: 6px;
   transition: color 0.3s, background 0.3s;
 }
@@ -3211,7 +3211,7 @@ html { scroll-behavior: smooth; }
   nav.nav-bar{
     position: fixed !important; top: 0; left: 0; right: 0;
     z-index: 1000 !important; background: #1f1f1f !important;
-    padding: 10px 10px !important; box-shadow: 0 6px 14px rgba(0,0,0,.35);
+    padding: 10px 10px !important; box-shadow: none;
   }
 
   /* Toggle button */
@@ -3280,7 +3280,7 @@ html { scroll-behavior: smooth; }
     transform: translateY(0);
     transition: transform .24s cubic-bezier(.22,1,.36,1) !important;
     will-change: transform;
-    box-shadow: 0 6px 14px rgba(0,0,0,.35);
+    box-shadow: none;
   }
   /* Hidden state the JS will toggle */
   nav.nav-bar.nav-hidden,
@@ -3297,7 +3297,7 @@ html { scroll-behavior: smooth; }
     margin: 0; padding: 0;
   }
   nav .nav-links li{ list-style: none; flex: 0 0 auto !important; }
-  nav .nav-links li a{ display: inline-block; padding: 12px 14px; }
+  nav .nav-links li a{ display: inline-block; padding: 8px 10px; }
 
   /* Ensure page content sits below the fixed bar (and below QR banner if visible) */
   body{ padding-top: 56px !important; transition: padding-top .25s ease; }
@@ -7174,3 +7174,14 @@ hr {
   box-shadow: none !important;
 }
 
+.nav-bar{
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.nav-links{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
