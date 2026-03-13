@@ -7136,9 +7136,27 @@ nav ul li {
 .navbar ul li {
   white-space: nowrap;
 }
+.navbar::after,
+.navbar::before {
+  display: none !important;
+}
 
+hr {
+  display: none;
+}
 
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
 
+.navbar ul li {
+  list-style: none;
+  white-space: nowrap;
+}
 
 
 
