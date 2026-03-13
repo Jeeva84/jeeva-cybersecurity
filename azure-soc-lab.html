@@ -1,148 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeeva Kumaradas - Cybersecurity Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Cloud SOC Lab | Jeeva Kumaradas</title>
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="style.css?v=133">
 
-  <!-- Your main stylesheet -->
- <link rel="stylesheet" href="style.css?v=133" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Small, safe overrides that win against any older rules -->
-  <style>
-    /* ----- QR banner base styles (desktop + mobile) ----- */
-    #qr-banner[hidden]{ display:none !important; }
-    #qr-banner{
-      position: sticky; top: 0; z-index: 1100;
-      display: none; /* default hidden until JS decides */
-      align-items: center; justify-content: space-between; gap: .65rem;
-      padding: .7rem .9rem;
-      background: rgba(255,255,255,0.96);
-      color: #111;
-      border-bottom: 1px solid rgba(0,0,0,.08);
-      max-height: 72px !important; /* beat legacy clamps */
-      overflow: hidden;
-      transition: max-height .25s ease, opacity .22s ease, padding .2s ease, border-width .2s ease;
-    }
-    #qr-banner.hidden{ max-height:0; opacity:0; padding:0 0; border-width:0; }
-    #qr-banner .close{
-      appearance: none; border: 0; background: transparent; font-size: 18px; line-height: 1;
-      cursor: pointer; color: #333; padding: .25rem .4rem;
-    }
-    /* Force-show the banner if URL has ?qr=1 (body gets .qr-on) */
-    body.qr-on #qr-banner{ display:flex !important; }
-
-    /* Make both CTAs orange (match your resume button) */
-    .hero-cta .secondary-button{ background:#ff5722; color:#fff; border:none; }
-    .hero-cta .secondary-button:hover{ background:#e64a19; }
-
-    /* Optional: tidy paragraph alignment in About */
-    .about-story p{ text-align: justify; }
-
-    /* ===== Desktop: keep nav sticky if you like ===== */
-    @media (min-width:901px){
-      nav.nav-bar{ position: sticky; top:0; z-index:1000; }
-      nav.nav-bar.nav-hidden{ transform: translateY(-110%); transition: transform .24s ease; }
-    }
-
-    /* ===== Mobile hard reset (<=900px): nav in flow, no overlap, all tabs visible ===== */
-    @media (max-width:900px){
-      /* Remove old padding/offset tricks that caused overlap */
-      body, body.page-specific{ padding-top:0 !important; }
-      main#content::before{ content:none !important; display:none !important; }
-
-      /* Nav lives in normal flow (cannot cover hero) */
-      body.page-specific nav.nav-bar{
-        position: relative !important; top:auto !important; z-index:1 !important;
-        width:100% !important;
-        background:#1f1f1f !important;
-        padding:10px 8px !important; margin:0 0 10px 0 !important;
-        transform:none !important; visibility:visible !important; opacity:1 !important;
-        box-shadow:0 3px 10px rgba(0,0,0,.25);
-        height:auto !important; display:block !important;
-      }
-      /* Neutralize any old hide classes */
-      nav.nav-bar.hidden-navbar, nav.nav-bar.nav-hidden{
-        transform:none !important; display:block !important; height:auto !important;
-        opacity:1 !important; visibility:visible !important;
-      }
-
-      /* Show ALL tabs in a tidy 2-column grid (no horizontal scroll) */
-      nav .nav-links{
-        display:grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap:10px !important;
-        margin:0 !important; padding:0 !important;
-        max-height:none !important; height:auto !important;
-        overflow:visible !important; white-space:normal !important;
-        list-style:none !important;
-        visibility:visible !important; opacity:1 !important;
-      }
-      nav .nav-links li{ list-style:none !important; display:block !important; }
-      nav .nav-links a{
-        display:block !important; width:100% !important; text-align:center !important;
-        padding:12px 14px !important;
-        color:#fff !important;
-        background:rgba(255,255,255,.08) !important;
-        border:1px solid rgba(255,255,255,.18) !important;
-        border-radius:10px !important;
-        text-decoration:none !important;
-      }
-
-      /* Ensure hero never tucks under anything */
-      .split-hero{ margin-top:0 !important; padding-top:8px !important; }
-
-      /* Slightly smaller portrait on small screens */
-      .hero-image img{
-        width:220px !important; height:220px !important;
-        object-fit:cover !important; border-radius:50% !important;
-      }
-    }
-  </style>
 </head>
 
-<body class="page-specific home-page">
+<body class="page-specific">
 
-  <!-- Background video -->
-  <div class="video-background" aria-hidden="true">
-    <video autoplay muted loop playsinline>
-      <source src="videos/nmap-lab.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
+<!-- Navigation -->
+<nav class="nav-bar">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="resume.html">Resume</a></li>
+<li><a href="labs.html">Home Labs</a></li>
+<li><a href="passion.html">My Passion</a></li>
+<li><a href="soc-lab.html">SOC Lab</a></li>
+<li><a href="opportunities.html">Opportunities</a></li>
+<li><a href="certifications.html">Certifications</a></li>
+<li><a href="testimonials.html">Testimonials</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
 
-  <!-- Navigation -->
-  <nav class="nav-bar">
-    <ul class="nav-links">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="labs.html">Home Labs</a></li>
-      <li><a href="passion.html">My Passion</a></li>
-      <li><a href="/soc-lab.html">SOC Lab</a></li>
-      <li><a href="opportunities.html">Opportunities</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="nav-spacer"></div>  <!-- add this -->
+<div class="nav-spacer"></div>
 
-  <!-- QR banner (shows when link has ?qr=1 or &ref=qr; hides on scroll or ✕) -->
-  <div id="qr-banner" class="qr-banner" hidden>
-    <div>
-      <strong>Thanks for scanning!</strong>
-      <span> You’re in the right place — see my journey, labs, and how I can help your team.</span>
-    </div>
-    <button class="close" aria-label="Close banner">✕</button>
-  </div>
-
-<main id="content" role="main">
+<main id="content">
 
 <section class="about-me dense">
 <div class="about-grid">
@@ -151,6 +41,22 @@
 
 <h2>Azure Cloud SOC Lab</h2>
 <h3>Microsoft Sentinel | Microsoft Defender XDR | Active Directory Attack Simulation</h3>
+
+<h3>Lab Walkthrough Video</h3>
+
+<div style="margin-top:25px;margin-bottom:40px;">
+
+<iframe 
+width="100%" 
+height="500"
+src="https://www.youtube.com/embed/BUKeNjO3SnM"
+title="Azure Cloud SOC Lab Demo"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
 
 <h3>Overview</h3>
 
@@ -192,41 +98,27 @@ security analytics using KQL, and automated incident response through Sentinel p
 
 <h3>Lab 1 – Active Directory Deployment</h3>
 
-<h4>Objective</h4>
-<p>Build a working Active Directory environment in Azure.</p>
-
-<h4>Implementation</h4>
+<p><strong>Objective:</strong> Build a working Active Directory environment in Azure.</p>
 
 <ul class="skills-list">
-<li>Created Azure resource group: SOC-LAB-RG</li>
+<li>Created Azure resource group SOC-LAB-RG</li>
 <li>Deployed Windows Server 2022 VM (DC01)</li>
-<li>Installed Active Directory Domain Services</li>
+<li>Configured Active Directory Domain Services</li>
 <li>Configured DNS server</li>
-<li>Domain created: soclab.local</li>
-<li>Deployed Windows 10 VM and joined it to the domain</li>
-</ul>
-
-<h4>Validation</h4>
-
-<ul class="skills-list">
-<li>WIN10 → DC01 ping successful</li>
-<li>DC01 → WIN10 ping successful</li>
-<li>Client successfully joined SOCLAB.local domain</li>
+<li>Created domain soclab.local</li>
+<li>Joined Windows 10 VM to domain</li>
 </ul>
 
 <h3>Lab 2 – Domain Authentication & Security Auditing</h3>
 
-<h4>Objective</h4>
-<p>Enable Windows audit logging for security monitoring.</p>
-
-<h4>Configuration</h4>
+<p><strong>Objective:</strong> Enable Windows audit logging for monitoring security activity.</p>
 
 <ul class="skills-list">
-<li>Configured Advanced Audit Policies through Group Policy</li>
-<li>Logon events monitoring</li>
+<li>Configured Advanced Audit Policies</li>
+<li>Logon event monitoring</li>
 <li>Account management tracking</li>
-<li>Process creation logging</li>
-<li>Kerberos authentication auditing</li>
+<li>Process creation auditing</li>
+<li>Kerberos authentication monitoring</li>
 </ul>
 
 <h4>Important Event IDs</h4>
@@ -241,19 +133,12 @@ security analytics using KQL, and automated incident response through Sentinel p
 
 <h3>Lab 3 – Log Collection with Microsoft Sentinel</h3>
 
-<h4>Objective</h4>
-<p>Ingest Windows security logs into Microsoft Sentinel.</p>
-
-<h4>Setup</h4>
-
 <ul class="skills-list">
-<li>Created Log Analytics Workspace: soc-lab-workspace</li>
-<li>Connected Microsoft Sentinel to workspace</li>
-<li>Installed Azure Monitor Agent on DC01 and WIN10</li>
-<li>Configured Data Collection Rule for Windows Security Events</li>
+<li>Created Log Analytics Workspace</li>
+<li>Connected Microsoft Sentinel</li>
+<li>Installed Azure Monitor Agent on endpoints</li>
+<li>Configured Data Collection Rule</li>
 </ul>
-
-<h4>KQL Validation Queries</h4>
 
 <pre>
 Heartbeat | sort by TimeGenerated desc
@@ -262,17 +147,7 @@ SecurityEvent | sort by TimeGenerated desc
 
 <h3>Lab 4 – Simulated Attack (Brute Force)</h3>
 
-<h4>Objective</h4>
-<p>Generate failed authentication attempts.</p>
-
-<h4>Attack Simulation</h4>
-
-<p>
-Multiple invalid RDP login attempts were performed which generated 
-Windows Security Event ID 4625 (Failed logon).
-</p>
-
-<h4>Detection Query</h4>
+<p>Multiple invalid RDP login attempts generated Windows Event ID 4625.</p>
 
 <pre>
 SecurityEvent
@@ -282,9 +157,6 @@ SecurityEvent
 
 <h3>Lab 5 – Sentinel Detection Rule</h3>
 
-<h4>Objective</h4>
-<p>Detect brute force attacks.</p>
-
 <pre>
 SecurityEvent
 | where EventID == 4625
@@ -292,62 +164,30 @@ SecurityEvent
 | where FailedAttempts >= 5
 </pre>
 
-<p>
-Configured as a Scheduled Analytics Rule with a frequency of 5 minutes 
-and lookback period of 30 minutes.
-</p>
-
-<p><strong>MITRE ATT&CK Tactic:</strong> Credential Access – Brute Force</p>
+<p><strong>MITRE ATT&CK:</strong> Credential Access – Brute Force</p>
 
 <h3>Lab 6 – Incident Investigation</h3>
 
-<h4>Objective</h4>
-<p>Investigate security incidents across Sentinel and Defender.</p>
-
 <ul class="skills-list">
 <li>Opened Sentinel incident</li>
-<li>Analyzed entities including user, host, and IP address</li>
-<li>Pivoted to Microsoft Defender portal for device timeline investigation</li>
+<li>Investigated user, host, and IP entities</li>
+<li>Pivoted to Microsoft Defender timeline</li>
 </ul>
 
 <h3>Lab 7 – Automated Response (Playbooks)</h3>
 
-<h4>Objective</h4>
-<p>Automate incident notifications.</p>
-
 <ul class="skills-list">
-<li>Created Sentinel playbook using Logic Apps</li>
+<li>Created Logic App playbook</li>
 <li>Trigger: Sentinel alert generated</li>
-<li>Action: Send automated email notification</li>
-<li>Email includes alert name, severity, incident link, and entities</li>
+<li>Action: Email notification</li>
 </ul>
 
 <h3>Lab 8 – Threat Hunting with KQL</h3>
 
-<h4>Objective</h4>
-<p>Perform manual threat hunting using KQL queries.</p>
-
-<h4>Failed Logons</h4>
-
 <pre>
 SecurityEvent
 | where EventID == 4625
-| summarize Attempts = count() by TargetUserName, IpAddress, bin(TimeGenerated, 1h)
-</pre>
-
-<h4>Successful Logons</h4>
-
-<pre>
-SecurityEvent
-| where EventID == 4624
-| summarize Logons = count() by TargetUserName
-</pre>
-
-<h4>Privileged Logons</h4>
-
-<pre>
-SecurityEvent
-| where EventID in (4672,4648)
+| summarize Attempts = count() by TargetUserName
 </pre>
 
 <h3>Key Skills Demonstrated</h3>
@@ -356,23 +196,20 @@ SecurityEvent
 <li>Cloud SOC Architecture</li>
 <li>Microsoft Sentinel SIEM</li>
 <li>Active Directory Security Monitoring</li>
-<li>Azure Monitor Agent</li>
 <li>KQL Threat Hunting</li>
 <li>Detection Engineering</li>
 <li>Incident Investigation</li>
-<li>Security Automation with Playbooks</li>
-<li>Microsoft Defender for Endpoint</li>
+<li>Security Automation</li>
 </ul>
 
 <h3>Final Outcome</h3>
 
 <ul class="skills-list">
-<li>Complete cloud SOC environment successfully deployed</li>
+<li>Complete cloud SOC environment deployed</li>
 <li>Endpoints onboarded to Microsoft Defender</li>
-<li>Windows security logs ingested into Sentinel</li>
-<li>Detection rules triggered security incidents</li>
-<li>Automated response playbooks executed successfully</li>
-<li>Threat hunting queries validated environment visibility</li>
+<li>Security logs ingested into Sentinel</li>
+<li>Detection rules triggered incidents</li>
+<li>Automated response playbooks executed</li>
 </ul>
 
 </div>
@@ -402,85 +239,11 @@ SecurityEvent
 
 </main>
 
- <!-- Footer -->
-  <footer class="site-footer full-bleed">
-  <div class="footer-inner">
-    © 2025 Jeeva Kumaradas. Built with love and dedication to cybersecurity.
-  </div>
+<footer class="site-footer full-bleed">
+<div class="footer-inner">
+© 2025 Jeeva Kumaradas. Built with dedication to cybersecurity.
+</div>
 </footer>
-
-
-  <!-- Behavior (tiny + conflict-free) -->
-  <script>
-    (function(){
-      const params   = new URLSearchParams(location.search);
-      const banner   = document.getElementById('qr-banner');
-      const closeBtn = banner ? banner.querySelector('.close') : null;
-
-      // Show banner when URL has ?qr=1 or ref=qr (for QR scans)
-      const showQR = ['1','true','yes'].includes((params.get('qr')||'').toLowerCase())
-                     || (params.get('ref')||'').toLowerCase() === 'qr';
-
-      try {
-        const closed = sessionStorage.getItem('qrBannerClosed') === '1';
-        if (banner && showQR && !closed) {
-          document.body.classList.add('qr-on'); // unlocks CSS override
-          banner.hidden = false;
-
-          // Hide on first small scroll
-          let done = false;
-          function hideOnScroll(){
-            if (done) return;
-            if (window.scrollY > 8){
-              banner.classList.add('hidden');
-              setTimeout(()=>{ banner.hidden = true; }, 260);
-              sessionStorage.setItem('qrBannerClosed','1');
-              done = true;
-              window.removeEventListener('scroll', hideOnScroll);
-            }
-          }
-          window.addEventListener('scroll', hideOnScroll, { passive:true });
-
-          // Hide on ✕ click
-          if (closeBtn){
-            closeBtn.addEventListener('click', () => {
-              banner.classList.add('hidden');
-              setTimeout(()=>{ banner.hidden = true; }, 260);
-              sessionStorage.setItem('qrBannerClosed','1');
-            });
-          }
-        }
-      } catch(e){ /* ignore storage issues */ }
-
-      // Kill any legacy inline onscroll handler that might still be present
-      window.onscroll = null;
-    })();
-  </script>
-
-  <script>
-(function () {
-  function setMobileNavPadding() {
-    if (!window.matchMedia('(max-width: 900px)').matches) return;
-    var nav = document.querySelector('nav.nav-bar');
-    var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
-    document.documentElement.style.setProperty('--mobile-nav-h', h + 'px');
-  }
-  window.addEventListener('load', setMobileNavPadding, { passive: true });
-  window.addEventListener('resize', setMobileNavPadding, { passive: true });
-  window.addEventListener('orientationchange', setMobileNavPadding, { passive: true });
-})();
-</script>
-
-  <script>
-  (function stripSoftHyphens(root){
-    const SHY = /\u00AD/g; // soft hyphen
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    let n;
-    while ((n = walker.nextNode())) {
-      if (SHY.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(SHY, "");
-    }
-  })(document.body);
-</script>
 
 </body>
 </html>
