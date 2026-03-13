@@ -7265,3 +7265,92 @@ nav.nav-bar .nav-links li a{
   padding: 25px;
   line-height: 1.6;
 }
+/* Make right sidebar wider */
+
+.about-grid{
+  display:grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap:40px;
+}
+.about-facts{
+  padding:30px;
+  line-height:1.7;
+  font-size:16px;
+}
+.about-facts .quick-links{
+  margin-top:25px;
+}
+
+.about-facts .chip{
+  display:block;
+  text-align:center;
+  margin-top:12px;
+}
+/* ===== Azure SOC Lab Tech Stack Card ===== */
+
+.about-grid{
+  display:grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap:40px;
+  max-width:1400px;
+  margin:auto;
+}
+
+/* Sidebar card */
+
+.about-facts{
+  padding:35px;
+  line-height:1.8;
+  font-size:16px;
+
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(8px);
+
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.45);
+}
+
+/* Sidebar title */
+
+.about-facts h3{
+  font-size:20px;
+  margin-bottom:15px;
+  color:#ffd24c;
+}
+
+/* Tech stack list */
+
+.about-facts ul{
+  list-style:none;
+  padding:0;
+}
+
+.about-facts li{
+  margin-bottom:10px;
+  padding-left:22px;
+  position:relative;
+}
+
+/* Custom bullet */
+
+.about-facts li::before{
+  content:"▸";
+  position:absolute;
+  left:0;
+  color:#ff5722;
+}
+
+/* Buttons */
+
+.about-facts .quick-links{
+  margin-top:30px;
+}
+
+.about-facts .chip{
+  display:block;
+  text-align:center;
+  margin-top:12px;
+  padding:12px;
+}
