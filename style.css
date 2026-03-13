@@ -7185,22 +7185,20 @@ hr {
   justify-content:space-between;
   align-items:center;
 }
-/* ===== NAVBAR FIX (force single row + remove line) ===== */
+/* ===== NAVBAR FINAL FIX ===== */
 
 nav.nav-bar{
   width:100% !important;
-  max-width:1400px !important;
+  max-width:1500px !important;
   margin:0 auto !important;
-  border-bottom:none !important;
-  box-shadow:none !important;
 }
 
 nav.nav-bar .nav-links{
   display:flex !important;
   flex-wrap:nowrap !important;
-  justify-content:space-between !important;
+  justify-content:center !important;
   align-items:center !important;
-  gap:8px !important;
+  gap:10px !important;
   width:100% !important;
 }
 
@@ -7209,6 +7207,6 @@ nav.nav-bar .nav-links li{
 }
 
 nav.nav-bar .nav-links li a{
-  padding:6px 8px !important;
-  font-size:16px !important;
+  padding:6px 6px !important;
+  font-size:15px !important;
 }
