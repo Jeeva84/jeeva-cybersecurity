@@ -7392,3 +7392,19 @@ nav.nav-bar .nav-links li a{
   border-radius:12px;
   box-shadow:0 12px 30px rgba(0,0,0,0.6);
 }
+/* Page title */
+
+.about-story h2{
+  color:#ffd24c;   /* yellow */
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+/* Subtitle under title */
+
+.about-story h3:first-of-type{
+  color:#9fb3c8;   /* soft blue/grey */
+  font-weight:500;
+  font-size:18px;
+  margin-bottom:25px;
+}
