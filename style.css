@@ -7210,3 +7210,39 @@ nav.nav-bar .nav-links li a{
   padding:6px 6px !important;
   font-size:15px !important;
 }
+/* Azure Cloud SOC Lab page list fixes */
+
+.azure-soc-page ul{
+  list-style: disc;
+  padding-left: 22px;
+}
+
+.azure-soc-page li{
+  margin-bottom: 6px;
+}
+/* Azure SOC page spacing */
+
+.azure-soc-page h2,
+.azure-soc-page h3,
+.azure-soc-page h4{
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.azure-soc-page p{
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+/* Azure SOC sidebar improvements */
+
+.azure-soc-page .side-menu{
+  padding:18px;
+}
+
+.azure-soc-page .side-menu li{
+  margin-bottom:10px;
+  line-height:1.6;
+}
+.azure-soc-page .content-container{
+  max-width:900px;
+}
