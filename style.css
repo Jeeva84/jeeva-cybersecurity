@@ -43,12 +43,18 @@ body {
 
 
 .nav-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
   padding: 0;
-  gap: 25px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.nav-links li {
+  white-space: nowrap;
 }
 
 .nav-links li a {
