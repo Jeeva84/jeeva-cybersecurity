@@ -7474,3 +7474,18 @@ nav.nav-bar .nav-links li a{
   left:0;
   color:#ff5722;
 }
+/* Fix sidebar buttons alignment */
+
+.about-facts .quick-links{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  margin-top:25px;
+}
+
+.about-facts .chip{
+  width:180px;
+  text-align:center;
+  display:block;
+}
