@@ -7582,3 +7582,14 @@ nav.nav-bar .nav-links li a{
   }
 
 }
+/* Force 2 column nav layout on mobile for all pages */
+@media (max-width:900px){
+
+  nav.nav-bar .nav-links{
+    display:grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap:10px !important;
+    flex-wrap:unset !important;
+  }
+
+}
