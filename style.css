@@ -3703,14 +3703,19 @@ html{ scroll-behavior:smooth; }
   }
   nav .nav-links li{ list-style:none !important; display:block !important; }
   nav .nav-links a{
-    display:block !important; width:100% !important; text-align:center !important;
-    padding:12px 14px !important;
-    color:#fff !important;
-    background:rgba(255,255,255,.08) !important;
-    border:1px solid rgba(255,255,255,.18) !important;
-    border-radius:10px !important;
-    text-decoration:none !important;
-  }
+display:flex !important;
+justify-content:center !important;
+align-items:center !important;
+width:100% !important;
+text-align:center !important;
+padding:12px 14px !important;
+color:#fff !important;
+background:rgba(255,255,255,.08) !important;
+border:1px solid rgba(255,255,255,.18) !important;
+border-radius:10px !important;
+text-decoration:none !important;
+box-sizing:border-box;
+}
 
   /* Prevent hero from hiding under the nav */
   .split-hero{ margin-top:0 !important; padding-top:8px !important; }
