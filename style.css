@@ -7569,3 +7569,16 @@ nav.nav-bar .nav-links li a{
   }
 
 }
+/* Fix mobile navbar for Azure SOC page */
+@media (max-width: 768px){
+
+  nav.nav-bar{
+    position: relative !important;
+    top:auto !important;
+  }
+
+  body.page-specific{
+    padding-top:0 !important;
+  }
+
+}
