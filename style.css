@@ -3057,7 +3057,7 @@ body.page-specific::before{
 /* ===== MOBILE NAV FIX: compact + hide on scroll ===== */
 @media (max-width: 768px) {
   .nav-bar{
-    position: fixed !important;
+    position: relative !important;
     top: 0; left: 0; right: 0;
     padding: 10px 8px !important;
     background-color: #1f1f1f !important;
