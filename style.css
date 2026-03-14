@@ -7553,3 +7553,26 @@ nav.nav-bar .nav-links li a{
   }
 
 }
+/* Mobile fix for Azure SOC page */
+
+@media (max-width:900px){
+
+  nav.nav-bar{
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  main#content{
+    padding-top: 10px !important;
+  }
+
+  .about-grid{
+    display:block !important;
+  }
+
+  .about-facts{
+    margin-top:25px;
+  }
+
+}
