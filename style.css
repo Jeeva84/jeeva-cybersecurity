@@ -7593,3 +7593,32 @@ nav.nav-bar .nav-links li a{
   }
 
 }
+/* Fix nav buttons equal width */
+.nav-links a{
+  display:block;
+  width:100%;
+  text-align:center;
+  white-space:nowrap;
+}
+/* Fix Azure SOC page overflow on mobile */
+@media (max-width:900px){
+
+  .about-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-story{
+    width:100%;
+    max-width:100%;
+  }
+
+  .about-facts{
+    width:100%;
+    max-width:100%;
+  }
+
+}
+
+body{
+  overflow-x:hidden;
+}
