@@ -7622,3 +7622,30 @@ nav.nav-bar .nav-links li a{
 body{
   overflow-x:hidden;
 }
+/* Azure SOC page mobile fix */
+@media (max-width: 900px){
+
+  .about-grid{
+    display:block !important;
+    width:100% !important;
+  }
+
+  .about-story{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+    padding:0 16px !important;
+    box-sizing:border-box;
+  }
+
+  .about-facts{
+    width:100% !important;
+    max-width:100% !important;
+    margin-top:20px;
+  }
+
+}
+/* stop horizontal overflow */
+body{
+  overflow-x:hidden;
+}
